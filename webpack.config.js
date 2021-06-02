@@ -4,27 +4,29 @@ var path = require('path');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 module.exports = {
-    context: path.join(__dirname, "assets"),
-    entry: "./src/js/go-react.js",
+    mode: "development",
+    context: path.resolve(__dirname, "assets"),
+    entry: path.resolve(__dirname, './assets/src/js/app.tsx'),
+    output: {
+        path: path.resolve(__dirname + "/assets/js/"),
+        filename: "go-react.min.js"
+    },
+    devtool: "cheap-module-source-map",
+    resolve: {
+        extensions: ['.js', ".ts", ".tsx", ".json"]
+    },
     module: {
         rules: [{
-            test: /\.jsx?$/,
+            test: /\.tsx?$/,
             exclude: /node_modules/,
             use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-react', '@babel/preset-env']
-                }
+                loader: 'ts-loader',
+
             }]
         }]
-    },
-    output: {
-        path: path.join(__dirname + "/assets/js/"),
-        filename: "go-react.min.js"
     },
     plugins: debug ? [] : [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
     ],
-    mode: "development"
 };

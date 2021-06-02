@@ -1,7 +1,8 @@
 package main
 
 import (
-	"fmt"
+	"go-react/product"
+	"go-react/test"
 	"log"
 	"net/http"
 
@@ -9,18 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func postTest() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		fmt.Println("call /name post")
-		name := c.PostForm("name")
-		// name := c.DefaultPostForm("name", "defult_name")
-		fmt.Printf("name is %v \n", name)
-		c.JSON(http.StatusOK, gin.H{
-			"name": name,
-		})
-	}
 
-}
 
 func main() {
 	router := gin.Default()
@@ -33,19 +23,15 @@ func main() {
 	// <link rel="stylesheet" href="/assets/css/style.css">
 	router.Static("/assets", "./assets")
 
-	router.GET("/", func(ctx *gin.Context) {
-		fmt.Println("call /")
-		ctx.HTML(http.StatusOK, "top/index.html", gin.H{})
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "top/index.html", gin.H{})
 	})
 
-	router.GET("/name", func(c *gin.Context) {
-		fmt.Println("call /name get")
-		c.JSON(http.StatusOK, gin.H{
-			"name": "biki",
-		})
-	})
+	router.GET("/get_test", test.GetTest())
 
-	router.POST("/name", postTest())
+	router.POST("/post_test", test.PostTest())
+
+	router.POST("/search", product.SearchProduct())
 
 	// server run
 	err := router.Run(":8080")
