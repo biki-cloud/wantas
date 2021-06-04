@@ -2,13 +2,27 @@ import json
 import random
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import subprocess
+import time
 
 def dict_to_json(d):
     return json.dumps(d, ensure_ascii=False, indent=4)
 
+def write_json_file(file_path, dic):
+    with open(file_path, 'w') as fp:
+        json.dump(dic, fp, indent=4, ensure_ascii=False)
+
+def read_json_file(file_path) -> dict:
+    with open(file_path, 'r') as fp:
+        return json.load(fp)
+
 def solve_certificate_problem():
     import certifi
     print(f"export SSL_CERT_FILE={certifi.where()}")
+    path = certifi.where()
+    cmd = f"export SSL_CERT_FILE={certifi.where()}"
+    subprocess.call(cmd, shell=True)
+    time.sleep(1)
 
 def join_slash(*args):
     joined = ""
@@ -41,3 +55,13 @@ def get_products_tag(url) -> list:
     soup = get_soup(url)
     return soup.findAll("div", {"class": "list_inner"})
 
+if __name__ == '__main__':
+    dic = [{
+        "name": "biki",
+        "age": 33
+    },
+    {
+        "mike": "jfoiajfia"
+    }]
+    write_json_file("test.json", dic)
+    

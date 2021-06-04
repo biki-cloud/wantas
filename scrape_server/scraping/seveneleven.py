@@ -1,7 +1,8 @@
-import sys
-import bs4
 import time
 from typing import List
+from collections import Counter
+
+import bs4
 
 import scrape_util as util
 
@@ -40,10 +41,9 @@ class Area:
         self.kinki = "kinki"
         self.hokuriku = "hokuriku"
         self.koshinetsu = "koshinetsu"
-        self.kanto =  "kanto"
-        self.tohoku =  "tohoku"
+        self.kanto = "kanto"
+        self.tohoku = "tohoku"
         self.hokkaido = "hokkaido"
-
 
 
 class SevenEleven:
@@ -71,12 +71,49 @@ class SevenEleven:
             return util.join_slash(self.base_url, self.products, self.a, res)
         return ""
 
+    def get_recursive_links(self, link, all_links: list):
+        if link not in all_links:
+            all_links.append(link)
+            print(f"append: {link}")
+            print("sleep 0.5...")
+            time.sleep(0.5)
+            line_up_links = self.get_line_up_links(link)
+            for l in line_up_links:
+                self.get_recursive_links(l, all_links)
+            pager_links = self.get_pager_links(link)
+            for l in pager_links:
+                self.get_recursive_links(l, all_links)
+        return
+
     def get_all_product_url(self) -> list:
         return_list = []
         all_product_kind = self.product_kind.__dict__.keys()
         for product in all_product_kind:
-            return_list.append(self.get_product_url(product))
+            product_url = self.get_product_url(product)
+            print(f"call: {product_url}")
+            self.get_recursive_links(product_url, return_list)
         return return_list
+
+    def get_line_up_links(self, product_url) -> list:
+        result_links = []
+        soup = util.get_soup(product_url)
+        line_up_elements = soup.find_all(class_="list_btn brn pbNested pbNestedWrapper")
+        for ele in line_up_elements:
+            url = util.join_slash(self.base_url, ele.find('a', href=True)['href'])
+            result_links.append(url)
+        return result_links
+
+    def get_pager_links(self, product_url) -> list:
+        result_links = []
+        soup = util.get_soup(product_url)
+        pager_elements = soup.find_all(class_="pager_num")
+        for ele in pager_elements:
+            if ele not in result_links:
+                a_tag = ele.find("a")
+                if a_tag:
+                    url = util.join_slash(self.base_url, a_tag.get('href'))
+                    result_links.append(url)
+        return result_links
 
 
 class Items:
@@ -125,7 +162,6 @@ class Item:
         url = util.join_slash(seven.base_url, url)
         return url
 
-
     def get_price(self) -> str:
         price_tag = self.item.find('div', attrs={"class", "item_price"})
         return price_tag.string
@@ -148,11 +184,13 @@ def get_area_items(area_name, seven: SevenEleven) -> Items:
     items_div = seven.get_items_tag_from_page(soup)
     return Items(items_div)
 
+
 def get_product_items(product_name, seven: SevenEleven) -> Items:
     url = seven.get_product_url(product_name)
     soup = util.get_soup(url)
     items_div = seven.get_items_tag_from_page(soup)
     return Items(items_div)
+
 
 def items_to_database(database, items_obj: Items):
     for item in items_obj.items:
@@ -165,12 +203,14 @@ def items_to_database(database, items_obj: Items):
             }
         )
 
+
 def search_from_database(database, search_name):
     result = []
     for record in database:
         if search_name in record['name']:
             result.append(record)
     return result
+
 
 def get_all_product(seven: SevenEleven):
     result = []
@@ -179,16 +219,25 @@ def get_all_product(seven: SevenEleven):
         soup = util.get_soup(product_url)
         items_div = seven.get_items_tag_from_page(soup)
         items_obj = Items(items_div)
-        print(f"url: {product_url}")
-        print(f"lineup num: {len(items_obj.items)}")
         for item in items_obj.items:
-            result.append(item.to_dict())
+            dic = item.to_dict()
+            if dic['name'] not in [i['name'] for i in result]:
+                result.append(item.to_dict())
     return result
 
-def search(search_name):
+def research_to_database(database_path, seven: SevenEleven):
+    database: List[dict] = get_all_product(seven)
+    util.write_json_file(database_path, database)
+
+def read_database(database_path):
+    return util.read_json_file(database_path)
+
+def search(search_name: str):
     seven = SevenEleven()
 
-    database: List[dict] = get_all_product(seven)
+    database_path = "database.json"
+
+    database = read_database(database_path)
 
     result = search_from_database(database, search_name)
     # print(util.dict_to_json(result))
@@ -199,9 +248,9 @@ def search(search_name):
     return result
 
 
-
 if __name__ == '__main__':
+    # プロダクトは上記の取り方で取れると思う。
     util.solve_certificate_problem()
-    result = search("ご飯")
-
-
+    result = search("オムライス")
+    print(util.dict_to_json(result))
+    print(len(result))

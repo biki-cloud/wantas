@@ -14,6 +14,7 @@ class ScrapeServiceServer(scrape_pb2_grpc.ScrapeServiceServicer):
         name = request.name
         print("Scrape function is invoked from client")
         print(f"received name is {name}")
+        result_list: list = do_scrape.scrape_seven("チキン")
         dealer, price = do_scrape.test(name)
         print(f"send {dealer} {price} to client.")
         return scrape_pb2.ScrapeResponse(
