@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-react/product"
+	"go-react/scrape_client/client"
 	"go-react/test"
 	"log"
 	"net/http"
@@ -9,8 +9,6 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
-
-
 
 func main() {
 	router := gin.Default()
@@ -31,7 +29,7 @@ func main() {
 
 	router.POST("/post_test", test.PostTest())
 
-	router.POST("/search", product.SearchProduct())
+	router.POST("/search", client.SearchProductUseGRPC())
 
 	// server run
 	err := router.Run(":8080")

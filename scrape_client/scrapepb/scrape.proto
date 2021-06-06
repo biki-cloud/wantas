@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+package hello;
+
+option go_package="./scrape_client/scrapepb";
+
+message Product {
+  string name = 1;
+  string url = 2;
+  string price = 3;
+  repeated string region_list = 4;
+}
+
+message ScrapeManyTimesRequest {
+  string productName = 1;
+}
+
+message ScrapeManyTimesResponse {
+  Product product = 1;
+}
+
+
+service ScrapingService {
+  rpc ScrapeManyTimes (ScrapeManyTimesRequest) returns (stream ScrapeManyTimesResponse) {}
+}

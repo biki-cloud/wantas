@@ -5,7 +5,7 @@ import grpc
 import scrape_pb2 as scrape__pb2
 
 
-class ScrapeServiceStub(object):
+class ScrapingServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -14,42 +14,42 @@ class ScrapeServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Scrape = channel.unary_unary(
-                '/scrape.ScrapeService/Scrape',
-                request_serializer=scrape__pb2.ScrapeRequest.SerializeToString,
-                response_deserializer=scrape__pb2.ScrapeResponse.FromString,
+        self.ScrapeManyTimes = channel.unary_stream(
+                '/hello.ScrapingService/ScrapeManyTimes',
+                request_serializer=scrape__pb2.ScrapeManyTimesRequest.SerializeToString,
+                response_deserializer=scrape__pb2.ScrapeManyTimesResponse.FromString,
                 )
 
 
-class ScrapeServiceServicer(object):
+class ScrapingServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Scrape(self, request, context):
+    def ScrapeManyTimes(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ScrapeServiceServicer_to_server(servicer, server):
+def add_ScrapingServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Scrape': grpc.unary_unary_rpc_method_handler(
-                    servicer.Scrape,
-                    request_deserializer=scrape__pb2.ScrapeRequest.FromString,
-                    response_serializer=scrape__pb2.ScrapeResponse.SerializeToString,
+            'ScrapeManyTimes': grpc.unary_stream_rpc_method_handler(
+                    servicer.ScrapeManyTimes,
+                    request_deserializer=scrape__pb2.ScrapeManyTimesRequest.FromString,
+                    response_serializer=scrape__pb2.ScrapeManyTimesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'scrape.ScrapeService', rpc_method_handlers)
+            'hello.ScrapingService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class ScrapeService(object):
+class ScrapingService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Scrape(request,
+    def ScrapeManyTimes(request,
             target,
             options=(),
             channel_credentials=None,
@@ -59,8 +59,8 @@ class ScrapeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/scrape.ScrapeService/Scrape',
-            scrape__pb2.ScrapeRequest.SerializeToString,
-            scrape__pb2.ScrapeResponse.FromString,
+        return grpc.experimental.unary_stream(request, target, '/hello.ScrapingService/ScrapeManyTimes',
+            scrape__pb2.ScrapeManyTimesRequest.SerializeToString,
+            scrape__pb2.ScrapeManyTimesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

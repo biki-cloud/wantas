@@ -1,10 +1,10 @@
 import time
 from typing import List
 from collections import Counter
-
+import os
 import bs4
 
-import scrape_util as util
+from scraping import scrape_util as util
 
 
 class ProductKinds:
@@ -147,13 +147,9 @@ class Item:
             "region_list": self.region_list
         }
 
-    def get_title(self) -> (str, str):
+    def get_title(self) -> str:
         title_tag = self.item.find('div', attrs={"class", "item_ttl"})
-        title = title_tag.string
-        url = title_tag.find('a', href=True)['href']
-        seven = SevenEleven()
-        url = util.join_slash(seven.base_url, url)
-        return title
+        return title_tag.string
 
     def get_url(self) -> str:
         title_tag = self.item.find('div', attrs={"class", "item_ttl"})
@@ -184,13 +180,11 @@ def get_area_items(area_name, seven: SevenEleven) -> Items:
     items_div = seven.get_items_tag_from_page(soup)
     return Items(items_div)
 
-
 def get_product_items(product_name, seven: SevenEleven) -> Items:
     url = seven.get_product_url(product_name)
     soup = util.get_soup(url)
     items_div = seven.get_items_tag_from_page(soup)
     return Items(items_div)
-
 
 def items_to_database(database, items_obj: Items):
     for item in items_obj.items:
@@ -203,14 +197,12 @@ def items_to_database(database, items_obj: Items):
             }
         )
 
-
 def search_from_database(database, search_name):
     result = []
     for record in database:
         if search_name in record['name']:
             result.append(record)
     return result
-
 
 def get_all_product(seven: SevenEleven):
     result = []
@@ -221,6 +213,7 @@ def get_all_product(seven: SevenEleven):
         items_obj = Items(items_div)
         for item in items_obj.items:
             dic = item.to_dict()
+            # prevent to insert same product.
             if dic['name'] not in [i['name'] for i in result]:
                 result.append(item.to_dict())
     return result
@@ -235,7 +228,9 @@ def read_database(database_path):
 def search(search_name: str):
     seven = SevenEleven()
 
-    database_path = "database.json"
+
+    # database_path = os.path.join(os.getcwd(), "database.json")
+    database_path = "scrape_server/scraping/database.json"
 
     database = read_database(database_path)
 

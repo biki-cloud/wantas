@@ -3,8 +3,9 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import json
 import sys
-from seveneleven import search
-import scrape_util as util
+
+from scraping.seveneleven import search
+from scraping.scrape_util import *
 
 def instead_scrape(name: str) -> (str, int):
     store_list = ["seven eleven", "family mart", "yamazaki", "mini stop", "lawson"]
@@ -20,7 +21,7 @@ def scrape_seven(search_name):
 def main():
     # instead_scrape("fami tiki")
     result = search("チキン")
-    print(util.dict_to_json(result))
+    print(dict_to_json(result))
     print(len(result))
 
 

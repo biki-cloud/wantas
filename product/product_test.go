@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func comfirmValue(p *product) bool {
+func comfirmValue(p *Product) bool {
 	return p.Dealer == "" || p.Name == "" || p.Distance == 0 || p.Price == 0 || p.Lat == 0 || p.Lon == 0 
 }
 
@@ -59,7 +59,7 @@ func TestJsonToStruct(t *testing.T) {
 		"Lat": 2.3,
 		"Lon": 33.3
 	}`)
-	var p product
+	var p Product
 	if err := json.Unmarshal(jsonData, &p); err != nil {
 		t.Errorf("err is %v \n", err)
 	}

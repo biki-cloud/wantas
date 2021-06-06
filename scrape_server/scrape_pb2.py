@@ -15,26 +15,79 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='scrape.proto',
-  package='scrape',
+  package='hello',
   syntax='proto3',
-  serialized_options=b'Z\030./scrape_server/scrapepb',
+  serialized_options=b'Z\030./scrape_client/scrapepb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0cscrape.proto\x12\x06scrape\"\x1d\n\rScrapeRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"/\n\x0eScrapeResponse\x12\x0e\n\x06\x64\x65\x61ler\x18\x01 \x01(\t\x12\r\n\x05price\x18\x02 \x01(\x03\x32J\n\rScrapeService\x12\x39\n\x06Scrape\x12\x15.scrape.ScrapeRequest\x1a\x16.scrape.ScrapeResponse\"\x00\x42\x1aZ\x18./scrape_server/scrapepbb\x06proto3'
+  serialized_pb=b'\n\x0cscrape.proto\x12\x05hello\"H\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\t\x12\x13\n\x0bregion_list\x18\x04 \x03(\t\"-\n\x16ScrapeManyTimesRequest\x12\x13\n\x0bproductName\x18\x01 \x01(\t\":\n\x17ScrapeManyTimesResponse\x12\x1f\n\x07product\x18\x01 \x01(\x0b\x32\x0e.hello.Product2g\n\x0fScrapingService\x12T\n\x0fScrapeManyTimes\x12\x1d.hello.ScrapeManyTimesRequest\x1a\x1e.hello.ScrapeManyTimesResponse\"\x00\x30\x01\x42\x1aZ\x18./scrape_client/scrapepbb\x06proto3'
 )
 
 
 
 
-_SCRAPEREQUEST = _descriptor.Descriptor(
-  name='ScrapeRequest',
-  full_name='scrape.ScrapeRequest',
+_PRODUCT = _descriptor.Descriptor(
+  name='Product',
+  full_name='hello.Product',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='scrape.ScrapeRequest.name', index=0,
+      name='name', full_name='hello.Product.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='url', full_name='hello.Product.url', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='price', full_name='hello.Product.price', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='region_list', full_name='hello.Product.region_list', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=23,
+  serialized_end=95,
+)
+
+
+_SCRAPEMANYTIMESREQUEST = _descriptor.Descriptor(
+  name='ScrapeManyTimesRequest',
+  full_name='hello.ScrapeManyTimesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='productName', full_name='hello.ScrapeManyTimesRequest.productName', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,30 +105,23 @@ _SCRAPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24,
-  serialized_end=53,
+  serialized_start=97,
+  serialized_end=142,
 )
 
 
-_SCRAPERESPONSE = _descriptor.Descriptor(
-  name='ScrapeResponse',
-  full_name='scrape.ScrapeResponse',
+_SCRAPEMANYTIMESRESPONSE = _descriptor.Descriptor(
+  name='ScrapeManyTimesResponse',
+  full_name='hello.ScrapeManyTimesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dealer', full_name='scrape.ScrapeResponse.dealer', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='price', full_name='scrape.ScrapeResponse.price', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='product', full_name='hello.ScrapeManyTimesResponse.product', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -91,54 +137,63 @@ _SCRAPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=55,
-  serialized_end=102,
+  serialized_start=144,
+  serialized_end=202,
 )
 
-DESCRIPTOR.message_types_by_name['ScrapeRequest'] = _SCRAPEREQUEST
-DESCRIPTOR.message_types_by_name['ScrapeResponse'] = _SCRAPERESPONSE
+_SCRAPEMANYTIMESRESPONSE.fields_by_name['product'].message_type = _PRODUCT
+DESCRIPTOR.message_types_by_name['Product'] = _PRODUCT
+DESCRIPTOR.message_types_by_name['ScrapeManyTimesRequest'] = _SCRAPEMANYTIMESREQUEST
+DESCRIPTOR.message_types_by_name['ScrapeManyTimesResponse'] = _SCRAPEMANYTIMESRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ScrapeRequest = _reflection.GeneratedProtocolMessageType('ScrapeRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SCRAPEREQUEST,
+Product = _reflection.GeneratedProtocolMessageType('Product', (_message.Message,), {
+  'DESCRIPTOR' : _PRODUCT,
   '__module__' : 'scrape_pb2'
-  # @@protoc_insertion_point(class_scope:scrape.ScrapeRequest)
+  # @@protoc_insertion_point(class_scope:hello.Product)
   })
-_sym_db.RegisterMessage(ScrapeRequest)
+_sym_db.RegisterMessage(Product)
 
-ScrapeResponse = _reflection.GeneratedProtocolMessageType('ScrapeResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SCRAPERESPONSE,
+ScrapeManyTimesRequest = _reflection.GeneratedProtocolMessageType('ScrapeManyTimesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SCRAPEMANYTIMESREQUEST,
   '__module__' : 'scrape_pb2'
-  # @@protoc_insertion_point(class_scope:scrape.ScrapeResponse)
+  # @@protoc_insertion_point(class_scope:hello.ScrapeManyTimesRequest)
   })
-_sym_db.RegisterMessage(ScrapeResponse)
+_sym_db.RegisterMessage(ScrapeManyTimesRequest)
+
+ScrapeManyTimesResponse = _reflection.GeneratedProtocolMessageType('ScrapeManyTimesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SCRAPEMANYTIMESRESPONSE,
+  '__module__' : 'scrape_pb2'
+  # @@protoc_insertion_point(class_scope:hello.ScrapeManyTimesResponse)
+  })
+_sym_db.RegisterMessage(ScrapeManyTimesResponse)
 
 
 DESCRIPTOR._options = None
 
-_SCRAPESERVICE = _descriptor.ServiceDescriptor(
-  name='ScrapeService',
-  full_name='scrape.ScrapeService',
+_SCRAPINGSERVICE = _descriptor.ServiceDescriptor(
+  name='ScrapingService',
+  full_name='hello.ScrapingService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=104,
-  serialized_end=178,
+  serialized_start=204,
+  serialized_end=307,
   methods=[
   _descriptor.MethodDescriptor(
-    name='Scrape',
-    full_name='scrape.ScrapeService.Scrape',
+    name='ScrapeManyTimes',
+    full_name='hello.ScrapingService.ScrapeManyTimes',
     index=0,
     containing_service=None,
-    input_type=_SCRAPEREQUEST,
-    output_type=_SCRAPERESPONSE,
+    input_type=_SCRAPEMANYTIMESREQUEST,
+    output_type=_SCRAPEMANYTIMESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_SCRAPESERVICE)
+_sym_db.RegisterServiceDescriptor(_SCRAPINGSERVICE)
 
-DESCRIPTOR.services_by_name['ScrapeService'] = _SCRAPESERVICE
+DESCRIPTOR.services_by_name['ScrapingService'] = _SCRAPINGSERVICE
 
 # @@protoc_insertion_point(module_scope)
