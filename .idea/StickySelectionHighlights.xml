@@ -8,7 +8,22 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/get_store_place.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/scrape_util.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/scrape_server/scraping/seveneleven.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/seveneleven.py">
           <value>
             <PaintGroupHighlightMap />
           </value>

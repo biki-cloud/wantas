@@ -2,12 +2,13 @@ package product
 
 import (
 	"encoding/json"
+	"fmt"
 	"math"
 	"testing"
 )
 
 func comfirmValue(p *Product) bool {
-	return p.Dealer == "" || p.Name == "" || p.Distance == 0 || p.Price == 0 || p.Lat == 0 || p.Lon == 0 
+	return p.Dealer == "" || p.Name == "" || p.Url == "" || p.Price == "" || len(p.RegionList) == 0
 }
 
 func TestCreateProduct(t *testing.T) {
@@ -73,4 +74,8 @@ func TestAbs(t *testing.T) {
     if got != 1 {
         t.Errorf("Abs(-1) = %f; want 1", got)
     }
+}
+
+func TestGrpc(t *testing.T) {
+	fmt.Printf("testing grpc.")
 }

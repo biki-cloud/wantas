@@ -1,3 +1,13 @@
 .result {
-    margin: 0 auto;
+    margin: 30px auto;
+}
+
+.resultWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultTable {
+    display: flex;
+    flex-direction: row;
 }

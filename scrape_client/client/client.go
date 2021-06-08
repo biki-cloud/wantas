@@ -1,4 +1,4 @@
-package client
+package main
 
 import (
 	"context"
@@ -14,9 +14,9 @@ import (
 	"google.golang.org/grpc"
 )
 
-
 func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
+		fmt.Println(c.Request)
 		productName := c.PostForm("productName")
 		userLat, err := strconv.Atoi(c.PostForm("userLat"))
 		if err != nil {
@@ -30,19 +30,20 @@ func SearchProduct() gin.HandlerFunc {
 		fmt.Printf("Received userLat: %v \n", userLat)
 		fmt.Printf("Received userLon: %v \n", userLon)
 
-		product := product.New()
-		product.Dealer = "seveneleven"
-		product.Name = "fami tiki"
-		product.Url = "http:localhost/something"
-		product.Price = "130円"
-		product.RegionList = []string{"九州", "四国"}
+		p := product.New()
+		p.Dealer = "seveneleven"
+		p.Name = "fame tiki"
+		p.Url = "http:localhost/something"
+		p.Price = "130円"
+		p.RegionList = []string{"九州", "四国"}
+		p.SetStorePlace()
 
 		c.JSON(http.StatusOK, gin.H{
-			"dealer":     product.Dealer,
-			"name":       product.Name,
-			"url":        product.Url,
-			"price":      product.Price,
-			"regionList": product.RegionList,
+			"dealer": p.Dealer,
+			"name":   p.Name,
+			"price":  p.Price,
+			"lat":    p.StoreLat,
+			"lon":    p.StoreLon,
 		})
 	}
 }
@@ -62,29 +63,25 @@ func SearchProductUseGRPC() gin.HandlerFunc {
 		fmt.Printf("Received userLat: %v \n", userLat)
 		fmt.Printf("Received userLon: %v \n", userLon)
 
-		var scrapedResults []product.Product = Scraping(productName, float64(userLat), userLon)
-		var product product.Product = scrapedResults[0]
-		fmt.Println(product)
+		var scrapedResults []product.Product = Scraping(productName, float64(userLat), float64(userLon))
+		var p product.Product = scrapedResults[0]
+		fmt.Println(p)
 
 		c.JSON(http.StatusOK, gin.H{
-			"dealer":     product.Dealer,
-			"name":       product.Name,
-			"url":        product.Url,
-			"price":      product.Price,
-			"regionList": product.RegionList,
+			"dealer": p.Dealer,
+			"name":   p.Name,
+			"price":  p.Price,
+			"lat":    p.StoreLat,
+			"lon":    p.StoreLon,
 		})
 	}
-}
-
-func main() {
-	fmt.Println("main")
 }
 
 func setUpConnection() scrapepb.ScrapingServiceClient {
 	// create client connection
 	cc, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
-		log.Fatalf("could not connetct: %v", err)
+		log.Fatalf("could not connect: %v", err)
 	}
 	defer func(cc *grpc.ClientConn) {
 		err := cc.Close()
@@ -99,15 +96,19 @@ func setUpConnection() scrapepb.ScrapingServiceClient {
 
 func Scraping(productName string, userLat float64, userLon float64) []product.Product {
 	c := setUpConnection()
-	fmt.Println("Starting ScrapingServiceClient ....")
+	fmt.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b \n", productName, userLat, userLon)
 	req := &scrapepb.ScrapeManyTimesRequest{
 		ProductName: productName,
+		UserLat: float32(userLat),
+		UserLon: float32(userLon),
 	}
+
 
 	var ScrapedResults []product.Product
 
 	// ScrapeManyTimesはサービスの中の機能の名前
 	reqStream, err := c.ScrapeManyTimes(context.Background(), req)
+	fmt.Println(err)
 	if err != nil {
 		log.Fatalf("err occurs %v \n", err)
 	}
@@ -124,13 +125,19 @@ func Scraping(productName string, userLat float64, userLon float64) []product.Pr
 		log.Printf("name: %s, url: %s, price: %s, region_list: %v \n",
 			msg.Product.Name, msg.Product.GetUrl(), msg.Product.GetPrice(), msg.Product.GetRegionList())
 
-		product := product.New()
-		product.Dealer = "seveneleven"
-		product.Name = msg.Product.GetName()
-		product.Url = msg.Product.GetUrl()
-		product.Price = msg.Product.GetPrice()
-		product.RegionList = msg.Product.GetRegionList()
-		ScrapedResults = append(ScrapedResults, *product)
+		p := product.New()
+		p.Dealer = "seveneleven"
+		p.Name = msg.Product.GetName()
+		p.Url = msg.Product.GetUrl()
+		p.Price = msg.Product.GetPrice()
+		p.RegionList = msg.Product.GetRegionList()
+		p.StoreLat = float64(msg.GetStoreLat())
+		p.StoreLon = float64(msg.GetStoreLon())
+		ScrapedResults = append(ScrapedResults, *p)
 	}
 	return ScrapedResults
+}
+
+func main () {
+	Scraping("ご飯", 134.3, 24.3)
 }

@@ -14,10 +14,14 @@ message Product {
 
 message ScrapeManyTimesRequest {
   string productName = 1;
+  float userLat = 2;
+  float userLon = 3;
 }
 
 message ScrapeManyTimesResponse {
   Product product = 1;
+  float storeLat = 2;
+  float storeLon = 3;
 }
 
 

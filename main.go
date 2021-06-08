@@ -29,10 +29,13 @@ func main() {
 
 	router.POST("/post_test", test.PostTest())
 
-	router.POST("/search", client.SearchProductUseGRPC())
+	// router.POST("/search", client.SearchProductUseGRPC())
+	router.POST("/search", client.SearchProduct())
 
 	// server run
 	err := router.Run(":8080")
+	// lsof -i:8080
+	// kill -9 PID
 	if err != nil {
 		log.Fatalf("failed to run %v \n", err)
 	}

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\030./scrape_client/scrapepb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0cscrape.proto\x12\x05hello\"H\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\t\x12\x13\n\x0bregion_list\x18\x04 \x03(\t\"-\n\x16ScrapeManyTimesRequest\x12\x13\n\x0bproductName\x18\x01 \x01(\t\":\n\x17ScrapeManyTimesResponse\x12\x1f\n\x07product\x18\x01 \x01(\x0b\x32\x0e.hello.Product2g\n\x0fScrapingService\x12T\n\x0fScrapeManyTimes\x12\x1d.hello.ScrapeManyTimesRequest\x1a\x1e.hello.ScrapeManyTimesResponse\"\x00\x30\x01\x42\x1aZ\x18./scrape_client/scrapepbb\x06proto3'
+  serialized_pb=b'\n\x0cscrape.proto\x12\x05hello\"H\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\t\x12\x13\n\x0bregion_list\x18\x04 \x03(\t\"O\n\x16ScrapeManyTimesRequest\x12\x13\n\x0bproductName\x18\x01 \x01(\t\x12\x0f\n\x07userLat\x18\x02 \x01(\x02\x12\x0f\n\x07userLon\x18\x03 \x01(\x02\"^\n\x17ScrapeManyTimesResponse\x12\x1f\n\x07product\x18\x01 \x01(\x0b\x32\x0e.hello.Product\x12\x10\n\x08storeLat\x18\x02 \x01(\x02\x12\x10\n\x08storeLon\x18\x03 \x01(\x02\x32g\n\x0fScrapingService\x12T\n\x0fScrapeManyTimes\x12\x1d.hello.ScrapeManyTimesRequest\x1a\x1e.hello.ScrapeManyTimesResponse\"\x00\x30\x01\x42\x1aZ\x18./scrape_client/scrapepbb\x06proto3'
 )
 
 
@@ -93,6 +93,20 @@ _SCRAPEMANYTIMESREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='userLat', full_name='hello.ScrapeManyTimesRequest.userLat', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='userLon', full_name='hello.ScrapeManyTimesRequest.userLon', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -106,7 +120,7 @@ _SCRAPEMANYTIMESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=97,
-  serialized_end=142,
+  serialized_end=176,
 )
 
 
@@ -125,6 +139,20 @@ _SCRAPEMANYTIMESRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLat', full_name='hello.ScrapeManyTimesResponse.storeLat', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLon', full_name='hello.ScrapeManyTimesResponse.storeLon', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -137,8 +165,8 @@ _SCRAPEMANYTIMESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=144,
-  serialized_end=202,
+  serialized_start=178,
+  serialized_end=272,
 )
 
 _SCRAPEMANYTIMESRESPONSE.fields_by_name['product'].message_type = _PRODUCT
@@ -178,8 +206,8 @@ _SCRAPINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=204,
-  serialized_end=307,
+  serialized_start=274,
+  serialized_end=377,
   methods=[
   _descriptor.MethodDescriptor(
     name='ScrapeManyTimes',
