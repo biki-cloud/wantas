@@ -40,7 +40,7 @@ const Post: React.FC = () => {
           key: "AIzaSyDzeU7QqfTOkKg58HQujHzTI8jTaOiDfB0",
         },
       })
-      .then((res) => {
+      .then(/*(res) => {
         console.log(res);
         SetPlace({
           userLat: res.data.resullts[0].geometry.location.lat,
@@ -50,7 +50,7 @@ const Post: React.FC = () => {
           userLat: res.data.results[0].geometry.location.lat,
           userLon: res.data.results[0].geometry.location.lng,
         };
-      })
+      }*/)
       .catch((err) => {});
     return p;
   };
@@ -98,25 +98,25 @@ const Post: React.FC = () => {
       place = await getPosition();
     }
     const submitData = new FormData();
-    addresses.map((address, index) => {
-      //複数検索出来る
-      submitData.append("productName", e.address);
-    });
+    //addresses.map((address, index) => {
+    //複数検索出来る
+    submitData.append("productName", e.address);
+    submitData.append("userLat", "33.2488525");
+    submitData.append("userLon", "129.6930912");
+    //});
     await axios
       .post("/search", submitData)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         const data = response.data;
         setData(
-          response.data.map(() => {
-            {
-              dealer: data.dealer;
-              name: data.name;
-              price: data.price;
-              lat: data.lat;
-              lon: data.lon;
-            }
-          })
+          /*response.data.map(() => (*/ {
+            dealer: data.dealer,
+            name: data.name,
+            price: data.price,
+            lat: data.lat,
+            lon: data.lon,
+          } //))
         );
       })
       .catch((error) => {
@@ -125,20 +125,20 @@ const Post: React.FC = () => {
   };
   return (
     <div className={styles.post}>
-      <div className={styles.postWrapper}>
-        <form className={styles.postForm} onSubmit={handleSubmit(onSubmit)}>
-          <label>
-            現在地
-            <input {...register("place")} />
-          </label>
+      <h1>検索フォーム</h1>
+      <div className={styles.wrapper}>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <label className={styles.label}>現在地</label>
+          <input className={styles.input} {...register("place")} />
+          <label className={styles.label}>商品名</label>
           {addresses.map((address) => {
             return (
-              <label key={address}>
-                商品名
+              <div key={address}>
                 <input
+                  className={styles.input}
                   {...register(`${address}`, { required: true, maxLength: 30 })}
                 />
-              </label>
+              </div>
             );
           })}
           {errors.name && errors.name.type === "required" && (
@@ -147,10 +147,14 @@ const Post: React.FC = () => {
           {errors.name && errors.name.type === "maxLength" && (
             <span>Max length exceeded</span>
           )}
-          <button className={styles.postForm}>検索 </button>
+          <button className={styles.button}>検索 </button>
         </form>
-        <a onClick={addAddress}>+</a>
-        <a onClick={removeAddress}>-</a>
+        <button className={styles.button} onClick={addAddress}>
+          +
+        </button>
+        <button className={styles.button} onClick={removeAddress}>
+          -
+        </button>
       </div>
     </div>
   );

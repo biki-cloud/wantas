@@ -1,8 +1,33 @@
 .post {
-    margin: 30px auto;
+    width: 30em;
+    margin: 10em auto;
+    height: 80%;
+    align-items: center;
+    text-align: center;
 }
 
-.postForm {
+.wrapper {
+    margin: 0 auto;
+    width: 25em;
+    border: 1px solid #333333;
+}
+
+.form {
+    margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+.label {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.button {
+    width: 100%;
+    margin: 2px 0;
 }

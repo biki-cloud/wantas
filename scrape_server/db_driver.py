@@ -1,5 +1,6 @@
 from typing import List
 import json
+import os
 
 from scrape_server.util import *
 from scrape_server.store import Store
@@ -10,18 +11,21 @@ class DbDriver:
         self.database_path = database_path
 
     def put(self, data: List[dict]):
-        elements = self.get_all()
+        if os.path.exists(self.database_path):
+            elements = self.get_all()
+        else:
+            elements = []
         for d in data:
             if d not in elements:
                 elements.append(d)
-        write_json_file(elements)
+        write_json_file(self.database_path, elements)
 
     def search(self, search_name) -> (List[dict]):
-        result = []
+        results = []
         for record in self.get_all():
             if search_name in record['name']:
-                result.append(record)
-        return result
+                results.append(record)
+        return results
 
     def scrape_and_put(self, store: Store):
         elements = store.get_all_product()

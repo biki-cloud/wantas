@@ -1,7 +1,8 @@
-package main
+package client
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"go-react/product"
 	"go-react/scrape_client/scrapepb"
@@ -14,29 +15,31 @@ import (
 	"google.golang.org/grpc"
 )
 
+func getPerametaFromPostForm(c *gin.Context) (string, float64, float64, error){
+	var (
+		productName = c.PostForm("productName")
+		userLat, err1 = strconv.ParseFloat(c.PostForm("userLat"), 64)
+		userLon, err2 = strconv.ParseFloat(c.PostForm("userLon"), 64)
+	)
+	if err1 != nil || err2 != nil{
+		log.Fatalf("userLat or userLon can't to convert: %v %v \n", err1, err2)
+		return "", 0, 0, errors.New("There some error.")
+	}
+	return productName, userLat, userLon, nil
+}
+
 func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		fmt.Println(c.Request)
-		productName := c.PostForm("productName")
-		userLat, err := strconv.Atoi(c.PostForm("userLat"))
+		productName, userLat, userLon, err := getPerametaFromPostForm(c)
 		if err != nil {
-			log.Fatalf("userLat can't to convert: %v \n", err)
+			log.Fatal(err)
 		}
-		userLon, err := strconv.Atoi(c.PostForm("userLon"))
-		if err != nil {
-			log.Fatalf("userLon can't to convert: %v \n", err)
-		}
-		fmt.Printf("productName: %s \n", productName)
-		fmt.Printf("Received userLat: %v \n", userLat)
-		fmt.Printf("Received userLon: %v \n", userLon)
+		fmt.Printf("productName: %s \n userLat: %v \n userLon: %v \n", productName, userLat, userLon)
 
-		p := product.New()
-		p.Dealer = "seveneleven"
-		p.Name = "fame tiki"
-		p.Url = "http:localhost/something"
-		p.Price = "130円"
-		p.RegionList = []string{"九州", "四国"}
-		p.SetStorePlace()
+		p, err := product.GetFullParametaProduct()
+		if err != nil {
+			log.Fatalf("err is %v \n", err)
+		}
 
 		c.JSON(http.StatusOK, gin.H{
 			"dealer": p.Dealer,
@@ -50,20 +53,16 @@ func SearchProduct() gin.HandlerFunc {
 
 func SearchProductUseGRPC() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		productName := c.PostForm("productName")
-		userLat, err := strconv.Atoi(c.PostForm("userLat"))
+		productName, userLat, userLon, err := getPerametaFromPostForm(c)
 		if err != nil {
-			log.Fatalf("userLat can't to convert: %v \n", err)
+			log.Fatal(err)
 		}
-		userLon, err := strconv.Atoi(c.PostForm("userLon"))
-		if err != nil {
-			log.Fatalf("userLon can't to convert: %v \n", err)
-		}
-		fmt.Printf("productName: %s \n", productName)
-		fmt.Printf("Received userLat: %v \n", userLat)
-		fmt.Printf("Received userLon: %v \n", userLon)
+		fmt.Printf("productName: %s \n userLat: %v \n userLon: %v \n", productName, userLat, userLon)
 
-		var scrapedResults []product.Product = Scraping(productName, float64(userLat), float64(userLon))
+		var scrapedResults, err2 = Scraping(productName, float64(userLat), float64(userLon))
+		if err2 != nil {
+			log.Fatalf("err is %v \n", err)
+		}
 		var p product.Product = scrapedResults[0]
 		fmt.Println(p)
 
@@ -77,8 +76,8 @@ func SearchProductUseGRPC() gin.HandlerFunc {
 	}
 }
 
-func setUpConnection() scrapepb.ScrapingServiceClient {
-	// create client connection
+
+func Scraping(productName string, userLat float64, userLon float64) ([]product.Product, error) {
 	cc, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
@@ -91,18 +90,13 @@ func setUpConnection() scrapepb.ScrapingServiceClient {
 	}(cc)
 	// create client
 	c := scrapepb.NewScrapingServiceClient(cc)
-	return c
-}
 
-func Scraping(productName string, userLat float64, userLon float64) []product.Product {
-	c := setUpConnection()
 	fmt.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b \n", productName, userLat, userLon)
 	req := &scrapepb.ScrapeManyTimesRequest{
 		ProductName: productName,
 		UserLat: float32(userLat),
 		UserLon: float32(userLon),
 	}
-
 
 	var ScrapedResults []product.Product
 
@@ -111,6 +105,7 @@ func Scraping(productName string, userLat float64, userLon float64) []product.Pr
 	fmt.Println(err)
 	if err != nil {
 		log.Fatalf("err occurs %v \n", err)
+		return nil, err
 	}
 	for {
 		msg, err := reqStream.Recv()
@@ -119,6 +114,7 @@ func Scraping(productName string, userLat float64, userLon float64) []product.Pr
 		}
 		if err != nil {
 			log.Fatalf("err while reading stream: %v \n", err)
+			return nil, err
 		}
 		// ユーザーが住んでいる場所の近くのセブンを検索
 		// そこがregionListにマッチすればそれだけを選んでproductにして、リストで返す
@@ -135,9 +131,6 @@ func Scraping(productName string, userLat float64, userLon float64) []product.Pr
 		p.StoreLon = float64(msg.GetStoreLon())
 		ScrapedResults = append(ScrapedResults, *p)
 	}
-	return ScrapedResults
+	return ScrapedResults, nil
 }
 
-func main () {
-	Scraping("ご飯", 134.3, 24.3)
-}

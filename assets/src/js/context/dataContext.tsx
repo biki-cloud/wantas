@@ -1,7 +1,7 @@
 import React, { useState, createContext, useContext } from "react";
 
 export const DataContext = createContext({
-  data: [{ dealer: "", name: "", price: 0, lat: 0, lon: 0 }],
+  data: /*[*/ { dealer: "", name: "", price: "", lat: 0, lon: 0 } /*]*/,
   place: { userLat: 0, userLon: 0 },
 });
 export const DataOpeContext = createContext({
@@ -10,9 +10,11 @@ export const DataOpeContext = createContext({
 });
 
 const dataProvider = ({ children }) => {
-  const [data, setData] = useState([
-    { dealer: "", name: "", price: 0, lat: 0, lon: 0 },
-  ]);
+  const [data, setData] = useState(
+    //[
+    { dealer: "", name: "", price: "", lat: 0, lon: 0 }
+    /*]*/
+  );
   const [place, SetPlace] = useState({ userLat: 0, userLon: 0 });
   return (
     <DataContext.Provider value={{ data, place }}>

@@ -17,39 +17,35 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
     """商品名を受け取り、スクレイプし名前が入った商品のリストを持ってくる。
     lat,lonから場所を検索し、商品が売られている場所のみをフィルターし、商品リストを返す。
     """
+    print(f"user_lat: {user_lat}")
+    print(f"user_lon: {user_lon}")
 
-    seven = SevenEleven()
+    db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "database.json")
+    db = DbDriver(db_path)
 
-    database_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "database.json")
-    db_driver = DbDriver(database_path)
+    result = db.search(search_name)
 
-    elements = db_driver.get_all()
+    # ユーザーから一番近い店舗の情報を取得
+    store_info = geo.get_shortest_store_info(user_lat, user_lon)
+    print(store_info)
 
-    result = db_driver.search(search_name)
-
-    store_lat, store_lon = geo.get_store_lat_lon(user_lat, user_lon)
-
+    # ユーザーに一番近い店舗がある地域のみでフィルターする。
     filtered_results = []
     for ele in result:
-        for place in ele['region_list']:
-            if geo.is_here(place, user_lat, user_lon):
-                filtered_results.append(ele)
+        if geo.is_contains(ele['region_list'], store_info):
+            filtered_results.append(ele)
+    result = filtered_results
 
-
-    print("***** result *****")
-    print(f"total: {len(elements)}")
-    print(f"hits:  {len(result)}")
-    print("******************")
-    return filtered_results, store_lat, store_lon
-
+    return result, store_info['lat'], store_info['lon']
 
 
 def main():
-    result, store_lat, store_lon = search("ご飯", 143.3, 24.2)
-    print("result")
-    print(result)
+    # lat, lonをランダムにしよう
+    result, store_lat, store_lon = search("おむすび", 43.242, 143.44)
     print(f"store_lat: {store_lat}")
     print(f"store_lot: {store_lon}")
+    for i in result:
+        print(util.dict_to_json(i))
 
 
 if __name__ == '__main__':
