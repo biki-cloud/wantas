@@ -3,5 +3,17 @@
 }
 
 .item {
-    height: 100vh;
+    height: 30vh;
+}
+
+@media screen and (max-width: 600) {
+    .item {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 960) {
+    .item {
+        height: 100vh;
+    }
 }

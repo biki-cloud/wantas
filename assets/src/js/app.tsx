@@ -9,11 +9,11 @@ const App: React.FC = () => {
   const data = useContext(DataContext).data;
   return (
     <Grid container className="container">
-      <Grid item md={4} className="item">
+      <Grid item xs={12} sm={5} md={4} className="item">
         <Post />
       </Grid>
-      <Grid item md={8} className="item">
-        {data.name && <Result />}
+      <Grid item xs={12} sm={7} md={8} className="item">
+        {data[0].name && <Result />}
       </Grid>
     </Grid>
   );

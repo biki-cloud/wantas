@@ -4,7 +4,9 @@ import time
 import os
 
 from scrape_server import util
+from scrape_server.store import AbsStore
 from scrape_server import geo
+from scrape_server.geo import StoreInfo
 from scrape_server.db_driver import DbDriver
 
 
@@ -16,7 +18,7 @@ def get_prefecture_urls() -> (list):
     47都道府県のルートリンクのリストを返す。それぞれのページに市町村のリンクがある。
     """
     results = []
-    for i in range(8, 48):
+    for i in range(1, 48):
         # 1の位の場合初めに0を加える
         if len(str(i)) == 1:
             results.append(BASE_URL + "0" + str(i))
@@ -50,23 +52,7 @@ def get_store_urls(city_url) -> (list):
     return results
 
 
-class Store:
-    """
-    店名と住所、位置情報を格納するクラス
-    """
-    def __init__(self, store_name, address):
-        self.store_name = store_name
-        self.address = address
-        self.set_lat_lon()
-
-    def set_lat_lon(self):
-        try:
-            self.lat, self.lon = geo.coordinate(self.address)
-        except ValueError:
-            self.lat, self.lon = 0,0
-
-
-def get_store_info(store_url) -> (Store):
+def get_store_info(store_url) -> (StoreInfo):
     """
     店舗のURLを受け取り、店名、住所をStoreクラスに格納し、Storeクラスを返す
     """
@@ -75,7 +61,7 @@ def get_store_info(store_url) -> (Store):
     td_tags = store_info_tag.findAll('td')
     store_name = td_tags[0].renderContents().decode('utf-8')
     address = td_tags[2].renderContents().decode('utf-8')
-    return Store(store_name, address)
+    return StoreInfo(store_name, address)
 
 def register_database(interval=1):
     """
@@ -83,18 +69,27 @@ def register_database(interval=1):
     """
     db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo_database.json")
     db = DbDriver(db_path)
-    stores: List[Store] = []
-    for pre in get_prefecture_urls():
-        for city in get_city_urls(pre):
-            for store in get_store_urls(city):
+    pre_s_idx = 12
+    city_s_idx = 19
+    store_s_idx = 17
+    for i,pre in enumerate(get_prefecture_urls()[pre_s_idx:], start=pre_s_idx):
+        for i2, city in enumerate(get_city_urls(pre)[city_s_idx:], start=city_s_idx):
+            for i3, store in enumerate(get_store_urls(city)[store_s_idx:], start=store_s_idx):
+                with open(os.path.join(os.path.dirname(__file__), "progress.txt"), 'w') as fp:
+                    fp.write(f"pre:   {i}\ncity:  {i2}\nstore: {i3}")
+                print(f"pre:   {pre},   i:  {i}")
+                print(f"city:  {city},  i2: {i2}")
+                print(f"store: {store}, i3: {i3}")
                 store_info = get_store_info(store)
                 db.put([store_info.__dict__])
                 print(util.dict_to_json(store_info.__dict__))
-                stores.append(store_info)
                 time.sleep(interval)
+            store_s_idx = 0
+        city_s_idx = 0
 
 def main():
     register_database()
+    # util.solve_certificate_problem()
 
 
 if __name__ == '__main__':

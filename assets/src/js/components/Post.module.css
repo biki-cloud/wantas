@@ -1,26 +1,26 @@
 .post {
+    border: 1px solid #333333;
+    margin: 100px auto;
+    border-radius: 3px;
     width: 30em;
-    margin: 10em auto;
-    height: 80%;
-    align-items: center;
-    text-align: center;
 }
 
 .wrapper {
-    margin: 0 auto;
     width: 25em;
-    border: 1px solid #333333;
+    margin: 10px auto;
 }
 
 .form {
-    margin: 0;
     display: flex;
     flex-direction: column;
 }
 
 .label {
+    position: relative;
     width: 100%;
 }
+
+.label:focus {}
 
 .input {
     width: 100%;

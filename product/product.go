@@ -14,8 +14,8 @@ type Product struct {
 	Url        string `json:"url" form:"url"`
 	Price      string `json:"price" form:"price"`
 	RegionList []string
-	StoreLat   float64
-	StoreLon   float64
+	StoreLat   float64 `json:"lat" form:"lon"`
+	StoreLon   float64 `json:"lon" form:"lon"`
 }
 
 func New() *Product {

@@ -1,16 +1,25 @@
 package main
 
 import (
+	"go-react/mylog"
 	"go-react/scrape_client/client"
 	"go-react/test"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	mylog.LoggingSet(filepath.Join(dir, "log", "all.log"))
+	log.Printf("-----------------------------------------------")
 	router := gin.Default()
 	router.Use(cors.Default())
 
@@ -29,11 +38,13 @@ func main() {
 
 	router.POST("/post_test", test.PostTest())
 
-	// router.POST("/search", client.SearchProductUseGRPC())
-	router.POST("/search", client.SearchProduct())
+	log.Printf("call /search call SearchProductUseGRPC\n")
+	router.POST("/search", client.SearchProductUseGRPC())
+	// router.POST("/search", client.SearchProduct())
 
 	// server run
-	err := router.Run(":8080")
+	log.Printf("run: 8080 \n")
+	err = router.Run(":8080")
 	// lsof -i:8080
 	// kill -9 PID
 	if err != nil {

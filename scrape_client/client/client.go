@@ -28,57 +28,76 @@ func getPerametaFromPostForm(c *gin.Context) (string, float64, float64, error){
 	return productName, userLat, userLon, nil
 }
 
+func GetMultipleProduct() []product.Product {
+	var li []product.Product
+	p1 := product.Product{
+		Dealer: "seveneleven",
+		Name: "big frank",
+		Url: "http://seveneleven",
+		Price: "134円(税込140円）",
+		StoreLat: 35.4232424,
+		StoreLon: 135.4545,
+	}
+	p2 := product.Product{
+			Dealer: "family mart",
+			Name: "fami tiki",
+			Url: "http://familymart",
+			Price: "149円(税込150円）",
+			StoreLat: 32.484748,
+			StoreLon: 131.199999,
+		}
+	li = append(li, p1, p2)
+	return li
+}
+
 func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		productName, userLat, userLon, err := getPerametaFromPostForm(c)
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("productName: %s \n userLat: %v \n userLon: %v \n", productName, userLat, userLon)
+		fmt.Printf("productName: %s \nuserLat: %v \nuserLon: %v \n", productName, userLat, userLon)
 
 		p, err := product.GetFullParametaProduct()
 		if err != nil {
 			log.Fatalf("err is %v \n", err)
 		}
+		fmt.Printf("responce from python: %v of client.go\n", p)
 
-		c.JSON(http.StatusOK, gin.H{
-			"dealer": p.Dealer,
-			"name":   p.Name,
-			"price":  p.Price,
-			"lat":    p.StoreLat,
-			"lon":    p.StoreLon,
-		})
+		products := GetMultipleProduct()
+
+		c.JSON(http.StatusOK, products)
 	}
 }
 
 func SearchProductUseGRPC() gin.HandlerFunc {
+	log.Printf("invoked SearchProductUseGRPC \n")
 	return func(c *gin.Context) {
+		log.Printf("*************************************************************************************\n")
 		productName, userLat, userLon, err := getPerametaFromPostForm(c)
+		log.Printf("received from react. productName: %v, userLat: %v, userLon: %v\n", productName, userLat, userLon)
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("productName: %s \n userLat: %v \n userLon: %v \n", productName, userLat, userLon)
 
+		log.Printf("call Scraping.")
 		var scrapedResults, err2 = Scraping(productName, float64(userLat), float64(userLon))
+		log.Printf("scrapeResults length: %v \n", len(scrapedResults))
+		log.Printf("scrapedResults: %v \n", scrapedResults)
 		if err2 != nil {
 			log.Fatalf("err is %v \n", err)
 		}
-		var p product.Product = scrapedResults[0]
-		fmt.Println(p)
 
-		c.JSON(http.StatusOK, gin.H{
-			"dealer": p.Dealer,
-			"name":   p.Name,
-			"price":  p.Price,
-			"lat":    p.StoreLat,
-			"lon":    p.StoreLon,
-		})
+		c.JSON(http.StatusOK, scrapedResults)
 	}
 }
 
+const grpcDialingUrl = "localhost:50051"
 
 func Scraping(productName string, userLat float64, userLon float64) ([]product.Product, error) {
-	cc, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", productName, userLat, userLon)
+	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
+	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
 	}
@@ -91,20 +110,20 @@ func Scraping(productName string, userLat float64, userLon float64) ([]product.P
 	// create client
 	c := scrapepb.NewScrapingServiceClient(cc)
 
-	fmt.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b \n", productName, userLat, userLon)
 	req := &scrapepb.ScrapeManyTimesRequest{
 		ProductName: productName,
 		UserLat: float32(userLat),
 		UserLon: float32(userLon),
 	}
+	log.Printf("request for grpc server: %v", req)
 
 	var ScrapedResults []product.Product
 
+	log.Printf("start request to python by using ScrapeManyTimes Service. \n")
 	// ScrapeManyTimesはサービスの中の機能の名前
 	reqStream, err := c.ScrapeManyTimes(context.Background(), req)
-	fmt.Println(err)
 	if err != nil {
-		log.Fatalf("err occurs %v \n", err)
+		log.Fatalf("err inside ScrapeManyTimes service: %v \n", err)
 		return nil, err
 	}
 	for {
@@ -116,19 +135,23 @@ func Scraping(productName string, userLat float64, userLon float64) ([]product.P
 			log.Fatalf("err while reading stream: %v \n", err)
 			return nil, err
 		}
-		// ユーザーが住んでいる場所の近くのセブンを検索
-		// そこがregionListにマッチすればそれだけを選んでproductにして、リストで返す
-		log.Printf("name: %s, url: %s, price: %s, region_list: %v \n",
-			msg.Product.Name, msg.Product.GetUrl(), msg.Product.GetPrice(), msg.Product.GetRegionList())
+
+		log.Printf("received from ScrapeManyTimes service: %v \n", msg)
 
 		p := product.New()
-		p.Dealer = "seveneleven"
+		if msg.Product.GetName() == "none" {
+			log.Printf("%v is not found from database\n", productName)
+			p.Dealer = "none"
+		} else {
+			p.Dealer = "seveneleven"
+		}
 		p.Name = msg.Product.GetName()
 		p.Url = msg.Product.GetUrl()
 		p.Price = msg.Product.GetPrice()
 		p.RegionList = msg.Product.GetRegionList()
 		p.StoreLat = float64(msg.GetStoreLat())
 		p.StoreLon = float64(msg.GetStoreLon())
+
 		ScrapedResults = append(ScrapedResults, *p)
 	}
 	return ScrapedResults, nil

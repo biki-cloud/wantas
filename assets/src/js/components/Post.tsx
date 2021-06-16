@@ -9,9 +9,9 @@ const Post: React.FC = () => {
   const data = useContext(DataContext).data;
   const position = useContext(DataContext).place;
   const setData = useSetData();
-  const SetPlace = useSetPlace();
-  const [addresses, setAddresses] = useState(["address.0"]);
-  const [update, setUpdata] = useState<boolean>(false);
+  const setPlace = useSetPlace();
+  const [addresses, setAddresses] = useState(["address.0"]); // 複数検索する場合のinput用
+  const [update, setUpdate] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -19,19 +19,22 @@ const Post: React.FC = () => {
   } = useForm();
 
   const addAddress = () => {
+    //inputを増やす
     const c = addresses.slice();
     c.push(`address.${addresses.length}`);
     setAddresses(c);
   };
   const removeAddress = () => {
+    //inputを減らす
     const c = addresses.slice();
     c.pop();
     setAddresses(c);
-    setUpdata(update ? false : true);
+    setUpdate(update ? false : true); //inputを削除した際に強制的にレンダリングさせる
   };
 
   const getPlacePosition = (place) => {
-    let p = {};
+    //入力した場所のlat,lngをgeocodeのapiでとる
+    let p = { userLat: 0, userLon: 0 };
     const res = axios
       .get("https://maps.googleapis.com/maps/api/geocode/json", {
         params: {
@@ -40,22 +43,21 @@ const Post: React.FC = () => {
           key: "AIzaSyDzeU7QqfTOkKg58HQujHzTI8jTaOiDfB0",
         },
       })
-      .then(/*(res) => {
-        console.log(res);
-        SetPlace({
-          userLat: res.data.resullts[0].geometry.location.lat,
+      .then((res) => {
+        setPlace({
+          userLat: res.data.results[0].geometry.location.lat,
           userLon: res.data.results[0].geometry.location.lng,
         });
         p = {
           userLat: res.data.results[0].geometry.location.lat,
           userLon: res.data.results[0].geometry.location.lng,
         };
-      }*/)
+      })
       .catch((err) => {});
     return p;
   };
-  //位置情報で検索する場合
   const getPosition = () => {
+    //位置情報からlat,lngをとる
     let startPos;
     const showNudgeBanner = function () {
       //位置情報がoffの場合の処理
@@ -69,12 +71,13 @@ const Post: React.FC = () => {
       hideNudgeBanner();
       clearTimeout(nudgeTimeoutId);
       startPos = position;
-      SetPlace({
+      setPlace({
         userLat: startPos.coords.latitude,
         userLon: startPos.coords.longitude,
       });
     };
     const geoError = function (error) {
+      //位置情報が取れなかった
       switch (error.code) {
         case error.TIMEOUT:
           showNudgeBanner();
@@ -89,7 +92,7 @@ const Post: React.FC = () => {
   };
 
   const onSubmit = async (e) => {
-    let place = {};
+    let place = { userLat: 0, userLon: 0 };
     if (e.place) {
       //場所を入力していればlat,lonをapiで取りに行く
       place = await getPlacePosition(e.place);
@@ -98,25 +101,28 @@ const Post: React.FC = () => {
       place = await getPosition();
     }
     const submitData = new FormData();
-    //addresses.map((address, index) => {
-    //複数検索出来る
-    submitData.append("productName", e.address);
-    submitData.append("userLat", "33.2488525");
-    submitData.append("userLon", "129.6930912");
-    //});
+    addresses.map((address, index) => {
+      submitData.append("productName", e.address);
+    });
+    submitData.append("userLat", `${place.userLat}`);
+    submitData.append("userLon", `${place.userLon}`);
     await axios
       .post("/search", submitData)
       .then((response) => {
         console.log(response.data);
-        const data = response.data;
+        response.data.map((datum) => {
+          console.log(datum.dealer);
+        });
         setData(
-          /*response.data.map(() => (*/ {
-            dealer: data.dealer,
-            name: data.name,
-            price: data.price,
-            lat: data.lat,
-            lon: data.lon,
-          } //))
+          response.data.map((datum) => {
+            return {
+              dealer: datum.dealer,
+              name: datum.productName,
+              price: datum.price,
+              lat: datum.lat,
+              lon: datum.lon,
+            };
+          })
         );
       })
       .catch((error) => {
@@ -125,7 +131,6 @@ const Post: React.FC = () => {
   };
   return (
     <div className={styles.post}>
-      <h1>検索フォーム</h1>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <label className={styles.label}>現在地</label>

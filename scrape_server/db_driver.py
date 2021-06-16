@@ -3,7 +3,7 @@ import json
 import os
 
 from scrape_server.util import *
-from scrape_server.store import Store
+from scrape_server.store import AbsStore
 
 
 class DbDriver:
@@ -27,10 +27,9 @@ class DbDriver:
                 results.append(record)
         return results
 
-    def scrape_and_put(self, store: Store):
+    def scrape_and_put(self, store: AbsStore):
         elements = store.get_all_product()
         self.put(elements)
-
 
     def get_all(self) -> (List[dict]):
         return read_json_file(self.database_path)

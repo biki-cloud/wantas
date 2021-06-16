@@ -2,18 +2,20 @@ import time
 from typing import List
 import bs4
 import sys
+
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
 
 from scrape_server import util
 from scrape_server import geo
 from scrape_server import db_driver as db
-from scrape_server.store import Store
+from scrape_server.store import AbsStore
 
 
 class Items:
     """
     Itemクラスをリストで保持するクラス
     """
+
     def __init__(self, items_div: bs4.element.ResultSet):
         self.items_div: List[bs4.element.Tag] = [i for i in items_div]
         self.items = [Item(item_tag) for item_tag in self.items_div]
@@ -23,6 +25,7 @@ class Item:
     """
     商品情報のbs4.element.Tagを受け取り、名前、値段、urlなどを格納するクラス
     """
+
     def __init__(self, item: bs4.element.Tag):
         self.item = item
         self.title = self.get_title()
@@ -78,6 +81,7 @@ class ProductKinds:
     """
     セブンイレブンの全ての商品の種類をプロパティとして保持するクラス
     """
+
     def __init__(self):
         self.thisweek = "thisweek"
         self.nextweek = "nextweek"
@@ -106,6 +110,7 @@ class Area:
     """
     セブンイレブンの全ての地域のプロパティを保持するクラス
     """
+
     def __init__(self):
         self.okinawa = "okinawa"
         self.kyushu = "kyushu"
@@ -119,10 +124,11 @@ class Area:
         self.hokkaido = "hokkaido"
 
 
-class SevenEleven(Store):
+class SevenEleven(AbsStore):
     """
     セブンイレブンのサイトをスクレイピングするクラス。Storeクラスを継承していて、get_all_productを実装しなければならない。
     """
+
     def __init__(self):
         self.base_url = "https://www.sej.co.jp"
         self.products = "products"
@@ -197,13 +203,11 @@ class SevenEleven(Store):
         items_div = self.get_items_tag_from_page(soup)
         return Items(items_div)
 
-
     def get_product_items(self, product_name) -> (Items):
         url = self.get_product_url(product_name)
         soup = util.get_soup(url)
         items_div = self.get_items_tag_from_page(soup)
         return Items(items_div)
-
 
     def get_all_product(self) -> (list):
         result = []
@@ -218,7 +222,6 @@ class SevenEleven(Store):
                 if dic['name'] not in [i['name'] for i in result]:
                     result.append(item.to_dict())
         return result
-
 
 
 if __name__ == '__main__':
