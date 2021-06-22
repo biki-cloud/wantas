@@ -17,21 +17,20 @@ from scrape_server.mylog import log
 from scrape_server.database import database
 
 
-def suited_results(result: list) -> (list):
+def suited_products_table(result: list) -> (list):
     """
     productsテーブル用。データベースから取り出す時にjsonを整形する。
     """
-    new_results = []
-    for i in result:
-        new_dic = {}
-        for k, v in i.items():
+    def suited(d: dict) -> (dict):
+        new = {}
+        for k, v in d.items():
             if k != "id":
                 if k == "region_list":
-                    new_dic[k] = v.split(",")
+                    new[k] = v.split(",")
                 else:
-                    new_dic[k] = v
-        new_results.append(new_dic)
-    return new_results
+                    new[k] = v
+        return new
+    return [suited(d) for d in result]
 
 
 def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, float):
@@ -41,13 +40,11 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
     log.info("invoked search function.")
     log.info(f"user lat: {user_lat}, user lon: {user_lon}")
 
-
     # get db 2
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
     product_table = db2["products"]
     result = database.search(product_table, "name", search_name)
-    result = suited_results(result)
-
+    result = suited_products_table(result)
 
     # ユーザーから一番近い店舗の情報を取得
     store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon)

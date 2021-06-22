@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from typing import List
 import time
-import tqdm
 import random
 import datetime
 import dataset
@@ -19,15 +18,16 @@ from scrape_server import geo
 from scrape_server.mylog import log
 from scrape_server.database import database
 
+
 class StoreInfo:
     """
     店名と住所、位置情報を格納するクラス
     """
-    def __init__(self, name, address, lat=None, lon=None):
+    def __init__(self, name: str, address: str, lat=None, lon=None):
         self.name = name
         self.address = address
-        print(f"lat: {lat}")
-        print(f"lon: {lon}")
+        log.debug(f"lat: {lat}")
+        log.debug(f"lon: {lon}")
         if lat != None and lon != None:
             self.lat = float(lat)
             self.lon = float(lon)
@@ -61,32 +61,28 @@ def get_distance(lat1, lon1, lat2, lon2) -> (float):
     else:
         raise ValueError(f"invalid value lat or lon. lat1: {lat1}, lon1: {lon1}, lat2: {lat2}, lon2: {lon2}")
 
-def suited_results(table: dataset.table.Table):
+def suited_store_table(table: dataset.table.Table):
     """
     store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を返す。
     """
     def suited(d: dict) -> (dict):
         new = {}
         for k, v in d.items():
-            if k == "lat" or k == "lon":
-                new[k] = float(v)
-            else:
-                new[k] = v
+            if k != "id":
+                if k == "lat" or k == "lon":
+                    new[k] = float(v)
+                else:
+                    new[k] = v
         return new
-
-    results = [suited(d) for d in table.find()]
-    return results
-
+    return [suited(d) for d in table.find()]
 
 def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
     """
     近くのセブンを調べて店舗の位置も含めた情報を返す
     """
-
-    # get db 2
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
     store_table = db2["store_info"]
-    results = suited_results(store_table)
+    results = suited_store_table(store_table)
 
     distances = []
     for store in results:
@@ -106,9 +102,8 @@ def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
             min_dis = dis_dict['distance']
             min_idx = idx
     accord_ele = results[min_idx]
-    print(util.dict_to_json(accord_ele))
+    log.debug(accord_ele)
     return StoreInfo(accord_ele['name'], accord_ele['address'], accord_ele['lat'], accord_ele['lon'])
-
 
 def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
     """
@@ -148,16 +143,10 @@ def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
             return True
     return False
 
-
-URL = 'http://www.geocoding.jp/api/'
-def absolutely_get_lat_lon(address) -> (float, float):
-    print("sleeping 10....")
-    print(datetime.datetime.now())
+def absolutely_get_lat_lon(address: str) -> (float, float):
+    log.debug("sleeping 10....")
     time.sleep(10)
-    print(f"find address: {address}.....")
-    # lat, lon = coordinate(address)
-    # if lat and lon:
-        # return lat, lon
+    log.debug(f"find address: {address}.....")
 
     lat, lon = get_lat_lon(address)
     if lat and lon:
@@ -170,65 +159,50 @@ def absolutely_get_lat_lon(address) -> (float, float):
     lat, lon = get_lat_lon3(address)
     if lat and lon:
         return lat, lon
+
     return 0.0, 0.0
 
-
-
-def get_geo_soup(address, url):
+def get_geo_soup(address: str, url: str):
     payload = {'q': address}
     html = requests.get(url, params=payload)
     return BeautifulSoup(html.content, "html.parser")
 
-
-def coordinate(address):
+def coordinate(address: str):
     """
     addressに住所を指定すると緯度経度を返す。
 
     >>> coordinate('東京都文京区本郷7-3-1')
     ['35.712056', '139.762775']
     """
-    print("*************************")
-    print("coordinate")
-    soup = get_geo_soup(address, URL)
+    url = 'http://www.geocoding.jp/api/'
+    log.debug("invoked coordinate.")
+    soup = get_geo_soup(address, url)
     if soup.find('error'):
         raise ValueError(f"Invalid address submitted. {address}")
     lat_tg = soup.find('lat')
     lon_tg = soup.find('lon')
 
-    # while lat_tg == None or lon_tg == None:
-    #     soup = get_geo_soup(address, URL)
-    #     if soup.find('error'):
-    #         raise ValueError(f"Invalid address submitted. {address}")
-    #     lat_tg = soup.find('lat')
-    #     lon_tg = soup.find('lon')
-    #     print(f"address: {address}")
-    #     print(f"lat_tg: {lat_tg}")
-    #     print(f"lon_tg: {lon_tg}")
-    #     time.sleep(10)
     if lat_tg == None or lon_tg == None:
-        print("failed")
+        log.debug("failed")
         return 0.0, 0.0
     latitude = lat_tg.string
     longitude = lon_tg.string
 
     return [latitude, longitude]
 
-def get_lat_lon(address) -> (float, float):
-    print("*************************")
-    print("get_lat_lon")
+def get_lat_lon(address: str) -> (float, float):
+    log.debug("get_lat_lon")
     res = geocoder.osm(address, timeout=5.0)
     if res.latlng == None:
-        print("failed")
+        log.debug("failed")
         return 0.0, 0.0
     lat, lon = res.latlng
-    print("lat: {lat}, lon: {lon}")
+    log.debug(f"lat: {lat}, lon: {lon}")
     return lat, lon
 
-
-def get_lat_lon2(address) -> (float, float):
-    print("*****************************")
-    print("get_lat_lon2")
-    print("sleep 10 ...")
+def get_lat_lon2(address: str) -> (float, float):
+    log.debug("get_lat_lon2")
+    log.debug("sleep 10....")
     time.sleep(10)
     url = 'http://www.geocoding.jp/'
     soup = get_geo_soup(address, url)
@@ -239,26 +213,21 @@ def get_lat_lon2(address) -> (float, float):
             lat = b_tag[0].next_element
             lon = b_tag[1].next_element
             return lat, lon
-    print("failed")
+    log.debug("failed")
     return 0.0, 0.0
 
-def get_lat_lon3(address) -> (float, float):
-    print("*****************************")
-    print("get_lat_lon3")
+def get_lat_lon3(address: str) -> (float, float):
+    log.debug("get_lat_lon3")
     locater = Nominatim(user_agent="test")
-    # geolocator = geocoders.GoogleV3()
     location = locater.geocode(address)
     if location == None:
-        print("failed")
+        log.debug("failed")
         return 0.0, 0.0
-    print(location)
+    log.debug(location)
     lat = location.latitude
     lon = location.longitude
-    print(f"lat: {lat}, lon: {lon}")
+    log.debug(f"lat: {lat}, lon: {lon}")
     return lat, lon
 
 if __name__ == '__main__':
-    address = "福島県河沼郡湯川村浜崎水上１４１３−２"
-    lat, lon = absolutely_get_lat_lon(address)
-    print("-------- result ---------")
-    print(f"lat: {lat}, lon: {lon}")
+    pass

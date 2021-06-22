@@ -11,6 +11,7 @@ from scrape_server import scrape_pb2_grpc
 from scrape_server import scrape_manager
 from scrape_server.store import seveneleven
 from scrape_server.mylog import log
+
 class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
     def __init__(self):
         pass
@@ -28,7 +29,6 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
         scrape_results, store_lat, store_lon = scrape_manager.search(product_name, user_lat, user_lon)
         results_len = len(scrape_results)
         log.info(f"scrape_results: {scrape_results}")
-
 
         if scrape_results:
             log.info(f"scraping results length is {results_len}")
@@ -59,7 +59,6 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
             log.info(f"send response to go client.")
             yield res
 
-
 def serve():
     log.info("Starting GRPC server...")
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -68,7 +67,5 @@ def serve():
     server.start()
     server.wait_for_termination()
 
-
 if __name__ == '__main__':
-    print("start")
     serve()
