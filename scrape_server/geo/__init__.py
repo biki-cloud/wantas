@@ -5,6 +5,7 @@ import time
 import tqdm
 import random
 import datetime
+import dataset
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
 import os
@@ -15,6 +16,8 @@ from geopy.geocoders import Nominatim
 from scrape_server import util
 from scrape_server.db_driver import DbDriver
 from scrape_server import geo
+from scrape_server.mylog import log
+from scrape_server.database import database
 
 class StoreInfo:
     """
@@ -58,13 +61,33 @@ def get_distance(lat1, lon1, lat2, lon2) -> (float):
     else:
         raise ValueError(f"invalid value lat or lon. lat1: {lat1}, lon1: {lon1}, lat2: {lat2}, lon2: {lon2}")
 
-def get_shortest_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
+def suited_results(table: dataset.table.Table):
+    """
+    store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を返す。
+    """
+    def suited(d: dict) -> (dict):
+        new = {}
+        for k, v in d.items():
+            if k == "lat" or k == "lon":
+                new[k] = float(v)
+            else:
+                new[k] = v
+        return new
+
+    results = [suited(d) for d in table.find()]
+    return results
+
+
+def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
     """
     近くのセブンを調べて店舗の位置も含めた情報を返す
     """
-    database_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo_database.json")
-    db_driver = DbDriver(database_path)
-    results = db_driver.get_all()
+
+    # get db 2
+    db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
+    store_table = db2["store_info"]
+    results = suited_results(store_table)
+
     distances = []
     for store in results:
         dic = {}
@@ -92,6 +115,9 @@ def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
     店舗の場所はarea_listの中に入っているか
     area_list -> (例)全国、九州
     """
+    log.debug("Invoked is_contains")
+    log.debug(f"area_list: {area_list}")
+    log.debug(f"store_info: {store_info}")
     area_table = {
         "北海道": ["北海道"],
         "東北": ["青森", "岩手", "宮城", "秋田", "山形", "福島"],

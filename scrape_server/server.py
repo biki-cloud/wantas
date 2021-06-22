@@ -10,9 +10,7 @@ from scrape_server import scrape_pb2
 from scrape_server import scrape_pb2_grpc
 from scrape_server import scrape_manager
 from scrape_server.store import seveneleven
-from scrape_server.mylog import set_log
-
-log = set_log("./../../go/go-react/log/all.log", os.path.basename(__file__))
+from scrape_server.mylog import log
 class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
     def __init__(self):
         pass
@@ -28,9 +26,12 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
         log.info(f"user_lon: {user_lon}")
 
         scrape_results, store_lat, store_lon = scrape_manager.search(product_name, user_lat, user_lon)
-        log.info("scrape_results: {scrape_results}")
+        results_len = len(scrape_results)
+        log.info(f"scrape_results: {scrape_results}")
+
 
         if scrape_results:
+            log.info(f"scraping results length is {results_len}")
             for result in scrape_results:
                 res = scrape_pb2.ScrapeManyTimesResponse()
                 res.storeLat = float(store_lat)
@@ -42,29 +43,32 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
                 responses.append(res)
 
             for r in responses:
-                log.info(f"send: {r}")
+                log.debug(f"send response to go client.")
                 yield r
+
         else:
             # no result
             res = scrape_pb2.ScrapeManyTimesResponse()
+            log.info("Scraping results is None.")
             res.storeLat = 0.0
             res.storeLon = 0.0
             res.product.name = "none"
             res.product.url = "none"
             res.product.price = "none"
             res.product.region_list.extend(["none"])
-            log.info(f"send: {res}")
+            log.info(f"send response to go client.")
             yield res
 
 
 def serve():
+    log.info("Starting GRPC server...")
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     scrape_pb2_grpc.add_ScrapingServiceServicer_to_server(ScrapingServiceManyTimes(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
-    print('Starting gRPC sample server...')
     server.wait_for_termination()
 
 
 if __name__ == '__main__':
+    print("start")
     serve()

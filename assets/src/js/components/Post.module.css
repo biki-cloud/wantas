@@ -3,31 +3,54 @@
     margin: 100px auto;
     border-radius: 3px;
     width: 30em;
+    background-color: white;
 }
 
 .wrapper {
     width: 25em;
-    margin: 10px auto;
+    margin: 30px auto 40px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 .label {
+    width: 50px;
     position: relative;
-    width: 100%;
+    top: 24;
+    left: 5;
+    transition: all 0.25s ease;
 }
 
-.label:focus {}
+.labelFocus {
+    width: 50px;
+    position: relative;
+    top: 0;
+    left: -5;
+    transition: all 0.25s ease;
+}
 
 .input {
     width: 100%;
     margin: 5px 0;
+    outline: 0;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .button {
     width: 100%;
-    margin: 2px 0;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }

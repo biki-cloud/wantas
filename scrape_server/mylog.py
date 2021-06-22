@@ -17,9 +17,9 @@ def set_log(filepath, log_name=__name__):
 
     # create console handler and set level to debug
     s = logging.StreamHandler()
-    s.setLevel(logging.DEBUG)
+    s.setLevel(logging.INFO)
     f = logging.FileHandler(filepath)
-    f.setLevel(logging.DEBUG)
+    f.setLevel(logging.INFO)
 
     # create formatter
     # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -35,6 +35,7 @@ def set_log(filepath, log_name=__name__):
 
     return logger
 
+log = set_log("/Users/hibiki/Desktop/go/go-react/log/all.log")
+
 if __name__ == '__main__':
-    log = set_log("file.log")
-    log.debug("hello")
+    pass

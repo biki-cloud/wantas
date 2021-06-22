@@ -29,9 +29,9 @@ const Result: React.FC = () => {
             <tr>
               <th className={styles.bar} colSpan={4}></th>
             </tr>
-            {data.map((datum) => {
+            {data.map((datum, index) => {
               return (
-                <tr className={styles.tbody}>
+                <tr className={styles.tbody} key={index}>
                   <td>{`${datum.dealer}`}</td>
                   <td>{`${datum.name}`}</td>
                   <td>{`${datum.price}`}</td>

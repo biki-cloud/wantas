@@ -69,10 +69,10 @@ def register_database(interval=1):
     """
     db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo_database.json")
     db = DbDriver(db_path)
-    pre_s_idx = 12
-    city_s_idx = 22
-    store_s_idx = 25
-    for i,pre in enumerate(get_prefecture_urls()[pre_s_idx:], start=pre_s_idx):
+    pre_s_idx = 46
+    city_s_idx = 9
+    store_s_idx = 0
+    for i, pre in enumerate(get_prefecture_urls()[pre_s_idx:], start=pre_s_idx):
         for i2, city in enumerate(get_city_urls(pre)[city_s_idx:], start=city_s_idx):
             for i3, store in enumerate(get_store_urls(city)[store_s_idx:], start=store_s_idx):
                 with open(os.path.join(os.path.dirname(__file__), "progress.txt"), 'w') as fp:

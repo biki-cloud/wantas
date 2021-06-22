@@ -5,12 +5,15 @@ import styles from "./Post.module.css";
 import { useForm } from "react-hook-form";
 import { useSetData, useSetPlace, DataContext } from "../context/dataContext";
 
+type PLACE = { userLat: any; userLon: any } | any;
+
 const Post: React.FC = () => {
   const data = useContext(DataContext).data;
   const position = useContext(DataContext).place;
   const setData = useSetData();
   const setPlace = useSetPlace();
   const [addresses, setAddresses] = useState(["address.0"]); // 複数検索する場合のinput用
+  const [focus, setFocus] = useState(false);
   const [update, setUpdate] = useState<boolean>(false);
   const {
     register,
@@ -34,8 +37,7 @@ const Post: React.FC = () => {
 
   const getPlacePosition = (place) => {
     //入力した場所のlat,lngをgeocodeのapiでとる
-    let p = { userLat: 0, userLon: 0 };
-    const res = axios
+    return axios
       .get("https://maps.googleapis.com/maps/api/geocode/json", {
         params: {
           address: place,
@@ -48,13 +50,12 @@ const Post: React.FC = () => {
           userLat: res.data.results[0].geometry.location.lat,
           userLon: res.data.results[0].geometry.location.lng,
         });
-        p = {
+        return {
           userLat: res.data.results[0].geometry.location.lat,
           userLon: res.data.results[0].geometry.location.lng,
         };
       })
       .catch((err) => {});
-    return p;
   };
   const getPosition = () => {
     //位置情報からlat,lngをとる
@@ -92,10 +93,11 @@ const Post: React.FC = () => {
   };
 
   const onSubmit = async (e) => {
-    let place = { userLat: 0, userLon: 0 };
+    let place: PLACE = { userLat: 0, userLon: 0 };
     if (e.place) {
       //場所を入力していればlat,lonをapiで取りに行く
       place = await getPlacePosition(e.place);
+      console.log(getPlacePosition(e.place));
     } else {
       // 入力してない場合、位置情報を取得する
       place = await getPosition();
@@ -106,6 +108,8 @@ const Post: React.FC = () => {
     });
     submitData.append("userLat", `${place.userLat}`);
     submitData.append("userLon", `${place.userLon}`);
+    console.log(place.userLat);
+    console.log(place.userLon);
     await axios
       .post("/search", submitData)
       .then((response) => {
@@ -133,15 +137,26 @@ const Post: React.FC = () => {
     <div className={styles.post}>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <label className={styles.label}>現在地</label>
-          <input className={styles.input} {...register("place")} />
-          <label className={styles.label}>商品名</label>
+          <label className={focus ? styles.labelFocus : styles.label}>
+            現在地
+          </label>
+          <input
+            className={styles.input}
+            {...register("place")}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+          />
+          <label className={focus ? styles.labelFocus : styles.label}>
+            商品名
+          </label>
           {addresses.map((address) => {
             return (
               <div key={address}>
                 <input
                   className={styles.input}
                   {...register(`${address}`, { required: true, maxLength: 30 })}
+                  onFocus={() => setFocus(true)}
+                  onBlur={() => setFocus(false)}
                 />
               </div>
             );
@@ -152,7 +167,7 @@ const Post: React.FC = () => {
           {errors.name && errors.name.type === "maxLength" && (
             <span>Max length exceeded</span>
           )}
-          <button className={styles.button}>検索 </button>
+          <button className={styles.submit}>検索 </button>
         </form>
         <button className={styles.button} onClick={addAddress}>
           +
