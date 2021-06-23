@@ -13,10 +13,9 @@ from geopy import geocoders
 from geopy.geocoders import Nominatim
 
 from scrape_server import util
-from scrape_server.db_driver import DbDriver
 from scrape_server import geo
 from scrape_server.mylog import log
-from scrape_server.database import database
+from scrape_server.database import db
 
 
 class StoreInfo:
@@ -48,6 +47,9 @@ def is_lon(lon) -> (bool):
     return lon > -180 and lon < 180
 
 def get_distance(lat1, lon1, lat2, lon2) -> (float):
+    """
+    2つの位置情報(lat,lon)をもらい、その距離を返す。
+    """
     if is_lat(lat1) and is_lat(lat2) and is_lon(lon1) and is_lon(lon2):
         lat_dis = lat1 - lat2
         if lat_dis < 0:
@@ -61,28 +63,14 @@ def get_distance(lat1, lon1, lat2, lon2) -> (float):
     else:
         raise ValueError(f"invalid value lat or lon. lat1: {lat1}, lon1: {lon1}, lat2: {lat2}, lon2: {lon2}")
 
-def suited_store_table(table: dataset.table.Table):
-    """
-    store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を返す。
-    """
-    def suited(d: dict) -> (dict):
-        new = {}
-        for k, v in d.items():
-            if k != "id":
-                if k == "lat" or k == "lon":
-                    new[k] = float(v)
-                else:
-                    new[k] = v
-        return new
-    return [suited(d) for d in table.find()]
 
 def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
     """
-    近くのセブンを調べて店舗の位置も含めた情報を返す
+    近くのセブンを調べて店舗の情報、位置を入れたStoreInfoクラスのインスタンスを返す。
     """
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
     store_table = db2["store_info"]
-    results = suited_store_table(store_table)
+    results = db.suited_store_table(store_table)
 
     distances = []
     for store in results:
@@ -101,9 +89,9 @@ def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
         if dis_dict['distance'] < min_dis:
             min_dis = dis_dict['distance']
             min_idx = idx
-    accord_ele = results[min_idx]
-    log.debug(accord_ele)
-    return StoreInfo(accord_ele['name'], accord_ele['address'], accord_ele['lat'], accord_ele['lon'])
+    match_ele = results[min_idx]
+    log.debug(match_ele)
+    return StoreInfo(match_ele['name'], match_ele['address'], match_ele['lat'], match_ele['lon'])
 
 def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
     """
@@ -144,9 +132,16 @@ def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
     return False
 
 def absolutely_get_lat_lon(address: str) -> (float, float):
+    """
+    いろんな位置情報の取得方法を使用し、位置情報をとってくる。
+    """
     log.debug("sleeping 10....")
     time.sleep(10)
     log.debug(f"find address: {address}.....")
+
+    lat, lon = coordinate(address)
+    if lat and lon:
+        return lat, lon
 
     lat, lon = get_lat_lon(address)
     if lat and lon:

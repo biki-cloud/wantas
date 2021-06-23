@@ -2,12 +2,11 @@ import time
 from typing import List
 import bs4
 import sys
-
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
 
 from scrape_server import util
 from scrape_server import geo
-from scrape_server import db_driver as db
+from scrape_server.database import db
 from scrape_server.store import AbsStore
 
 
@@ -15,7 +14,6 @@ class Items:
     """
     Itemクラスをリストで保持するクラス
     """
-
     def __init__(self, items_div: bs4.element.ResultSet):
         self.items_div: List[bs4.element.Tag] = [i for i in items_div]
         self.items = [Item(item_tag) for item_tag in self.items_div]
@@ -81,7 +79,6 @@ class ProductKinds:
     """
     セブンイレブンの全ての商品の種類をプロパティとして保持するクラス
     """
-
     def __init__(self):
         self.thisweek = "thisweek"
         self.nextweek = "nextweek"
@@ -110,7 +107,6 @@ class Area:
     """
     セブンイレブンの全ての地域のプロパティを保持するクラス
     """
-
     def __init__(self):
         self.okinawa = "okinawa"
         self.kyushu = "kyushu"
@@ -128,7 +124,6 @@ class SevenEleven(AbsStore):
     """
     セブンイレブンのサイトをスクレイピングするクラス。Storeクラスを継承していて、get_all_productを実装しなければならない。
     """
-
     def __init__(self):
         self.base_url = "https://www.sej.co.jp"
         self.products = "products"
@@ -141,19 +136,19 @@ class SevenEleven(AbsStore):
     def get_items_tag_from_page(cls, soup) -> (bs4.element.ResultSet):
         return soup.findAll("div", {"class": "list_inner"})
 
-    def get_area_url(self, area_name):
+    def get_area_url(self, area_name: str):
         res = self.areas.__dict__.get(area_name)
         if res:
             return util.join_slash(self.base_url, self.products, self.a, self.product_kind.thisweek, self.area, res)
         return ""
 
-    def get_product_url(self, product_name):
+    def get_product_url(self, product_name: str):
         res = self.product_kind.__dict__.get(product_name)
         if res:
             return util.join_slash(self.base_url, self.products, self.a, res)
         return ""
 
-    def get_recursive_links(self, link, all_links: list):
+    def get_recursive_links(self, link: str, all_links: list):
         if link not in all_links:
             all_links.append(link)
             print(f"append: {link}")
@@ -176,7 +171,7 @@ class SevenEleven(AbsStore):
             self.get_recursive_links(product_url, return_list)
         return return_list
 
-    def get_line_up_links(self, product_url) -> (list):
+    def get_line_up_links(self, product_url: str) -> (list):
         result_links = []
         soup = util.get_soup(product_url)
         line_up_elements = soup.find_all(class_="list_btn brn pbNested pbNestedWrapper")
@@ -185,7 +180,7 @@ class SevenEleven(AbsStore):
             result_links.append(url)
         return result_links
 
-    def get_pager_links(self, product_url) -> (list):
+    def get_pager_links(self, product_url: str) -> (list):
         result_links = []
         soup = util.get_soup(product_url)
         pager_elements = soup.find_all(class_="pager_num")
@@ -197,19 +192,23 @@ class SevenEleven(AbsStore):
                     result_links.append(url)
         return result_links
 
-    def get_area_items(self, area_name) -> (Items):
+    def get_area_items(self, area_name: str) -> (Items):
         url = self.get_area_url(area_name)
         soup = util.get_soup(url)
         items_div = self.get_items_tag_from_page(soup)
         return Items(items_div)
 
-    def get_product_items(self, product_name) -> (Items):
+    def get_product_items(self, product_name: str) -> (Items):
         url = self.get_product_url(product_name)
         soup = util.get_soup(url)
         items_div = self.get_items_tag_from_page(soup)
         return Items(items_div)
 
     def get_all_product(self) -> (list):
+        """
+        店舗ごとにクラスを作成する場合にこのメソッドを実装しなければならない。
+        returnはname,url,price,region_listをキーに持つdictのリストを返す。
+        """
         result = []
         all_product_url = self.get_all_product_url()
         for product_url in all_product_url:
@@ -230,4 +229,3 @@ if __name__ == '__main__':
     # result = search("オムライス")
     # print(util.dict_to_json(result))
     # print(len(result))
-    print("hello")

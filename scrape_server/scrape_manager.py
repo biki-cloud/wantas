@@ -11,26 +11,10 @@ sys.path.append("/Users/hibiki/Desktop/go/go-react")
 from scrape_server import util
 from scrape_server import geo
 from scrape_server.geo import StoreInfo
-from scrape_server.db_driver import DbDriver
 from scrape_server.store.seveneleven import SevenEleven
 from scrape_server.mylog import log
-from scrape_server.database import database
+from scrape_server.database import db
 
-
-def suited_products_table(result: list) -> (list):
-    """
-    productsテーブル用。データベースから取り出す時にjsonを整形する。
-    """
-    def suited(d: dict) -> (dict):
-        new = {}
-        for k, v in d.items():
-            if k != "id":
-                if k == "region_list":
-                    new[k] = v.split(",")
-                else:
-                    new[k] = v
-        return new
-    return [suited(d) for d in result]
 
 
 def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, float):
@@ -40,11 +24,10 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
     log.info("invoked search function.")
     log.info(f"user lat: {user_lat}, user lon: {user_lon}")
 
-    # get db 2
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
     product_table = db2["products"]
-    result = database.search(product_table, "name", search_name)
-    result = suited_products_table(result)
+    result = db.search(product_table, "name", search_name)
+    result = db.suited_products_table(result)
 
     # ユーザーから一番近い店舗の情報を取得
     store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon)
@@ -66,11 +49,9 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
 
 def main():
     db2 = dataset.connect(f"sqlite:///{os.path.join('database', 'db.sqlite')}")
-    print(db2)
     product_table = db2["products"]
-    print(product_table)
     # result = product_table.find(name="*カフェ*")
-    result = database.search(product_table, "name", "おにぎり")
+    result = db.search(product_table, "name", "おにぎり")
     for i in result:
         print(i)
 

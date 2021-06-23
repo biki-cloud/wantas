@@ -22,7 +22,6 @@ def set_log(filepath, log_name=__name__):
     f.setLevel(logging.INFO)
 
     # create formatter
-    # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     formatter = logging.Formatter('%(asctime)s %(filename)s:%(lineno)d: %(levelname)s - %(message)s','%Y/%m/%d %H:%M:%S')
 
     # add formatter to ch

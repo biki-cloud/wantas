@@ -2,8 +2,10 @@ import os, sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
 
 import dataset
+from typing import List
 
-from scrape_server import util
+from scrape_server.util import *
+from scrape_server.store import AbsStore
 
 
 class DatabasePathIsNotExistsError(Exception):
@@ -20,7 +22,7 @@ def init_insert_to_db(json_path: str, database_path: str, table_name: str):
     table_name: なければテーブルを作成
     json_path: jsonを読み込んで中身をテーブルに入れる。
     """
-    elements = util.read_json_file(json_path)
+    elements = read_json_file(json_path)
     # データベースに接続(なければ自動的に作成)
     db = dataset.connect(f"sqlite:///{database_path}")
 
@@ -74,6 +76,67 @@ def search(table: dataset.table.Table, key: str, name: str):
             results.append(ele)
     return results
 
+def suited_products_table(result: list) -> (list):
+    """
+    productsテーブル用。データベースから取り出す時にjsonを整形する。
+    """
+    def suited(d: dict) -> (dict):
+        new = {}
+        for k, v in d.items():
+            if k != "id":
+                if k == "region_list":
+                    new[k] = v.split(",")
+                else:
+                    new[k] = v
+        return new
+    return [suited(d) for d in result]
+
+def suited_store_table(table: dataset.table.Table):
+    """
+    store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を含むdictのリストを返す。
+    """
+    def suited(d: dict) -> (dict):
+        new = {}
+        for k, v in d.items():
+            if k != "id":
+                if k == "lat" or k == "lon":
+                    new[k] = float(v)
+                else:
+                    new[k] = v
+        return new
+    return [suited(d) for d in table.find()]
+
+
+class JsonDbDriver:
+    """
+    jsonに対し、データの書き込み、読み込みを行うクラス。データベースの簡易版。
+    """
+    def __init__(self, database_path):
+        self.database_path = database_path
+
+    def put(self, data: List[dict]):
+        if os.path.exists(self.database_path):
+            elements = self.get_all()
+        else:
+            elements = []
+        for d in data:
+            if d not in elements:
+                elements.append(d)
+        write_json_file(self.database_path, elements)
+
+    def search(self, search_name) -> (List[dict]):
+        results = []
+        for record in self.get_all():
+            if search_name in record['name']:
+                results.append(record)
+        return results
+
+    def scrape_and_put(self, store: AbsStore):
+        elements = store.get_all_product()
+        self.put(elements)
+
+    def get_all(self) -> (List[dict]):
+        return read_json_file(self.database_path)
 
 if __name__ == '__main__':
     # init_insert_to_db("./products.json","./db.sqlite", "products")

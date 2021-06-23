@@ -6,20 +6,16 @@ from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 
-
 def dict_to_json(d):
     return json.dumps(d, ensure_ascii=False, indent=4)
-
 
 def write_json_file(file_path, dic):
     with open(file_path, 'w') as fp:
         json.dump(dic, fp, indent=4, ensure_ascii=False)
 
-
 def read_json_file(file_path) -> (dict):
     with open(file_path, 'r') as fp:
         return json.load(fp)
-
 
 def solve_certificate_problem():
     import certifi
@@ -28,7 +24,6 @@ def solve_certificate_problem():
     cmd = f"export SSL_CERT_FILE={certifi.where()}"
     subprocess.call(cmd, shell=True)
     time.sleep(1)
-
 
 def join_slash(*args):
     joined = ""
@@ -55,7 +50,6 @@ def html_to_soup(html: str):
 def get_soup(url: str):
     html = get_html(url)
     return html_to_soup(html)
-
 
 if __name__ == '__main__':
     pass

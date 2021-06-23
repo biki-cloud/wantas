@@ -7,7 +7,7 @@ from scrape_server import util
 from scrape_server.store import AbsStore
 from scrape_server import geo
 from scrape_server.geo import StoreInfo
-from scrape_server.db_driver import DbDriver
+from scrape_server.database.db import JsonDbDriver
 
 
 ROOT_URL = "https://www.mapion.co.jp"
@@ -68,7 +68,7 @@ def register_database(interval=1):
     全国の店舗の情報をgeo_database.jsonに格納していく
     """
     db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo_database.json")
-    db = DbDriver(db_path)
+    db = JsonDbDriver(db_path)
     pre_s_idx = 46
     city_s_idx = 9
     store_s_idx = 0
