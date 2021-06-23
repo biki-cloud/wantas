@@ -13,8 +13,8 @@ const Post: React.FC = () => {
   const setData = useSetData();
   const setPlace = useSetPlace();
   const [addresses, setAddresses] = useState(["address.0"]); // 複数検索する場合のinput用
-  const [focus, setFocus] = useState(false);
   const [update, setUpdate] = useState<boolean>(false);
+  const [geo, setGeo] = useState(false);
   const {
     register,
     handleSubmit,
@@ -35,36 +35,16 @@ const Post: React.FC = () => {
     setUpdate(update ? false : true); //inputを削除した際に強制的にレンダリングさせる
   };
 
-  const getPlacePosition = (place) => {
-    //入力した場所のlat,lngをgeocodeのapiでとる
-    return axios
-      .get("https://maps.googleapis.com/maps/api/geocode/json", {
-        params: {
-          address: place,
-          sensor: false,
-          key: "AIzaSyDzeU7QqfTOkKg58HQujHzTI8jTaOiDfB0",
-        },
-      })
-      .then((res) => {
-        setPlace({
-          userLat: res.data.results[0].geometry.location.lat,
-          userLon: res.data.results[0].geometry.location.lng,
-        });
-        return {
-          userLat: res.data.results[0].geometry.location.lat,
-          userLon: res.data.results[0].geometry.location.lng,
-        };
-      })
-      .catch((err) => {});
-  };
   const getPosition = () => {
     //位置情報からlat,lngをとる
     let startPos;
     const showNudgeBanner = function () {
       //位置情報がoffの場合の処理
+      setGeo(true);
     };
     const hideNudgeBanner = function () {
       //位置情報がonの場合の処理
+      setGeo(false);
     };
     const nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
 
@@ -76,7 +56,12 @@ const Post: React.FC = () => {
         userLat: startPos.coords.latitude,
         userLon: startPos.coords.longitude,
       });
+      return {
+        userLat: startPos.coords.latitude,
+        userLon: startPos.coords.longitude,
+      };
     };
+    console.log(() => );
     const geoError = function (error) {
       //位置情報が取れなかった
       switch (error.code) {
@@ -85,38 +70,26 @@ const Post: React.FC = () => {
           break;
       }
     };
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-    return {
-      userLat: startPos.coords.latitude,
-      userLon: startPos.coords.longitude,
-    };
+    const nav = navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    console.log(nav);
+    return 
   };
 
   const onSubmit = async (e) => {
     let place: PLACE = { userLat: 0, userLon: 0 };
-    if (e.place) {
-      //場所を入力していればlat,lonをapiで取りに行く
-      place = await getPlacePosition(e.place);
-      console.log(getPlacePosition(e.place));
-    } else {
-      // 入力してない場合、位置情報を取得する
-      place = await getPosition();
-    }
+
+    // 入力してない場合、位置情報を取得する
+    place = await getPosition();
     const submitData = new FormData();
     addresses.map((address, index) => {
       submitData.append("productName", e.address);
     });
     submitData.append("userLat", `${place.userLat}`);
     submitData.append("userLon", `${place.userLon}`);
-    console.log(place.userLat);
-    console.log(place.userLon);
     await axios
       .post("/search", submitData)
       .then((response) => {
-        console.log(response.data);
-        response.data.map((datum) => {
-          console.log(datum.dealer);
-        });
+        response.data.map((datum) => {});
         setData(
           response.data.map((datum) => {
             return {
@@ -137,26 +110,13 @@ const Post: React.FC = () => {
     <div className={styles.post}>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <label className={focus ? styles.labelFocus : styles.label}>
-            現在地
-          </label>
-          <input
-            className={styles.input}
-            {...register("place")}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
-          />
-          <label className={focus ? styles.labelFocus : styles.label}>
-            商品名
-          </label>
+          <label className={styles.label}>商品名</label>
           {addresses.map((address) => {
             return (
-              <div key={address}>
+              <div key={address} className={styles.textBox}>
                 <input
-                  className={styles.input}
+                  className={styles.text}
                   {...register(`${address}`, { required: true, maxLength: 30 })}
-                  onFocus={() => setFocus(true)}
-                  onBlur={() => setFocus(false)}
                 />
               </div>
             );
@@ -175,6 +135,11 @@ const Post: React.FC = () => {
         <button className={styles.button} onClick={removeAddress}>
           -
         </button>
+        {geo && (
+          <div>
+            <h1>位置情報を有効にしてください</h1>
+          </div>
+        )}
       </div>
     </div>
   );

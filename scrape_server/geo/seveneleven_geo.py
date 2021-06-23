@@ -52,9 +52,14 @@ def get_store_urls(city_url) -> (list):
     return results
 
 
-def get_store_info(store_url) -> (StoreInfo):
+def get_store_info(store_url: str) -> (StoreInfo):
     """
     店舗のURLを受け取り、店名、住所をStoreクラスに格納し、Storeクラスを返す
+    """
+    """[summary]
+
+    Returns:
+        [type]: [description]
     """
     soup = util.get_soup(store_url)
     store_info_tag = soup.find('table', attrs={"class", "spot-table-basic tbl-basic"})

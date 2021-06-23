@@ -205,9 +205,10 @@ class SevenEleven(AbsStore):
         return Items(items_div)
 
     def get_all_product(self) -> (list):
-        """
-        店舗ごとにクラスを作成する場合にこのメソッドを実装しなければならない。
-        returnはname,url,price,region_listをキーに持つdictのリストを返す。
+        """店舗ごとにクラスを作成する場合にこのメソッドを実装しなければならない
+
+        Returns:
+            list: returnはname,url,price,region_listをキーに持つdictのリストを返す。
         """
         result = []
         all_product_url = self.get_all_product_url()

@@ -35,6 +35,8 @@ const Result: React.FC = () => {
                   <td>{`${datum.dealer}`}</td>
                   <td>{`${datum.name}`}</td>
                   <td>{`${datum.price}`}</td>
+                  <td>{`${datum.lat}`}</td>
+                  <td>{`${datum.lon}`}</td>
                   <td>
                     <div>
                       <LoadScript googleMapsApiKey="AIzaSyDzeU7QqfTOkKg58HQujHzTI8jTaOiDfB0">

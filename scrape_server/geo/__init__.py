@@ -46,9 +46,21 @@ def is_lat(lat) -> (bool):
 def is_lon(lon) -> (bool):
     return lon > -180 and lon < 180
 
-def get_distance(lat1, lon1, lat2, lon2) -> (float):
-    """
-    2つの位置情報(lat,lon)をもらい、その距離を返す。
+
+def get_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> (float):
+    """2つの位置情報(lat,lon)をもらい、その距離を返す。
+
+    Args:
+        lat1 (float): lat 1
+        lat2 (float): lat 2
+        lon1 (float): lon 1
+        lon2 (float): lon 2
+
+    Raises:
+        ValueError: 引数のどれかが適切な値でない場合、エラーを起こす
+
+    Returns:
+        float: lat同士の距離とlon同士の距離を足したもの
     """
     if is_lat(lat1) and is_lat(lat2) and is_lon(lon1) and is_lon(lon2):
         lat_dis = lat1 - lat2
@@ -64,9 +76,15 @@ def get_distance(lat1, lon1, lat2, lon2) -> (float):
         raise ValueError(f"invalid value lat or lon. lat1: {lat1}, lon1: {lon1}, lat2: {lat2}, lon2: {lon2}")
 
 
+    
 def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
-    """
-    近くのセブンを調べて店舗の情報、位置を入れたStoreInfoクラスのインスタンスを返す。
+    """近くのセブンを調べて店舗の情報、位置を入れたStoreInfoクラスのインスタンスを返す。
+
+    Args:
+        user_lat (float, user_lon): ユーザーの位置情報
+
+    Returns:
+        StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
     store_table = db2["store_info"]

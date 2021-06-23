@@ -75,6 +75,7 @@ func SearchProductUseGRPC() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		log.Printf("*************************************************************************************\n")
 		productName, userLat, userLon, err := getPerametaFromPostForm(c)
+		// userLat, userLon = 38.32323, 139.42323
 		log.Printf("received from react. productName: %v, userLat: %v, userLon: %v\n", productName, userLat, userLon)
 		if err != nil {
 			log.Fatal(err)
