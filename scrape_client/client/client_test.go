@@ -1,13 +1,19 @@
-package client
+package client_test
 
 import (
 	"fmt"
+	"go-react/scrape_client/client"
 	"testing"
 )
 
 
 func TestScraping(t *testing.T) {
-	scrapedResults, err := Scraping("ご飯", 23.4, 142.3244)
+	userInfo := client.UserInfo{
+		ProductName: "パスタ",
+		UserLat: 35.53434,
+		UserLon: 140.32323,
+	}
+	scrapedResults, err := client.Scraping(userInfo)
 	if err != nil {
 		t.Errorf("err is %v \n ", err)
 	}

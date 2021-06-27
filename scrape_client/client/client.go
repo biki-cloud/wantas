@@ -15,17 +15,33 @@ import (
 	"google.golang.org/grpc"
 )
 
-func getPerametaFromPostForm(c *gin.Context) (string, float64, float64, error){
+type UserInfo struct {
+	ProductName string `json:"productname"`
+	UserLat float64 `json:"userlat"`
+	UserLon float64 `json:"userlon"`
+}
+// userlatやlonやfloatの方が使いやすいかも
+// methodでvalidateしたほうがいいかも
+func getPerametaFromPostForm(c *gin.Context) (UserInfo, error){
 	var (
-		productName = c.PostForm("productName")
-		userLat, err1 = strconv.ParseFloat(c.PostForm("userLat"), 64)
-		userLon, err2 = strconv.ParseFloat(c.PostForm("userLon"), 64)
+		productName = c.PostForm("ProductName")
+		userLat, err1 = strconv.ParseFloat(c.PostForm("UserLat"), 64)
+		userLon, err2 = strconv.ParseFloat(c.PostForm("UserLon"), 64)
 	)
+	var userInfo UserInfo
+	if err := c.Bind(&userInfo); err == nil {
+		return userInfo, nil
+	}else {
+		log.Fatalf("err is %v \n", err)
+	}
 	if err1 != nil || err2 != nil{
 		log.Fatalf("userLat or userLon can't to convert: %v %v \n", err1, err2)
-		return "", 0, 0, errors.New("There some error.")
+		return userInfo, errors.New("There some error.")
 	}
-	return productName, userLat, userLon, nil
+	userInfo.ProductName = productName
+	userInfo.UserLat = userLat
+	userInfo.UserLon = userLon
+	return userInfo, nil
 }
 
 func GetMultipleProduct() []product.Product {
@@ -52,11 +68,12 @@ func GetMultipleProduct() []product.Product {
 
 func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		productName, userLat, userLon, err := getPerametaFromPostForm(c)
+		// productName, userLat, userLon, err := getPerametaFromPostForm(c)
+		userInfo, err := getPerametaFromPostForm(c)
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("productName: %s \nuserLat: %v \nuserLon: %v \n", productName, userLat, userLon)
+		fmt.Printf("productName: %s \nuserLat: %v \nuserLon: %v \n", userInfo.ProductName,userInfo.UserLat,userInfo.UserLon)
 
 		p, err := product.GetFullParametaProduct()
 		if err != nil {
@@ -70,33 +87,42 @@ func SearchProduct() gin.HandlerFunc {
 	}
 }
 
-func SearchProductUseGRPC() gin.HandlerFunc {
+func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	log.Printf("invoked SearchProductUseGRPC \n")
 	return func(c *gin.Context) {
 		log.Printf("*************************************************************************************\n")
-		productName, userLat, userLon, err := getPerametaFromPostForm(c)
-		// userLat, userLon = 38.32323, 139.42323
-		log.Printf("received from react. productName: %v, userLat: %v, userLon: %v\n", productName, userLat, userLon)
+		userInfo, err := getPerametaFromPostForm(c)
+		log.Printf("userInfo: %v \n", userInfo)
 		if err != nil {
 			log.Fatal(err)
 		}
 
 		log.Printf("call Scraping.")
-		var scrapedResults, err2 = Scraping(productName, float64(userLat), float64(userLon))
+		var scrapedResults, err2 = Scraping(userInfo)
 		log.Printf("scrapeResults length: %v \n", len(scrapedResults))
 		log.Printf("scrapedResults: %v \n", scrapedResults)
 		if err2 != nil {
 			log.Fatalf("err is %v \n", err)
 		}
 
-		c.JSON(http.StatusOK, scrapedResults)
+		if outFormat == "json" {
+			log.Printf("out format: json")
+			c.JSON(http.StatusOK, scrapedResults)
+		}else if outFormat == "html" {
+			log.Printf("out format: html")
+			c.HTML(http.StatusOK, "main.html", gin.H{
+				"results": scrapedResults,
+			})
+		}else{
+			panic("format is invalid.")
+		}
 	}
 }
 
 const grpcDialingUrl = "localhost:50051"
 
-func Scraping(productName string, userLat float64, userLon float64) ([]product.Product, error) {
-	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", productName, userLat, userLon)
+func Scraping(userInfo UserInfo) ([]product.Product, error) {
+	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat,userInfo.UserLon)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
 	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())
 	if err != nil {
@@ -112,9 +138,9 @@ func Scraping(productName string, userLat float64, userLon float64) ([]product.P
 	c := scrapepb.NewScrapingServiceClient(cc)
 
 	req := &scrapepb.ScrapeManyTimesRequest{
-		ProductName: productName,
-		UserLat: float32(userLat),
-		UserLon: float32(userLon),
+		ProductName:userInfo.ProductName,
+		UserLat: float32(userInfo.UserLat),
+		UserLon: float32(userInfo.UserLon),
 	}
 	log.Printf("request for grpc server: %v", req)
 
@@ -141,7 +167,7 @@ func Scraping(productName string, userLat float64, userLon float64) ([]product.P
 
 		p := product.New()
 		if msg.Product.GetName() == "none" {
-			log.Printf("%v is not found from database\n", productName)
+			log.Printf("%v is not found from database\n", userInfo.ProductName)
 			p.Dealer = "none"
 		} else {
 			p.Dealer = "seveneleven"

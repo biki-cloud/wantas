@@ -3,13 +3,121 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>すぐ欲しい！！</title>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css" />
 </head>
 
 <body>
-    <p>hello</p>
+    <p id="loc">hello</p>
+
+    <!-- get lat lon -->
+    <button onclick="test()">get coordinate</button>
+
+    <br />
+
+    <!-- test -->
+    <form action="POST" action="/html" id="myform">
+        <input type="text" name="ProductName" value="パスタ" id="name" />
+        <input type="hidden" name="UserLat" value="38.48199" id="lat" />
+        <input type="hidden" name="UserLon" value="140.34343" id="lon" />
+        <input type="submit" id="btn"></input>
+    </form>
+
+    <!-- search form -->
+    <form method="POST" action="/html">
+        <input type="text" name="ProductName" value="パスタ" />
+        <input type="text" name="UserLat" value="38.48199" />
+        <input type="text" name="UserLon" value="140.34343" />
+        <input type="submit" name="search" />
+    </form>
+
+    <!-- search result -->
+    <table border="1" id="tbl">
+        <tr>
+            <th>取扱い店舗</th>
+            <th>商品名</th>
+            <th>値段</th>
+            <th>商品リンク</th>
+        </tr>
+        {{range .results}}
+        <tr>
+            <td>{{.Dealer}}</td>
+            <td>{{.Name}}</td>
+            <td>{{.Price}}</td>
+            <td>
+                <a href="{{.Url}}">{{.Url}}</a>
+            </td>
+        </tr>
+        {{end}}
+    </table>
+
+    <script type="text/javascript">
+        console.log("I'm script of main.html.");
+        var geolocation_is_available = false
+
+        // Set lat lon after page loading
+        if (navigator.geolocation) {
+            // user's mobile is available to use geolocation.
+            var geolocation_is_available = true
+            var is_getting_coordinate = false
+            navigator.geolocation.getCurrentPosition(success, fail);
+        } else {
+            // user's mobile is not available to use geolocation.
+            alert("あなたの端末では現在位置を取得できません。")
+        }
+
+
+        function success(pos) {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            document.getElementById("lat").value = lat
+            document.getElementById("lon").value = lon
+            console.log("位置情報の取得を完了しました。")
+            is_getting_coordinate = true
+        }
+
+        function fail(pos) {
+            console.log('位置情報の取得に失敗しました。エラーコード：');
+        }
+
+        $("#btn").on('click', function() {
+            if (!geolocation_is_available || !is_getting_coordinate) {
+                alert("現在位置情報を取得しています....　2,3秒お待ちください。")
+                return false
+            }
+            var jsonData = JSON.stringify({
+                "ProductName": document.getElementById("name").value,
+                "UserLat": parseFloat(document.getElementById("lat").value),
+                "UserLon": parseFloat(document.getElementById("lon").value)
+            })
+            console.log("send data to server: " + jsonData)
+            $.ajax({
+                url: "/html",
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                data: jsonData,
+                cache: false,
+                timeout: 5000,
+            }).done(function(results) {
+                console.log("ajax successful")
+                console.log("data: ", results)
+                    // result append to the table.
+                for (var i = 0; i < results.length; i++) {
+                    r = results[i]
+                    $("#tbl").append("<tr> <td>" + r.dealer + "</td><td>" + r.productName + "</td><td>" + r.price + "</td><td><a href=" + r.url + ">" + r.url + "</a></td></tr>")
+                }
+            }).fail(function(data) {
+                console.log("data: ", data)
+                console.log("ajax fail.")
+            })
+
+            // 通常でのsubmit処理を無効にする
+            return false
+        })
+    </script>
 </body>
 
 </html>

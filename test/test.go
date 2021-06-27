@@ -26,3 +26,12 @@ func PostTest() gin.HandlerFunc {
 		})
 	}
 }
+
+func HtmlTest() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "main.html", gin.H{
+			"message": "hello world",
+		})
+
+	}
+}
