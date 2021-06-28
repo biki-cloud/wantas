@@ -9,7 +9,8 @@ message Product {
   string name = 1;
   string url = 2;
   string price = 3;
-  repeated string region_list = 4;
+  string img_url = 4;
+  repeated string region_list = 5;
 }
 
 message ScrapeManyTimesRequest {
@@ -20,8 +21,9 @@ message ScrapeManyTimesRequest {
 
 message ScrapeManyTimesResponse {
   Product product = 1;
-  float storeLat = 2;
-  float storeLon = 3;
+  string storeName = 2;
+  float storeLat = 3;
+  float storeLon = 4;
 }
 
 

@@ -14,6 +14,7 @@ from scrape_server.store import seveneleven
 from scrape_server.mylog import log
 from scrape_server.database import db
 
+
 def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, float):
     """
     商品名を受け取り、スクレイプし名前が入った商品のリストを持ってくる。
@@ -46,7 +47,8 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
     log.info("return from search funcion.")
     log.info(f"result: {result}")
     log.info(f"most near store lat: {store_info.lat}, store lon: {store_info.lon}")
-    return result, store_info.lat, store_info.lon
+    # return result, store_info.lat, store_info.lon
+    return result, store_info
 
 
 class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
@@ -63,7 +65,8 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
         log.info(f"user_lat: {user_lat}")
         log.info(f"user_lon: {user_lon}")
 
-        scrape_results, store_lat, store_lon = search(product_name, user_lat, user_lon)
+        # scrape_results, store_lat, store_lon = search(product_name, user_lat, user_lon)
+        scrape_results, store_info = search(product_name, user_lat, user_lon)
         results_len = len(scrape_results)
         log.info(f"scrape_results: {scrape_results}")
 
@@ -71,12 +74,15 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
             log.info(f"scraping results length is {results_len}")
             for result in scrape_results:
                 res = scrape_pb2.ScrapeManyTimesResponse()
-                res.storeLat = float(store_lat)
-                res.storeLon = float(store_lon)
+                res.storeName = store_info.name
+                log.info(f"store_name: {store_info.name}")
+                res.storeLat = float(store_info.lat)
+                res.storeLon = float(store_info.lon)
                 res.product.name = result['name']
                 res.product.url = result['url']
                 res.product.price = result['price']
                 res.product.region_list.extend(result['region_list'])
+                res.product.img_url = result['img_url']
                 responses.append(res)
 
             for r in responses:

@@ -176,6 +176,8 @@ func Scraping(userInfo UserInfo) ([]product.Product, error) {
 		p.Url = msg.Product.GetUrl()
 		p.Price = msg.Product.GetPrice()
 		p.RegionList = msg.Product.GetRegionList()
+		p.ImgUrl = msg.Product.GetImgUrl()
+		p.StoreName = msg.GetStoreName()
 		p.StoreLat = float64(msg.GetStoreLat())
 		p.StoreLon = float64(msg.GetStoreLon())
 

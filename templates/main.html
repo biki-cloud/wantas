@@ -32,7 +32,7 @@
         <tr>
             <th>商品名</th>
             <th>商品画像</th>
-            <th>値段</th>
+            <th>値段(税込)</th>
             <th>取扱い店舗</th>
             <th>Google Map</th>
         </tr>
@@ -100,11 +100,13 @@
                 // result append to the table.
                 for (var i = 0; i < results.length; i++) {
                     r = results[i]
+                    console.log(r)
                     googleMapUrl = CreateGoogleMapUrl(userLat, userLon, r.lat, r.lon);
-                    // FIXME: htmlで行の順番を変えた。下の行も順序を帰る必要がある。
-                    // FIXME: <a href="商品ページアドレス"><img src="商品画像アドレス"></a>
-                    // FIXME: <a href="google map url">r.dealer</a>
-                    $("#tbl").append("<tr> <td>" + r.productName + "</td><td><a href=" + r.url + ">" + r.url + "</a></td><td>" + r.price + "</td><td>" + r.dealer + "</td><td><a href=" + googleMapUrl + ">Google Map</a></td></tr>")
+                    // TODO: dealerはいらない
+                    // TODO: 値段を数字にする。表示する際は+円をつける。ソートできるようにする。
+                    // TODO: まずは変数名、コメント、GRPC周辺の整理。
+                    // img 640 480
+                    $("#tbl").append("<tr> <td>" + r.productName + "</td><td><a href=" + r.url + "><img src=" + r.imgUrl + " width=\"128\" height=\"96\" ></a></td><td>" + r.price + "</td><td>" + r.storename + "</td><td><a href=" + googleMapUrl + ">Google Map</a></td></tr>")
                 }
             }).fail(function(data) {
                 console.log("ajax fail.")

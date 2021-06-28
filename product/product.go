@@ -14,6 +14,8 @@ type Product struct {
 	Url        string `json:"url" form:"url"`
 	Price      string `json:"price" form:"price"`
 	RegionList []string
+	ImgUrl     string `json:"imgUrl"`
+	StoreName  string `json:"storename" form:"storename"`
 	StoreLat   float64 `json:"lat" form:"lon"`
 	StoreLon   float64 `json:"lon" form:"lon"`
 }
