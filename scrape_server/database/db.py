@@ -3,9 +3,11 @@ sys.path.append("/Users/hibiki/Desktop/go/go-react")
 
 import dataset
 from typing import List
+import requests
 
 from scrape_server.util import *
 from scrape_server.store import AbsStore
+from scrape_server.store.seveneleven import SevenEleven
 
 
 class DatabasePathIsNotExistsError(Exception):
@@ -52,12 +54,12 @@ def to_suited_dict(record: dict) -> (dict):
     element -> database
     """
     for k, v in record.items():
-        if type(v) is list:
-            record[k] = ",".join(record[k])
-        if k == "lat" or k == "lon":
+        if k == "region_list":
+            record[k] = ",".join(v)
+        elif k == "lat" or k == "lon":
             record[k] = float(v)
         else:
-            record[k] = v
+            record[k] = str(v)
     return record
 
 def insert(table: dataset.table.Table, record: dict):
@@ -106,6 +108,27 @@ def suited_store_table(table: dataset.table.Table):
         return new
     return [suited(d) for d in table.find()]
 
+def seveneleven_to_db(db_path: str):
+    """セブンイレブンの全商品をスクレイピングで取得し、databaseのproductsテーブルに入れる。
+
+    Args:
+        db_path (str): データベースのパス
+    """
+    seven = SevenEleven()
+    # スクレイピング
+    results = seven.get_all_product()
+    print(f"all_length: {len(results)}")
+
+    # DBへ登録
+    db = dataset.connect(f"sqlite:///{db_path}")
+    table = db["products"]
+    for element_dic in results:
+        insert(table, element_dic)
+
+def delete_table(db_path: str, table_name: str):
+    db = dataset.connect(f"sqlite:///{db_path}")
+    table = db[table_name]
+    table.delete()
 
 class JsonDbDriver:
     """
@@ -140,7 +163,9 @@ class JsonDbDriver:
 
 if __name__ == '__main__':
     # init_insert_to_db("./products.json","./db.sqlite", "products")
-    init_insert_to_db("./store_info.json","./db.sqlite", "store_info")
+    # init_insert_to_db("./store_info.json","./db.sqlite", "store_info")
+    seveneleven_to_db("./db.sqlite")
+    # delete_table("./db.sqlite", "products")
 
 # # "address"テーブルを開く(なければ自動的に作成)
 # address = db["address"]

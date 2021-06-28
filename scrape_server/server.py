@@ -38,6 +38,7 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
     # ユーザーに一番近い店舗がある地域のみでフィルターする。
     filtered_results = []
     for ele in result:
+        log.info(f"ele['region_list']: {ele['region_list']}")
         if geo.is_contains(ele['region_list'], store_info):
             filtered_results.append(ele)
     result = filtered_results
