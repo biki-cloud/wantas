@@ -8,6 +8,7 @@ import requests
 from scrape_server.util import *
 from scrape_server.store import AbsStore
 from scrape_server.store.seveneleven import SevenEleven
+from scrape_server.store.familymart import FamilyMart
 
 
 class DatabasePathIsNotExistsError(Exception):
@@ -18,13 +19,18 @@ class TableNameIsNotExistsError(Exception):
     pass
 
 
-def init_insert_to_db(json_path: str, database_path: str, table_name: str):
-    """
-    database_path: なければデータベースを作成
-    table_name: なければテーブルを作成
-    json_path: jsonを読み込んで中身をテーブルに入れる。
+def json_to_db(json_path: str, database_path: str, table_name: str):
+    """JSONファイルの中身をDBに登録する。
+    呼び出し方
+    init_insert_to_db("./product_seven.json","./db.sqlite", "products")
+
+    Args:
+        json_path (str): jsonを読み込んで中身をテーブルに入れる。
+        database_path (str): なければデータベースを作成
+        table_name (str): なければテーブルを作成
     """
     elements = read_json_file(json_path)
+
     # データベースに接続(なければ自動的に作成)
     db = dataset.connect(f"sqlite:///{database_path}")
 
@@ -33,7 +39,6 @@ def init_insert_to_db(json_path: str, database_path: str, table_name: str):
     for element_dic in elements:
         insert(table, element_dic)
 
-    # table.delete()
 def is_contains(table: dataset.table.Table, record: dict) -> (bool):
     """
     recordがtableに含まれているか
@@ -54,9 +59,9 @@ def to_suited_dict(record: dict) -> (dict):
     element -> database
     """
     for k, v in record.items():
-        if k == "region_list":
+        if k == "product_region_list":
             record[k] = ",".join(v)
-        elif k == "lat" or k == "lon":
+        elif k == "store_lat" or k == "store_lon":
             record[k] = float(v)
         else:
             record[k] = str(v)
@@ -86,7 +91,7 @@ def suited_products_table(result: list) -> (list):
         new = {}
         for k, v in d.items():
             if k != "id":
-                if k == "region_list":
+                if k == "product_region_list":
                     new[k] = v.split(",")
                 else:
                     new[k] = v
@@ -101,31 +106,43 @@ def suited_store_table(table: dataset.table.Table):
         new = {}
         for k, v in d.items():
             if k != "id":
-                if k == "lat" or k == "lon":
+                if k == "store_lat" or k == "store_lon":
                     new[k] = float(v)
                 else:
                     new[k] = v
         return new
     return [suited(d) for d in table.find()]
 
-def seveneleven_to_db(db_path: str):
+def store_to_db(db_path: str, table_name: str, store: AbsStore):
     """セブンイレブンの全商品をスクレイピングで取得し、databaseのproductsテーブルに入れる。
+    呼び出し方
+    seven = SevenEleven()
+    store_to_db("./db.sqlite", seven)
 
     Args:
         db_path (str): データベースのパス
+        store (AbsStore): sevenelevenやfamilymartクラスの親クラス、
+            必ずget_all_product()メソッドを持っている。
     """
-    seven = SevenEleven()
     # スクレイピング
-    results = seven.get_all_product()
+    results = store.get_all_product()
     print(f"all_length: {len(results)}")
 
     # DBへ登録
     db = dataset.connect(f"sqlite:///{db_path}")
-    table = db["products"]
+    table = db[table_name]
     for element_dic in results:
         insert(table, element_dic)
 
 def delete_table(db_path: str, table_name: str):
+    """テーブルを削除する
+    呼び出し方
+    delete_table("./db.sqlite", "products")
+
+    Args:
+        db_path (str): DBのパス
+        table_name (str): テーブルの名前
+    """
     db = dataset.connect(f"sqlite:///{db_path}")
     table = db[table_name]
     table.delete()
@@ -162,10 +179,21 @@ class JsonDbDriver:
         return read_json_file(self.database_path)
 
 if __name__ == '__main__':
-    # init_insert_to_db("./products.json","./db.sqlite", "products")
-    # init_insert_to_db("./store_info.json","./db.sqlite", "store_info")
-    seveneleven_to_db("./db.sqlite")
+    # seven = SevenEleven()
+    # store_to_db("./db.sqlite", "product_seven", seven)
+    # famima = FamilyMart()
+    # store_to_db("./db.sqlite", "product_famima", famima)
+    # json_to_db("./product_familymart.json", "./db.sqlite", "product_familymart")
+    # json_to_db("./product_seveneleven.json", "./db.sqlite", "product_seveneleven")
+    json_to_db("./store_seveneleven.json", "./db.sqlite", "store_seveneleven")
+    json_to_db("./store_familymart.json", "./db.sqlite", "store_familymart")
     # delete_table("./db.sqlite", "products")
+    json_to_db("./product_familymart.json", "./db.sqlite", "products")
+    json_to_db("./product_seveneleven.json", "./db.sqlite", "products")
+    # delete_table("./db.sqlite", "product_familymart")
+    # delete_table("./db.sqlite", "product_seven")
+    # delete_table("./db.sqlite", "store_familymart")
+    # delete_table("./db.sqlite", "store_seveneleven")
 
 # # "address"テーブルを開く(なければ自動的に作成)
 # address = db["address"]

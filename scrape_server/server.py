@@ -1,5 +1,6 @@
 from concurrent import futures
 
+from typing import List
 import grpc
 import sys
 import os
@@ -15,7 +16,7 @@ from scrape_server.mylog import log
 from scrape_server.database import db
 
 
-def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, float):
+def search(search_name: str, user_lat: float, user_lon: float) -> (List[dict]):
     """
     商品名を受け取り、スクレイプし名前が入った商品のリストを持ってくる。
     lat,lonから場所を検索し、商品が売られている場所のみをフィルターし、商品リストを返す。
@@ -26,38 +27,35 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (list, float, 
 
     # scrape_serverディレクトリで実行する必要がある。
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
-    # db2 = dataset.connect(os.path.join("database", "db.sqlite"))
     product_table = db2["products"]
-    result = db.search(product_table, "name", search_name)
-    result = db.suited_products_table(result)
+    results = db.search(product_table, "product_name", search_name)
+    results = db.suited_products_table(results)
 
-    # ユーザーから一番近い店舗の情報を取得
-    store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon)
-    log.info("got most near store information")
-    log.info(store_info.__dict__)
+    # 上のresultは商品情報dictのリストになっているのでそのdictに
+    # 商品がセブンだった場合、一番近くのセブンの店舗情報を付加し返す。
+    for i in range(len(results)):
+        store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon, results[i]['store_table_name'])
+        results[i].update(store_info.__dict__)
+    log.info("added store infomation to product information")
+    log.info(results)
+    log.info(f'length: {len(results)}')
 
-    # ユーザーに一番近い店舗がある地域のみでフィルターする。
-    filtered_results = []
-    for ele in result:
-        log.info(f"ele['region_list']: {ele['region_list']}")
-        if geo.is_contains(ele['region_list'], store_info):
-            filtered_results.append(ele)
-    result = filtered_results
+    area_filtered_results = [ele for ele in results if geo.is_contains(ele)]
 
     log.info("return from search funcion.")
-    log.info(f"result: {result}")
-    log.info(f"most near store lat: {store_info.lat}, store lon: {store_info.lon}")
-    # return result, store_info.lat, store_info.lon
-    return result, store_info
+    log.info(f"result: {results}")
+    return results
 
 
 class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
     def __init__(self):
         pass
 
+    # Goからのリクエスト
     def ScrapeManyTimes(self, request, context):
-        log.info("Invoked ScrapeManyTimes.")
+        log.info("Invoked ScrapeManyTimes from go client.")
         responses = []
+        # リクエストからパラメータを取り出す。
         product_name = request.productName
         user_lat = request.userLat
         user_lon = request.userLon
@@ -65,24 +63,27 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
         log.info(f"user_lat: {user_lat}")
         log.info(f"user_lon: {user_lon}")
 
-        # scrape_results, store_lat, store_lon = search(product_name, user_lat, user_lon)
-        scrape_results, store_info = search(product_name, user_lat, user_lon)
+        scrape_results = search(product_name, user_lat, user_lon)
         results_len = len(scrape_results)
         log.info(f"scrape_results: {scrape_results}")
 
         if scrape_results:
             log.info(f"scraping results length is {results_len}")
-            for result in scrape_results:
+            for r in scrape_results:
                 res = scrape_pb2.ScrapeManyTimesResponse()
-                res.storeName = store_info.name
-                log.info(f"store_name: {store_info.name}")
-                res.storeLat = float(store_info.lat)
-                res.storeLon = float(store_info.lon)
-                res.product.name = result['name']
-                res.product.url = result['url']
-                res.product.price = result['price']
-                res.product.region_list.extend(result['region_list'])
-                res.product.img_url = result['img_url']
+
+                # レスポンスに値をセットする。
+                res.result.productName = r['product_name']
+                res.result.productUrl = r['product_url']
+                res.result.productPrice = r['product_price']
+                res.result.productImgUrl = r['product_img_url']
+                res.result.productRegionList.extend(r['product_region_list'])
+                res.result.storeName = r['store_name']
+                res.result.storeAddress = r['store_address']
+                res.result.storeLat = r['store_lat']
+                res.result.storeLon = r['store_lon']
+                res.message = "yes"
+
                 responses.append(res)
 
             for r in responses:
@@ -90,15 +91,10 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
                 yield r
         else:
             # no result
-            res = scrape_pb2.ScrapeManyTimesResponse()
             log.info("Scraping results is None.")
-            res.storeLat = 0.0
-            res.storeLon = 0.0
-            res.product.name = "none"
-            res.product.url = "none"
-            res.product.price = "none"
-            res.product.region_list.extend(["none"])
-            log.info(f"send response to go client.")
+            res = scrape_pb2.ScrapeManyTimesResponse()
+            res.result.productName = "none"
+            res.message = "some message"
             yield res
 
 def serve():

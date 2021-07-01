@@ -9,8 +9,7 @@ from scrape_server import util
 from scrape_server.store import AbsStore
 
 BASE_URL = "https://www.sej.co.jp"
-get_soup = util.get_soup_wrapper(BASE_URL)
-
+get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
 
 class Product:
     """
@@ -19,11 +18,12 @@ class Product:
 
     def __init__(self, item: bs4.element.Tag):
         self.item = item
-        self.title = self.get_title()
+        self.name = self.get_name()
         self.url = self.get_url()
         self.price = self.get_price()
         self.region_list = self.get_region()
         self.img_url = self.get_img_url()
+        self.store_table_name = "store_seveneleven"
 
     def __repr__(self):
         return str(self.item)
@@ -47,14 +47,15 @@ class Product:
             }
         """
         return {
-            "name": self.title,
-            "url": self.url,
-            "price": self.price,
-            "region_list": self.region_list,
-            "img_url": self.img_url
+            "product_name": self.name,
+            "product_url": self.url,
+            "product_price": self.price,
+            "product_region_list": self.region_list,
+            "product_img_url": self.img_url,
+            "store_table_name": self.store_table_name
         }
 
-    def get_title(self) -> (str):
+    def get_name(self) -> (str):
         title_tag = self.item.find('div', attrs={"class", "item_ttl"})
         return title_tag.string
 
@@ -263,6 +264,7 @@ class SevenEleven(AbsStore):
                 img_url: 商品画像のurl
             }
         """
+        get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         results = []
         products_listed_page_urls = self.get_products_listed_page_urls()
         for products_listed_url in products_listed_page_urls:
@@ -271,17 +273,16 @@ class SevenEleven(AbsStore):
             products = Products(products_soup)
             for product in products.get_contents():
                 dic = product.to_dict()
+                print(util.dict_to_json(dic))
                 # prevent to insert same product.
-                if dic['name'] not in [i['name'] for i in results]:
-                    results.append(product.to_dict())
-            # return results
+                if dic['product_name'] not in [i['product_name'] for i in results]:
+                    results.append(dic)
         return results
 
 
 if __name__ == '__main__':
-    util.solve_certificate_problem()
-    # seven = SevenEleven()
-    # results = seven.get_all_product()
-    # print(results)
-    # print(len(results))
+    # util.solve_certificate_problem()
+    seven = SevenEleven()
+    results = seven.get_all_product()
+    util.write_json_file("./product_seveneleven.json", results)
 

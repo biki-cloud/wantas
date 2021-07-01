@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\030./scrape_client/scrapepb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0cscrape.proto\x12\x05hello\"Y\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\t\x12\x0f\n\x07img_url\x18\x04 \x01(\t\x12\x13\n\x0bregion_list\x18\x05 \x03(\t\"O\n\x16ScrapeManyTimesRequest\x12\x13\n\x0bproductName\x18\x01 \x01(\t\x12\x0f\n\x07userLat\x18\x02 \x01(\x02\x12\x0f\n\x07userLon\x18\x03 \x01(\x02\"q\n\x17ScrapeManyTimesResponse\x12\x1f\n\x07product\x18\x01 \x01(\x0b\x32\x0e.hello.Product\x12\x11\n\tstoreName\x18\x02 \x01(\t\x12\x10\n\x08storeLat\x18\x03 \x01(\x02\x12\x10\n\x08storeLon\x18\x04 \x01(\x02\x32g\n\x0fScrapingService\x12T\n\x0fScrapeManyTimes\x12\x1d.hello.ScrapeManyTimesRequest\x1a\x1e.hello.ScrapeManyTimesResponse\"\x00\x30\x01\x42\x1aZ\x18./scrape_client/scrapepbb\x06proto3'
+  serialized_pb=b'\n\x0cscrape.proto\x12\x05hello\"W\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\t\x12\x0e\n\x06imgUrl\x18\x04 \x01(\t\x12\x12\n\nregionList\x18\x05 \x03(\t\"\xc6\x01\n\x06Result\x12\x13\n\x0bproductName\x18\x01 \x01(\t\x12\x12\n\nproductUrl\x18\x02 \x01(\t\x12\x14\n\x0cproductPrice\x18\x03 \x01(\t\x12\x15\n\rproductImgUrl\x18\x04 \x01(\t\x12\x19\n\x11productRegionList\x18\x05 \x03(\t\x12\x11\n\tstoreName\x18\x06 \x01(\t\x12\x14\n\x0cstoreAddress\x18\x07 \x01(\t\x12\x10\n\x08storeLat\x18\x08 \x01(\x02\x12\x10\n\x08storeLon\x18\t \x01(\x02\"=\n\tStoreInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08storeLat\x18\x02 \x01(\x02\x12\x10\n\x08storeLon\x18\x03 \x01(\x02\"O\n\x16ScrapeManyTimesRequest\x12\x13\n\x0bproductName\x18\x01 \x01(\t\x12\x0f\n\x07userLat\x18\x02 \x01(\x02\x12\x0f\n\x07userLon\x18\x03 \x01(\x02\"I\n\x17ScrapeManyTimesResponse\x12\x1d\n\x06result\x18\x01 \x01(\x0b\x32\r.hello.Result\x12\x0f\n\x07message\x18\x02 \x01(\t2g\n\x0fScrapingService\x12T\n\x0fScrapeManyTimes\x12\x1d.hello.ScrapeManyTimesRequest\x1a\x1e.hello.ScrapeManyTimesResponse\"\x00\x30\x01\x42\x1aZ\x18./scrape_client/scrapepbb\x06proto3'
 )
 
 
@@ -55,14 +55,14 @@ _PRODUCT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='img_url', full_name='hello.Product.img_url', index=3,
+      name='imgUrl', full_name='hello.Product.imgUrl', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='region_list', full_name='hello.Product.region_list', index=4,
+      name='regionList', full_name='hello.Product.regionList', index=4,
       number=5, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -81,7 +81,141 @@ _PRODUCT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=23,
-  serialized_end=112,
+  serialized_end=110,
+)
+
+
+_RESULT = _descriptor.Descriptor(
+  name='Result',
+  full_name='hello.Result',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='productName', full_name='hello.Result.productName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='productUrl', full_name='hello.Result.productUrl', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='productPrice', full_name='hello.Result.productPrice', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='productImgUrl', full_name='hello.Result.productImgUrl', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='productRegionList', full_name='hello.Result.productRegionList', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeName', full_name='hello.Result.storeName', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeAddress', full_name='hello.Result.storeAddress', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLat', full_name='hello.Result.storeLat', index=7,
+      number=8, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLon', full_name='hello.Result.storeLon', index=8,
+      number=9, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=113,
+  serialized_end=311,
+)
+
+
+_STOREINFO = _descriptor.Descriptor(
+  name='StoreInfo',
+  full_name='hello.StoreInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='hello.StoreInfo.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLat', full_name='hello.StoreInfo.storeLat', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storeLon', full_name='hello.StoreInfo.storeLon', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=313,
+  serialized_end=374,
 )
 
 
@@ -126,8 +260,8 @@ _SCRAPEMANYTIMESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=193,
+  serialized_start=376,
+  serialized_end=455,
 )
 
 
@@ -140,30 +274,16 @@ _SCRAPEMANYTIMESRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='hello.ScrapeManyTimesResponse.product', index=0,
+      name='result', full_name='hello.ScrapeManyTimesResponse.result', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='storeName', full_name='hello.ScrapeManyTimesResponse.storeName', index=1,
+      name='message', full_name='hello.ScrapeManyTimesResponse.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='storeLat', full_name='hello.ScrapeManyTimesResponse.storeLat', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='storeLon', full_name='hello.ScrapeManyTimesResponse.storeLon', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -179,12 +299,14 @@ _SCRAPEMANYTIMESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=195,
-  serialized_end=308,
+  serialized_start=457,
+  serialized_end=530,
 )
 
-_SCRAPEMANYTIMESRESPONSE.fields_by_name['product'].message_type = _PRODUCT
+_SCRAPEMANYTIMESRESPONSE.fields_by_name['result'].message_type = _RESULT
 DESCRIPTOR.message_types_by_name['Product'] = _PRODUCT
+DESCRIPTOR.message_types_by_name['Result'] = _RESULT
+DESCRIPTOR.message_types_by_name['StoreInfo'] = _STOREINFO
 DESCRIPTOR.message_types_by_name['ScrapeManyTimesRequest'] = _SCRAPEMANYTIMESREQUEST
 DESCRIPTOR.message_types_by_name['ScrapeManyTimesResponse'] = _SCRAPEMANYTIMESRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -195,6 +317,20 @@ Product = _reflection.GeneratedProtocolMessageType('Product', (_message.Message,
   # @@protoc_insertion_point(class_scope:hello.Product)
   })
 _sym_db.RegisterMessage(Product)
+
+Result = _reflection.GeneratedProtocolMessageType('Result', (_message.Message,), {
+  'DESCRIPTOR' : _RESULT,
+  '__module__' : 'scrape_pb2'
+  # @@protoc_insertion_point(class_scope:hello.Result)
+  })
+_sym_db.RegisterMessage(Result)
+
+StoreInfo = _reflection.GeneratedProtocolMessageType('StoreInfo', (_message.Message,), {
+  'DESCRIPTOR' : _STOREINFO,
+  '__module__' : 'scrape_pb2'
+  # @@protoc_insertion_point(class_scope:hello.StoreInfo)
+  })
+_sym_db.RegisterMessage(StoreInfo)
 
 ScrapeManyTimesRequest = _reflection.GeneratedProtocolMessageType('ScrapeManyTimesRequest', (_message.Message,), {
   'DESCRIPTOR' : _SCRAPEMANYTIMESREQUEST,
@@ -220,8 +356,8 @@ _SCRAPINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=310,
-  serialized_end=413,
+  serialized_start=532,
+  serialized_end=635,
   methods=[
   _descriptor.MethodDescriptor(
     name='ScrapeManyTimes',

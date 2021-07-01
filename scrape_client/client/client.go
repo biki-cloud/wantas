@@ -3,7 +3,6 @@ package client
 import (
 	"context"
 	"errors"
-	"fmt"
 	"go-react/product"
 	"go-react/scrape_client/scrapepb"
 	"io"
@@ -16,12 +15,10 @@ import (
 )
 
 type UserInfo struct {
-	ProductName string `json:"productname"`
-	UserLat float64 `json:"userlat"`
-	UserLon float64 `json:"userlon"`
+	ProductName string  `json:"productname"`
+	UserLat     float64 `json:"userlat"`
+	UserLon     float64 `json:"userlon"`
 }
-// userlatやlonやfloatの方が使いやすいかも
-// methodでvalidateしたほうがいいかも
 func getPerametaFromPostForm(c *gin.Context) (UserInfo, error){
 	var (
 		productName = c.PostForm("ProductName")
@@ -44,21 +41,15 @@ func getPerametaFromPostForm(c *gin.Context) (UserInfo, error){
 	return userInfo, nil
 }
 
-func GetMultipleProduct() []product.Product {
-	var li []product.Product
-	p1 := product.Product{
+func GetMultipleProduct() []product.ScrapeResult {
+	var li []product.ScrapeResult
+	p1 := product.ScrapeResult{
 		Dealer: "seveneleven",
-		Name: "big frank",
-		Url: "http://seveneleven",
-		Price: "134円(税込140円）",
 		StoreLat: 35.4232424,
 		StoreLon: 135.4545,
 	}
-	p2 := product.Product{
+	p2 := product.ScrapeResult{
 			Dealer: "family mart",
-			Name: "fami tiki",
-			Url: "http://familymart",
-			Price: "149円(税込150円）",
 			StoreLat: 32.484748,
 			StoreLon: 131.199999,
 		}
@@ -66,26 +57,26 @@ func GetMultipleProduct() []product.Product {
 	return li
 }
 
-func SearchProduct() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		// productName, userLat, userLon, err := getPerametaFromPostForm(c)
-		userInfo, err := getPerametaFromPostForm(c)
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Printf("productName: %s \nuserLat: %v \nuserLon: %v \n", userInfo.ProductName,userInfo.UserLat,userInfo.UserLon)
+// func SearchProduct() gin.HandlerFunc {
+// 	return func(c *gin.Context) {
+// 		// productName, userLat, userLon, err := getPerametaFromPostForm(c)
+// 		userInfo, err := getPerametaFromPostForm(c)
+// 		if err != nil {
+// 			log.Fatal(err)
+// 		}
+// 		fmt.Printf("productName: %s \nuserLat: %v \nuserLon: %v \n", userInfo.ProductName,userInfo.UserLat,userInfo.UserLon)
 
-		p, err := product.GetFullParametaProduct()
-		if err != nil {
-			log.Fatalf("err is %v \n", err)
-		}
-		fmt.Printf("responce from python: %v of client.go\n", p)
+// 		p, err := product.GetFullParametaProduct()
+// 		if err != nil {
+// 			log.Fatalf("err is %v \n", err)
+// 		}
+// 		fmt.Printf("responce from python: %v of client.go\n", p)
 
-		products := GetMultipleProduct()
+// 		products := GetMultipleProduct()
 
-		c.JSON(http.StatusOK, products)
-	}
-}
+// 		c.JSON(http.StatusOK, products)
+// 	}
+// }
 
 func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	log.Printf("invoked SearchProductUseGRPC \n")
@@ -99,17 +90,19 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 		log.Printf("call Scraping.")
 		var scrapedResults, err2 = Scraping(userInfo)
+		// var scrapedResults = GetMultipleProduct()
 		log.Printf("scrapeResults length: %v \n", len(scrapedResults))
 		log.Printf("scrapedResults: %v \n", scrapedResults)
 		if err2 != nil {
 			log.Fatalf("err is %v \n", err)
 		}
 
+		log.Printf("out format: %s \n", outFormat)
 		if outFormat == "json" {
-			log.Printf("out format: json")
+			log.Printf("send to html from 1.")
 			c.JSON(http.StatusOK, scrapedResults)
 		}else if outFormat == "html" {
-			log.Printf("out format: html")
+			log.Printf("send to html . from 2.")
 			c.HTML(http.StatusOK, "main.html", gin.H{
 				"results": scrapedResults,
 			})
@@ -121,7 +114,7 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 const grpcDialingUrl = "localhost:50051"
 
-func Scraping(userInfo UserInfo) ([]product.Product, error) {
+func Scraping(userInfo UserInfo) ([]product.ScrapeResult, error) {
 	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat,userInfo.UserLon)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
 	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())
@@ -134,9 +127,11 @@ func Scraping(userInfo UserInfo) ([]product.Product, error) {
 			log.Fatalf("could not close %v", cc)
 		}
 	}(cc)
+
 	// create client
 	c := scrapepb.NewScrapingServiceClient(cc)
 
+	// create request
 	req := &scrapepb.ScrapeManyTimesRequest{
 		ProductName:userInfo.ProductName,
 		UserLat: float32(userInfo.UserLat),
@@ -144,7 +139,7 @@ func Scraping(userInfo UserInfo) ([]product.Product, error) {
 	}
 	log.Printf("request for grpc server: %v", req)
 
-	var ScrapedResults []product.Product
+	var ScrapedResults []product.ScrapeResult
 
 	log.Printf("start request to python by using ScrapeManyTimes Service. \n")
 	// ScrapeManyTimesはサービスの中の機能の名前
@@ -165,23 +160,26 @@ func Scraping(userInfo UserInfo) ([]product.Product, error) {
 
 		log.Printf("received from ScrapeManyTimes service: %v \n", msg)
 
-		p := product.New()
-		if msg.Product.GetName() == "none" {
+		r := product.New()
+		if msg.Result.GetProductName() == "none" {
 			log.Printf("%v is not found from database\n", userInfo.ProductName)
-			p.Dealer = "none"
+			r.Dealer = "none"
 		} else {
-			p.Dealer = "seveneleven"
+			r.Dealer = "seveneleven"
 		}
-		p.Name = msg.Product.GetName()
-		p.Url = msg.Product.GetUrl()
-		p.Price = msg.Product.GetPrice()
-		p.RegionList = msg.Product.GetRegionList()
-		p.ImgUrl = msg.Product.GetImgUrl()
-		p.StoreName = msg.GetStoreName()
-		p.StoreLat = float64(msg.GetStoreLat())
-		p.StoreLon = float64(msg.GetStoreLon())
 
-		ScrapedResults = append(ScrapedResults, *p)
+		r.ProductName = msg.Result.GetProductName()
+		r.ProductUrl = msg.Result.GetProductUrl()
+		r.ProductPrice = msg.Result.GetProductPrice()
+		r.ProductRegionList = msg.Result.GetProductRegionList()
+		r.ProductImgUrl = msg.Result.GetProductImgUrl()
+		r.StoreName = msg.Result.GetStoreName()
+		r.StoreAddress = msg.Result.GetStoreAddress()
+		r.StoreLat = float64(msg.Result.GetStoreLat())
+		r.StoreLon = float64(msg.Result.GetStoreLon())
+
+
+		ScrapedResults = append(ScrapedResults, *r)
 	}
 	return ScrapedResults, nil
 }

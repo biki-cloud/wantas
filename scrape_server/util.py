@@ -27,6 +27,7 @@ def solve_certificate_problem():
     time.sleep(1)
 
 def join_slash(*args):
+    return_url = ""
     joined = ""
     if "https://" not in args[0]:
         joined = "/"
@@ -35,9 +36,14 @@ def join_slash(*args):
     if "https://" in joined or "http://" in joined:
         pre = joined[0:9]
         after = joined[9:].replace("//", "/")
-        return pre + after
+        return_url = pre + after
+        # return pre + after
     else:
-        return joined.replace("//", "/")
+        return_url = joined.replace("//", "/")
+        # return joined.replace("//", "/")
+    if return_url[-1] == "/":
+        return return_url[:-1]
+    return return_url
 
 def get_html(url):
     page = urlopen(url)
