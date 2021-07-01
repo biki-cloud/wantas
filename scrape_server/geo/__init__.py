@@ -23,21 +23,21 @@ class StoreInfo:
     店名と住所、位置情報を格納するクラス
     """
     def __init__(self, name: str, address: str, lat=None, lon=None):
-        self.name = name
-        self.address = address
+        self.store_name = name
+        self.store_address = address
         log.debug(f"lat: {lat}")
         log.debug(f"lon: {lon}")
         if lat != None and lon != None:
-            self.lat = float(lat)
-            self.lon = float(lon)
+            self.store_lat = float(lat)
+            self.store_lon = float(lon)
         else:
             self.set_lat_lon()
 
     def set_lat_lon(self):
         try:
-            self.lat, self.lon = geo.get_lat_lon2(self.address)
+            self.store_lat, self.store_lon = geo.get_lat_lon2(self.store_address)
         except ValueError:
-            self.lat, self.lon = 0,0
+            self.store_lat, self.store_lon = 0,0
 
 
 def is_lat(lat) -> (bool):
@@ -77,24 +77,28 @@ def get_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> (float):
 
 
     
-def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
+def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name: str) -> (StoreInfo):
     """近くのセブンを調べて店舗の情報、位置を入れたStoreInfoクラスのインスタンスを返す。
 
     Args:
         user_lat (float, user_lon): ユーザーの位置情報
+        store_type: 店のタイプ, familymart, sevenelevenのみ今は。
 
     Returns:
         StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
-    store_table = db2["store_info"]
+
+    store_table = db2[store_table_name]
     results = db.suited_store_table(store_table)
+    # log.info(f"store table: {store_table_name}")
+    # log.info(results)
 
     distances = []
     for store in results:
         dic = {}
-        store_lat = float(store['lat'])
-        store_lon = float(store['lon'])
+        store_lat = float(store['store_lat'])
+        store_lon = float(store['store_lon'])
         dic['store_lat'] = store_lat
         dic['store_lon'] = store_lon
         dic['distance'] = get_distance(user_lat, user_lon, store_lat, store_lon)
@@ -108,17 +112,15 @@ def get_most_near_store_info(user_lat: float, user_lon: float) -> (StoreInfo):
             min_dis = dis_dict['distance']
             min_idx = idx
     match_ele = results[min_idx]
-    log.debug(match_ele)
-    return StoreInfo(match_ele['name'], match_ele['address'], match_ele['lat'], match_ele['lon'])
+    return StoreInfo(match_ele['store_name'], match_ele['store_address'], match_ele['store_lat'], match_ele['store_lon'])
 
-def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
+def is_contains(product_store_dic: dict) -> (bool):
     """
     店舗の場所はarea_listの中に入っているか
-    area_list -> (例)全国、九州
+    area_list -> (例)[全国、九州]
     """
     log.debug("Invoked is_contains")
-    log.debug(f"area_list: {area_list}")
-    log.debug(f"store_info: {store_info}")
+    log.debug(f"area_list: {product_store_dic['product_region_list']}")
     area_table = {
         "北海道": ["北海道"],
         "東北": ["青森", "岩手", "宮城", "秋田", "山形", "福島"],
@@ -134,113 +136,123 @@ def is_contains(area_list: str, store_info: StoreInfo) -> (bool):
         "九州": ["福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"],
         "首都圏": ["埼玉", "千葉", "神奈川", "東京"]
     }
+    store_address = product_store_dic['store_address']
+    product_region_list = product_store_dic['product_region_list']
+    log.debug(f"store_address: {store_address}")
+    log.debug(f"product_region_list: {product_region_list}")
 
-    for area in area_list:
+    for area in product_region_list:
         # areaが県の場合
-        if area in store_info.address:
+        if area in store_address:
             return True
         # areaが東北などの地域の場合
         for k, v in area_table.items():
             if area == k:
                 for pre in v:
-                    if pre in store_info.address:
+                    if pre in store_address:
                         return True
         if area == "全国":
             return True
     return False
 
-def absolutely_get_lat_lon(address: str) -> (float, float):
-    """
-    いろんな位置情報の取得方法を使用し、位置情報をとってくる。
-    """
-    log.debug("sleeping 10....")
-    time.sleep(10)
-    log.debug(f"find address: {address}.....")
-
-    lat, lon = coordinate(address)
-    if lat and lon:
-        return lat, lon
-
-    lat, lon = get_lat_lon(address)
-    if lat and lon:
-        return lat, lon
-
-    lat, lon = get_lat_lon2(address)
-    if lat and lon:
-        return lat, lon
-
-    lat, lon = get_lat_lon3(address)
-    if lat and lon:
-        return lat, lon
-
-    return 0.0, 0.0
-
 def get_geo_soup(address: str, url: str):
+    time.sleep(1)
     payload = {'q': address}
     html = requests.get(url, params=payload)
     return BeautifulSoup(html.content, "html.parser")
 
-def coordinate(address: str):
-    """
-    addressに住所を指定すると緯度経度を返す。
-
-    >>> coordinate('東京都文京区本郷7-3-1')
-    ['35.712056', '139.762775']
-    """
-    url = 'http://www.geocoding.jp/api/'
-    log.debug("invoked coordinate.")
-    soup = get_geo_soup(address, url)
-    if soup.find('error'):
-        raise ValueError(f"Invalid address submitted. {address}")
-    lat_tg = soup.find('lat')
-    lon_tg = soup.find('lon')
-
-    if lat_tg == None or lon_tg == None:
-        log.debug("failed")
-        return 0.0, 0.0
-    latitude = lat_tg.string
-    longitude = lon_tg.string
-
-    return [latitude, longitude]
-
-def get_lat_lon(address: str) -> (float, float):
-    log.debug("get_lat_lon")
-    res = geocoder.osm(address, timeout=5.0)
-    if res.latlng == None:
-        log.debug("failed")
-        return 0.0, 0.0
-    lat, lon = res.latlng
-    log.debug(f"lat: {lat}, lon: {lon}")
-    return lat, lon
-
 def get_lat_lon2(address: str) -> (float, float):
     log.debug("get_lat_lon2")
-    log.debug("sleep 10....")
-    time.sleep(10)
     url = 'http://www.geocoding.jp/'
-    soup = get_geo_soup(address, url)
-    tags = soup.findAll('span', attrs={"class", "nowrap"})
-    for t in tags:
-        if "緯度" in str(t) or "経度" in str(t):
-            b_tag = t.findAll('b')
-            lat = b_tag[0].next_element
-            lon = b_tag[1].next_element
-            return lat, lon
+    while True:
+        soup = get_geo_soup(address, url)
+        if "該当する住所が見つかりませんでした。" in str(soup):
+            return 0.0, 0.0
+        tags = soup.findAll('span', attrs={"class", "nowrap"})
+        for t in tags:
+            if "緯度" in str(t) or "経度" in str(t):
+                b_tag = t.findAll('b')
+                lat = b_tag[0].next_element
+                lon = b_tag[1].next_element
+                return lat, lon
+        print(f"it seems too many request.{time.asctime()} sleep 2")
+        time.sleep(2)
     log.debug("failed")
-    return 0.0, 0.0
 
-def get_lat_lon3(address: str) -> (float, float):
-    log.debug("get_lat_lon3")
-    locater = Nominatim(user_agent="test")
-    location = locater.geocode(address)
-    if location == None:
-        log.debug("failed")
-        return 0.0, 0.0
-    log.debug(location)
-    lat = location.latitude
-    lon = location.longitude
-    log.debug(f"lat: {lat}, lon: {lon}")
-    return lat, lon
+# 住所から位置情報を取得するための色々な方法、今は使わない
+
+# def absolutely_get_lat_lon(address: str) -> (float, float):
+#     """
+#     いろんな位置情報の取得方法を使用し、位置情報をとってくる。
+#     """
+#     log.debug("sleeping 10....")
+#     # time.sleep(10)
+#     log.debug(f"find address: {address}.....")
+
+#     lat, lon = coordinate(address)
+#     if lat and lon:
+#         return lat, lon
+
+#     lat, lon = get_lat_lon(address)
+#     if lat and lon:
+#         return lat, lon
+
+#     lat, lon = get_lat_lon2(address)
+#     if lat and lon:
+#         return lat, lon
+
+#     lat, lon = get_lat_lon3(address)
+#     if lat and lon:
+#         return lat, lon
+
+#     return 0.0, 0.0
+
+# def coordinate(address: str):
+#     """
+#     addressに住所を指定すると緯度経度を返す。
+
+#     >>> coordinate('東京都文京区本郷7-3-1')
+#     ['35.712056', '139.762775']
+#     """
+#     url = 'http://www.geocoding.jp/api/'
+#     log.debug("invoked coordinate.")
+#     soup = get_geo_soup(address, url)
+#     if soup.find('error'):
+#         raise ValueError(f"Invalid address submitted. {address}")
+#     lat_tg = soup.find('lat')
+#     lon_tg = soup.find('lon')
+
+#     if lat_tg == None or lon_tg == None:
+#         log.debug("failed")
+#         return 0.0, 0.0
+#     latitude = lat_tg.string
+#     longitude = lon_tg.string
+
+#     return [latitude, longitude]
+
+# def get_lat_lon(address: str) -> (float, float):
+#     log.debug("get_lat_lon")
+#     res = geocoder.osm(address, timeout=5.0)
+#     if res.latlng == None:
+#         log.debug("failed")
+#         return 0.0, 0.0
+#     lat, lon = res.latlng
+#     log.debug(f"lat: {lat}, lon: {lon}")
+#     return lat, lon
+
+
+# def get_lat_lon3(address: str) -> (float, float):
+#     log.debug("get_lat_lon3")
+#     locater = Nominatim(user_agent="test")
+#     location = locater.geocode(address)
+#     if location == None:
+#         log.debug("failed")
+#         return 0.0, 0.0
+#     log.debug(location)
+#     lat = location.latitude
+#     lon = location.longitude
+#     log.debug(f"lat: {lat}, lon: {lon}")
+#     return lat, lon
 
 if __name__ == '__main__':
     pass

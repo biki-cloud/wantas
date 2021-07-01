@@ -38,8 +38,13 @@ func main() {
 
 	router.POST("/post_test", test.PostTest())
 
+	router.LoadHTMLFiles("templates/main.html")
+	router.Static("/static", "./static")
+	router.GET("/html", test.HtmlTest())
+	router.POST("/html", client.SearchProductUseGRPC("json"))
+
 	log.Printf("call /search call SearchProductUseGRPC\n")
-	router.POST("/search", client.SearchProductUseGRPC())
+	router.POST("/search", client.SearchProductUseGRPC("json"))
 	// router.POST("/search", client.SearchProduct())
 
 	// server run

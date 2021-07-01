@@ -3,6 +3,7 @@ import random
 import subprocess
 import time
 from urllib.request import urlopen
+import urllib.robotparser
 
 from bs4 import BeautifulSoup
 
@@ -26,6 +27,7 @@ def solve_certificate_problem():
     time.sleep(1)
 
 def join_slash(*args):
+    return_url = ""
     joined = ""
     if "https://" not in args[0]:
         joined = "/"
@@ -34,9 +36,14 @@ def join_slash(*args):
     if "https://" in joined or "http://" in joined:
         pre = joined[0:9]
         after = joined[9:].replace("//", "/")
-        return pre + after
+        return_url = pre + after
+        # return pre + after
     else:
-        return joined.replace("//", "/")
+        return_url = joined.replace("//", "/")
+        # return joined.replace("//", "/")
+    if return_url[-1] == "/":
+        return return_url[:-1]
+    return return_url
 
 def get_html(url):
     page = urlopen(url)
@@ -47,9 +54,40 @@ def get_html(url):
 def html_to_soup(html: str):
     return BeautifulSoup(html, "html.parser")
 
-def get_soup(url: str):
-    html = get_html(url)
-    return html_to_soup(html)
+
+class UrlCannotFetchError(Exception):
+    pass
+
+def get_soup_wrapper(base_url: str):
+    """スクレイピングするためにrobots.txtを確認する。
+    urlのページ全体をBeautifulSoupに入れ返す関数を返す。
+    スクレイピングする時は必ずこの関数を用いる。`
+
+    Args:
+        base_url (str): 直下にrobots.txtがあるサイトのベースURL
+
+    Returns:
+        get_soup (function): urlページ全体をBeautifulSoupインスタンスにして返す関数を返す。
+    """
+    rp = urllib.robotparser.RobotFileParser()
+    robots_url = join_slash(base_url, "robots.txt")
+    rp.set_url(robots_url)
+    rp.read()
+    delay = rp.crawl_delay("*")
+    interval = 0
+    if delay == None:
+        interval = 1
+    else:
+        interval = delay
+
+    def get_soup(url: str):
+        if rp.can_fetch("*", url) == False:
+            raise UrlCannotFetchError(f"This url: {url} can't fetch.")
+        time.sleep(interval)
+        html = get_html(url)
+        return html_to_soup(html)
+
+    return get_soup
 
 if __name__ == '__main__':
-    pass
+    solve_certificate_problem()
