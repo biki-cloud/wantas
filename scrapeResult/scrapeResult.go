@@ -1,4 +1,4 @@
-package product
+package scrapeResult
 
 import (
 	"encoding/json"
@@ -7,24 +7,23 @@ import (
 	"strings"
 )
 
-type ScrapeResult struct {
-	Dealer     string `json:"dealer" form:"dealer"`
+type ResultStruct struct {
 	ProductName       string `json:"productName" form:"productName"`
 	ProductUrl        string `json:"url" form:"url"`
 	ProductPrice      string `json:"price" form:"price"`
 	ProductRegionList []string
 	ProductImgUrl     string `json:"imgUrl"`
 	StoreName  string `json:"storename" form:"storename"`
-	StoreAddress string `json: "storeaddress"`
+	StoreAddress string `json:"storeaddress"`
 	StoreLat   float64 `json:"lat" form:"lon"`
 	StoreLon   float64 `json:"lon" form:"lon"`
 }
 
-func New() *ScrapeResult {
-	return &ScrapeResult{}
+func New() *ResultStruct {
+	return &ResultStruct{}
 }
 
-func (p *ScrapeResult) ToJson() ([]byte, error) {
+func (p *ResultStruct) ToJson() ([]byte, error) {
 	b, err := json.Marshal(p)
 	if err != nil {
 		log.Fatalf("err is : %v \n", err)
@@ -43,7 +42,7 @@ func IsInSlice(str string, data []string) bool {
 	return false
 }
 
-func (p *ScrapeResult) ToMapSpecificFields(AllFieldsOutFlag bool, specificFields ...string) map[string]interface{} {
+func (p *ResultStruct) ToMapSpecificFields(AllFieldsOutFlag bool, specificFields ...string) map[string]interface{} {
 	if !AllFieldsOutFlag && len(specificFields) == 0 {
 		specificFields = []string{"dealer", "name", "url", "price"}
 	}
@@ -69,23 +68,16 @@ func (p *ScrapeResult) ToMapSpecificFields(AllFieldsOutFlag bool, specificFields
 	return result
 }
 
-// func ComfirmSetAllValue(p *ScrapeResult) bool {
-// 	return p.Dealer == "" || p.Name == "" || p.Url == "" || p.Price == "" || len(p.RegionList) == 0 || p.StoreLat > -180 || p.StoreLat < 180 || p.StoreLon > -45 || p.StoreLon < 45
-// }
-
-// func GetFullParametaProduct() (ScrapeResult, error) {
-// 	p := ScrapeResult{
-// 		Dealer:     "seveneleven",
-// 		Name:       "ファミチキ",
-// 		Url:        "http://seveneleve.com/product",
-// 		Price:      "130円(税込140円)",
-// 		RegionList: []string{"九州", "四国"},
-// 		StoreLat:   134.2384723,
-// 		StoreLon:   12.31330832,
-// 	}
-// 	if ComfirmSetAllValue(&p) {
-// 		return p, nil
-// 	} else {
-// 		return p, errors.New("This parameta is not full.")
-// 	}
-// }
+func GetFullPerametaResultStruct() ResultStruct{
+	r := New()
+	r.ProductName = "famitiki"
+	r.ProductPrice = "140"
+	r.ProductImgUrl = "something.html"
+	r.ProductRegionList = []string{"aaa", "bbb"}
+	r.ProductUrl = "something_url.html"
+	r.StoreName = "familymart"
+	r.StoreAddress = "fjaojfoijajfojaijfi"
+	r.StoreLat = 35.333
+	r.StoreLon = 140.233
+	return *r
+}
