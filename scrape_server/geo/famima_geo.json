@@ -48178,5 +48178,455 @@
         "store_address": "兵庫県宍粟市山崎町今宿９８−９",
         "store_lat": "35.00896",
         "store_lon": "134.547873"
+    },
+    {
+        "store_name": "ファミリーマート西鹿沢店",
+        "store_address": "兵庫県宍粟市山崎町鹿沢１３６番地３",
+        "store_lat": "35.004615",
+        "store_lon": "134.536343"
+    },
+    {
+        "store_name": "ファミリーマートマツモト湯村店",
+        "store_address": "兵庫県美方郡新温泉町井土８４０−１",
+        "store_lat": "35.568774",
+        "store_lon": "134.486377"
+    },
+    {
+        "store_name": "ファミリーマート洲本海岸通店",
+        "store_address": "兵庫県洲本市栄町１丁目１番２２号",
+        "store_lat": "34.344713",
+        "store_lon": "134.897186"
+    },
+    {
+        "store_name": "ファミリーマート洲本上物部店",
+        "store_address": "兵庫県洲本市上物部２−２−７４",
+        "store_lat": "34.332968",
+        "store_lon": "134.889049"
+    },
+    {
+        "store_name": "ファミリーマートサントピアマリーナ店",
+        "store_address": "兵庫県洲本市小路谷字古茂江１２８１−１",
+        "store_lat": "34.329816",
+        "store_lon": "134.912319"
+    },
+    {
+        "store_name": "ファミリーマート洲本宇原店",
+        "store_address": "兵庫県洲本市宇原字石成５８１−１",
+        "store_lat": "34.333445",
+        "store_lon": "134.868896"
+    },
+    {
+        "store_name": "ファミリーマート洲本バイパス店",
+        "store_address": "兵庫県洲本市大野１８６５番地",
+        "store_lat": "34.33438",
+        "store_lon": "134.853364"
+    },
+    {
+        "store_name": "ファミリーマート洲本鮎原店",
+        "store_address": "兵庫県洲本市五色町鮎原西１４４番地１",
+        "store_lat": "34.397371",
+        "store_lon": "134.8096"
+    },
+    {
+        "store_name": "ファミリーマート都志店",
+        "store_address": "兵庫県洲本市五色町都志２４７番地",
+        "store_lat": "34.41436",
+        "store_lon": "134.785616"
+    },
+    {
+        "store_name": "ファミリーマートいかるが店",
+        "store_address": "兵庫県揖保郡太子町鵤１３２３番地３",
+        "store_lat": "34.834734",
+        "store_lon": "134.579188"
+    },
+    {
+        "store_name": "ファミリーマート荒井町千鳥店",
+        "store_address": "兵庫県高砂市荒井町千鳥三丁目３番１１号",
+        "store_lat": "34.76573",
+        "store_lon": "134.792679"
+    },
+    {
+        "store_name": "ファミリーマート高砂伊保店",
+        "store_address": "兵庫県高砂市伊保四丁目３８２",
+        "store_lat": "34.776796",
+        "store_lon": "134.792237"
+    },
+    {
+        "store_name": "ファミリーマート高砂松陽一丁目店",
+        "store_address": "兵庫県高砂市松陽一丁目１４４",
+        "store_lat": "34.777456",
+        "store_lon": "134.781761"
+    },
+    {
+        "store_name": "ファミリーマート高砂朝日町店",
+        "store_address": "兵庫県高砂市高砂町朝日町２−３−１６",
+        "store_lat": "34.75294",
+        "store_lon": "134.803809"
+    },
+    {
+        "store_name": "ファミリーマート高砂米田店",
+        "store_address": "兵庫県高砂市米田町米田９５０番１",
+        "store_lat": "34.776748",
+        "store_lon": "134.812946"
+    },
+    {
+        "store_name": "ファミリーマート高砂魚橋店",
+        "store_address": "兵庫県高砂市阿弥陀町魚橋１０４３−４",
+        "store_lat": "34.791643",
+        "store_lon": "134.793612"
+    },
+    {
+        "store_name": "ファミリーマート米田町店",
+        "store_address": "兵庫県高砂市米田町米田１０１４番",
+        "store_lat": "34.779572",
+        "store_lon": "134.818323"
+    },
+    {
+        "store_name": "ファミリーマート中町森本店",
+        "store_address": "兵庫県多可郡多可町中区森本２１５番地１",
+        "store_lat": "35.043102",
+        "store_lon": "134.928103"
+    },
+    {
+        "store_name": "ファミリーマート宝塚市立病院店",
+        "store_address": "兵庫県宝塚市小浜四丁目５番１号",
+        "store_lat": "34.805099",
+        "store_lon": "135.366864"
+    },
+    {
+        "store_name": "ファミリーマート小林四丁目店",
+        "store_address": "兵庫県宝塚市小林４−１２−２",
+        "store_lat": "34.792617",
+        "store_lon": "135.355737"
+    },
+    {
+        "store_name": "ファミリーマート宝塚警察署前店",
+        "store_address": "兵庫県宝塚市旭町２−１０−１８",
+        "store_lat": "34.808535",
+        "store_lon": "135.355868"
+    },
+    {
+        "store_name": "ファミリーマート宝塚御所の前店",
+        "store_address": "兵庫県宝塚市御所の前町１４−２５",
+        "store_lat": "34.791147",
+        "store_lon": "135.36794"
+    },
+    {
+        "store_name": "ファミリーマート宝塚ほしのそう店",
+        "store_address": "兵庫県宝塚市米谷１丁目４０番２１号",
+        "store_lat": "34.811685",
+        "store_lon": "135.364805"
+    },
+    {
+        "store_name": "ファミリーマート宝塚高司店",
+        "store_address": "兵庫県宝塚市高司二丁目１７番４０号",
+        "store_lat": "34.787414",
+        "store_lon": "135.36299"
+    },
+    {
+        "store_name": "ファミリーマート宝塚安倉中店",
+        "store_address": "兵庫県宝塚市安倉中５丁目２番２２号",
+        "store_lat": "34.805118",
+        "store_lon": "135.377235"
+    },
+    {
+        "store_name": "ファミリーマート宝塚美幸町店",
+        "store_address": "兵庫県宝塚市美幸町１０−４５",
+        "store_lat": "34.784442",
+        "store_lon": "135.369572"
+    },
+    {
+        "store_name": "ファミリーマート阪急中山駅前店",
+        "store_address": "兵庫県宝塚市中山寺一丁目１３番２１",
+        "store_lat": "34.819394",
+        "store_lon": "135.369506"
+    },
+    {
+        "store_name": "ファミリーマート逆瀬台一丁目店",
+        "store_address": "兵庫県宝塚市逆瀬台一丁目１番１１号",
+        "store_lat": "34.788957",
+        "store_lon": "135.334016"
+    },
+    {
+        "store_name": "ファミリーマート宝塚栄町店",
+        "store_address": "兵庫県宝塚市栄町三丁目８番３号",
+        "store_lat": "34.813993",
+        "store_lon": "135.336494"
+    },
+    {
+        "store_name": "ファミリーマート仁川駅前店",
+        "store_address": "兵庫県宝塚市仁川北三丁目７番６号",
+        "store_lat": "34.775558",
+        "store_lon": "135.358674"
+    },
+    {
+        "store_name": "ファミリーマート宝塚山本丸橋店",
+        "store_address": "兵庫県宝塚市山本丸橋３丁目１６−１",
+        "store_lat": "34.810779",
+        "store_lon": "135.392001"
+    },
+    {
+        "store_name": "ファミリーマート宝塚山本駅前店",
+        "store_address": "兵庫県宝塚市平井１−１１−２",
+        "store_lat": "34.823519",
+        "store_lon": "135.386782"
+    },
+    {
+        "store_name": "ファミリーマート宝塚山本野里店",
+        "store_address": "兵庫県宝塚市山本野里三丁目２７番４号",
+        "store_lat": "34.810364",
+        "store_lon": "135.397941"
+    },
+    {
+        "store_name": "ファミリーマート宝塚山手台店",
+        "store_address": "兵庫県宝塚市山手台西三丁目２−２４",
+        "store_lat": "34.833395",
+        "store_lon": "135.377949"
+    },
+    {
+        "store_name": "ファミリーマートたつの富永店",
+        "store_address": "兵庫県たつの市龍野町富永５２０",
+        "store_lat": "34.85303",
+        "store_lon": "134.54719"
+    },
+    {
+        "store_name": "ファミリーマートたつの門前西店",
+        "store_address": "兵庫県たつの市揖保町門前１１１",
+        "store_lat": "34.831635",
+        "store_lon": "134.548814"
+    },
+    {
+        "store_name": "ファミリーマートたつの松原口店",
+        "store_address": "兵庫県たつの市誉田町下沖字三條河原２８−３",
+        "store_lat": 0.0,
+        "store_lon": 0.0
+    },
+    {
+        "store_name": "ファミリーマートたつの山津屋店",
+        "store_address": "兵庫県たつの市揖保川町山津屋７０番１",
+        "store_lat": "34.822012",
+        "store_lon": "134.525359"
+    },
+    {
+        "store_name": "ファミリーマート揖保川原店",
+        "store_address": "兵庫県たつの市揖保川町原７８７−４",
+        "store_lat": "34.823945",
+        "store_lon": "134.511"
+    },
+    {
+        "store_name": "ファミリーマート新宮平野店",
+        "store_address": "兵庫県たつの市新宮町平野９９−１０８",
+        "store_lat": "34.921832",
+        "store_lon": "134.538536"
+    },
+    {
+        "store_name": "ファミリーマート篠山丹南店",
+        "store_address": "兵庫県丹波篠山市東吹３３０−３",
+        "store_lat": "35.063956",
+        "store_lon": "135.191239"
+    },
+    {
+        "store_name": "ファミリーマート氷上町常楽店",
+        "store_address": "兵庫県丹波市氷上町常楽１１１６番１",
+        "store_lat": "35.179686",
+        "store_lon": "135.029097"
+    },
+    {
+        "store_name": "ファミリーマート氷上町稲継店",
+        "store_address": "兵庫県丹波市氷上町稲継２２９番４",
+        "store_lat": "35.152783",
+        "store_lon": "135.045174"
+    },
+    {
+        "store_name": "ファミリーマート柏原南多田店",
+        "store_address": "兵庫県丹波市柏原町柏原２６７２−１",
+        "store_lat": "35.138047",
+        "store_lon": "135.065649"
+    },
+    {
+        "store_name": "ファミリーマート春日インター店",
+        "store_address": "兵庫県丹波市春日町七日市６１１−１",
+        "store_lat": "35.166952",
+        "store_lon": "135.115642"
+    },
+    {
+        "store_name": "ファミリーマート柏原下小倉店",
+        "store_address": "兵庫県丹波市柏原町下小倉字棚田２７５",
+        "store_lat": "35.121419",
+        "store_lon": "135.086534"
+    },
+    {
+        "store_name": "ファミリーマート丹波青垣店",
+        "store_address": "兵庫県丹波市青垣町沢野１１１−１",
+        "store_lat": "35.248862",
+        "store_lon": "135.00513"
+    },
+    {
+        "store_name": "ファミリーマート豊岡千代田町店",
+        "store_address": "兵庫県豊岡市千代田町１０番１８号",
+        "store_lat": "35.54477",
+        "store_lon": "134.815777"
+    },
+    {
+        "store_name": "ファミリーマート豊岡若松町店",
+        "store_address": "兵庫県豊岡市若松町６−３５",
+        "store_lat": "35.548367",
+        "store_lon": "134.815342"
+    },
+    {
+        "store_name": "ファミリーマート豊岡城南町店",
+        "store_address": "兵庫県豊岡市城南町４−３２",
+        "store_lat": "35.539868",
+        "store_lon": "134.824361"
+    },
+    {
+        "store_name": "ファミリーマート豊岡駅西口店",
+        "store_address": "兵庫県豊岡市高屋９８９番地の８",
+        "store_lat": "35.543925",
+        "store_lon": "134.810411"
+    },
+    {
+        "store_name": "ファミリーマート豊岡昭和町店",
+        "store_address": "兵庫県豊岡市昭和町６−２１",
+        "store_lat": "35.531397",
+        "store_lon": "134.819537"
+    },
+    {
+        "store_name": "ファミリーマート豊岡庄境店",
+        "store_address": "兵庫県豊岡市庄境１１０２番地の１",
+        "store_lat": "35.544353",
+        "store_lon": "134.840474"
+    },
+    {
+        "store_name": "ファミリーマート公立豊岡病院店",
+        "store_address": "兵庫県豊岡市戸牧１０９４番地",
+        "store_lat": "35.526753",
+        "store_lon": "134.806492"
+    },
+    {
+        "store_name": "ファミリーマート豊岡江本店",
+        "store_address": "兵庫県豊岡市八社宮４３３−１",
+        "store_lat": "35.525612",
+        "store_lon": "134.833617"
+    },
+    {
+        "store_name": "ファミリーマート城崎来日店",
+        "store_address": "兵庫県豊岡市城崎町来日２２１−１",
+        "store_lat": "35.605717",
+        "store_lon": "134.802186"
+    },
+    {
+        "store_name": "ファミリーマート出石長砂店",
+        "store_address": "兵庫県豊岡市出石町長砂４１５−１",
+        "store_lat": "35.474893",
+        "store_lon": "134.8602"
+    },
+    {
+        "store_name": "ファミリーマート日高町鶴岡店",
+        "store_address": "兵庫県豊岡市日高町鶴岡２７３番２",
+        "store_lat": "35.4734",
+        "store_lon": "134.783189"
+    },
+    {
+        "store_name": "ファミリーマート城崎湯島店",
+        "store_address": "兵庫県豊岡市城崎町湯島３７２番地２",
+        "store_lat": "35.625757",
+        "store_lon": "134.80968"
+    },
+    {
+        "store_name": "ファミリーマート城崎温泉店",
+        "store_address": "兵庫県豊岡市城崎町湯島２０６番地",
+        "store_lat": "35.626262",
+        "store_lon": "134.812687"
+    },
+    {
+        "store_name": "ファミリーマート出石川原店",
+        "store_address": "兵庫県豊岡市出石町町分３９２番１",
+        "store_lat": "35.46693",
+        "store_lon": "134.871026"
+    },
+    {
+        "store_name": "ファミリーマート日高町岩中店",
+        "store_address": "兵庫県豊岡市日高町岩中６６９−１",
+        "store_lat": "35.466409",
+        "store_lon": "134.767866"
+    },
+    {
+        "store_name": "ファミリーマート阪神西宮駅東店",
+        "store_address": "兵庫県西宮市六湛寺町１１番１７号",
+        "store_lat": "34.736518",
+        "store_lon": "135.340839"
+    },
+    {
+        "store_name": "ファミリーマート丹仙与古道店",
+        "store_address": "兵庫県西宮市与古道町１−２４",
+        "store_lat": "34.735758",
+        "store_lon": "135.343152"
+    },
+    {
+        "store_name": "ファミリーマート西宮戸田町店",
+        "store_address": "兵庫県西宮市戸田町５−２４",
+        "store_lat": "34.735454",
+        "store_lon": "135.339801"
+    },
+    {
+        "store_name": "ファミリーマート西宮枦塚町店",
+        "store_address": "兵庫県西宮市櫨塚町２−１５",
+        "store_lat": "34.741201",
+        "store_lon": "135.3425"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ西宮駅南店",
+        "store_address": "兵庫県西宮市池田町９−７",
+        "store_lat": "34.738281",
+        "store_lon": "135.347109"
+    },
+    {
+        "store_name": "ファミリーマート西宮鞍掛町店",
+        "store_address": "兵庫県西宮市鞍掛町１番１７号",
+        "store_lat": "34.733266",
+        "store_lon": "135.338578"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ西宮駅北口店",
+        "store_address": "兵庫県西宮市西福町６−１",
+        "store_lat": "34.739854",
+        "store_lon": "135.347969"
+    },
+    {
+        "store_name": "ファミリーマート西宮桜谷店",
+        "store_address": "兵庫県西宮市桜谷町１番２２号",
+        "store_lat": "34.744284",
+        "store_lon": "135.338767"
+    },
+    {
+        "store_name": "ファミリーマート西宮久保町店",
+        "store_address": "兵庫県西宮市久保町７−２１",
+        "store_lat": "34.730535",
+        "store_lon": "135.339579"
+    },
+    {
+        "store_name": "ファミリーマート西宮宮西店",
+        "store_address": "兵庫県西宮市宮西町９番１４号",
+        "store_lat": "34.736596",
+        "store_lon": "135.331855"
+    },
+    {
+        "store_name": "ファミリーマート西宮東町北店",
+        "store_address": "兵庫県西宮市東町１−４−３",
+        "store_lat": "34.729631",
+        "store_lon": "135.345409"
+    },
+    {
+        "store_name": "ファミリーマート今津駅前店",
+        "store_address": "兵庫県西宮市津門宝津町１１−９",
+        "store_lat": "34.732164",
+        "store_lon": "135.351315"
+    },
+    {
+        "store_name": "ファミリーマート西宮北口駅南店",
+        "store_address": "兵庫県西宮市高松町３番３４号",
+        "store_lat": "34.744624",
+        "store_lon": "135.356347"
     }
 ]
