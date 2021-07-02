@@ -7,7 +7,6 @@
     <script type="text/javascript" src="/static/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/static/css/main.css" />
-
 </head>
 
 <body>
@@ -16,6 +15,8 @@
             <span class="spinner"></span>
         </div>
     </div>
+    <button id="select-seven-btn-id" value="off">SevenEleven</button>
+    <button id="select-famima-btn-id" value="off">FamilyMart</button>
     <p>hello</p>
     <p id="status">位置情報を取得しています.......</p>
 
@@ -42,9 +43,35 @@
     </table>
 
     <script type="text/javascript">
+        var selected_store_list = [];
+
+        function toggleSelectStoreButton(store_name) {
+            if (store_name == "SevenEleven") {
+                var store_btn = $('#select-seven-btn-id');
+            } else if (store_name == "FamilyMart") {
+                var store_btn = $('#select-famima-btn-id');
+            }
+            if (store_btn.val() == "on") {
+                // リストからstore_nameを削除する
+                selected_store_list.splice(selected_store_list.indexOf(store_name), 1)
+                store_btn.removeClass('active');
+                store_btn.val("off")
+            } else {
+                selected_store_list.push(store_name)
+                store_btn.addClass('active');
+                store_btn.val("on")
+            };
+            console.log(selected_store_list)
+        }
+        toggleSelectStoreButton("SevenEleven")
+        toggleSelectStoreButton("FamilyMart")
+
+        $('button').click(function() {
+            toggleSelectStoreButton(this.outerText);
+        });
+
         // TODO: 値段を数字にする。表示する際は+円をつける。ソートできるようにする。
         // TODO: 表示を各コンビニでできるようにする
-        // TODO: 新しく検索したら前の検索結果は消えるようにする
         // TODO: 近さでソートする。
         jQuery(function($) {
             $(document).ajaxSend(function() {
@@ -104,22 +131,33 @@
                 cache: true,
                 timeout: 60000,
             }).done(function(results) {
+                // テーブルの要素を削除
+                var table = document.getElementById("tbl");
+                while (table.rows[0]) table.deleteRow(0);
+
+                // 検索中のローディング画面をセット
                 setTimeout(function() {
                     $("#overlay").fadeOut(300);
                 }, 500);
+
                 console.log("ajax successful");
                 console.log("data from server: ", results);
-                $("#hit-num").text(results.length + "件ヒットしました。");
-                if (results.length == 1 && results[0].productName == "none") {
+
+                var hit_num = 0
+                    // 検索結果をテーブルに表示させる
+                for (var i = 0; i < results.length; i++) {
+                    r = results[i];
+                    // ユーザーが選択した店のみを表示する。
+                    if (selected_store_list.indexOf(r.dealer) != -1) {
+                        hit_num = hit_num + 1
+                        googleMapUrl = CreateGoogleMapUrl(userLat, userLon, r.lat, r.lon);
+                        $("#tbl").append("<tr> <td>" + r.productName + "</td><td><a href=" + r.url + "><img src=" + r.imgUrl + " width=\"128\" height=\"96\" ></a></td><td>" + r.price + "</td><td>" + r.storename + "</td><td><a href=" + googleMapUrl + ">Google Map</a></td></tr>");
+                    }
+                }
+                $("#hit-num").text(hit_num + "件ヒットしました。");
+                if (hit_num == 0) {
                     $("#hit-num").text("ヒットした商品はありませんでした。");
                     return false
-                }
-                // result append to the table.
-                for (var i = 0; i < results.length; i++) {
-                    r = results[i]
-                    console.log(r)
-                    googleMapUrl = CreateGoogleMapUrl(userLat, userLon, r.lat, r.lon);
-                    $("#tbl").append("<tr> <td>" + r.productName + "</td><td><a href=" + r.url + "><img src=" + r.imgUrl + " width=\"128\" height=\"96\" ></a></td><td>" + r.price + "</td><td>" + r.storename + "</td><td><a href=" + googleMapUrl + ">Google Map</a></td></tr>")
                 }
             }).fail(function(data) {
                 console.log("ajax fail.")

@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
@@ -142,6 +143,11 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 		r.StoreAddress = msg.Result.GetStoreAddress()
 		r.StoreLat = float64(msg.Result.GetStoreLat())
 		r.StoreLon = float64(msg.Result.GetStoreLon())
+		if strings.Contains(r.StoreName, "セブンイレブン"){
+			r.Dealer = "SevenEleven"
+		} else if strings.Contains(r.StoreName, "ファミリーマート"){
+			r.Dealer = "FamilyMart"
+		}
 
 		ScrapedResults = append(ScrapedResults, *r)
 	}

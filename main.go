@@ -23,9 +23,6 @@ func main() {
 	router := gin.Default()
 	router.Use(cors.Default())
 
-	// ""templates/**/*"で指定したらtop/index.htmlみたいな感じでアクセスできる"
-	router.LoadHTMLGlob("templates/**/*")
-
 	// 下のhtmlで/assets/css/style.cssとして指定するためにrouter.Static("/assets", "./assets/")を入れないといけない
 	// <link rel="stylesheet" href="/assets/css/style.css">
 	router.Static("/assets", "./assets")

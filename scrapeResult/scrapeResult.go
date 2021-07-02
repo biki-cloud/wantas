@@ -13,6 +13,7 @@ type ResultStruct struct {
 	ProductPrice      string `json:"price" form:"price"`
 	ProductRegionList []string
 	ProductImgUrl     string `json:"imgUrl"`
+	Dealer string `json:"dealer"`
 	StoreName  string `json:"storename" form:"storename"`
 	StoreAddress string `json:"storeaddress"`
 	StoreLat   float64 `json:"lat" form:"lon"`

@@ -142,5 +142,131 @@
         "store_address": "北海道旭川市旭町２条１０−１２８−１７",
         "store_lat": "43.789268",
         "store_lon": "142.35009"
+    },
+    {
+        "store_name": "ローソン旭川豊岡４条一丁目店",
+        "store_address": "北海道旭川市豊岡４条１−３−１２",
+        "store_lat": "43.76133",
+        "store_lon": "142.391608"
+    },
+    {
+        "store_name": "ローソン旭川川端４条店",
+        "store_address": "北海道旭川市川端町４条１０−４−１４",
+        "store_lat": "43.786162",
+        "store_lon": "142.343436"
+    },
+    {
+        "store_name": "ローソン旭川神楽５条店",
+        "store_address": "北海道旭川市神楽５条１２−４５６−４０",
+        "store_lat": "43.749443",
+        "store_lon": "142.356473"
+    },
+    {
+        "store_name": "ローソン旭川神居３条八丁目店",
+        "store_address": "北海道旭川市神居３条８−３３８−１",
+        "store_lat": "43.756",
+        "store_lon": "142.336419"
+    },
+    {
+        "store_name": "ローソン旭川神居２条店",
+        "store_address": "北海道旭川市神居２条１４−２８７−２",
+        "store_lat": "43.755467",
+        "store_lon": "142.338445"
+    },
+    {
+        "store_name": "ローソン旭川新富店",
+        "store_address": "北海道旭川市新富２条２−９−１２",
+        "store_lat": "43.789618",
+        "store_lon": "142.388704"
+    },
+    {
+        "store_name": "ローソン旭川豊岡７条三丁目店",
+        "store_address": "北海道旭川市豊岡７条３−４−８",
+        "store_lat": "43.765034",
+        "store_lon": "142.399804"
+    },
+    {
+        "store_name": "ローソン芦別北４条東店",
+        "store_address": "北海道芦別市北四条東１−２−１",
+        "store_lat": "43.525024",
+        "store_lon": "142.187352"
+    },
+    {
+        "store_name": "ローソン足寄町店",
+        "store_address": "北海道足寄郡足寄町郊南１−２９−１２",
+        "store_lat": "43.230234",
+        "store_lon": "143.544921"
+    },
+    {
+        "store_name": "ローソンＳ網走厚生病院店",
+        "store_address": "北海道網走市北６条西１−９",
+        "store_lat": "44.026172",
+        "store_lon": "144.262386"
+    },
+    {
+        "store_name": "ローソン網走北６条店",
+        "store_address": "北海道網走市北６条西２−１６−１",
+        "store_lat": "44.026383",
+        "store_lon": "144.2619"
+    },
+    {
+        "store_name": "ローソン網走駒場南店",
+        "store_address": "北海道網走市駒場南５−２−１",
+        "store_lat": "44.002163",
+        "store_lon": "144.281712"
+    },
+    {
+        "store_name": "ローソン網走潮見店",
+        "store_address": "北海道網走市潮見８−９４−６４",
+        "store_lat": "43.996782",
+        "store_lon": "144.264817"
+    },
+    {
+        "store_name": "ローソン網走大曲店",
+        "store_address": "北海道網走市大曲１−１６−３６",
+        "store_lat": "44.013253",
+        "store_lon": "144.229192"
+    },
+    {
+        "store_name": "ローソン安平町遠浅店",
+        "store_address": "北海道勇払郡安平町遠浅７１３−３８",
+        "store_lat": "42.73108",
+        "store_lon": "141.773277"
+    },
+    {
+        "store_name": "ローソン池田大通店",
+        "store_address": "北海道中川郡池田町字大通４−６",
+        "store_lat": "42.925365",
+        "store_lon": "143.45074"
+    },
+    {
+        "store_name": "ローソン池田利別店",
+        "store_address": "北海道中川郡池田町字利別本町１４−１",
+        "store_lat": "42.928324",
+        "store_lon": "143.431093"
+    },
+    {
+        "store_name": "ローソン石狩花川北店",
+        "store_address": "北海道石狩市花川北２条５−６１",
+        "store_lat": "43.154381",
+        "store_lon": "141.311731"
+    },
+    {
+        "store_name": "ローソン石狩花川南３条店",
+        "store_address": "北海道石狩市花川南３条５−１",
+        "store_lat": "43.147839",
+        "store_lon": "141.302565"
+    },
+    {
+        "store_name": "ローソン石狩花川南９条店",
+        "store_address": "北海道石狩市花川南９条１−１",
+        "store_lat": "43.143882",
+        "store_lon": "141.278067"
+    },
+    {
+        "store_name": "ローソン石狩新港西三丁目店",
+        "store_address": "北海道石狩市新港西３−７０２−５",
+        "store_lat": "43.161067",
+        "store_lon": "141.250895"
     }
 ]
