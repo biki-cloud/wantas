@@ -1,8 +1,4 @@
 {
-    "familymart": {
-        "base_url": "https://www.mapion.co.jp/phonebook/M02005CM03/",
-        "geo_file_name": "store_familymart.json"
-    },
     "seveneleven": {
         "base_url": "https://www.mapion.co.jp/phonebook/M02005CM01/",
         "geo_file_name": "store_seveneleven.json"
@@ -10,6 +6,10 @@
     "lawson": {
         "base_url": "https://www.mapion.co.jp/phonebook/M02005CM02/",
         "geo_file_name": "store_lawson.json"
+    },
+    "familymart": {
+        "base_url": "https://www.mapion.co.jp/phonebook/M02005CM03/",
+        "geo_file_name": "store_familymart.json"
     },
     "ministop": {
         "base_url": "https://www.mapion.co.jp/phonebook/M02005CM04/",
