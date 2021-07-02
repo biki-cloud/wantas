@@ -43870,5 +43870,1511 @@
         "store_address": "大阪府茨木市中総持寺町４番２号",
         "store_lat": "34.825288",
         "store_lon": "135.585639"
+    },
+    {
+        "store_name": "ファミリーマート阪急総持寺駅前店",
+        "store_address": "大阪府茨木市総持寺駅前町６−１",
+        "store_lat": "34.826871",
+        "store_lon": "135.584191"
+    },
+    {
+        "store_name": "ファミリーマート茨木蔵垣内店",
+        "store_address": "大阪府茨木市蔵垣内一丁目１番１４号",
+        "store_lat": "34.800894",
+        "store_lon": "135.557372"
+    },
+    {
+        "store_name": "ファミリーマート茨木西河原店",
+        "store_address": "大阪府茨木市西河原２−２０−１５",
+        "store_lat": "34.833571",
+        "store_lon": "135.575544"
+    },
+    {
+        "store_name": "ファミリーマート茨木南春日丘店",
+        "store_address": "大阪府茨木市南春日丘１−６−３４",
+        "store_lat": "34.814886",
+        "store_lon": "135.544588"
+    },
+    {
+        "store_name": "ファミリーマート茨木沢良宜浜店",
+        "store_address": "大阪府茨木市沢良宜浜二丁目４番３号",
+        "store_lat": "34.795769",
+        "store_lon": "135.57218"
+    },
+    {
+        "store_name": "ファミリーマート茨木鮎川五丁目店",
+        "store_address": "大阪府茨木市鮎川五丁目３番４２号",
+        "store_lat": "34.812957",
+        "store_lon": "135.594135"
+    },
+    {
+        "store_name": "ファミリーマート茨木鮎川店",
+        "store_address": "大阪府茨木市鮎川５−２１−５",
+        "store_lat": "34.814316",
+        "store_lon": "135.599821"
+    },
+    {
+        "store_name": "ファミリーマート茨木南目垣店",
+        "store_address": "大阪府茨木市南目垣一丁目２番３号",
+        "store_lat": "34.80512",
+        "store_lon": "135.597478"
+    },
+    {
+        "store_name": "ファミリーマート小浦茨木島店",
+        "store_address": "大阪府茨木市島３−３−１",
+        "store_lat": "34.790599",
+        "store_lon": "135.576076"
+    },
+    {
+        "store_name": "ファミリーマート茨木太田二丁目店",
+        "store_address": "大阪府茨木市太田２−５−１８",
+        "store_lat": "34.842585",
+        "store_lon": "135.573429"
+    },
+    {
+        "store_name": "ファミリーマート狭山市役所前店",
+        "store_address": "大阪府大阪狭山市狭山１−８９６−１",
+        "store_lat": "34.502625",
+        "store_lon": "135.555536"
+    },
+    {
+        "store_name": "ファミリーマート大阪金剛駅前店",
+        "store_address": "大阪府大阪狭山市半田一丁目５９５−４",
+        "store_lat": "34.494571",
+        "store_lon": "135.559275"
+    },
+    {
+        "store_name": "ファミリーマート大阪狭山半田店",
+        "store_address": "大阪府大阪狭山市半田３丁目１６１５",
+        "store_lat": "34.493899",
+        "store_lon": "135.551333"
+    },
+    {
+        "store_name": "ファミリーマート狭山山本東店",
+        "store_address": "大阪府大阪狭山市山本東７９５番地の６",
+        "store_lat": "34.509375",
+        "store_lon": "135.542572"
+    },
+    {
+        "store_name": "ファミリーマート狭山今熊店",
+        "store_address": "大阪府大阪狭山市今熊１−５９−１",
+        "store_lat": "34.49597",
+        "store_lon": "135.543641"
+    },
+    {
+        "store_name": "ファミリーマート東くみの木一丁目店",
+        "store_address": "大阪府大阪狭山市東茱萸木一丁目５１５−１",
+        "store_lat": "34.49017",
+        "store_lon": "135.552293"
+    },
+    {
+        "store_name": "ファミリーマート東ぐみの木店",
+        "store_address": "大阪府大阪狭山市東茱萸木２−８９７−２",
+        "store_lat": "34.485376",
+        "store_lon": "135.553964"
+    },
+    {
+        "store_name": "ファミリーマート大阪狭山東野中店",
+        "store_address": "大阪府大阪狭山市東野中４丁目６５６−１",
+        "store_lat": "34.526626",
+        "store_lon": "135.55857"
+    },
+    {
+        "store_name": "ファミリーマート近畿大学病院店",
+        "store_address": "大阪府大阪狭山市大野東３７７−２",
+        "store_lat": "34.476585",
+        "store_lon": "135.548931"
+    },
+    {
+        "store_name": "ファミリーマート淀川区役所前店",
+        "store_address": "大阪府大阪市淀川区十三東２−３−１６",
+        "store_lat": "34.720821",
+        "store_lon": "135.486287"
+    },
+    {
+        "store_name": "ファミリーマート平野区役所東店",
+        "store_address": "大阪府大阪市平野区背戸口５丁目６−２９ビル１階",
+        "store_lat": "34.621213",
+        "store_lon": "135.546885"
+    },
+    {
+        "store_name": "ファミリーマート天満駅前店",
+        "store_address": "大阪府大阪市北区山崎町１−１",
+        "store_lat": "34.705813",
+        "store_lon": "135.510583"
+    },
+    {
+        "store_name": "ファミリーマート東住吉南田辺店",
+        "store_address": "大阪府大阪市東住吉区南田辺１丁目８番２３号",
+        "store_lat": "34.621947",
+        "store_lon": "135.525806"
+    },
+    {
+        "store_name": "ファミリーマート西成区役所前店",
+        "store_address": "大阪府大阪市西成区岸里２−２−２７",
+        "store_lat": "34.634142",
+        "store_lon": "135.494219"
+    },
+    {
+        "store_name": "ファミリーマート市岡一丁目店",
+        "store_address": "大阪府大阪市港区市岡１丁目５−２９",
+        "store_lat": "34.664435",
+        "store_lon": "135.461893"
+    },
+    {
+        "store_name": "ファミリーマート西野田店",
+        "store_address": "大阪府大阪市福島区大開１−６−１",
+        "store_lat": "34.692842",
+        "store_lon": "135.473452"
+    },
+    {
+        "store_name": "ファミリーマート豊新二丁目店",
+        "store_address": "大阪府大阪市東淀川区豊新２−４−３０",
+        "store_lat": "34.741863",
+        "store_lon": "135.530601"
+    },
+    {
+        "store_name": "ファミリーマート難波中三丁目店",
+        "store_address": "大阪府大阪市浪速区難波中３−１７−１５",
+        "store_lat": "34.659362",
+        "store_lon": "135.498151"
+    },
+    {
+        "store_name": "ファミリーマート鶴見横堤三丁目店",
+        "store_address": "大阪府大阪市鶴見区横堤３丁目１０番３４号",
+        "store_lat": "34.703179",
+        "store_lon": "135.574448"
+    },
+    {
+        "store_name": "ファミリーマート浪速元町３丁目店",
+        "store_address": "大阪府大阪市浪速区元町３丁目１０番２３号",
+        "store_lat": "34.65963",
+        "store_lon": "135.497574"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ天満駅前店",
+        "store_address": "大阪府大阪市北区錦町３−１２",
+        "store_lat": "34.705185",
+        "store_lon": "135.512186"
+    },
+    {
+        "store_name": "ファミリーマート松崎町店",
+        "store_address": "大阪府大阪市阿倍野区松崎町３−１４−１２",
+        "store_lat": "34.639996",
+        "store_lon": "135.517022"
+    },
+    {
+        "store_name": "ファミリーマート天下茶屋三丁目店",
+        "store_address": "大阪府大阪市西成区天下茶屋３丁目２８−１６",
+        "store_lat": "34.634708",
+        "store_lon": "135.496535"
+    },
+    {
+        "store_name": "ファミリーマート難波中南店",
+        "store_address": "大阪府大阪市浪速区難波中３丁目９−５",
+        "store_lat": "34.661271",
+        "store_lon": "135.500342"
+    },
+    {
+        "store_name": "ファミリーマート浪速敷津東店",
+        "store_address": "大阪府大阪市浪速区敷津東１丁目８−１９",
+        "store_lat": "34.65789",
+        "store_lon": "135.498256"
+    },
+    {
+        "store_name": "ファミリーマート勝山北店",
+        "store_address": "大阪府大阪市生野区勝山北２丁目１７−１４",
+        "store_lat": "34.654442",
+        "store_lon": "135.532291"
+    },
+    {
+        "store_name": "ファミリーマート北久宝寺町一丁目店",
+        "store_address": "大阪府大阪市中央区北久宝寺町１丁目４−２",
+        "store_lat": "34.679566",
+        "store_lon": "135.508588"
+    },
+    {
+        "store_name": "ファミリーマート御幣島二丁目北店",
+        "store_address": "大阪府大阪市西淀川区御幣島２丁目３−１３",
+        "store_lat": "34.712372",
+        "store_lon": "135.453974"
+    },
+    {
+        "store_name": "ファミリーマート文の里二丁目店",
+        "store_address": "大阪府大阪市阿倍野区文の里２−１１−２１　ジョイフル文の里",
+        "store_lat": "34.636652",
+        "store_lon": "135.517839"
+    },
+    {
+        "store_name": "ファミリーマート城東中央二丁目店",
+        "store_address": "大阪府大阪市城東区中央二丁目８番１５号",
+        "store_lat": "34.702448",
+        "store_lon": "135.542423"
+    },
+    {
+        "store_name": "ファミリーマート田辺店",
+        "store_address": "大阪府大阪市東住吉区南田辺３−３−２",
+        "store_lat": "34.620857",
+        "store_lon": "135.524485"
+    },
+    {
+        "store_name": "ファミリーマート南本町店",
+        "store_address": "大阪府大阪市中央区南本町一丁目５番１号",
+        "store_lat": "34.682976",
+        "store_lon": "135.508324"
+    },
+    {
+        "store_name": "ファミリーマート中宮店",
+        "store_address": "大阪府大阪市旭区中宮１−９−１９",
+        "store_lat": "34.722008",
+        "store_lon": "135.541739"
+    },
+    {
+        "store_name": "ファミリーマート天神橋四丁目店",
+        "store_address": "大阪府大阪市北区天神橋４丁目６−３６",
+        "store_lat": "34.703286",
+        "store_lon": "135.511937"
+    },
+    {
+        "store_name": "ファミリーマート新町三丁目店",
+        "store_address": "大阪府大阪市西区新町３−１１−７",
+        "store_lat": "34.677619",
+        "store_lon": "135.488524"
+    },
+    {
+        "store_name": "ファミリーマート大正千島店",
+        "store_address": "大阪府大阪市大正区千島２丁目３−３",
+        "store_lat": "34.652646",
+        "store_lon": "135.473556"
+    },
+    {
+        "store_name": "ファミリーマート内本町西店",
+        "store_address": "大阪府大阪市中央区本町橋２−２８",
+        "store_lat": "34.683685",
+        "store_lon": "135.510441"
+    },
+    {
+        "store_name": "ファミリーマート常盤町二丁目店",
+        "store_address": "大阪府大阪市中央区常盤町２丁目３番５号",
+        "store_lat": "34.682081",
+        "store_lon": "135.512754"
+    },
+    {
+        "store_name": "ファミリーマート北野病院店",
+        "store_address": "大阪府大阪市北区扇町２−４−２０地下１階",
+        "store_lat": "34.705285",
+        "store_lon": "135.506834"
+    },
+    {
+        "store_name": "ファミリーマート小浦貝塚石才店",
+        "store_address": "大阪府貝塚市石才１６０−１",
+        "store_lat": "34.435393",
+        "store_lon": "135.360895"
+    },
+    {
+        "store_name": "ファミリーマート小浦貝塚加神店",
+        "store_address": "大阪府貝塚市加神一丁目９番５号",
+        "store_lat": "34.440705",
+        "store_lon": "135.355576"
+    },
+    {
+        "store_name": "ファミリーマート貝塚警察署前店",
+        "store_address": "大阪府貝塚市海塚２７０４番３",
+        "store_lat": "34.444371",
+        "store_lon": "135.359564"
+    },
+    {
+        "store_name": "ファミリーマート貝塚駅前店",
+        "store_address": "大阪府貝塚市海塚２５３−１１",
+        "store_lat": "34.443394",
+        "store_lon": "135.358674"
+    },
+    {
+        "store_name": "ファミリーマート貝塚福田店",
+        "store_address": "大阪府貝塚市福田９３番",
+        "store_lat": "34.442062",
+        "store_lon": "135.364842"
+    },
+    {
+        "store_name": "ファミリーマート貝塚麻生中店",
+        "store_address": "大阪府貝塚市麻生中１０１５−１",
+        "store_lat": "34.434581",
+        "store_lon": "135.37244"
+    },
+    {
+        "store_name": "ファミリーマート貝塚二色店",
+        "store_address": "大阪府貝塚市二色１丁目１番６５号",
+        "store_lat": "34.44507",
+        "store_lon": "135.346084"
+    },
+    {
+        "store_name": "ファミリーマート貝塚半田店",
+        "store_address": "大阪府貝塚市半田１丁目２−１１",
+        "store_lat": "34.439987",
+        "store_lon": "135.373741"
+    },
+    {
+        "store_name": "ファミリーマート貝塚二色の浜店",
+        "store_address": "大阪府貝塚市澤５７５−１",
+        "store_lat": "34.433571",
+        "store_lon": "135.343203"
+    },
+    {
+        "store_name": "ファミリーマート和泉橋本店",
+        "store_address": "大阪府貝塚市橋本３７１",
+        "store_lat": "34.423802",
+        "store_lon": "135.362914"
+    },
+    {
+        "store_name": "ファミリーマート貝塚澤店",
+        "store_address": "大阪府貝塚市澤８９０番６",
+        "store_lat": "34.437941",
+        "store_lon": "135.340646"
+    },
+    {
+        "store_name": "ファミリーマート貝塚港北店",
+        "store_address": "大阪府貝塚市港２７−１３",
+        "store_lat": "34.453418",
+        "store_lon": "135.356655"
+    },
+    {
+        "store_name": "ファミリーマートイル・サローネ貝塚店",
+        "store_address": "大阪府貝塚市半田四丁目１２番１号",
+        "store_lat": "34.44204",
+        "store_lon": "135.379751"
+    },
+    {
+        "store_name": "ファミリーマート貝塚名越店",
+        "store_address": "大阪府貝塚市名越２１３−２",
+        "store_lat": "34.422486",
+        "store_lon": "135.380688"
+    },
+    {
+        "store_name": "ファミリーマート貝塚東山店",
+        "store_address": "大阪府貝塚市東山６−９−２５",
+        "store_lat": "34.409445",
+        "store_lon": "135.391312"
+    },
+    {
+        "store_name": "ファミリーマート外環貝塚店",
+        "store_address": "大阪府貝塚市森１３９−１",
+        "store_lat": "34.408997",
+        "store_lon": "135.391716"
+    },
+    {
+        "store_name": "ファミリーマート柏原清州店",
+        "store_address": "大阪府柏原市清州２−１−４５",
+        "store_lat": "34.58712",
+        "store_lon": "135.624296"
+    },
+    {
+        "store_name": "ファミリーマート国分駅西口店",
+        "store_address": "大阪府柏原市国分西１−１−１７",
+        "store_lat": "34.567468",
+        "store_lon": "135.635057"
+    },
+    {
+        "store_name": "ファミリーマート柏原平野店",
+        "store_address": "大阪府柏原市平野１丁目８番１５号",
+        "store_lat": "34.593468",
+        "store_lon": "135.630869"
+    },
+    {
+        "store_name": "ファミリーマート柏原本郷三丁目店",
+        "store_address": "大阪府柏原市本郷３丁目７番５１号",
+        "store_lat": "34.591654",
+        "store_lon": "135.617688"
+    },
+    {
+        "store_name": "ファミリーマート法善寺駅東店",
+        "store_address": "大阪府柏原市法善寺４−９−１１",
+        "store_lat": "34.59479",
+        "store_lon": "135.627859"
+    },
+    {
+        "store_name": "ファミリーマート柏原田辺一丁目店",
+        "store_address": "大阪府柏原市田辺１丁目３番２号",
+        "store_lat": "34.562614",
+        "store_lon": "135.638162"
+    },
+    {
+        "store_name": "ファミリーマート柏原円明町店",
+        "store_address": "大阪府柏原市円明町１７番９号",
+        "store_lat": "34.558959",
+        "store_lon": "135.62449"
+    },
+    {
+        "store_name": "ファミリーマート交野私部店",
+        "store_address": "大阪府交野市私部２−２２−２",
+        "store_lat": "34.785277",
+        "store_lon": "135.680281"
+    },
+    {
+        "store_name": "ファミリーマート幾野四丁目店",
+        "store_address": "大阪府交野市幾野４−１８−５",
+        "store_lat": "34.795913",
+        "store_lon": "135.684083"
+    },
+    {
+        "store_name": "ファミリーマート交野森北一丁目店",
+        "store_address": "大阪府交野市森北１−１３７",
+        "store_lat": "34.778024",
+        "store_lon": "135.685216"
+    },
+    {
+        "store_name": "ファミリーマート交野倉治西店",
+        "store_address": "大阪府交野市倉治二丁目６８番２６号",
+        "store_lat": "34.794161",
+        "store_lon": "135.691833"
+    },
+    {
+        "store_name": "ファミリーマート河内いわふね店",
+        "store_address": "大阪府交野市私市１丁目１番１３号",
+        "store_lat": "34.77569",
+        "store_lon": "135.684434"
+    },
+    {
+        "store_name": "ファミリーマート星田駅東店",
+        "store_address": "大阪府交野市星田５丁目７番１５号",
+        "store_lat": "34.767891",
+        "store_lon": "135.665313"
+    },
+    {
+        "store_name": "ファミリーマート交野星田店",
+        "store_address": "大阪府交野市星田６−１−３０",
+        "store_lat": "34.764522",
+        "store_lon": "135.662724"
+    },
+    {
+        "store_name": "ファミリーマート門真新橋店",
+        "store_address": "大阪府門真市新橋町５−５",
+        "store_lat": "34.736888",
+        "store_lon": "135.583866"
+    },
+    {
+        "store_name": "ファミリーマート古川橋駅南店",
+        "store_address": "大阪府門真市末広町７−５樋口ビル",
+        "store_lat": "34.739705",
+        "store_lon": "135.592259"
+    },
+    {
+        "store_name": "ファミリーマート古川橋駅前店",
+        "store_address": "大阪府門真市垣内町１−１１古川橋北ペアビル東館",
+        "store_lat": "34.740742",
+        "store_lon": "135.592243"
+    },
+    {
+        "store_name": "ファミリーマート門真元町店",
+        "store_address": "大阪府門真市元町１−６",
+        "store_lat": "34.738033",
+        "store_lon": "135.581037"
+    },
+    {
+        "store_name": "ファミリーマート門真浜町店",
+        "store_address": "大阪府門真市浜町１５−１９",
+        "store_lat": "34.744196",
+        "store_lon": "135.588364"
+    },
+    {
+        "store_name": "ファミリーマート門真元町中店",
+        "store_address": "大阪府門真市元町９−２３",
+        "store_lat": "34.738759",
+        "store_lon": "135.580353"
+    },
+    {
+        "store_name": "ファミリーマート門真古川町店",
+        "store_address": "大阪府門真市古川町１−２",
+        "store_lat": "34.740974",
+        "store_lon": "135.59475"
+    },
+    {
+        "store_name": "ファミリーマート門真柳田町店",
+        "store_address": "大阪府門真市柳田町１−４",
+        "store_lat": "34.733323",
+        "store_lon": "135.589618"
+    },
+    {
+        "store_name": "ファミリーマート門真栄町店",
+        "store_address": "大阪府門真市栄町２０−１０",
+        "store_lat": "34.735066",
+        "store_lon": "135.580022"
+    },
+    {
+        "store_name": "ファミリーマート門真大倉町店",
+        "store_address": "大阪府門真市大倉町８−２６",
+        "store_lat": "34.744128",
+        "store_lon": "135.594156"
+    },
+    {
+        "store_name": "ファミリーマート門真大池町店",
+        "store_address": "大阪府門真市大池町２−３４",
+        "store_lat": "34.738483",
+        "store_lon": "135.600932"
+    },
+    {
+        "store_name": "ファミリーマート門真深田町店",
+        "store_address": "大阪府門真市深田町２４−７",
+        "store_lat": "34.727489",
+        "store_lon": "135.586345"
+    },
+    {
+        "store_name": "ファミリーマート大和田駅前店",
+        "store_address": "大阪府門真市常称寺町１９−１８",
+        "store_lat": "34.743434",
+        "store_lon": "135.60264"
+    },
+    {
+        "store_name": "ファミリーマート門真北島店",
+        "store_address": "大阪府門真市大字北島６８３−１",
+        "store_lat": "34.729079",
+        "store_lon": "135.599441"
+    },
+    {
+        "store_name": "ファミリーマート門真舟田町店",
+        "store_address": "大阪府門真市舟田町２７−２０",
+        "store_lat": "34.733448",
+        "store_lon": "135.60328"
+    },
+    {
+        "store_name": "ファミリーマート門真桑才店",
+        "store_address": "大阪府門真市桑才町１２−５",
+        "store_lat": "34.723364",
+        "store_lon": "135.591012"
+    },
+    {
+        "store_name": "ファミリーマート門真上野口町店",
+        "store_address": "大阪府門真市上野口町５８−１２",
+        "store_lat": "34.73747",
+        "store_lon": "135.606883"
+    },
+    {
+        "store_name": "ファミリーマート門真大橋店",
+        "store_address": "大阪府門真市桑才町１８−２４",
+        "store_lat": "34.721712",
+        "store_lon": "135.591118"
+    },
+    {
+        "store_name": "ファミリーマート門真上島町店",
+        "store_address": "大阪府門真市上島町１７−２１",
+        "store_lat": "34.743617",
+        "store_lon": "135.609513"
+    },
+    {
+        "store_name": "ファミリーマート門真島頭店",
+        "store_address": "大阪府門真市島頭３−８−３",
+        "store_lat": "34.731382",
+        "store_lon": "135.609082"
+    },
+    {
+        "store_name": "ファミリーマート門真上馬伏店",
+        "store_address": "大阪府門真市四宮１−３−８",
+        "store_lat": "34.73891",
+        "store_lon": "135.61336"
+    },
+    {
+        "store_name": "ファミリーマート門真宮前町店",
+        "store_address": "大阪府門真市宮前町１８番２号",
+        "store_lat": "34.741355",
+        "store_lon": "135.614557"
+    },
+    {
+        "store_name": "ファミリーマート門真三ツ島店",
+        "store_address": "大阪府門真市三ツ島５丁目９−２",
+        "store_lat": "34.71962",
+        "store_lon": "135.601393"
+    },
+    {
+        "store_name": "ファミリーマート門真三ツ島三丁目店",
+        "store_address": "大阪府門真市三ツ島３丁目９番１３号",
+        "store_lat": "34.716876",
+        "store_lon": "135.596145"
+    },
+    {
+        "store_name": "ファミリーマート四宮小学校前店",
+        "store_address": "大阪府門真市四宮３−１０−２０",
+        "store_lat": "34.735313",
+        "store_lon": "135.615669"
+    },
+    {
+        "store_name": "ファミリーマート門真三ツ島六丁目店",
+        "store_address": "大阪府門真市三ツ島６丁目３番２号",
+        "store_lat": "34.722003",
+        "store_lon": "135.608096"
+    },
+    {
+        "store_name": "ファミリーマート下馬伏町店",
+        "store_address": "大阪府門真市下馬伏町２９−７",
+        "store_lat": "34.727958",
+        "store_lon": "135.617533"
+    },
+    {
+        "store_name": "ファミリーマート門真江端東店",
+        "store_address": "大阪府門真市岸和田４−１−２",
+        "store_lat": "34.723873",
+        "store_lon": "135.621509"
+    },
+    {
+        "store_name": "ファミリーマート河南白木店",
+        "store_address": "大阪府南河内郡河南町白木８４２−１",
+        "store_lat": "34.483658",
+        "store_lon": "135.631478"
+    },
+    {
+        "store_name": "ファミリーマート河南一須賀店",
+        "store_address": "大阪府南河内郡河南町大字一須賀１１４−１",
+        "store_lat": "34.510084",
+        "store_lon": "135.624961"
+    },
+    {
+        "store_name": "ファミリーマート河内長野西之山町店",
+        "store_address": "大阪府河内長野市西之山町１番８号",
+        "store_lat": "34.454526",
+        "store_lon": "135.563588"
+    },
+    {
+        "store_name": "ファミリーマート河内長野南貴望ヶ丘店",
+        "store_address": "大阪府河内長野市南貴望ヶ丘３０−１６",
+        "store_lat": "34.465996",
+        "store_lon": "135.561336"
+    },
+    {
+        "store_name": "ファミリーマート河内長野錦町店",
+        "store_address": "大阪府河内長野市錦町２１−１０",
+        "store_lat": "34.449201",
+        "store_lon": "135.562405"
+    },
+    {
+        "store_name": "ファミリーマート河内長野向野店",
+        "store_address": "大阪府河内長野市向野町７５１番地",
+        "store_lat": "34.456338",
+        "store_lon": "135.575988"
+    },
+    {
+        "store_name": "ファミリーマート千代田駅前店",
+        "store_address": "大阪府河内長野市千代田南町１−６",
+        "store_lat": "34.467874",
+        "store_lon": "135.567346"
+    },
+    {
+        "store_name": "ファミリーマート河内長野喜多町店",
+        "store_address": "大阪府河内長野市喜多町１９９−６",
+        "store_lat": "34.446809",
+        "store_lon": "135.569595"
+    },
+    {
+        "store_name": "ファミリーマート河内長野木戸店",
+        "store_address": "大阪府河内長野市木戸一丁目３２番８号",
+        "store_lat": "34.46987",
+        "store_lon": "135.570757"
+    },
+    {
+        "store_name": "ファミリーマート河内長野松ヶ丘店",
+        "store_address": "大阪府河内長野市松ヶ丘東町１３１５−１",
+        "store_lat": "34.475655",
+        "store_lon": "135.561962"
+    },
+    {
+        "store_name": "ファミリーマート河内長野市町店",
+        "store_address": "大阪府河内長野市市町１１３５−１１１３６−１",
+        "store_lat": "34.474541",
+        "store_lon": "135.575316"
+    },
+    {
+        "store_name": "ファミリーマートミナミ河内長野高向店",
+        "store_address": "大阪府河内長野市高向７３６−１",
+        "store_lat": "34.442094",
+        "store_lon": "135.550829"
+    },
+    {
+        "store_name": "ファミリーマート河内長野高向東店",
+        "store_address": "大阪府河内長野市高向６４２−１",
+        "store_lat": "34.441315",
+        "store_lon": "135.551098"
+    },
+    {
+        "store_name": "ファミリーマート河内長野三日市町店",
+        "store_address": "大阪府河内長野市三日市町５２−３",
+        "store_lat": "34.437053",
+        "store_lon": "135.573012"
+    },
+    {
+        "store_name": "ファミリーマート河内長野北青葉台店",
+        "store_address": "大阪府河内長野市北青葉台５２−４２",
+        "store_lat": "34.42547",
+        "store_lon": "135.571753"
+    },
+    {
+        "store_name": "ファミリーマート岸和田上町店",
+        "store_address": "大阪府岸和田市上町９−１１",
+        "store_lat": "34.457203",
+        "store_lon": "135.376284"
+    },
+    {
+        "store_name": "ファミリーマート岸和田南町店",
+        "store_address": "大阪府岸和田市南町１８−１６",
+        "store_lat": "34.456795",
+        "store_lon": "135.36528"
+    },
+    {
+        "store_name": "ファミリーマート岸和田南インター店",
+        "store_address": "大阪府岸和田市地蔵浜町７−１",
+        "store_lat": "34.466086",
+        "store_lon": "135.362242"
+    },
+    {
+        "store_name": "ファミリーマート岸和田並松店",
+        "store_address": "大阪府岸和田市並松町２９番３０号",
+        "store_lat": "34.467691",
+        "store_lon": "135.37374"
+    },
+    {
+        "store_name": "ファミリーマート岸和田野田町二丁目店",
+        "store_address": "大阪府岸和田市野田町２丁目１４番１４号",
+        "store_lat": "34.457268",
+        "store_lon": "135.379785"
+    },
+    {
+        "store_name": "ファミリーマート土生町二丁目店",
+        "store_address": "大阪府岸和田市土生町二丁目１６番３５号",
+        "store_lat": "34.44941",
+        "store_lon": "135.377695"
+    },
+    {
+        "store_name": "ファミリーマート岸和田藤井店",
+        "store_address": "大阪府岸和田市藤井町１丁目７番２２号",
+        "store_lat": "34.465599",
+        "store_lon": "135.384728"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ東岸和田駅北店",
+        "store_address": "大阪府岸和田市土生町４２０８番地",
+        "store_lat": "34.450899",
+        "store_lon": "135.386622"
+    },
+    {
+        "store_name": "ファミリーマート岸和田西之内町店",
+        "store_address": "大阪府岸和田市西之内町１３番１号",
+        "store_lat": "34.464267",
+        "store_lon": "135.390826"
+    },
+    {
+        "store_name": "ファミリーマート岸和田新港町店",
+        "store_address": "大阪府岸和田市新港町２−２",
+        "store_lat": "34.478178",
+        "store_lon": "135.378614"
+    },
+    {
+        "store_name": "ファミリーマート岸和田土生町店",
+        "store_address": "大阪府岸和田市土生町１５９６−１",
+        "store_lat": "34.444338",
+        "store_lon": "135.382937"
+    },
+    {
+        "store_name": "ファミリーマート岸和田上松町店",
+        "store_address": "大阪府岸和田市上松町２０１−１",
+        "store_lat": "34.450878",
+        "store_lon": "135.391322"
+    },
+    {
+        "store_name": "ファミリーマート岸和田下松町店",
+        "store_address": "大阪府岸和田市下松町３丁目６−１６",
+        "store_lat": "34.455138",
+        "store_lon": "135.395645"
+    },
+    {
+        "store_name": "ファミリーマート春木駅前店",
+        "store_address": "大阪府岸和田市春木旭町７−８",
+        "store_lat": "34.475588",
+        "store_lon": "135.391131"
+    },
+    {
+        "store_name": "ファミリーマート岸和田畑町店",
+        "store_address": "大阪府岸和田市畑町４丁目３番３号",
+        "store_lat": "34.44073",
+        "store_lon": "135.389767"
+    },
+    {
+        "store_name": "ファミリーマート岸和田荒木町二丁目店",
+        "store_address": "大阪府岸和田市荒木町２−６−１",
+        "store_lat": "34.475077",
+        "store_lon": "135.397794"
+    },
+    {
+        "store_name": "ファミリーマート岸和田土生東店",
+        "store_address": "大阪府岸和田市土生町１３丁目１番５１号",
+        "store_lat": "34.442001",
+        "store_lon": "135.394317"
+    },
+    {
+        "store_name": "ファミリーマート岸和田下池田店",
+        "store_address": "大阪府岸和田市下池田町１丁目３番１２号",
+        "store_lat": "34.469917",
+        "store_lon": "135.401244"
+    },
+    {
+        "store_name": "ファミリーマート久米田駅前店",
+        "store_address": "大阪府岸和田市大町３７１−５",
+        "store_lat": "34.465771",
+        "store_lon": "135.406076"
+    },
+    {
+        "store_name": "ファミリーマート吉井町二丁目店",
+        "store_address": "大阪府岸和田市吉井町２−１９−２８",
+        "store_lat": "34.480808",
+        "store_lon": "135.398634"
+    },
+    {
+        "store_name": "ファミリーマート小浦岸和田木材町店",
+        "store_address": "大阪府岸和田市木材町８番地の８",
+        "store_lat": "34.489992",
+        "store_lon": "135.382167"
+    },
+    {
+        "store_name": "ファミリーマート小浦岸和田北インター店",
+        "store_address": "大阪府岸和田市木材町９−１１",
+        "store_lat": "34.491022",
+        "store_lon": "135.381984"
+    },
+    {
+        "store_name": "ファミリーマート岸和田中井町東店",
+        "store_address": "大阪府岸和田市中井町１丁目２２番７号",
+        "store_lat": "34.475583",
+        "store_lon": "135.405743"
+    },
+    {
+        "store_name": "ファミリーマート岸和田流木東店",
+        "store_address": "大阪府岸和田市流木町３２５番地１",
+        "store_lat": "34.433147",
+        "store_lon": "135.393497"
+    },
+    {
+        "store_name": "ファミリーマート岸和田八田町店",
+        "store_address": "大阪府岸和田市土生町１３５−１",
+        "store_lat": "34.433533",
+        "store_lon": "135.403453"
+    },
+    {
+        "store_name": "ファミリーマート岸和田今木町店",
+        "store_address": "大阪府岸和田市今木町６",
+        "store_lat": "34.468906",
+        "store_lon": "135.419456"
+    },
+    {
+        "store_name": "ファミリーマート岸和田岡山町店",
+        "store_address": "大阪府岸和田市岡山町１０１",
+        "store_lat": "34.457989",
+        "store_lon": "135.422008"
+    },
+    {
+        "store_name": "ファミリーマート岸和田三田町店",
+        "store_address": "大阪府岸和田市三田町６３６番地",
+        "store_lat": "34.45444",
+        "store_lon": "135.437097"
+    },
+    {
+        "store_name": "ファミリーマート岸和田三田町北店",
+        "store_address": "大阪府岸和田市三田町４００番地の２１",
+        "store_lat": "34.453744",
+        "store_lon": "135.433931"
+    },
+    {
+        "store_name": "ファミリーマートゆめみヶ丘岸和田店",
+        "store_address": "大阪府岸和田市岸の丘町２丁目１番３０号",
+        "store_lat": "34.428862",
+        "store_lon": "135.430242"
+    },
+    {
+        "store_name": "ファミリーマート熊取五門店",
+        "store_address": "大阪府泉南郡熊取町五門西１−１−１４",
+        "store_lat": "34.399184",
+        "store_lon": "135.351681"
+    },
+    {
+        "store_name": "ファミリーマート熊取紺屋店",
+        "store_address": "大阪府泉南郡熊取町紺屋２丁目１０３４−１（地番）",
+        "store_lat": "34.40412",
+        "store_lon": "135.351332"
+    },
+    {
+        "store_name": "ファミリーマート熊取大久保中店",
+        "store_address": "大阪府泉南郡熊取町大久保中１丁目５番１７号",
+        "store_lat": "34.404916",
+        "store_lon": "135.344414"
+    },
+    {
+        "store_name": "ファミリーマート熊取駅前店",
+        "store_address": "大阪府泉南郡熊取町大久保中１−１６−１８",
+        "store_lat": "34.405586",
+        "store_lon": "135.341753"
+    },
+    {
+        "store_name": "ファミリーマート堺新金岡店",
+        "store_address": "大阪府堺市北区新金岡町五丁１番２号",
+        "store_lat": "34.565968",
+        "store_lon": "135.516302"
+    },
+    {
+        "store_name": "ファミリーマート堺市役所前店",
+        "store_address": "大阪府堺市堺区中瓦町１丁４−１８",
+        "store_lat": "34.574629",
+        "store_lon": "135.482579"
+    },
+    {
+        "store_name": "ファミリーマート栂美木多駅前店",
+        "store_address": "大阪府堺市南区原山台２丁１−２",
+        "store_lat": "34.48498",
+        "store_lon": "135.491058"
+    },
+    {
+        "store_name": "ファミリーマート堺日置荘原寺店",
+        "store_address": "大阪府堺市東区日置荘原寺町２９番地の６",
+        "store_lat": "34.539868",
+        "store_lon": "135.5362"
+    },
+    {
+        "store_name": "ファミリーマート泉北深井駅前店",
+        "store_address": "大阪府堺市中区深井沢町３２８３番地",
+        "store_lat": "34.529605",
+        "store_lon": "135.496998"
+    },
+    {
+        "store_name": "ファミリーマート堺市之町東店",
+        "store_address": "大阪府堺市堺区市之町東六丁１番２１号",
+        "store_lat": "34.57488",
+        "store_lon": "135.478598"
+    },
+    {
+        "store_name": "ファミリーマート堺深井沢町店",
+        "store_address": "大阪府堺市中区深井沢町２７７番２",
+        "store_lat": "34.528013",
+        "store_lon": "135.503442"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ鳳駅前店",
+        "store_address": "大阪府堺市西区鳳東町一丁７",
+        "store_lat": "34.532607",
+        "store_lon": "135.46"
+    },
+    {
+        "store_name": "ファミリーマート京屋平岡町店",
+        "store_address": "大阪府堺市西区平岡町３８−１",
+        "store_lat": "34.533854",
+        "store_lon": "135.469929"
+    },
+    {
+        "store_name": "ファミリーマート堺大泉緑地店",
+        "store_address": "大阪府堺市北区新金岡町５丁６番１１６号",
+        "store_lat": "34.565866",
+        "store_lon": "135.523244"
+    },
+    {
+        "store_name": "ファミリーマート堺高松店",
+        "store_address": "大阪府堺市東区高松７０−４",
+        "store_lat": "34.532876",
+        "store_lon": "135.536069"
+    },
+    {
+        "store_name": "ファミリーマート堺鳳東町店",
+        "store_address": "大阪府堺市西区鳳東町２丁１６２−１",
+        "store_lat": "34.530645",
+        "store_lon": "135.459183"
+    },
+    {
+        "store_name": "ファミリーマートときはま長曽根町店",
+        "store_address": "大阪府堺市北区長曽根町４８４−１",
+        "store_lat": "34.565815",
+        "store_lon": "135.507517"
+    },
+    {
+        "store_name": "ファミリーマート堺榎元町店",
+        "store_address": "大阪府堺市堺区榎元町５丁６−１１",
+        "store_lat": "34.571558",
+        "store_lon": "135.489654"
+    },
+    {
+        "store_name": "ファミリーマート堺平井店",
+        "store_address": "大阪府堺市中区平井１３７−１",
+        "store_lat": "34.522229",
+        "store_lon": "135.496324"
+    },
+    {
+        "store_name": "ファミリーマート堺深井畑山町店",
+        "store_address": "大阪府堺市中区深井畑山町２４７−１",
+        "store_lat": "34.525859",
+        "store_lon": "135.506177"
+    },
+    {
+        "store_name": "ファミリーマート堺泉北竹城台店",
+        "store_address": "大阪府堺市南区竹城台３丁目２２−８",
+        "store_lat": "34.49064",
+        "store_lon": "135.49771"
+    },
+    {
+        "store_name": "ファミリーマート堺津久野町店",
+        "store_address": "大阪府堺市西区津久野町１丁１１番１０",
+        "store_lat": "34.541091",
+        "store_lon": "135.469396"
+    },
+    {
+        "store_name": "ファミリーマート堺櫛屋町東二丁店",
+        "store_address": "大阪府堺市堺区櫛屋町東２丁２−１６",
+        "store_lat": "34.580224",
+        "store_lon": "135.477986"
+    },
+    {
+        "store_name": "ファミリーマート堺市立総合医療センター店",
+        "store_address": "大阪府堺市西区家原寺町一丁１番１号",
+        "store_lat": "34.539513",
+        "store_lon": "135.471491"
+    },
+    {
+        "store_name": "ファミリーマート大阪労災病院店",
+        "store_address": "大阪府堺市北区長曽根町１１７９−３",
+        "store_lat": "34.567779",
+        "store_lon": "135.507174"
+    },
+    {
+        "store_name": "ファミリーマート京屋宿院店",
+        "store_address": "大阪府堺市堺区宿院町東３丁１−１",
+        "store_lat": "34.574546",
+        "store_lon": "135.473296"
+    },
+    {
+        "store_name": "ファミリーマート堺美原黒山店",
+        "store_address": "大阪府堺市美原区黒山６９番１",
+        "store_lat": "34.547161",
+        "store_lon": "135.56152"
+    },
+    {
+        "store_name": "ファミリーマート堺堀上町店",
+        "store_address": "大阪府堺市中区八田北町４８１−１",
+        "store_lat": "34.528016",
+        "store_lon": "135.488041"
+    },
+    {
+        "store_name": "ファミリーマート堺一条通店",
+        "store_address": "大阪府堺市堺区一条通５−２６",
+        "store_lat": "34.566068",
+        "store_lon": "135.477391"
+    },
+    {
+        "store_name": "ファミリーマート堺金岡店",
+        "store_address": "大阪府堺市北区金岡町２２６７番地１",
+        "store_lat": "34.556686",
+        "store_lon": "135.518924"
+    },
+    {
+        "store_name": "ファミリーマート堺金岡町店",
+        "store_address": "大阪府堺市北区金岡町３０３４−３１",
+        "store_lat": "34.557169",
+        "store_lon": "135.512677"
+    },
+    {
+        "store_name": "ファミリーマート堺鳳西町店",
+        "store_address": "大阪府堺市西区鳳西町１丁６８−１４",
+        "store_lat": "34.530341",
+        "store_lon": "135.454033"
+    },
+    {
+        "store_name": "ファミリーマート堺初芝駅前店",
+        "store_address": "大阪府堺市東区日置荘西町１丁２１番１９号",
+        "store_lat": "34.543467",
+        "store_lon": "135.526875"
+    },
+    {
+        "store_name": "ファミリーマート京屋長曽根店",
+        "store_address": "大阪府堺市北区長曽根町３００１−３",
+        "store_lat": "34.565248",
+        "store_lon": "135.505391"
+    },
+    {
+        "store_name": "ファミリーマート四條畷中野西店",
+        "store_address": "大阪府四條畷市西中野一丁目１０番１号",
+        "store_lat": "34.741105",
+        "store_lon": "135.636998"
+    },
+    {
+        "store_name": "ファミリーマート四條畷岡山店",
+        "store_address": "大阪府四條畷市岡山１−１３−１",
+        "store_lat": "34.743983",
+        "store_lon": "135.639676"
+    },
+    {
+        "store_name": "ファミリーマート四條畷米崎店",
+        "store_address": "大阪府四條畷市米崎町１３番３０号",
+        "store_lat": "34.736221",
+        "store_lon": "135.637534"
+    },
+    {
+        "store_name": "ファミリーマート四條畷岡山東店",
+        "store_address": "大阪府四條畷市岡山東一丁目１番１３号",
+        "store_lat": "34.744186",
+        "store_lon": "135.64499"
+    },
+    {
+        "store_name": "ファミリーマート四條畷砂店",
+        "store_address": "大阪府四條畷市砂２丁目１８−１５",
+        "store_lat": "34.745963",
+        "store_lon": "135.63288"
+    },
+    {
+        "store_name": "ファミリーマート忍ヶ丘駅前店",
+        "store_address": "大阪府四條畷市岡山３−１−５",
+        "store_lat": "34.746734",
+        "store_lon": "135.646043"
+    },
+    {
+        "store_name": "ファミリーマート四條畷しとみや店",
+        "store_address": "大阪府四條畷市蔀屋本町１３−１１",
+        "store_lat": "34.740134",
+        "store_lon": "135.628653"
+    },
+    {
+        "store_name": "ファミリーマート四條畷雁屋西町店",
+        "store_address": "大阪府四條畷市雁屋西町４−６",
+        "store_lat": "34.73361",
+        "store_lon": "135.631095"
+    },
+    {
+        "store_name": "ファミリーマート島本江川店",
+        "store_address": "大阪府三島郡島本町江川１−２−１５",
+        "store_lat": "34.88378",
+        "store_lon": "135.674648"
+    },
+    {
+        "store_name": "ファミリーマート島本高浜二丁目店",
+        "store_address": "大阪府三島郡島本町高浜２−２６−２０",
+        "store_lat": "34.872877",
+        "store_lon": "135.664916"
+    },
+    {
+        "store_name": "ファミリーマート吹田内本町店",
+        "store_address": "大阪府吹田市内本町一丁目２２番９号",
+        "store_lat": "34.757587",
+        "store_lon": "135.523082"
+    },
+    {
+        "store_name": "ファミリーマート豊津駅前店",
+        "store_address": "大阪府吹田市山手町２−６−３−１０１",
+        "store_lat": "34.76417",
+        "store_lon": "135.510036"
+    },
+    {
+        "store_name": "ファミリーマート吹田栄通り商店会店",
+        "store_address": "大阪府吹田市昭和町１０−１８",
+        "store_lat": "34.762712",
+        "store_lon": "135.526782"
+    },
+    {
+        "store_name": "ファミリーマート吹田垂水町一丁目店",
+        "store_address": "大阪府吹田市垂水町１−７−６",
+        "store_lat": "34.764282",
+        "store_lon": "135.507212"
+    },
+    {
+        "store_name": "ファミリーマート南吹田一丁目店",
+        "store_address": "大阪府吹田市南吹田１丁目９番１０号",
+        "store_lat": "34.750773",
+        "store_lon": "135.511919"
+    },
+    {
+        "store_name": "ファミリーマート吹田山手三丁目店",
+        "store_address": "大阪府吹田市山手町３−２２−２２",
+        "store_lat": "34.769052",
+        "store_lon": "135.512302"
+    },
+    {
+        "store_name": "ファミリーマート吹田山手町四丁目店",
+        "store_address": "大阪府吹田市山手町４丁目１３−６",
+        "store_lat": "34.770237",
+        "store_lon": "135.515925"
+    },
+    {
+        "store_name": "ファミリーマート吹田大橋店",
+        "store_address": "大阪府吹田市西御旅町１−８",
+        "store_lat": "34.750858",
+        "store_lon": "135.525843"
+    },
+    {
+        "store_name": "ファミリーマート南吹田五丁目店",
+        "store_address": "大阪府吹田市南吹田５丁目２４番１号",
+        "store_lat": "34.753101",
+        "store_lon": "135.500981"
+    },
+    {
+        "store_name": "ファミリーマート済生会吹田病院店",
+        "store_address": "大阪府吹田市川園町１−２",
+        "store_lat": "34.761691",
+        "store_lon": "135.534725"
+    },
+    {
+        "store_name": "ファミリーマート江坂駅北店",
+        "store_address": "大阪府吹田市江坂町１−１３−４１",
+        "store_lat": "34.760852",
+        "store_lon": "135.49772"
+    },
+    {
+        "store_name": "ファミリーマート吹田広芝町店",
+        "store_address": "大阪府吹田市広芝町１０−１４",
+        "store_lat": "34.756274",
+        "store_lon": "135.497704"
+    },
+    {
+        "store_name": "ファミリーマート吹田上山手町店",
+        "store_address": "大阪府吹田市上山手町２７−８",
+        "store_lat": "34.777426",
+        "store_lon": "135.517628"
+    },
+    {
+        "store_name": "ファミリーマート吹田江坂五丁目店",
+        "store_address": "大阪府吹田市江坂町五丁目１３番２号",
+        "store_lat": "34.770542",
+        "store_lon": "135.498146"
+    },
+    {
+        "store_name": "ファミリーマート岸部中店",
+        "store_address": "大阪府吹田市岸部中１−１３−１３",
+        "store_lat": "34.774799",
+        "store_lon": "135.531053"
+    },
+    {
+        "store_name": "ファミリーマート江坂町二丁目店",
+        "store_address": "大阪府吹田市江坂町２丁目１２−４８",
+        "store_lat": "34.764316",
+        "store_lon": "135.492811"
+    },
+    {
+        "store_name": "ファミリーマート佐井寺南が丘店",
+        "store_address": "大阪府吹田市佐井寺南が丘９−６",
+        "store_lat": "34.780048",
+        "store_lon": "135.517406"
+    },
+    {
+        "store_name": "ファミリーマート吹田豊津町店",
+        "store_address": "大阪府吹田市豊津町５３−１",
+        "store_lat": "34.759321",
+        "store_lon": "135.491082"
+    },
+    {
+        "store_name": "ファミリーマート阪急千里山駅前店",
+        "store_address": "大阪府吹田市千里山西５−１−１",
+        "store_lat": "34.779829",
+        "store_lon": "135.505285"
+    },
+    {
+        "store_name": "ファミリーマート吹田千里山高塚店",
+        "store_address": "大阪府吹田市千里山高塚９−２",
+        "store_lat": "34.781704",
+        "store_lon": "135.509676"
+    },
+    {
+        "store_name": "ファミリーマート吹田千里山西店",
+        "store_address": "大阪府吹田市千里山西４−３８−１０",
+        "store_lat": "34.778687",
+        "store_lon": "135.497283"
+    },
+    {
+        "store_name": "ファミリーマート吹田五月が丘北店",
+        "store_address": "大阪府吹田市五月が丘北２２−１４",
+        "store_lat": "34.789",
+        "store_lon": "135.523848"
+    },
+    {
+        "store_name": "ファミリーマート吹田山田南店",
+        "store_address": "大阪府吹田市山田南３０−４",
+        "store_lat": "34.79172",
+        "store_lon": "135.536967"
+    },
+    {
+        "store_name": "ファミリーマート桃山台駅店",
+        "store_address": "大阪府吹田市桃山台５−１　Ｃ２０−Ｂ１０１",
+        "store_lat": "34.792394",
+        "store_lon": "135.496928"
+    },
+    {
+        "store_name": "ファミリーマート吹田長野西店",
+        "store_address": "大阪府吹田市長野西１１−８",
+        "store_lat": "34.790775",
+        "store_lon": "135.540914"
+    },
+    {
+        "store_name": "ファミリーマート吹田山田西店",
+        "store_address": "大阪府吹田市山田西２−７−１６",
+        "store_lat": "34.79577",
+        "store_lon": "135.527309"
+    },
+    {
+        "store_name": "ファミリーマートグローバルビレッジ津雲台店",
+        "store_address": "大阪府吹田市津雲台五丁目１１−３",
+        "store_lat": "34.802919",
+        "store_lon": "135.513852"
+    },
+    {
+        "store_name": "ファミリーマート山田西四丁目店",
+        "store_address": "大阪府吹田市山田西４−２−６",
+        "store_lat": "34.80534",
+        "store_lon": "135.516802"
+    },
+    {
+        "store_name": "ファミリーマート吹田津雲台七丁目店",
+        "store_address": "大阪府吹田市津雲台七丁目７番２０号",
+        "store_lat": "34.805913",
+        "store_lon": "135.507165"
+    },
+    {
+        "store_name": "ファミリーマート万博記念公園店",
+        "store_address": "大阪府吹田市千里万博公園１−２０",
+        "store_lat": "34.805458",
+        "store_lon": "135.529325"
+    },
+    {
+        "store_name": "ファミリーマート摂津鶴野店",
+        "store_address": "大阪府摂津市鶴野３丁目５番２３号",
+        "store_lat": "34.780519",
+        "store_lon": "135.56502"
+    },
+    {
+        "store_name": "ファミリーマート摂津三島店",
+        "store_address": "大阪府摂津市三島３−５−１３",
+        "store_lat": "34.778196",
+        "store_lon": "135.555547"
+    },
+    {
+        "store_name": "ファミリーマート摂津新在家一丁目店",
+        "store_address": "大阪府摂津市新在家１−２７−２３",
+        "store_lat": "34.772916",
+        "store_lon": "135.568791"
+    },
+    {
+        "store_name": "ファミリーマート摂津学園町店",
+        "store_address": "大阪府摂津市学園町１丁目７番５５号",
+        "store_lat": "34.785594",
+        "store_lon": "135.562199"
+    },
+    {
+        "store_name": "ファミリーマート池上鶴野店",
+        "store_address": "大阪府摂津市鶴野４−１２−２１",
+        "store_lat": "34.78449",
+        "store_lon": "135.567108"
+    },
+    {
+        "store_name": "ファミリーマート摂津正雀三丁目店",
+        "store_address": "大阪府摂津市正雀三丁目１１番７号",
+        "store_lat": "34.774831",
+        "store_lon": "135.551363"
+    },
+    {
+        "store_name": "ファミリーマート摂津庄屋店",
+        "store_address": "大阪府摂津市庄屋２丁目２番３９号",
+        "store_lat": "34.784942",
+        "store_lon": "135.552934"
+    },
+    {
+        "store_name": "ファミリーマート正雀駅東口店",
+        "store_address": "大阪府摂津市正雀本町１−３４−９−１０１",
+        "store_lat": "34.77665",
+        "store_lon": "135.54706"
+    },
+    {
+        "store_name": "ファミリーマート鳥飼本町五丁目店",
+        "store_address": "大阪府摂津市鳥飼本町５−１−１３",
+        "store_lat": "34.778307",
+        "store_lon": "135.577428"
+    },
+    {
+        "store_name": "ファミリーマート摂津正雀駅前店",
+        "store_address": "大阪府摂津市正雀本町１丁目２６番９号",
+        "store_lat": "34.775531",
+        "store_lon": "135.546186"
+    },
+    {
+        "store_name": "ファミリーマート摂津鳥飼店",
+        "store_address": "大阪府摂津市鳥飼西二丁目４０番１５号",
+        "store_lat": "34.769763",
+        "store_lon": "135.576268"
+    },
+    {
+        "store_name": "ファミリーマート摂津東別府三丁目店",
+        "store_address": "大阪府摂津市東別府三丁目８番１１号",
+        "store_lat": "34.763371",
+        "store_lon": "135.55729"
+    },
+    {
+        "store_name": "ファミリーマート千里丘北口店",
+        "store_address": "大阪府摂津市千里丘東１−１１−１３",
+        "store_lat": "34.791773",
+        "store_lon": "135.552124"
+    },
+    {
+        "store_name": "ファミリーマート摂津千里丘二丁目店",
+        "store_address": "大阪府摂津市千里丘２−１１−１８",
+        "store_lat": "34.790168",
+        "store_lon": "135.54707"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ千里丘駅西口店",
+        "store_address": "大阪府摂津市千里丘１丁目４番１１号",
+        "store_lat": "34.792648",
+        "store_lon": "135.550937"
+    },
+    {
+        "store_name": "ファミリーマート摂津別府店",
+        "store_address": "大阪府摂津市別府３丁目１９−３",
+        "store_lat": "34.760431",
+        "store_lon": "135.551701"
+    },
+    {
+        "store_name": "ファミリーマート摂津鳥飼中一丁目店",
+        "store_address": "大阪府摂津市鳥飼中１丁目３６番２０号",
+        "store_lat": "34.778367",
+        "store_lon": "135.588585"
+    },
+    {
+        "store_name": "ファミリーマート摂津鳥飼上四丁目店",
+        "store_address": "大阪府摂津市鳥飼上４−７−４１",
+        "store_lat": "34.792577",
+        "store_lon": "135.596999"
+    },
+    {
+        "store_name": "ファミリーマート泉南信達市場店",
+        "store_address": "大阪府泉南市信達市場１５２７−１",
+        "store_lat": "34.368646",
+        "store_lon": "135.277887"
+    },
+    {
+        "store_name": "ファミリーマート泉南樽井北店",
+        "store_address": "大阪府泉南市樽井７−１−３４",
+        "store_lat": "34.370909",
+        "store_lon": "135.267462"
+    },
+    {
+        "store_name": "ファミリーマート泉南信達牧野店",
+        "store_address": "大阪府泉南市信達牧野３３９番地の１",
+        "store_lat": "34.358613",
+        "store_lon": "135.277997"
+    },
+    {
+        "store_name": "ファミリーマート泉南幡代北店",
+        "store_address": "大阪府泉南市幡代１丁目３番１７号",
+        "store_lat": "34.357048",
+        "store_lon": "135.263945"
+    },
+    {
+        "store_name": "ファミリーマート泉南幡代店",
+        "store_address": "大阪府泉南市幡代１丁目９番３号",
+        "store_lat": "34.356288",
+        "store_lon": "135.265007"
+    },
+    {
+        "store_name": "ファミリーマート泉南男里北店",
+        "store_address": "大阪府泉南市男里５−２−６",
+        "store_lat": "34.364183",
+        "store_lon": "135.257864"
+    },
+    {
+        "store_name": "ファミリーマート泉南砂川店",
+        "store_address": "大阪府泉南市信達市場２３３５番地１",
+        "store_lat": "34.364218",
+        "store_lon": "135.289976"
     }
 ]
