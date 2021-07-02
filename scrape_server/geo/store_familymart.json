@@ -48628,5 +48628,1019 @@
         "store_address": "兵庫県西宮市高松町３番３４号",
         "store_lat": "34.744624",
         "store_lon": "135.356347"
+    },
+    {
+        "store_name": "ファミリーマート西宮津門大箇町店",
+        "store_address": "兵庫県西宮市津門大箇町１０番１０号",
+        "store_lat": "34.735683",
+        "store_lon": "135.358986"
+    },
+    {
+        "store_name": "ファミリーマート甲風園一丁目店",
+        "store_address": "兵庫県西宮市甲風園１−５−７",
+        "store_lat": "34.747225",
+        "store_lon": "135.356252"
+    },
+    {
+        "store_name": "ファミリーマート西宮名次町店",
+        "store_address": "兵庫県西宮市名次町２９−３",
+        "store_lat": "34.749749",
+        "store_lon": "135.331662"
+    },
+    {
+        "store_name": "ファミリーマート西宮上甲子園五丁目店",
+        "store_address": "兵庫県西宮市上甲子園５−５−２７",
+        "store_lat": "34.734178",
+        "store_lon": "135.36071"
+    },
+    {
+        "store_name": "ファミリーマート西宮能登町店",
+        "store_address": "兵庫県西宮市能登町４番１６号",
+        "store_lat": "34.75124",
+        "store_lon": "135.352472"
+    },
+    {
+        "store_name": "ファミリーマート西宮今津港町店",
+        "store_address": "兵庫県西宮市今津港町３番２７号",
+        "store_lat": "34.722392",
+        "store_lon": "135.34937"
+    },
+    {
+        "store_name": "ファミリーマート西宮瓦木店",
+        "store_address": "兵庫県西宮市上甲子園３−５−３０",
+        "store_lat": "34.733658",
+        "store_lon": "135.365631"
+    },
+    {
+        "store_name": "ファミリーマート西宮獅子ヶ口店",
+        "store_address": "兵庫県西宮市獅子ヶ口町１−３９",
+        "store_lat": "34.755345",
+        "store_lon": "135.329514"
+    },
+    {
+        "store_name": "ファミリーマート西宮大屋町店",
+        "store_address": "兵庫県西宮市大屋町２３番１号",
+        "store_lat": "34.745752",
+        "store_lon": "135.365705"
+    },
+    {
+        "store_name": "ファミリーマート阪急門戸厄神駅前店",
+        "store_address": "兵庫県西宮市下大市東町９−３",
+        "store_lat": "34.757798",
+        "store_lon": "135.358592"
+    },
+    {
+        "store_name": "ファミリーマート西宮上ヶ原店",
+        "store_address": "兵庫県西宮市上ケ原五番町２番３８号",
+        "store_lat": "34.761995",
+        "store_lon": "135.347974"
+    },
+    {
+        "store_name": "ファミリーマート甲陽園駅前店",
+        "store_address": "兵庫県西宮市甲陽園西山町１−６４エクセル錦",
+        "store_lat": "34.76133",
+        "store_lon": "135.329707"
+    },
+    {
+        "store_name": "ファミリーマート甲子園口店",
+        "store_address": "兵庫県西宮市甲子園口北町１９番１号",
+        "store_lat": "34.740744",
+        "store_lon": "135.373825"
+    },
+    {
+        "store_name": "ファミリーマート西宮甲子園口北町店",
+        "store_address": "兵庫県西宮市甲子園口北町２番２号",
+        "store_lat": "34.739558",
+        "store_lon": "135.375355"
+    },
+    {
+        "store_name": "ファミリーマート西宮里中町店",
+        "store_address": "兵庫県西宮市里中町３−１２−２９",
+        "store_lat": "34.720672",
+        "store_lon": "135.370071"
+    },
+    {
+        "store_name": "ファミリーマート阪神なるお駅前店",
+        "store_address": "兵庫県西宮市鳴尾町３−２−１",
+        "store_lat": "34.719221",
+        "store_lon": "135.37078"
+    },
+    {
+        "store_name": "ファミリーマート上大市四丁目店",
+        "store_address": "兵庫県西宮市上大市四丁目７番１７号",
+        "store_lat": "34.762331",
+        "store_lon": "135.366187"
+    },
+    {
+        "store_name": "ファミリーマート西脇上野店",
+        "store_address": "兵庫県西脇市上野２３５",
+        "store_lat": "34.987743",
+        "store_lon": "134.978995"
+    },
+    {
+        "store_name": "ファミリーマート西脇和布店",
+        "store_address": "兵庫県西脇市和布町１８９−４",
+        "store_lat": "34.979705",
+        "store_lon": "134.974659"
+    },
+    {
+        "store_name": "ファミリーマート西脇南本町店",
+        "store_address": "兵庫県西脇市西脇１１０７番",
+        "store_lat": "34.981777",
+        "store_lon": "134.969719"
+    },
+    {
+        "store_name": "ファミリーマート西脇野村町店",
+        "store_address": "兵庫県西脇市野村町７７２番１",
+        "store_lat": "34.970076",
+        "store_lon": "134.964542"
+    },
+    {
+        "store_name": "ファミリーマート播磨町古田店",
+        "store_address": "兵庫県加古郡播磨町北古田１−２０−１３",
+        "store_lat": "34.724809",
+        "store_lon": "134.86776"
+    },
+    {
+        "store_name": "ファミリーマート播磨北本荘店",
+        "store_address": "兵庫県加古郡播磨町北本荘６−１−２６",
+        "store_lat": "34.721738",
+        "store_lon": "134.858278"
+    },
+    {
+        "store_name": "ファミリーマートジミー姫路市役所南店",
+        "store_address": "兵庫県姫路市佃町７０−１",
+        "store_lat": "34.814985",
+        "store_lon": "134.68444"
+    },
+    {
+        "store_name": "ファミリーマート姫路手柄店",
+        "store_address": "兵庫県姫路市手柄１−１５５",
+        "store_lat": "34.817296",
+        "store_lon": "134.681794"
+    },
+    {
+        "store_name": "ファミリーマート姫路亀山店",
+        "store_address": "兵庫県姫路市亀山１８３−１",
+        "store_lat": "34.810024",
+        "store_lon": "134.675146"
+    },
+    {
+        "store_name": "ファミリーマート姫路駅南店",
+        "store_address": "兵庫県姫路市南駅前町９５",
+        "store_lat": "34.825385",
+        "store_lon": "134.69098"
+    },
+    {
+        "store_name": "ファミリーマートＪＲ姫路駅前店",
+        "store_address": "兵庫県姫路市駅前町２４１",
+        "store_lat": "34.828182",
+        "store_lon": "134.691079"
+    },
+    {
+        "store_name": "ファミリーマート山陽姫路駅前店",
+        "store_address": "兵庫県姫路市南町５",
+        "store_lat": "34.828823",
+        "store_lon": "134.688962"
+    },
+    {
+        "store_name": "ファミリーマート姫路みゆき通店",
+        "store_address": "兵庫県姫路市駅前町３４１福富ビル",
+        "store_lat": "34.829559",
+        "store_lon": "134.691612"
+    },
+    {
+        "store_name": "ファミリーマート姫路玉地店",
+        "store_address": "兵庫県姫路市飾磨区玉地１−１２２",
+        "store_lat": "34.800838",
+        "store_lon": "134.6786"
+    },
+    {
+        "store_name": "ファミリーマート姫路塩町店",
+        "store_address": "兵庫県姫路市塩町８５番地",
+        "store_lat": "34.831546",
+        "store_lon": "134.686615"
+    },
+    {
+        "store_name": "ファミリーマートうかいや阿成店",
+        "store_address": "兵庫県姫路市飾磨区阿成植木６４９",
+        "store_lat": "34.79886",
+        "store_lon": "134.688081"
+    },
+    {
+        "store_name": "ファミリーマート姫路大手前店",
+        "store_address": "兵庫県姫路市白銀町６７番地",
+        "store_lat": "34.83153",
+        "store_lon": "134.69114"
+    },
+    {
+        "store_name": "ファミリーマート姫路構四丁目店",
+        "store_address": "兵庫県姫路市飾磨区構４−１４６",
+        "store_lat": "34.812715",
+        "store_lon": "134.665391"
+    },
+    {
+        "store_name": "ファミリーマート姫路土山二丁目店",
+        "store_address": "兵庫県姫路市土山２丁目１２番４１号",
+        "store_lat": "34.83138",
+        "store_lon": "134.674363"
+    },
+    {
+        "store_name": "ファミリーマート神屋町南店",
+        "store_address": "兵庫県姫路市神屋町三丁目３７番５",
+        "store_lat": "34.82821",
+        "store_lon": "134.702385"
+    },
+    {
+        "store_name": "ファミリーマート姫路土山東の町店",
+        "store_address": "兵庫県姫路市土山東の町１５−１６",
+        "store_lat": "34.833144",
+        "store_lon": "134.677251"
+    },
+    {
+        "store_name": "ファミリーマート姫路壱丁町店",
+        "store_address": "兵庫県姫路市坂田町１５４",
+        "store_lat": "34.833725",
+        "store_lon": "134.700209"
+    },
+    {
+        "store_name": "ファミリーマート姫路中島店",
+        "store_address": "兵庫県姫路市飾磨区中島２６４−１",
+        "store_lat": "34.791651",
+        "store_lon": "134.68781"
+    },
+    {
+        "store_name": "ファミリーマート姫路飾磨細江店",
+        "store_address": "兵庫県姫路市飾磨区細江２５６４番地",
+        "store_lat": "34.79724",
+        "store_lon": "134.666272"
+    },
+    {
+        "store_name": "ファミリーマート姫路北原店",
+        "store_address": "兵庫県姫路市北原３７３番地１",
+        "store_lat": "34.798593",
+        "store_lon": "134.707653"
+    },
+    {
+        "store_name": "ファミリーマート西八代町店",
+        "store_address": "兵庫県姫路市西八代町８−１６",
+        "store_lat": "34.846375",
+        "store_lon": "134.687686"
+    },
+    {
+        "store_name": "ファミリーマート姫路飾磨今在家店",
+        "store_address": "兵庫県姫路市飾磨区今在家１０６８番地１４",
+        "store_lat": "34.796417",
+        "store_lon": "134.651784"
+    },
+    {
+        "store_name": "ファミリーマート姫路東郷町店",
+        "store_address": "兵庫県姫路市野里１５番地１１",
+        "store_lat": "34.843465",
+        "store_lon": "134.708826"
+    },
+    {
+        "store_name": "ファミリーマート英賀春日町店",
+        "store_address": "兵庫県姫路市飾磨区英賀春日町２丁目４９番地",
+        "store_lat": "34.811646",
+        "store_lon": "134.642226"
+    },
+    {
+        "store_name": "ファミリーマート姫路国分寺店",
+        "store_address": "兵庫県姫路市御国野町国分寺１５９番地１",
+        "store_lat": "34.823103",
+        "store_lon": "134.730284"
+    },
+    {
+        "store_name": "ファミリーマート梅ヶ枝町店",
+        "store_address": "兵庫県姫路市野里９０７−１",
+        "store_lat": "34.850199",
+        "store_lon": "134.706025"
+    },
+    {
+        "store_name": "ファミリーマート姫路宇佐崎店",
+        "store_address": "兵庫県姫路市白浜町宇佐崎南２−６９",
+        "store_lat": "34.781427",
+        "store_lon": "134.709098"
+    },
+    {
+        "store_name": "ファミリーマート姫路御国野店",
+        "store_address": "兵庫県姫路市御国野町御着３７２−１",
+        "store_lat": "34.812193",
+        "store_lon": "134.734407"
+    },
+    {
+        "store_name": "ファミリーマート西夢前台五丁目店",
+        "store_address": "兵庫県姫路市広畑区西夢前台５−３６−１２",
+        "store_lat": "34.831287",
+        "store_lon": "134.638876"
+    },
+    {
+        "store_name": "ファミリーマート広峰店",
+        "store_address": "兵庫県姫路市城北新町２−１９−２７",
+        "store_lat": "34.856962",
+        "store_lon": "134.697215"
+    },
+    {
+        "store_name": "ファミリーマート御着橋店",
+        "store_address": "兵庫県姫路市御国野町御着７８４番１",
+        "store_lat": "34.819186",
+        "store_lon": "134.73855"
+    },
+    {
+        "store_name": "ファミリーマート福崎辻川西店",
+        "store_address": "兵庫県神崎郡福崎町西田原１２９５−１",
+        "store_lat": "34.954227",
+        "store_lon": "134.758753"
+    },
+    {
+        "store_name": "ファミリーマート福崎南インター店",
+        "store_address": "兵庫県神崎郡福崎町南田原２１８４番１",
+        "store_lat": "34.94192",
+        "store_lon": "134.760027"
+    },
+    {
+        "store_name": "ファミリーマート三木末広店",
+        "store_address": "兵庫県三木市末広３−１０−３１",
+        "store_lat": "34.803339",
+        "store_lon": "134.975459"
+    },
+    {
+        "store_name": "ファミリーマート三木志染店",
+        "store_address": "兵庫県三木市志染町広野１−３０−１",
+        "store_lat": "34.781997",
+        "store_lon": "135.006685"
+    },
+    {
+        "store_name": "ファミリーマート三木インター店",
+        "store_address": "兵庫県三木市大村字城ノ前５５４−１",
+        "store_lat": "34.804371",
+        "store_lon": "134.965071"
+    },
+    {
+        "store_name": "ファミリーマート三木広野店",
+        "store_address": "兵庫県三木市志染町広野５丁目７３番１",
+        "store_lat": "34.77638",
+        "store_lon": "135.017325"
+    },
+    {
+        "store_name": "ファミリーマート三木緑が丘店",
+        "store_address": "兵庫県三木市緑が丘町本町１丁目２３６−１平井ビル",
+        "store_lat": "34.765246",
+        "store_lon": "135.026718"
+    },
+    {
+        "store_name": "ファミリーマート吉川町大沢店",
+        "store_address": "兵庫県三木市吉川町大沢３５１番１",
+        "store_lat": "34.885732",
+        "store_lon": "135.119583"
+    },
+    {
+        "store_name": "ファミリーマート淡路こえなみ店",
+        "store_address": "兵庫県南あわじ市榎列小榎列４０８−１",
+        "store_lat": "34.301235",
+        "store_lon": "134.763571"
+    },
+    {
+        "store_name": "ファミリーマート淡路ファームパーク前店",
+        "store_address": "兵庫県南あわじ市八木養宜上字廣畑２４６",
+        "store_lat": "34.302348",
+        "store_lon": "134.800397"
+    },
+    {
+        "store_name": "ファミリーマート南あわじ国衙店",
+        "store_address": "兵庫県南あわじ市神代國衙１２９４−１",
+        "store_lat": "34.272466",
+        "store_lon": "134.760662"
+    },
+    {
+        "store_name": "ファミリーマート淡路かもり店",
+        "store_address": "兵庫県南あわじ市榎列松田７０６番地の６",
+        "store_lat": "34.323016",
+        "store_lon": "134.772853"
+    },
+    {
+        "store_name": "ファミリーマート賀集八幡店",
+        "store_address": "兵庫県南あわじ市賀集八幡４１４−１",
+        "store_lat": "34.268097",
+        "store_lon": "134.739904"
+    },
+    {
+        "store_name": "ファミリーマート西淡湊店",
+        "store_address": "兵庫県南あわじ市湊２６１−１",
+        "store_lat": "34.324144",
+        "store_lon": "134.737539"
+    },
+    {
+        "store_name": "ファミリーマート南淡北阿万店",
+        "store_address": "兵庫県南あわじ市北阿万筒井１７１９番地２",
+        "store_lat": "34.245815",
+        "store_lon": "134.749261"
+    },
+    {
+        "store_name": "ファミリーマート八鹿店",
+        "store_address": "兵庫県養父市八鹿町八鹿１３００−１",
+        "store_lat": "35.402363",
+        "store_lon": "134.764886"
+    },
+    {
+        "store_name": "ファミリーマート八鹿高柳店",
+        "store_address": "兵庫県養父市八鹿町高柳２６３−２",
+        "store_lat": "35.39285",
+        "store_lon": "134.743241"
+    },
+    {
+        "store_name": "ファミリーマート東安堵店",
+        "store_address": "奈良県生駒郡安堵町大字東安堵８６３−１",
+        "store_lat": "34.606204",
+        "store_lon": "135.754367"
+    },
+    {
+        "store_name": "ファミリーマート斑鳩法隆寺南店",
+        "store_address": "奈良県生駒郡斑鳩町法隆寺南２丁目１番１２号",
+        "store_lat": "34.609665",
+        "store_lon": "135.739458"
+    },
+    {
+        "store_name": "ファミリーマート近鉄生駒駅改札外橋上店",
+        "store_address": "奈良県生駒市元町１丁目１−１",
+        "store_lat": "34.693144",
+        "store_lon": "135.697923"
+    },
+    {
+        "store_name": "ファミリーマート近鉄生駒駅改札内橋上店",
+        "store_address": "奈良県生駒市元町１丁目１−１",
+        "store_lat": "34.693144",
+        "store_lon": "135.697923"
+    },
+    {
+        "store_name": "ファミリーマート生駒東松ヶ丘店",
+        "store_address": "奈良県生駒市東松ヶ丘４−１１−１０１",
+        "store_lat": "34.698865",
+        "store_lon": "135.696387"
+    },
+    {
+        "store_name": "ファミリーマート近鉄東生駒駅前店",
+        "store_address": "奈良県生駒市東生駒１−５−１",
+        "store_lat": "34.691109",
+        "store_lon": "135.710427"
+    },
+    {
+        "store_name": "ファミリーマート生駒辻町店",
+        "store_address": "奈良県生駒市辻町２４１番２",
+        "store_lat": "34.696853",
+        "store_lon": "135.708843"
+    },
+    {
+        "store_name": "ファミリーマート生駒俵口店",
+        "store_address": "奈良県生駒市俵口町４５３番地１",
+        "store_lat": "34.707442",
+        "store_lon": "135.696635"
+    },
+    {
+        "store_name": "ファミリーマート生駒壱分インター北店",
+        "store_address": "奈良県生駒市壱分町１２５９番地１",
+        "store_lat": "34.674089",
+        "store_lon": "135.706109"
+    },
+    {
+        "store_name": "ファミリーマート生駒上町店",
+        "store_address": "奈良県生駒市上町９２番地",
+        "store_lat": "34.719899",
+        "store_lon": "135.722493"
+    },
+    {
+        "store_name": "ファミリーマート生駒西白庭台店",
+        "store_address": "奈良県生駒市西白庭台２−１４−１",
+        "store_lat": "34.730823",
+        "store_lon": "135.707271"
+    },
+    {
+        "store_name": "ファミリーマート榛原駅前店",
+        "store_address": "奈良県宇陀市榛原萩原２４２９番地３９",
+        "store_lat": "34.529541",
+        "store_lon": "135.955809"
+    },
+    {
+        "store_name": "ファミリーマート榛原萩原店",
+        "store_address": "奈良県宇陀市榛原萩原１９４４−１",
+        "store_lat": "34.537926",
+        "store_lon": "135.95333"
+    },
+    {
+        "store_name": "ファミリーマート王寺本町一丁目店",
+        "store_address": "奈良県北葛城郡王寺町本町１丁目１７番５３号",
+        "store_lat": "34.594844",
+        "store_lon": "135.703998"
+    },
+    {
+        "store_name": "ファミリーマート王寺本町店",
+        "store_address": "奈良県北葛城郡王寺町本町二丁目３４番３３号",
+        "store_lat": "34.584667",
+        "store_lon": "135.705718"
+    },
+    {
+        "store_name": "ファミリーマート大淀桧垣本店",
+        "store_address": "奈良県吉野郡大淀町大字桧垣本１０２６番地",
+        "store_lat": "34.397076",
+        "store_lon": "135.793396"
+    },
+    {
+        "store_name": "ファミリーマート大淀下渕店",
+        "store_address": "奈良県吉野郡大淀町大字下渕１６３４番地１１",
+        "store_lat": "34.392292",
+        "store_lon": "135.780178"
+    },
+    {
+        "store_name": "ファミリーマート花吉野ガーデンヒルズ店",
+        "store_address": "奈良県吉野郡大淀町福神１−１２５",
+        "store_lat": "34.394162",
+        "store_lon": "135.748703"
+    },
+    {
+        "store_name": "ファミリーマート近鉄八木駅３番ホーム店",
+        "store_address": "奈良県橿原市内膳町５丁目１−２",
+        "store_lat": "34.513242",
+        "store_lon": "135.79203"
+    },
+    {
+        "store_name": "ファミリーマート近鉄八木駅１番ホーム店",
+        "store_address": "奈良県橿原市内膳町５丁目１−２",
+        "store_lat": "34.513242",
+        "store_lon": "135.79203"
+    },
+    {
+        "store_name": "ファミリーマート近鉄八木駅６番ホーム店",
+        "store_address": "奈良県橿原市内膳町５丁目１−２",
+        "store_lat": "34.513242",
+        "store_lon": "135.79203"
+    },
+    {
+        "store_name": "ファミリーマート奈良県立医大前店",
+        "store_address": "奈良県橿原市四条町８６４番地４",
+        "store_lat": "34.50414",
+        "store_lon": "135.79456"
+    },
+    {
+        "store_name": "ファミリーマート橿原内膳町店",
+        "store_address": "奈良県橿原市内膳町４丁目５番１８号",
+        "store_lat": "34.515676",
+        "store_lon": "135.791169"
+    },
+    {
+        "store_name": "ファミリーマート橿原小綱町店",
+        "store_address": "奈良県橿原市小綱町１７−４５",
+        "store_lat": "34.510684",
+        "store_lon": "135.783445"
+    },
+    {
+        "store_name": "ファミリーマート橿原五井町店",
+        "store_address": "奈良県橿原市五井町２１５−１",
+        "store_lat": "34.505811",
+        "store_lon": "135.780526"
+    },
+    {
+        "store_name": "ファミリーマートみみなし駅前店",
+        "store_address": "奈良県橿原市石原田町２７７番地の１１",
+        "store_lat": "34.512485",
+        "store_lon": "135.814182"
+    },
+    {
+        "store_name": "ファミリーマート橿原くずもと町店",
+        "store_address": "奈良県橿原市葛本町３４４番地の２",
+        "store_lat": "34.526648",
+        "store_lon": "135.802916"
+    },
+    {
+        "store_name": "ファミリーマート橿原下八釣店",
+        "store_address": "奈良県橿原市下八釣町６３−１",
+        "store_lat": "34.503179",
+        "store_lon": "135.814831"
+    },
+    {
+        "store_name": "ファミリーマート近鉄橿原神宮前駅店",
+        "store_address": "奈良県橿原市久米町６１８",
+        "store_lat": "34.483376",
+        "store_lon": "135.793282"
+    },
+    {
+        "store_name": "ファミリーマート橿原神宮前駅西口店",
+        "store_address": "奈良県橿原市久米町５６８番地",
+        "store_lat": "34.482674",
+        "store_lon": "135.793186"
+    },
+    {
+        "store_name": "ファミリーマート橿原石川町店",
+        "store_address": "奈良県橿原市石川町３３８−１",
+        "store_lat": "34.482932",
+        "store_lon": "135.800019"
+    },
+    {
+        "store_name": "ファミリーマート橿原見瀬町店",
+        "store_address": "奈良県橿原市見瀬町２３５８−２",
+        "store_lat": "34.474782",
+        "store_lon": "135.792892"
+    },
+    {
+        "store_name": "ファミリーマート橿原五条野店",
+        "store_address": "奈良県橿原市五条野町４２１番地の１",
+        "store_lat": "34.47235",
+        "store_lon": "135.802656"
+    },
+    {
+        "store_name": "ファミリーマート橿原一町店",
+        "store_address": "奈良県橿原市一町３５４−１",
+        "store_lat": "34.475468",
+        "store_lon": "135.763835"
+    },
+    {
+        "store_name": "ファミリーマート香芝下田西店",
+        "store_address": "奈良県香芝市下田西二丁目５番３０号",
+        "store_lat": "34.544125",
+        "store_lon": "135.699817"
+    },
+    {
+        "store_name": "ファミリーマート香芝二上駅前店",
+        "store_address": "奈良県香芝市穴虫９−１８",
+        "store_lat": "34.546321",
+        "store_lon": "135.687482"
+    },
+    {
+        "store_name": "ファミリーマート香芝良福寺店",
+        "store_address": "奈良県香芝市良福寺１２８番地の１",
+        "store_lat": "34.528086",
+        "store_lon": "135.706495"
+    },
+    {
+        "store_name": "ファミリーマート香芝高山台店",
+        "store_address": "奈良県香芝市高山台３−１−３",
+        "store_lat": "34.547367",
+        "store_lon": "135.680757"
+    },
+    {
+        "store_name": "ファミリーマート香芝真美ヶ丘二丁目店",
+        "store_address": "奈良県香芝市真美ヶ丘二丁目１番２号",
+        "store_lat": "34.541743",
+        "store_lon": "135.719393"
+    },
+    {
+        "store_name": "ファミリーマート近鉄五位堂駅改札外橋上店",
+        "store_address": "奈良県香芝市瓦口２６８",
+        "store_lat": "34.534855",
+        "store_lon": "135.718297"
+    },
+    {
+        "store_name": "ファミリーマート香芝ＳＡ下り店",
+        "store_address": "奈良県香芝市関屋北１丁目１３４４",
+        "store_lat": "34.558931",
+        "store_lon": "135.677527"
+    },
+    {
+        "store_name": "ファミリーマート葛城南藤井店",
+        "store_address": "奈良県葛城市南藤井１７４−１",
+        "store_lat": "34.483211",
+        "store_lon": "135.7158"
+    },
+    {
+        "store_name": "ファミリーマート葛城忍海店",
+        "store_address": "奈良県葛城市忍海４８６番地３",
+        "store_lat": "34.474455",
+        "store_lon": "135.732818"
+    },
+    {
+        "store_name": "ファミリーマート葛城八川店",
+        "store_address": "奈良県葛城市八川９３番地１",
+        "store_lat": "34.510158",
+        "store_lon": "135.716222"
+    },
+    {
+        "store_name": "ファミリーマート葛城竹内店",
+        "store_address": "奈良県葛城市竹内２０１番地",
+        "store_lat": "34.510485",
+        "store_lon": "135.702001"
+    },
+    {
+        "store_name": "ファミリーマート河合町池部店",
+        "store_address": "奈良県北葛城郡河合町池部二丁目４番５号",
+        "store_lat": "34.58024",
+        "store_lon": "135.741211"
+    },
+    {
+        "store_name": "ファミリーマート河合店",
+        "store_address": "奈良県北葛城郡河合町西山台５２４−１８",
+        "store_lat": "34.581453",
+        "store_lon": "135.731521"
+    },
+    {
+        "store_name": "ファミリーマート法隆寺インター南店",
+        "store_address": "奈良県北葛城郡河合町大字穴闇２９０−１",
+        "store_lat": "34.590314",
+        "store_lon": "135.741175"
+    },
+    {
+        "store_name": "ファミリーマート上牧町三軒屋店",
+        "store_address": "奈良県北葛城郡上牧町大字上牧３３０８番地",
+        "store_lat": "34.566551",
+        "store_lon": "135.716344"
+    },
+    {
+        "store_name": "ファミリーマート上牧町米山台店",
+        "store_address": "奈良県北葛城郡上牧町大字上牧５４２番地１",
+        "store_lat": "34.559627",
+        "store_lon": "135.711497"
+    },
+    {
+        "store_name": "ファミリーマート上牧葛城台店",
+        "store_address": "奈良県北葛城郡上牧町葛城台１丁目１番１号",
+        "store_lat": "34.557264",
+        "store_lon": "135.720666"
+    },
+    {
+        "store_name": "ファミリーマート奈良上牧町店",
+        "store_address": "奈良県北葛城郡上牧町大字中筋出作１１２番地の１",
+        "store_lat": "34.553192",
+        "store_lon": "135.706561"
+    },
+    {
+        "store_name": "ファミリーマート上牧桜ヶ丘店",
+        "store_address": "奈良県北葛城郡上牧町桜ヶ丘２−６−１１",
+        "store_lat": "34.576122",
+        "store_lon": "135.720125"
+    },
+    {
+        "store_name": "ファミリーマート広陵町平尾店",
+        "store_address": "奈良県北葛城郡広陵町大字平尾８７１番地１",
+        "store_lat": "34.541767",
+        "store_lon": "135.745345"
+    },
+    {
+        "store_name": "ファミリーマート広陵疋相店",
+        "store_address": "奈良県北葛城郡広陵町疋相６０−１",
+        "store_lat": "34.542137",
+        "store_lon": "135.742283"
+    },
+    {
+        "store_name": "ファミリーマート広陵寺戸店",
+        "store_address": "奈良県北葛城郡広陵町大字寺戸５９７番地１",
+        "store_lat": "34.558989",
+        "store_lon": "135.746535"
+    },
+    {
+        "store_name": "ファミリーマート広陵みささぎ台店",
+        "store_address": "奈良県北葛城郡広陵町みささぎ台３９−１",
+        "store_lat": "34.533647",
+        "store_lon": "135.736727"
+    },
+    {
+        "store_name": "ファミリーマート五條病院前店",
+        "store_address": "奈良県五條市野原西６丁目３番１１号",
+        "store_lat": "34.341001",
+        "store_lon": "135.698139"
+    },
+    {
+        "store_name": "ファミリーマート五條今井店",
+        "store_address": "奈良県五條市今井５−１−１８",
+        "store_lat": "34.359135",
+        "store_lon": "135.711007"
+    },
+    {
+        "store_name": "ファミリーマート青翔高校前店",
+        "store_address": "奈良県御所市大字三室５９",
+        "store_lat": "34.459393",
+        "store_lon": "135.731642"
+    },
+    {
+        "store_name": "ファミリーマート御所冨田店",
+        "store_address": "奈良県御所市大字池之内４１−１",
+        "store_lat": "34.444462",
+        "store_lon": "135.748045"
+    },
+    {
+        "store_name": "ファミリーマート御所櫛羅店",
+        "store_address": "奈良県御所市大字櫛羅７１１番地の１",
+        "store_lat": "34.462",
+        "store_lon": "135.702371"
+    },
+    {
+        "store_name": "ファミリーマート桜井市役所南店",
+        "store_address": "奈良県桜井市大字粟殿１５８−２",
+        "store_lat": "34.516897",
+        "store_lon": "135.843245"
+    },
+    {
+        "store_name": "ファミリーマート近鉄桜井駅前店",
+        "store_address": "奈良県桜井市桜井１９０−２",
+        "store_lat": "34.513509",
+        "store_lon": "135.846312"
+    },
+    {
+        "store_name": "ファミリーマート山の辺の道店",
+        "store_address": "奈良県桜井市粟殿９１−１",
+        "store_lat": "34.516893",
+        "store_lon": "135.850541"
+    },
+    {
+        "store_name": "ファミリーマート桜井薬師町店",
+        "store_address": "奈良県桜井市大字桜井５６０−２",
+        "store_lat": "34.510918",
+        "store_lon": "135.851535"
+    },
+    {
+        "store_name": "ファミリーマート桜井安倍木店",
+        "store_address": "奈良県桜井市安倍木材団地二丁目２番地の５",
+        "store_lat": "34.503302",
+        "store_lon": "135.837744"
+    },
+    {
+        "store_name": "ファミリーマート桜井阿部店",
+        "store_address": "奈良県桜井市大字阿部１１４７番地",
+        "store_lat": "34.500231",
+        "store_lon": "135.843864"
+    },
+    {
+        "store_name": "ファミリーマート三郷勢野北店",
+        "store_address": "奈良県生駒郡三郷町勢野北一丁目１番１７号",
+        "store_lat": "34.606149",
+        "store_lon": "135.697957"
+    },
+    {
+        "store_name": "ファミリーマート三郷立野南店",
+        "store_address": "奈良県生駒郡三郷町立野南２丁目１１番３号",
+        "store_lat": "34.590163",
+        "store_lon": "135.685105"
+    },
+    {
+        "store_name": "ファミリーマート高取清水谷店",
+        "store_address": "奈良県高市郡高取町大字清水谷７番地１",
+        "store_lat": "34.4445",
+        "store_lon": "135.797386"
+    },
+    {
+        "store_name": "ファミリーマート高取町店",
+        "store_address": "奈良県高市郡高取町大字兵庫３０番地１",
+        "store_lat": "34.451951",
+        "store_lon": "135.769897"
+    },
+    {
+        "store_name": "ファミリーマート田原本千代店",
+        "store_address": "奈良県磯城郡田原本町千代６０６−７",
+        "store_lat": "34.545982",
+        "store_lon": "135.800231"
+    },
+    {
+        "store_name": "ファミリーマート田原本十六面店",
+        "store_address": "奈良県磯城郡田原本町大字十六面４８番地１",
+        "store_lat": "34.55695",
+        "store_lon": "135.778192"
+    },
+    {
+        "store_name": "ファミリーマート天理川原城店",
+        "store_address": "奈良県天理市川原城町７６０番地１",
+        "store_lat": "34.597136",
+        "store_lon": "135.832701"
+    },
+    {
+        "store_name": "ファミリーマート近鉄天理駅前店",
+        "store_address": "奈良県天理市川原城町８１５番地",
+        "store_lat": "34.601691",
+        "store_lon": "135.830281"
+    },
+    {
+        "store_name": "ファミリーマート天理勾田町店",
+        "store_address": "奈良県天理市勾田町８０−１",
+        "store_lat": "34.58936",
+        "store_lon": "135.836294"
+    },
+    {
+        "store_name": "ファミリーマート天理田井庄町店",
+        "store_address": "奈良県天理市田井庄町６４３番地",
+        "store_lat": "34.596386",
+        "store_lon": "135.827436"
+    },
+    {
+        "store_name": "ファミリーマート天理よろづ相談所病院外来棟／Ｓ店",
+        "store_address": "奈良県天理市別所町３０",
+        "store_lat": "34.605528",
+        "store_lon": "135.836904"
+    },
+    {
+        "store_name": "ファミリーマート天理よろづ相談所病院店",
+        "store_address": "奈良県天理市別所町７０−１",
+        "store_lat": "34.606322",
+        "store_lon": "135.836781"
+    },
+    {
+        "store_name": "ファミリーマート大西天理東店",
+        "store_address": "奈良県天理市布留町１０３−１",
+        "store_lat": "34.599952",
+        "store_lon": "135.8491"
+    },
+    {
+        "store_name": "ファミリーマート天理井戸堂店",
+        "store_address": "奈良県天理市西井戸堂町４５５番地１",
+        "store_lat": "34.589263",
+        "store_lon": "135.817129"
+    },
+    {
+        "store_name": "ファミリーマート天理九条町店",
+        "store_address": "奈良県天理市九条町６１７−１",
+        "store_lat": "34.577451",
+        "store_lon": "135.823231"
+    },
+    {
+        "store_name": "ファミリーマート郡山南インター店",
+        "store_address": "奈良県天理市南六条町元六条方１７９−１",
+        "store_lat": "34.607623",
+        "store_lon": "135.798424"
+    },
+    {
+        "store_name": "ファミリーマート天理柳本店",
+        "store_address": "奈良県天理市柳本町７００番地４",
+        "store_lat": "34.561189",
+        "store_lon": "135.845292"
+    },
+    {
+        "store_name": "ファミリーマート奈良県コンベンションセンター店",
+        "store_address": "奈良県奈良市三条大路１丁目６９１−１",
+        "store_lat": "34.683336",
+        "store_lon": "135.802471"
+    },
+    {
+        "store_name": "ファミリーマート奈良三条檜町店",
+        "store_address": "奈良県奈良市三条桧町６３５番地５",
+        "store_lat": "34.678189",
+        "store_lon": "135.810772"
+    },
+    {
+        "store_name": "ファミリーマート奈良法蓮店",
+        "store_address": "奈良県奈良市法蓮町５６０番地１フェリス１階",
+        "store_lat": "34.691831",
+        "store_lon": "135.813324"
+    },
+    {
+        "store_name": "ファミリーマート奈良恋の窪店",
+        "store_address": "奈良県奈良市恋の窪３丁目７−６",
+        "store_lat": "34.673439",
+        "store_lon": "135.807418"
+    },
+    {
+        "store_name": "ファミリーマート奈良大森町店",
+        "store_address": "奈良県奈良市大森町１２９番地１",
+        "store_lat": "34.676851",
+        "store_lon": "135.817473"
+    },
+    {
+        "store_name": "ファミリーマート奈良二条大路店",
+        "store_address": "奈良県奈良市二条大路南５−２−１３",
+        "store_lat": "34.684571",
+        "store_lon": "135.788963"
+    },
+    {
+        "store_name": "ファミリーマート済生会奈良病院／Ｓ店",
+        "store_address": "奈良県奈良市八条４丁目６４３",
+        "store_lat": "34.668922",
+        "store_lon": "135.805155"
+    },
+    {
+        "store_name": "ファミリーマート近鉄奈良駅改札内店",
+        "store_address": "奈良県奈良市東向中町２９",
+        "store_lat": "34.684497",
+        "store_lon": "135.82865"
+    },
+    {
+        "store_name": "ファミリーマート近商ストア西大寺店",
+        "store_address": "奈良県奈良市西大寺国見町１丁目１−１２７",
+        "store_lat": "34.692993",
+        "store_lon": "135.783344"
+    },
+    {
+        "store_name": "ファミリーマート近鉄西大寺駅３番ホーム店",
+        "store_address": "奈良県奈良市西大寺国見町１丁目１−１",
+        "store_lat": "34.693744",
+        "store_lon": "135.782852"
+    },
+    {
+        "store_name": "ファミリーマート近鉄西大寺駅改札内橋上店",
+        "store_address": "奈良県奈良市西大寺国見町１−１−１",
+        "store_lat": "34.693744",
+        "store_lon": "135.782852"
+    },
+    {
+        "store_name": "ファミリーマート近鉄西大寺駅改札外橋上店",
+        "store_address": "奈良県奈良市西大寺国見町１丁目１−１",
+        "store_lat": "34.693744",
+        "store_lon": "135.782852"
+    },
+    {
+        "store_name": "ファミリーマート猿沢池店",
+        "store_address": "奈良県奈良市橋本町６番地",
+        "store_lat": "34.681836",
+        "store_lon": "135.829104"
+    },
+    {
+        "store_name": "ファミリーマート奈良大安寺店",
+        "store_address": "奈良県奈良市南京終町三丁目１５３１番地の１",
+        "store_lat": "34.666506",
+        "store_lon": "135.819185"
     }
 ]

@@ -112,9 +112,12 @@ def register_database(json_path: str):
         city_s_idx = 0
 
 if __name__ == '__main__':
+    # command $ python3 get_store_geo.py familymart
     # util.solve_certificate_problem()
     config_dic = util.read_json_file("./config.json")
-    famima_dic = config_dic['familymart']
-    BASE_URL = famima_dic['base_url']
-    get_soup = util.get_soup_wrapper(BASE_URL)
-    register_database(famima_dic['geo_file_name'])
+    store_name = sys.argv[1]
+    if config_dic[store_name]:
+        famima_dic = config_dic[store_name]
+        BASE_URL = famima_dic['base_url']
+        get_soup = util.get_soup_wrapper(BASE_URL)
+        register_database(famima_dic['geo_file_name'])
