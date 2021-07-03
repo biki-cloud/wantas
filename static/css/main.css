@@ -63,3 +63,7 @@ button {
     background-color: red;
     color: white;
 }
+
+#myTable th {
+    background-color: lightblue;
+}

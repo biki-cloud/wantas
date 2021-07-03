@@ -1,31 +1,154 @@
-// ここはginからの入力は受け取れないため、おそらく関数群を記述していく
-console.log("hello main.js");
+var selected_store_list = [];
 
-function test() {
-    navigator.geolocation.getCurrentPosition(test2);
+function toggleSelectStoreButton(store_name) {
+    if (store_name == "SevenEleven") {
+        var store_btn = $("#select-seven-btn-id");
+    } else if (store_name == "FamilyMart") {
+        var store_btn = $("#select-famima-btn-id");
+    }
+    if (store_btn.val() == "on") {
+        // リストからstore_nameを削除する
+        selected_store_list.splice(selected_store_list.indexOf(store_name), 1);
+        store_btn.removeClass("active");
+        store_btn.val("off");
+    } else {
+        selected_store_list.push(store_name);
+        store_btn.addClass("active");
+        store_btn.val("on");
+    }
+    console.log(selected_store_list);
+}
+toggleSelectStoreButton("SevenEleven");
+toggleSelectStoreButton("FamilyMart");
+
+$("button").click(function() {
+    toggleSelectStoreButton(this.outerText);
+});
+
+// TODO: 店舗の近さでソートする。googlemapで距離をとる
+// TODO: javascriptはmain.jsに全て分けて動作するのか
+// TODO: bootstrapで見た目をカッコよくする。
+// TODO: ローソンの商品のスクレイピングをする。
+jQuery(function($) {
+    $(document).ajaxSend(function() {
+        $("#overlay").fadeIn(300);
+    });
+});
+console.log("I'm script of main.html.");
+var geolocation_is_available = false;
+
+function CreateGoogleMapUrl(userLat, userLon, storeLat, storeLon) {
+    return (
+        "https://www.google.com/maps/dir/?api=1&origin=" +
+        userLat +
+        "," +
+        userLon +
+        "&destination=" +
+        storeLat +
+        "," +
+        storeLon
+    );
 }
 
-function test2(position) {
-    var geo_text = "緯度:" + position.coords.latitude + "\n";
-    geo_text += "経度:" + position.coords.longitude + "\n";
-    geo_text += "高度:" + position.coords.altitude + "\n";
-    geo_text += "位置精度:" + position.coords.accuracy + "\n";
-    geo_text += "高度精度:" + position.coords.altitudeAccuracy + "\n";
-    geo_text += "移動方向:" + position.coords.heading + "\n";
-    geo_text += "速度:" + position.coords.speed + "\n";
-
-    var date = new Date(position.timestamp);
-
-    geo_text += "取得時刻:" + date.toLocaleString() + "\n";
-
-    alert(geo_text);
+// Set lat lon after page loading
+if (navigator.geolocation) {
+    // user's mobile is available to use geolocation.
+    var geolocation_is_available = true;
+    var is_getting_coordinate = false;
+    navigator.geolocation.getCurrentPosition(success, fail);
+} else {
+    // user's mobile is not available to use geolocation.
+    alert("あなたの端末では現在位置を取得できません。");
 }
 
-function get_lat() {
-    navigator.geolocation.getCurrentPosition(lat);
+function success(pos) {
+    document.getElementById("lat").value = pos.coords.latitude;
+    document.getElementById("lon").value = pos.coords.longitude;
+    console.log("位置情報の取得を完了しました。");
+    $("#status").text("位置情報の取得を完了しました。");
+    is_getting_coordinate = true;
 }
 
-function lat(position) {
-    console.log(position.coords.latitude);
-    return position.coords.latitude;
+function fail(pos) {
+    console.log("位置情報の取得に失敗しました。エラーコード：");
 }
+
+$("#btn").on("click", function() {
+    if (!geolocation_is_available || !is_getting_coordinate) {
+        alert("現在位置情報を取得しています....　2,3秒お待ちください。");
+        return false;
+    }
+    productName = document.getElementById("name").value;
+    userLat = parseFloat(document.getElementById("lat").value);
+    userLon = parseFloat(document.getElementById("lon").value);
+    var jsonData = JSON.stringify({
+        ProductName: productName,
+        UserLat: userLat,
+        UserLon: userLon,
+    });
+    console.log("send data to server: " + jsonData);
+    $.ajax({
+            url: "/search",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: jsonData,
+            cache: true,
+            timeout: 60000,
+        })
+        .done(function(results) {
+            // テーブルのtbodyの部分を空にする
+            $("#myTable > tbody").empty();
+
+            // 検索中のローディング画面をセット
+            setTimeout(function() {
+                $("#overlay").fadeOut(300);
+            }, 500);
+
+            console.log("ajax successful");
+            console.log("data from server: ", results);
+
+            var hit_num = 0; // 表に表示する件数
+            // 検索結果をテーブルに表示させる
+            for (var i = 0; i < results.length; i++) {
+                r = results[i];
+                // ユーザーが選択した店のみを表示する。
+                if (selected_store_list.indexOf(r.dealer) != -1) {
+                    hit_num++;
+                    googleMapUrl = CreateGoogleMapUrl(userLat, userLon, r.lat, r.lon);
+                    $("#myTable > tbody").append(
+                        "<tr><td>" +
+                        hit_num +
+                        "</td> <td>" +
+                        r.productName +
+                        "</td><td><a href=" +
+                        r.url +
+                        "><img src=" +
+                        r.imgUrl +
+                        ' width="128" height="96" ></a></td><td>' +
+                        r.price +
+                        "</td><td>" +
+                        r.storename +
+                        "</td><td><a href=" +
+                        googleMapUrl +
+                        ">Google Map</a></td></tr>"
+                    );
+                }
+            }
+            // 表を更新した後はアップデートしなければソートが機能しない。
+            $("#myTable").trigger("update");
+
+            // 検索結果の件数の表示
+            $("#hit-num").text(hit_num + "件ヒットしました。");
+            if (hit_num == 0) {
+                $("#hit-num").text("ヒットした商品はありませんでした。");
+                return false;
+            }
+        })
+        .fail(function(data) {
+            console.log("ajax fail.");
+            console.log("data: ", data);
+        });
+    // 通常でのsubmit処理を無効にする
+    return false;
+});
