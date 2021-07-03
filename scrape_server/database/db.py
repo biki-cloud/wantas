@@ -178,47 +178,11 @@ class JsonDbDriver:
     def get_all(self) -> (List[dict]):
         return read_json_file(self.database_path)
 
+def recreate_sqlite_db(db_path: str):
+    json_to_db("./product_familymart.json", db_path, "products")
+    json_to_db("./product_seveneleven.json", db_path, "products")
+    json_to_db("./store_seveneleven.json", db_path, "store_seveneleven")
+    json_to_db("./store_familymart.json", db_path, "store_familymart")
+
 if __name__ == '__main__':
-    # seven = SevenEleven()
-    # store_to_db("./db.sqlite", "product_seven", seven)
-    # famima = FamilyMart()
-    # store_to_db("./db.sqlite", "product_famima", famima)
-    # json_to_db("./product_familymart.json", "./db.sqlite", "product_familymart")
-    # json_to_db("./product_seveneleven.json", "./db.sqlite", "product_seveneleven")
-    json_to_db("./store_seveneleven.json", "./db.sqlite", "store_seveneleven")
-    json_to_db("./store_familymart.json", "./db.sqlite", "store_familymart")
-    # delete_table("./db.sqlite", "products")
-    json_to_db("./product_familymart.json", "./db.sqlite", "products")
-    json_to_db("./product_seveneleven.json", "./db.sqlite", "products")
-    # delete_table("./db.sqlite", "product_familymart")
-    # delete_table("./db.sqlite", "product_seven")
-    # delete_table("./db.sqlite", "store_familymart")
-    # delete_table("./db.sqlite", "store_seveneleven")
-
-# # "address"テーブルを開く(なければ自動的に作成)
-# address = db["address"]
-
-# # レコードの追加(dictのキーによって自動的にフィールドが追加される)
-# address.insert({"name":"aaa", "address": "an address"})
-# address.insert({"name":"bbb", "address": "some address"})
-# address.insert({"name":"ccc", "address": "any address"})
-
-
-# # "aaa"さんのレコードを取り出す
-# # findは当てはまったレコードを全て取得。
-# aaa = address.find_one(name="aaa")
-# print(type(aaa))
-# print(aaa.get("address")) # an address
-# print(aaa.get("nothing")) # None
-
-# data = address.find()
-# print(type(data))
-# for i in data:
-#     print(i) # OrderedDict
-#     print(i.get("address")) # print address
-#     print(i.get("nothing")) # print None
-
-# address.delete()
-
-
-
+    recreate_sqlite_db("./db.sqlite")

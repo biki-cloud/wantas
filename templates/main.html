@@ -4,131 +4,66 @@
 <head>
     <meta charset="UTF-8" />
     <title>わんたす</title>
-    <script type="text/javascript" src="/static/js/main.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/tablesorter.js"></script>
     <link rel="stylesheet" href="/static/css/main.css" />
 
+    <!-- tablesorter js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
+    <!-- tablesorter css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
 </head>
 
 <body>
+    <!-- ローディング画面の設置 -->
     <div id="overlay">
         <div class="cv-spinner">
             <span class="spinner"></span>
         </div>
     </div>
-    <p>hello</p>
+
+    <button id="select-seven-btn-id" value="off">SevenEleven</button>
+    <button id="select-famima-btn-id" value="off">FamilyMart</button>
+
     <p id="status">位置情報を取得しています.......</p>
 
-    <br />
+    <br>
+
+    <!-- 何件ヒットしたかを表示する -->
     <p id="hit-num"></p>
 
-    <!-- search -->
+    <!-- 商品を検索する -->
     <form action="POST" action="/html" id="myform">
         <input type="text" name="ProductName" value="パスタ" id="name" />
         <input type="hidden" name="UserLat" value="38.48199" id="lat" />
         <input type="hidden" name="UserLon" value="140.34343" id="lon" />
-        <input type="submit" id="btn"></input>
+        <input type="submit" id="btn" value="検索"></input>
     </form>
 
-    <!-- search result table -->
-    <table border="1" id="tbl">
-        <tr>
-            <th>商品名</th>
-            <th>商品画像</th>
-            <th>値段(税込)</th>
-            <th>取扱い店舗</th>
-            <th>Google Map</th>
-        </tr>
+    <!-- 検索結果を表示するテーブル -->
+    <table class="tablesorter" id="myTable">
+        <thead>
+            <tr>
+                <th>番号</th>
+                <th>商品名</th>
+                <th>商品画像</th>
+                <th>値段</th>
+                <th>取扱い店舗</th>
+                <th>Google Map</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
 
-    <script type="text/javascript">
-        // TODO: 値段を数字にする。表示する際は+円をつける。ソートできるようにする。
-        // TODO: 表示を各コンビニでできるようにする
-        // TODO: 新しく検索したら前の検索結果は消えるようにする
-        // TODO: 近さでソートする。
-        jQuery(function($) {
-            $(document).ajaxSend(function() {
-                $("#overlay").fadeIn(300);　
-            });
-        });
-        console.log("I'm script of main.html.");
-        var geolocation_is_available = false
 
-        function CreateGoogleMapUrl(userLat, userLon, storeLat, storeLon) {
-            return "https://www.google.com/maps/dir/?api=1&origin=" + userLat + "," + userLon + "&destination=" + storeLat + "," + storeLon
-        }
-
-        // Set lat lon after page loading
-        if (navigator.geolocation) {
-            // user's mobile is available to use geolocation.
-            var geolocation_is_available = true
-            var is_getting_coordinate = false
-            navigator.geolocation.getCurrentPosition(success, fail);
-        } else {
-            // user's mobile is not available to use geolocation.
-            alert("あなたの端末では現在位置を取得できません。")
-        }
-
-        function success(pos) {
-            document.getElementById("lat").value = pos.coords.latitude;
-            document.getElementById("lon").value = pos.coords.longitude;
-            console.log("位置情報の取得を完了しました。")
-            $("#status").text("位置情報の取得を完了しました。")
-            is_getting_coordinate = true
-        }
-
-        function fail(pos) {
-            console.log('位置情報の取得に失敗しました。エラーコード：');
-        }
-
-        $("#btn").on('click', function() {
-            if (!geolocation_is_available || !is_getting_coordinate) {
-                alert("現在位置情報を取得しています....　2,3秒お待ちください。");
-                return false
-            }
-            productName = document.getElementById("name").value
-            userLat = parseFloat(document.getElementById("lat").value)
-            userLon = parseFloat(document.getElementById("lon").value)
-            var jsonData = JSON.stringify({
-                "ProductName": productName,
-                "UserLat": userLat,
-                "UserLon": userLon
-            })
-            console.log("send data to server: " + jsonData)
-            $.ajax({
-                url: "/html",
-                type: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                data: jsonData,
-                cache: true,
-                timeout: 60000,
-            }).done(function(results) {
-                setTimeout(function() {
-                    $("#overlay").fadeOut(300);
-                }, 500);
-                console.log("ajax successful");
-                console.log("data from server: ", results);
-                $("#hit-num").text(results.length + "件ヒットしました。");
-                if (results.length == 1 && results[0].productName == "none") {
-                    $("#hit-num").text("ヒットした商品はありませんでした。");
-                    return false
-                }
-                // result append to the table.
-                for (var i = 0; i < results.length; i++) {
-                    r = results[i]
-                    console.log(r)
-                    googleMapUrl = CreateGoogleMapUrl(userLat, userLon, r.lat, r.lon);
-                    $("#tbl").append("<tr> <td>" + r.productName + "</td><td><a href=" + r.url + "><img src=" + r.imgUrl + " width=\"128\" height=\"96\" ></a></td><td>" + r.price + "</td><td>" + r.storename + "</td><td><a href=" + googleMapUrl + ">Google Map</a></td></tr>")
-                }
-            }).fail(function(data) {
-                console.log("ajax fail.")
-                console.log("data: ", data)
-            });
-            // 通常でのsubmit処理を無効にする
-            return false
-        })
-    </script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
 </body>
 
 </html>
