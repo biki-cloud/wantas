@@ -25,10 +25,10 @@ $("button").click(function() {
     toggleSelectStoreButton(this.outerText);
 });
 
-// TODO: 店舗の近さでソートする。googlemapで距離をとる
-// TODO: javascriptはmain.jsに全て分けて動作するのか
+// TODO: 店舗の近さでソートする。google mapで距離をとる
 // TODO: bootstrapで見た目をカッコよくする。
 // TODO: ローソンの商品のスクレイピングをする。
+// TODO: goでall.logが一定のサイズを超えたら上を削除する
 jQuery(function($) {
     $(document).ajaxSend(function() {
         $("#overlay").fadeIn(300);
