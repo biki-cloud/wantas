@@ -1,9 +1,60 @@
-body {
-    background-color: aquamarine;
-}
-
 #mapid {
     height: 200px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.25em;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
 }
 
 #button {
@@ -52,18 +103,77 @@ body {
 }
 
 button {
-    width: 100px;
+    width: 200px;
     height: 40px;
     border: 1px solid #ccc;
     background-color: white;
     color: #000000;
+    border-radius: 20px;
 }
 
 .active {
-    background-color: red;
+    background-color: coral;
     color: white;
 }
 
 #myTable th {
     background-color: lightblue;
+}
+
+#discribe {
+    background-color: aliceblue;
+    /*背景色*/
+    padding: 0.5em;
+    /*文字まわり（上下左右）の余白*/
+    text-align: center;
+}
+
+.submit-button {
+    display: inline-block;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 18pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 12px;
+    /* 余白       */
+    background: #ffffff;
+    /* 背景色     */
+    color: #ff7f7f;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: 0.3s;
+    /* なめらか変化 */
+    box-shadow: 6px 6px 3px #666666;
+    /* 影の設定 */
+    border: 2px solid #ffffff;
+    /* 枠の指定 */
+}
+
+.submit-button:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    color: #ffffff;
+    /* 背景色     */
+    background: #ff7f7f;
+    /* 文字色     */
+}
+
+#name {
+    width: 300px;
+    /*親要素いっぱい広げる*/
+    padding: 10px 20px;
+    /*ボックスを大きくする*/
+    font-size: 16px;
+    border-radius: 3px;
+    /*ボックス角の丸み*/
+    border: 2px solid #ddd;
+    /*枠線*/
+    box-sizing: border-box;
+    /*横幅の解釈をpadding, borderまでとする*/
+    font-size: larger;
 }

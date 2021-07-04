@@ -25,16 +25,15 @@ $("button").click(function() {
     toggleSelectStoreButton(this.outerText);
 });
 
-// TODO: 店舗の近さでソートする。googlemapで距離をとる
-// TODO: javascriptはmain.jsに全て分けて動作するのか
+// TODO: 店舗の近さでソートする。google mapで距離をとる
 // TODO: bootstrapで見た目をカッコよくする。
 // TODO: ローソンの商品のスクレイピングをする。
+// TODO: 麺 -> パスタ、うどん、ラーメン、冷やし中華を調べる。
 jQuery(function($) {
     $(document).ajaxSend(function() {
         $("#overlay").fadeIn(300);
     });
 });
-console.log("I'm script of main.html.");
 var geolocation_is_available = false;
 
 function CreateGoogleMapUrl(userLat, userLon, storeLat, storeLon) {
@@ -123,15 +122,15 @@ $("#btn").on("click", function() {
                         r.productName +
                         "</td><td><a href=" +
                         r.url +
-                        "><img src=" +
+                        ' target="_blank"><img src=' +
                         r.imgUrl +
-                        ' width="128" height="96" ></a></td><td>' +
+                        ' width="128" height="96"></a></td><td>' +
                         r.price +
                         "</td><td>" +
                         r.storename +
                         "</td><td><a href=" +
                         googleMapUrl +
-                        ">Google Map</a></td></tr>"
+                        ' target="_blank">Google Map</a></td></tr>'
                     );
                 }
             }
