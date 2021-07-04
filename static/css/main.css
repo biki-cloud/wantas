@@ -103,19 +103,77 @@ h1 {
 }
 
 button {
-    width: 100px;
+    width: 200px;
     height: 40px;
     border: 1px solid #ccc;
     background-color: white;
     color: #000000;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .active {
-    background-color: red;
+    background-color: coral;
     color: white;
 }
 
 #myTable th {
     background-color: lightblue;
+}
+
+#discribe {
+    background-color: aliceblue;
+    /*背景色*/
+    padding: 0.5em;
+    /*文字まわり（上下左右）の余白*/
+    text-align: center;
+}
+
+.submit-button {
+    display: inline-block;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 18pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 12px;
+    /* 余白       */
+    background: #ffffff;
+    /* 背景色     */
+    color: #ff7f7f;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: 0.3s;
+    /* なめらか変化 */
+    box-shadow: 6px 6px 3px #666666;
+    /* 影の設定 */
+    border: 2px solid #ffffff;
+    /* 枠の指定 */
+}
+
+.submit-button:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    color: #ffffff;
+    /* 背景色     */
+    background: #ff7f7f;
+    /* 文字色     */
+}
+
+#name {
+    width: 300px;
+    /*親要素いっぱい広げる*/
+    padding: 10px 20px;
+    /*ボックスを大きくする*/
+    font-size: 16px;
+    border-radius: 3px;
+    /*ボックス角の丸み*/
+    border: 2px solid #ddd;
+    /*枠線*/
+    box-sizing: border-box;
+    /*横幅の解釈をpadding, borderまでとする*/
+    font-size: larger;
 }
