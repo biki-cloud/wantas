@@ -19480,5 +19480,1715 @@
         "store_address": "東京都墨田区両国３−２６−１１",
         "store_lat": "35.695321",
         "store_lon": "139.793754"
+    },
+    {
+        "store_name": "ローソン墨田江東橋一丁目店",
+        "store_address": "東京都墨田区江東橋１−７−１１",
+        "store_lat": "35.695039",
+        "store_lon": "139.809433"
+    },
+    {
+        "store_name": "ナチュラルローソン錦糸町テルミナ２店",
+        "store_address": "東京都墨田区錦糸１−２−４７",
+        "store_lat": "35.696861",
+        "store_lon": "139.81399"
+    },
+    {
+        "store_name": "ローソン八広一丁目店",
+        "store_address": "東京都墨田区八広１−１−３",
+        "store_lat": "35.720546",
+        "store_lon": "139.820981"
+    },
+    {
+        "store_name": "ローソンＨ墨田江東橋四丁目店",
+        "store_address": "東京都墨田区江東橋４−２６−１１",
+        "store_lat": "35.695539",
+        "store_lon": "139.816405"
+    },
+    {
+        "store_name": "ローソンＨ墨田両国一丁目店",
+        "store_address": "東京都墨田区両国１−６−７",
+        "store_lat": "35.69268",
+        "store_lon": "139.790851"
+    },
+    {
+        "store_name": "ローソンＨ錦糸町店",
+        "store_address": "東京都墨田区江東橋４−１１−５",
+        "store_lat": "35.69441",
+        "store_lon": "139.81592"
+    },
+    {
+        "store_name": "ローソン墨田江東橋五丁目店",
+        "store_address": "東京都墨田区江東橋５−７−６",
+        "store_lat": "35.691805",
+        "store_lon": "139.810584"
+    },
+    {
+        "store_name": "ローソン墨田立花一丁目店",
+        "store_address": "東京都墨田区立花１−１−１",
+        "store_lat": "35.705402",
+        "store_lon": "139.826258"
+    },
+    {
+        "store_name": "ローソンＨ墨田千歳三丁目店",
+        "store_address": "東京都墨田区千歳３−５−８",
+        "store_lat": "35.689921",
+        "store_lon": "139.79787"
+    },
+    {
+        "store_name": "ローソン都立墨東病院店",
+        "store_address": "東京都墨田区江東橋４−２３−１５",
+        "store_lat": "35.694594",
+        "store_lon": "139.818958"
+    },
+    {
+        "store_name": "ローソン文花三丁目店",
+        "store_address": "東京都墨田区文花３−２４−９",
+        "store_lat": "35.712275",
+        "store_lon": "139.827913"
+    },
+    {
+        "store_name": "ローソン立花店",
+        "store_address": "東京都墨田区立花４−４０−８",
+        "store_lat": "35.709082",
+        "store_lon": "139.836505"
+    },
+    {
+        "store_name": "ローソン世田谷駅北店",
+        "store_address": "東京都世田谷区世田谷３−１９−１４",
+        "store_lat": "35.645073",
+        "store_lon": "139.650394"
+    },
+    {
+        "store_name": "ローソンＬＴＦ松陰神社駅前店",
+        "store_address": "東京都世田谷区若林４−１９−４",
+        "store_lat": "35.644878",
+        "store_lon": "139.655942"
+    },
+    {
+        "store_name": "ローソンＬＴＦ梅丘二丁目店",
+        "store_address": "東京都世田谷区梅丘２−１１−３",
+        "store_lat": "35.649358",
+        "store_lon": "139.654013"
+    },
+    {
+        "store_name": "ローソン世田谷三丁目店",
+        "store_address": "東京都世田谷区世田谷３−１２−１２",
+        "store_lat": "35.643901",
+        "store_lon": "139.647219"
+    },
+    {
+        "store_name": "ローソン世田谷一丁目店",
+        "store_address": "東京都世田谷区世田谷１−３０−１１",
+        "store_lat": "35.64144",
+        "store_lon": "139.648453"
+    },
+    {
+        "store_name": "ローソン世田谷山下駅前店",
+        "store_address": "東京都世田谷区宮坂２−２６−３１",
+        "store_lat": "35.653795",
+        "store_lon": "139.646183"
+    },
+    {
+        "store_name": "ナチュラルローソン若林一丁目店",
+        "store_address": "東京都世田谷区若林１−７−３",
+        "store_lat": "35.643455",
+        "store_lon": "139.663908"
+    },
+    {
+        "store_name": "ローソン上馬二丁目店",
+        "store_address": "東京都世田谷区上馬２−３８−７",
+        "store_lat": "35.6396",
+        "store_lon": "139.66182"
+    },
+    {
+        "store_name": "ローソン弦巻二丁目店",
+        "store_address": "東京都世田谷区弦巻２−９−５",
+        "store_lat": "35.636111",
+        "store_lon": "139.653849"
+    },
+    {
+        "store_name": "ローソン三軒茶屋店",
+        "store_address": "東京都世田谷区三軒茶屋２−１９−１８",
+        "store_lat": "35.642877",
+        "store_lon": "139.666061"
+    },
+    {
+        "store_name": "ナチュラルローソン世田谷弦巻３丁目店",
+        "store_address": "東京都世田谷区弦巻３−４−１１",
+        "store_lat": "35.636017",
+        "store_lon": "139.648166"
+    },
+    {
+        "store_name": "ナチュラルローソン経堂テラスガーデン店",
+        "store_address": "東京都世田谷区宮坂３−１−３２",
+        "store_lat": "35.651735",
+        "store_lon": "139.638104"
+    },
+    {
+        "store_name": "ローソン世田谷代田駅前店",
+        "store_address": "東京都世田谷区代田５−７−５",
+        "store_lat": "35.658243",
+        "store_lon": "139.66052"
+    },
+    {
+        "store_name": "ローソン経堂１丁目店",
+        "store_address": "東京都世田谷区経堂１−１１−１０",
+        "store_lat": "35.649448",
+        "store_lon": "139.636754"
+    },
+    {
+        "store_name": "ローソン世田谷三軒茶屋二丁目店",
+        "store_address": "東京都世田谷区三軒茶屋２−２−１３",
+        "store_lat": "35.640842",
+        "store_lon": "139.668641"
+    },
+    {
+        "store_name": "ローソン太子堂二丁目店",
+        "store_address": "東京都世田谷区太子堂２−１７−９",
+        "store_lat": "35.645147",
+        "store_lon": "139.670715"
+    },
+    {
+        "store_name": "ナチュラルローソン上馬三丁目店",
+        "store_address": "東京都世田谷区上馬３−６−９",
+        "store_lat": "35.63505",
+        "store_lon": "139.664324"
+    },
+    {
+        "store_name": "ＬＡＷＳＯＮ＋ｔｏｋｓ三軒茶屋駅店",
+        "store_address": "東京都世田谷区太子堂２−１５",
+        "store_lat": "35.643836",
+        "store_lon": "139.671279"
+    },
+    {
+        "store_name": "ローソン世田谷桜新町二丁目店",
+        "store_address": "東京都世田谷区桜新町２−１３−２０",
+        "store_lat": "35.633838",
+        "store_lon": "139.643337"
+    },
+    {
+        "store_name": "ローソン代沢５丁目店",
+        "store_address": "東京都世田谷区代沢５−８−５",
+        "store_lat": "35.656085",
+        "store_lon": "139.667578"
+    },
+    {
+        "store_name": "ローソン世田谷三軒茶屋一丁目店",
+        "store_address": "東京都世田谷区三軒茶屋１−１９−１",
+        "store_lat": "35.639413",
+        "store_lon": "139.6703"
+    },
+    {
+        "store_name": "ローソン世田谷赤堤三丁目店",
+        "store_address": "東京都世田谷区赤堤３−２３−２",
+        "store_lat": "35.657075",
+        "store_lon": "139.638863"
+    },
+    {
+        "store_name": "ローソン駒沢１丁目店",
+        "store_address": "東京都世田谷区駒沢１−１７−１７",
+        "store_lat": "35.631349",
+        "store_lon": "139.658365"
+    },
+    {
+        "store_name": "ローソンＬＴＦ東松原駅前店",
+        "store_address": "東京都世田谷区松原５−３−２１",
+        "store_lat": "35.662332",
+        "store_lon": "139.655547"
+    },
+    {
+        "store_name": "ローソン世田谷野沢二丁目店",
+        "store_address": "東京都世田谷区野沢２−２５−１０",
+        "store_lat": "35.63342",
+        "store_lon": "139.667797"
+    },
+    {
+        "store_name": "ローソンＬＴＦ世田谷三軒茶屋一丁目店",
+        "store_address": "東京都世田谷区三軒茶屋１−６−１０",
+        "store_lat": "35.640686",
+        "store_lon": "139.67433"
+    },
+    {
+        "store_name": "ローソン下北沢駅西口店",
+        "store_address": "東京都世田谷区北沢２−２３−７",
+        "store_lat": "35.661534",
+        "store_lon": "139.665973"
+    },
+    {
+        "store_name": "ローソン野沢一丁目店",
+        "store_address": "東京都世田谷区野沢１−３５−９",
+        "store_lat": "35.638532",
+        "store_lon": "139.673344"
+    },
+    {
+        "store_name": "ローソン世田谷三宿一丁目店",
+        "store_address": "東京都世田谷区三宿１−１４−１",
+        "store_lat": "35.646656",
+        "store_lon": "139.676249"
+    },
+    {
+        "store_name": "ローソン下北沢店",
+        "store_address": "東京都世田谷区北沢２−７−１４",
+        "store_lat": "35.661668",
+        "store_lon": "139.669585"
+    },
+    {
+        "store_name": "ナチュラルローソン東上野五丁目店",
+        "store_address": "東京都台東区東上野５−２−２",
+        "store_lat": "35.711797",
+        "store_lon": "139.781337"
+    },
+    {
+        "store_name": "ローソン東上野三丁目店",
+        "store_address": "東京都台東区東上野３−１７−８",
+        "store_lat": "35.711007",
+        "store_lon": "139.77809"
+    },
+    {
+        "store_name": "ローソン東上野車坂通店",
+        "store_address": "東京都台東区東上野３−１３−１",
+        "store_lat": "35.710236",
+        "store_lon": "139.779129"
+    },
+    {
+        "store_name": "ローソン台東北上野一丁目店",
+        "store_address": "東京都台東区北上野１−５−３",
+        "store_lat": "35.716184",
+        "store_lon": "139.781307"
+    },
+    {
+        "store_name": "ローソン東上野１丁目店",
+        "store_address": "東京都台東区東上野１−２０−６",
+        "store_lat": "35.708777",
+        "store_lon": "139.778408"
+    },
+    {
+        "store_name": "ローソン上野四丁目店",
+        "store_address": "東京都台東区上野４−９−６",
+        "store_lat": "35.710178",
+        "store_lon": "139.774054"
+    },
+    {
+        "store_name": "ローソン新御徒町店",
+        "store_address": "東京都台東区台東４−２７−５",
+        "store_lat": "35.706951",
+        "store_lon": "139.780196"
+    },
+    {
+        "store_name": "ローソン御徒町駅北口店",
+        "store_address": "東京都台東区上野５−２６−１２",
+        "store_lat": "35.707368",
+        "store_lon": "139.775193"
+    },
+    {
+        "store_name": "ローソン台東元浅草四丁目店",
+        "store_address": "東京都台東区元浅草４−１０−６",
+        "store_lat": "35.710162",
+        "store_lon": "139.787842"
+    },
+    {
+        "store_name": "ローソン御徒町駅南口店",
+        "store_address": "東京都台東区上野５−２７−２",
+        "store_lat": "35.706961",
+        "store_lon": "139.774595"
+    },
+    {
+        "store_name": "ローソン上野仲町通店",
+        "store_address": "東京都台東区上野２−１２−９",
+        "store_lat": "35.709384",
+        "store_lon": "139.771991"
+    },
+    {
+        "store_name": "ローソン元浅草三丁目店",
+        "store_address": "東京都台東区元浅草３−５−６",
+        "store_lat": "35.706864",
+        "store_lon": "139.785656"
+    },
+    {
+        "store_name": "ローソン上野一丁目店",
+        "store_address": "東京都台東区上野１−２０−１",
+        "store_lat": "35.707384",
+        "store_lon": "139.772431"
+    },
+    {
+        "store_name": "ローソン鶯谷駅南店",
+        "store_address": "東京都台東区根岸１−３−２０",
+        "store_lat": "35.72087",
+        "store_lon": "139.779816"
+    },
+    {
+        "store_name": "ローソン台東三丁目店",
+        "store_address": "東京都台東区台東３−５−１０",
+        "store_lat": "35.704126",
+        "store_lon": "139.779445"
+    },
+    {
+        "store_name": "ローソン上野五丁目店",
+        "store_address": "東京都台東区上野５−１０−２４",
+        "store_lat": "35.704815",
+        "store_lon": "139.774345"
+    },
+    {
+        "store_name": "ローソン池之端一丁目店",
+        "store_address": "東京都台東区池之端１−１−１",
+        "store_lat": "35.708922",
+        "store_lon": "139.769595"
+    },
+    {
+        "store_name": "ローソン上野中央通店",
+        "store_address": "東京都台東区上野１−１−１０",
+        "store_lat": "35.705412",
+        "store_lon": "139.771562"
+    },
+    {
+        "store_name": "ローソン台東西浅草二丁目店",
+        "store_address": "東京都台東区西浅草２−１３−１０",
+        "store_lat": "35.712473",
+        "store_lon": "139.79184"
+    },
+    {
+        "store_name": "ローソン鶯谷駅前店",
+        "store_address": "東京都台東区根岸１−７−５",
+        "store_lat": "35.72256",
+        "store_lon": "139.777764"
+    },
+    {
+        "store_name": "ローソン上野五丁目昭和通店",
+        "store_address": "東京都台東区上野５−１−１",
+        "store_lat": "35.702895",
+        "store_lon": "139.7754"
+    },
+    {
+        "store_name": "ローソン台東浅草一丁目店",
+        "store_address": "東京都台東区浅草１−４２−４",
+        "store_lat": "35.713197",
+        "store_lon": "139.793488"
+    },
+    {
+        "store_name": "ローソン浅草ブロードウェイ店",
+        "store_address": "東京都台東区浅草２−６−１１",
+        "store_lat": "35.714435",
+        "store_lon": "139.793539"
+    },
+    {
+        "store_name": "ローソン台東浅草新仲見世通店",
+        "store_address": "東京都台東区浅草１−２３−９",
+        "store_lat": "35.71228",
+        "store_lon": "139.793708"
+    },
+    {
+        "store_name": "ローソンＨ浅草二丁目店",
+        "store_address": "東京都台東区浅草２−１８−８",
+        "store_lat": "35.716182",
+        "store_lon": "139.792928"
+    },
+    {
+        "store_name": "ローソン寿３丁目店",
+        "store_address": "東京都台東区寿３−３−１０",
+        "store_lat": "35.705921",
+        "store_lon": "139.792377"
+    },
+    {
+        "store_name": "ローソンＨ台東浅草三丁目店",
+        "store_address": "東京都台東区浅草３−１０−５",
+        "store_lat": "35.717271",
+        "store_lon": "139.794144"
+    },
+    {
+        "store_name": "ローソンＨ浅草観音店",
+        "store_address": "東京都台東区浅草２−２８−２５",
+        "store_lat": "35.716292",
+        "store_lon": "139.796036"
+    },
+    {
+        "store_name": "ローソンＨ台東病院店",
+        "store_address": "東京都台東区千束３−２０−５",
+        "store_lat": "35.722714",
+        "store_lon": "139.792665"
+    },
+    {
+        "store_name": "ローソンＬＴＦ浅草橋店",
+        "store_address": "東京都台東区浅草橋１−２２−１６",
+        "store_lat": "35.697872",
+        "store_lon": "139.784337"
+    },
+    {
+        "store_name": "ローソン立川柏町店",
+        "store_address": "東京都立川市柏町２−１２−９",
+        "store_lat": "35.721037",
+        "store_lon": "139.416499"
+    },
+    {
+        "store_name": "ローソン立川相互病院店",
+        "store_address": "東京都立川市緑町４番１",
+        "store_lat": "35.703575",
+        "store_lon": "139.413366"
+    },
+    {
+        "store_name": "ローソン立川栄町四丁目店",
+        "store_address": "東京都立川市栄町４−１５−３",
+        "store_lat": "35.711493",
+        "store_lon": "139.422318"
+    },
+    {
+        "store_name": "ローソン立川曙町店",
+        "store_address": "東京都立川市曙町２−３４−１３",
+        "store_lat": "35.702461",
+        "store_lon": "139.414656"
+    },
+    {
+        "store_name": "ローソン立川高松町三丁目店",
+        "store_address": "東京都立川市高松町３−１５−１",
+        "store_lat": "35.702205",
+        "store_lon": "139.416096"
+    },
+    {
+        "store_name": "ローソン立川砂川町店",
+        "store_address": "東京都立川市砂川町２−６０−１",
+        "store_lat": "35.72143",
+        "store_lon": "139.394023"
+    },
+    {
+        "store_name": "ローソン立川曙町一丁目店",
+        "store_address": "東京都立川市曙町１−１１−４",
+        "store_lat": "35.699746",
+        "store_lon": "139.406229"
+    },
+    {
+        "store_name": "ローソン立川曙橋店",
+        "store_address": "東京都立川市曙町２−１０−１",
+        "store_lat": "35.700538",
+        "store_lon": "139.415321"
+    },
+    {
+        "store_name": "ローソン立川曙町二丁目店",
+        "store_address": "東京都立川市曙町２−１７−３明治安田生命立川ビル",
+        "store_lat": "35.700085",
+        "store_lon": "139.416125"
+    },
+    {
+        "store_name": "ローソンＪＲ立川駅南口店",
+        "store_address": "東京都立川市柴崎町３−７−２５",
+        "store_lat": "35.696994",
+        "store_lon": "139.412475"
+    },
+    {
+        "store_name": "ローソン立川ウインズ通店",
+        "store_address": "東京都立川市錦町１−１−２７",
+        "store_lat": "35.697494",
+        "store_lon": "139.415611"
+    },
+    {
+        "store_name": "ローソン立川南口大通店",
+        "store_address": "東京都立川市柴崎町３−１４−２",
+        "store_lat": "35.694612",
+        "store_lon": "139.411449"
+    },
+    {
+        "store_name": "ローソン立川幸町四丁目店",
+        "store_address": "東京都立川市幸町４−１８−４２",
+        "store_lat": "35.724801",
+        "store_lon": "139.428794"
+    },
+    {
+        "store_name": "ローソン錦町一丁目店",
+        "store_address": "東京都立川市錦町１−１４−２１",
+        "store_lat": "35.69635",
+        "store_lon": "139.420135"
+    },
+    {
+        "store_name": "ローソン立川富士見町六丁目店",
+        "store_address": "東京都立川市富士見町６−４８−２７",
+        "store_lat": "35.692585",
+        "store_lon": "139.391289"
+    },
+    {
+        "store_name": "ローソン立川羽衣町三丁目店",
+        "store_address": "東京都立川市羽衣町３−１２",
+        "store_lat": "35.691091",
+        "store_lon": "139.423251"
+    },
+    {
+        "store_name": "ローソン立川羽衣町二丁目店",
+        "store_address": "東京都立川市羽衣町２−４９−９",
+        "store_lat": "35.69147",
+        "store_lon": "139.428194"
+    },
+    {
+        "store_name": "ローソン一番町四丁目店",
+        "store_address": "東京都立川市一番町４−５２−１１",
+        "store_lat": "35.731453",
+        "store_lon": "139.38034"
+    },
+    {
+        "store_name": "ローソン立川西砂町二丁目店",
+        "store_address": "東京都立川市西砂町２−４８−２",
+        "store_lat": "35.729152",
+        "store_lon": "139.360484"
+    },
+    {
+        "store_name": "ローソン多摩乞田店",
+        "store_address": "東京都多摩市乞田１４２６",
+        "store_lat": "35.634327",
+        "store_lon": "139.446271"
+    },
+    {
+        "store_name": "ローソン多摩永山店",
+        "store_address": "東京都多摩市永山１−５",
+        "store_lat": "35.632057",
+        "store_lon": "139.445965"
+    },
+    {
+        "store_name": "ローソン多摩一ノ宮店",
+        "store_address": "東京都多摩市一ノ宮１−２６−６",
+        "store_lat": "35.651627",
+        "store_lon": "139.439339"
+    },
+    {
+        "store_name": "ローソン多摩和田店",
+        "store_address": "東京都多摩市和田２００５−７",
+        "store_lat": "35.641898",
+        "store_lon": "139.427672"
+    },
+    {
+        "store_name": "ローソン丘の上パティオ店",
+        "store_address": "東京都多摩市落合１−４５−１",
+        "store_lat": "35.623164",
+        "store_lon": "139.426274"
+    },
+    {
+        "store_name": "ローソン多摩センター駅前店",
+        "store_address": "東京都多摩市落合１−４１−１マグレブＷＥＳＴ２Ｆ",
+        "store_lat": "35.623854",
+        "store_lon": "139.423438"
+    },
+    {
+        "store_name": "ローソン多摩山王下一丁目店",
+        "store_address": "東京都多摩市山王下１−５−１３",
+        "store_lat": "35.625702",
+        "store_lon": "139.420964"
+    },
+    {
+        "store_name": "ローソン新富町メトロピア店",
+        "store_address": "東京都中央区築地１−１−１",
+        "store_lat": "35.67063",
+        "store_lon": "139.772"
+    },
+    {
+        "store_name": "ナチュラルローソン銀座二丁目店",
+        "store_address": "東京都中央区銀座２−１６−１２",
+        "store_lat": "35.6709",
+        "store_lon": "139.770211"
+    },
+    {
+        "store_name": "ローソンＨ築地三丁目店",
+        "store_address": "東京都中央区築地３−１−１０",
+        "store_lat": "35.669383",
+        "store_lon": "139.774482"
+    },
+    {
+        "store_name": "ローソン新富一丁目店",
+        "store_address": "東京都中央区新富１−７−１７",
+        "store_lat": "35.673011",
+        "store_lon": "139.773889"
+    },
+    {
+        "store_name": "ローソン銀座四丁目昭和通店",
+        "store_address": "東京都中央区銀座４−１１−２",
+        "store_lat": "35.670282",
+        "store_lon": "139.768129"
+    },
+    {
+        "store_name": "ローソン東銀座駅前店",
+        "store_address": "東京都中央区銀座４−１４−１１",
+        "store_lat": "35.668914",
+        "store_lon": "139.768476"
+    },
+    {
+        "store_name": "ナチュラルローソン中央銀座一丁目店",
+        "store_address": "東京都中央区銀座１−１３−１５",
+        "store_lat": "35.673388",
+        "store_lon": "139.769183"
+    },
+    {
+        "store_name": "ローソンＨ銀座三丁目店",
+        "store_address": "東京都中央区銀座３−８−１",
+        "store_lat": "35.672098",
+        "store_lon": "139.767865"
+    },
+    {
+        "store_name": "ローソン築地二丁目店",
+        "store_address": "東京都中央区築地２−１５−１３",
+        "store_lat": "35.667153",
+        "store_lon": "139.770538"
+    },
+    {
+        "store_name": "ナチュラルローソン築地東劇ビル店",
+        "store_address": "東京都中央区築地４−１−１",
+        "store_lat": "35.667657",
+        "store_lon": "139.768665"
+    },
+    {
+        "store_name": "ローソンＨ八丁堀弾正橋店",
+        "store_address": "東京都中央区八丁堀４−２−２",
+        "store_lat": "35.674491",
+        "store_lon": "139.773412"
+    },
+    {
+        "store_name": "ローソンＨ入船一丁目店",
+        "store_address": "東京都中央区入船１−３−１",
+        "store_lat": "35.672831",
+        "store_lon": "139.776453"
+    },
+    {
+        "store_name": "ローソン築地四丁目店",
+        "store_address": "東京都中央区築地４−８−１",
+        "store_lat": "35.666182",
+        "store_lon": "139.770559"
+    },
+    {
+        "store_name": "ローソン入船店",
+        "store_address": "東京都中央区入船２−１０−７",
+        "store_lat": "35.671272",
+        "store_lon": "139.777651"
+    },
+    {
+        "store_name": "ローソン銀座５丁目店",
+        "store_address": "東京都中央区銀座５−１４−１０",
+        "store_lat": "35.668342",
+        "store_lon": "139.766739"
+    },
+    {
+        "store_name": "ローソン王子ホールディングス１号館店",
+        "store_address": "東京都中央区銀座５−１２−８",
+        "store_lat": "35.66925",
+        "store_lon": "139.766083"
+    },
+    {
+        "store_name": "ナチュラルローソン東京スクエアガーデン３階店",
+        "store_address": "東京都中央区京橋３−１−１−３",
+        "store_lat": "35.675886",
+        "store_lon": "139.768623"
+    },
+    {
+        "store_name": "ローソン東京スクエアガーデン店",
+        "store_address": "東京都中央区京橋３−１−１−１",
+        "store_lat": "35.6761",
+        "store_lon": "139.768382"
+    },
+    {
+        "store_name": "ローソンＧＩＮＺＡ　ＳＩＸ店",
+        "store_address": "東京都中央区銀座６−１０−１",
+        "store_lat": "35.669872",
+        "store_lon": "139.76401"
+    },
+    {
+        "store_name": "ローソンＨ八丁堀四丁目店",
+        "store_address": "東京都中央区八丁堀４−１３−１",
+        "store_lat": "35.674393",
+        "store_lon": "139.778771"
+    },
+    {
+        "store_name": "ローソン築地六丁目店",
+        "store_address": "東京都中央区築地６−１６−１",
+        "store_lat": "35.66393",
+        "store_lon": "139.774004"
+    },
+    {
+        "store_name": "ローソン銀座七丁目店",
+        "store_address": "東京都中央区銀座７−１６−１４",
+        "store_lat": "35.666601",
+        "store_lon": "139.765234"
+    },
+    {
+        "store_name": "ローソン京橋エドグラン店",
+        "store_address": "東京都中央区京橋２−２−１",
+        "store_lat": "35.677464",
+        "store_lon": "139.769443"
+    },
+    {
+        "store_name": "ローソン東京銀座ベイホテル店",
+        "store_address": "東京都中央区銀座７−１３−１５",
+        "store_lat": "35.667607",
+        "store_lon": "139.763732"
+    },
+    {
+        "store_name": "ローソン八丁堀二丁目店",
+        "store_address": "東京都中央区八丁堀２−２４−２",
+        "store_lat": "35.6764",
+        "store_lon": "139.778306"
+    },
+    {
+        "store_name": "ローソンＨ八丁堀一丁目店",
+        "store_address": "東京都中央区八丁堀１−５−１",
+        "store_lat": "35.677755",
+        "store_lon": "139.775937"
+    },
+    {
+        "store_name": "ナチュラルローソン京橋一丁目店",
+        "store_address": "東京都中央区京橋１−１０−７",
+        "store_lat": "35.678527",
+        "store_lon": "139.77263"
+    },
+    {
+        "store_name": "ローソン八重洲二丁目外堀通店",
+        "store_address": "東京都中央区八重洲２−６−２１",
+        "store_lat": "35.677984",
+        "store_lon": "139.767909"
+    },
+    {
+        "store_name": "ナチュラルローソン銀座三井ビル店",
+        "store_address": "東京都中央区銀座８−１３−１",
+        "store_lat": "35.667121",
+        "store_lon": "139.76323"
+    },
+    {
+        "store_name": "ローソンＳ朝日新聞築地新館店",
+        "store_address": "東京都中央区築地５−３−２",
+        "store_lat": "35.664255",
+        "store_lon": "139.766646"
+    },
+    {
+        "store_name": "ローソン調布駅南口店",
+        "store_address": "東京都調布市小島町２−４６−８",
+        "store_lat": "35.65088",
+        "store_lon": "139.54286"
+    },
+    {
+        "store_name": "ローソン調布小島町二丁目店",
+        "store_address": "東京都調布市小島町２−４８−２６",
+        "store_lat": "35.651851",
+        "store_lon": "139.542835"
+    },
+    {
+        "store_name": "ローソン調布布田四丁目店",
+        "store_address": "東京都調布市布田４−２−９",
+        "store_lat": "35.651523",
+        "store_lon": "139.544622"
+    },
+    {
+        "store_name": "ローソン調布駅北口店",
+        "store_address": "東京都調布市布田１−３５−２",
+        "store_lat": "35.654069",
+        "store_lon": "139.544488"
+    },
+    {
+        "store_name": "ローソン調布布田店",
+        "store_address": "東京都調布市布田１−１７−２",
+        "store_lat": "35.654243",
+        "store_lon": "139.547382"
+    },
+    {
+        "store_name": "ローソン京王多摩川駅店",
+        "store_address": "東京都調布市多摩川５−６−１２",
+        "store_lat": "35.6446",
+        "store_lon": "139.537087"
+    },
+    {
+        "store_name": "ローソン調布多摩川店",
+        "store_address": "東京都調布市多摩川７−７−２",
+        "store_lat": "35.643453",
+        "store_lon": "139.538586"
+    },
+    {
+        "store_name": "ローソン調布多摩川一丁目店",
+        "store_address": "東京都調布市多摩川１−２６−６",
+        "store_lat": "35.651312",
+        "store_lon": "139.530152"
+    },
+    {
+        "store_name": "ローソン調布国領町三丁目店",
+        "store_address": "東京都調布市国領町３−１０−４",
+        "store_lat": "35.649959",
+        "store_lon": "139.559391"
+    },
+    {
+        "store_name": "ローソン飛田給駅南口店",
+        "store_address": "東京都調布市飛田給２−１８−１６",
+        "store_lat": "35.660168",
+        "store_lon": "139.522496"
+    },
+    {
+        "store_name": "ローソンＬＴＦ飛田給スタジアム通店",
+        "store_address": "東京都調布市飛田給１−２５−６",
+        "store_lat": "35.661459",
+        "store_lon": "139.523194"
+    },
+    {
+        "store_name": "ローソン調布深大寺北町一丁目店",
+        "store_address": "東京都調布市深大寺北町１−２−４",
+        "store_lat": "35.673441",
+        "store_lon": "139.545467"
+    },
+    {
+        "store_name": "ローソン西つつじヶ丘三丁目店",
+        "store_address": "東京都調布市西つつじケ丘３−２５−４１新井ビル１Ｆ",
+        "store_lat": "35.657483",
+        "store_lon": "139.573143"
+    },
+    {
+        "store_name": "ローソン仙川駅前店",
+        "store_address": "東京都調布市仙川町２−２１−１３",
+        "store_lat": "35.662291",
+        "store_lon": "139.584289"
+    },
+    {
+        "store_name": "ローソン神田神保町二丁目店",
+        "store_address": "東京都千代田区神田神保町２−４−７",
+        "store_lat": "35.696336",
+        "store_lon": "139.755424"
+    },
+    {
+        "store_name": "ローソン九段北一丁目店",
+        "store_address": "東京都千代田区九段北１−５−１０",
+        "store_lat": "35.696487",
+        "store_lon": "139.752096"
+    },
+    {
+        "store_name": "ローソン九段北目白通店",
+        "store_address": "東京都千代田区九段北１−１１−５",
+        "store_lat": "35.697023",
+        "store_lon": "139.751113"
+    },
+    {
+        "store_name": "ローソン神保町メトロピア店",
+        "store_address": "東京都千代田区神田神保町２−２半蔵門線神保町駅構内",
+        "store_lat": "35.695932",
+        "store_lon": "139.757627"
+    },
+    {
+        "store_name": "ローソン神田神保町白山通り店",
+        "store_address": "東京都千代田区神田神保町２−１６−２",
+        "store_lat": "35.697267",
+        "store_lon": "139.757254"
+    },
+    {
+        "store_name": "ローソン千代田神田錦町三丁目店",
+        "store_address": "東京都千代田区神田錦町３−４−２",
+        "store_lat": "35.693139",
+        "store_lon": "139.76243"
+    },
+    {
+        "store_name": "ナチュラルローソン千代田三番町店",
+        "store_address": "東京都千代田区三番町６−４",
+        "store_lat": "35.691145",
+        "store_lon": "139.745468"
+    },
+    {
+        "store_name": "ローソン三崎町二丁目店",
+        "store_address": "東京都千代田区神田三崎町２−１７−２",
+        "store_lat": "35.701276",
+        "store_lon": "139.753406"
+    },
+    {
+        "store_name": "ローソン神田スクエア店",
+        "store_address": "東京都千代田区神田錦町２−２−１",
+        "store_lat": "35.693125",
+        "store_lon": "139.763204"
+    },
+    {
+        "store_name": "ナチュラルローソン日本大学病院店",
+        "store_address": "東京都千代田区神田駿河台１−６",
+        "store_lat": "35.697346",
+        "store_lon": "139.762752"
+    },
+    {
+        "store_name": "ローソン神田駿河台１丁目店",
+        "store_address": "東京都千代田区神田駿河台１−６−５",
+        "store_lat": "35.697024",
+        "store_lon": "139.763366"
+    },
+    {
+        "store_name": "ローソンＨ神田駿河台店",
+        "store_address": "東京都千代田区神田駿河台２−５−４",
+        "store_lat": "35.700014",
+        "store_lon": "139.761665"
+    },
+    {
+        "store_name": "ローソン千代田富士見二丁目店",
+        "store_address": "東京都千代田区富士見２−１２−１１",
+        "store_lat": "35.698584",
+        "store_lon": "139.744075"
+    },
+    {
+        "store_name": "ローソン飯田橋三丁目店",
+        "store_address": "東京都千代田区飯田橋３−６−５",
+        "store_lat": "35.70161",
+        "store_lon": "139.746645"
+    },
+    {
+        "store_name": "ローソン飯田橋サクラテラス店",
+        "store_address": "東京都千代田区富士見２−１０−２",
+        "store_lat": "35.698453",
+        "store_lon": "139.743388"
+    },
+    {
+        "store_name": "ローソンＴＨＥ　ＫＡＩＴＥＫＩビル店",
+        "store_address": "東京都千代田区内神田１−１３−４",
+        "store_lat": "35.69114",
+        "store_lon": "139.76492"
+    },
+    {
+        "store_name": "ＪＰローソン東京逓信病院店",
+        "store_address": "東京都千代田区富士見２−１４−２３",
+        "store_lat": "35.697582",
+        "store_lon": "139.743255"
+    },
+    {
+        "store_name": "ローソン千代田一番町店",
+        "store_address": "東京都千代田区一番町４−６",
+        "store_lat": "35.688436",
+        "store_lon": "139.743466"
+    },
+    {
+        "store_name": "ローソン大手町フィナンシャルシティグランキューブ店",
+        "store_address": "東京都千代田区大手町１−９−２",
+        "store_lat": "35.688781",
+        "store_lon": "139.764566"
+    },
+    {
+        "store_name": "ローソン大手センタービル店",
+        "store_address": "東京都千代田区大手町１−１−３",
+        "store_lat": "35.685966",
+        "store_lon": "139.762736"
+    },
+    {
+        "store_name": "ナチュラルローソン大手町西メトロピア店",
+        "store_address": "東京都千代田区大手町１−６−１半蔵門線大手町駅構内",
+        "store_lat": "35.686398",
+        "store_lon": "139.764855"
+    },
+    {
+        "store_name": "ナチュラルローソン大手町フィナンシャルシティノース店",
+        "store_address": "東京都千代田区大手町１−９−５",
+        "store_lat": "35.68825",
+        "store_lon": "139.766158"
+    },
+    {
+        "store_name": "ナチュラルローソン大手町メトロピア店",
+        "store_address": "東京都千代田区大手町１−６−１千代田線大手町駅構内",
+        "store_lat": "35.685231",
+        "store_lon": "139.763046"
+    },
+    {
+        "store_name": "ナチュラルローソンＳ大手町フィナンシャルシティサウス店",
+        "store_address": "東京都千代田区大手町１−９−７",
+        "store_lat": "35.687691",
+        "store_lon": "139.765819"
+    },
+    {
+        "store_name": "ナチュラルローソン大手町ビル店",
+        "store_address": "東京都千代田区大手町１−６−１",
+        "store_lat": "35.686398",
+        "store_lon": "139.764855"
+    },
+    {
+        "store_name": "ローソン内神田２丁目店",
+        "store_address": "東京都千代田区内神田２−１０−１２",
+        "store_lat": "35.690804",
+        "store_lon": "139.767913"
+    },
+    {
+        "store_name": "ローソン大手町二丁目店",
+        "store_address": "東京都千代田区大手町２−３−５",
+        "store_lat": "35.687803",
+        "store_lon": "139.767782"
+    },
+    {
+        "store_name": "ローソン丸の内テラス店",
+        "store_address": "東京都千代田区丸の内１−３−４　Ｂ１０１",
+        "store_lat": "35.684408",
+        "store_lon": "139.764085"
+    },
+    {
+        "store_name": "ローソン内神田三丁目店",
+        "store_address": "東京都千代田区内神田３−５−１",
+        "store_lat": "35.690552",
+        "store_lon": "139.769319"
+    },
+    {
+        "store_name": "ＪＰローソン大手町プレイス２Ｆ店",
+        "store_address": "東京都千代田区大手町２−３−１",
+        "store_lat": "35.686859",
+        "store_lon": "139.767437"
+    },
+    {
+        "store_name": "ローソン豊島南池袋二丁目店",
+        "store_address": "東京都豊島区南池袋２−３０−１２",
+        "store_lat": "35.727283",
+        "store_lon": "139.716394"
+    },
+    {
+        "store_name": "ローソン池袋駅東店",
+        "store_address": "東京都豊島区東池袋１−２９−５",
+        "store_lat": "35.730512",
+        "store_lon": "139.716228"
+    },
+    {
+        "store_name": "ローソン南池袋一丁目店",
+        "store_address": "東京都豊島区南池袋１−１７−２",
+        "store_lat": "35.727001",
+        "store_lon": "139.711516"
+    },
+    {
+        "store_name": "ローソン雑司が谷店",
+        "store_address": "東京都豊島区雑司が谷３−１１−４",
+        "store_lat": "35.723023",
+        "store_lon": "139.71222"
+    },
+    {
+        "store_name": "ローソン東池袋店",
+        "store_address": "東京都豊島区東池袋１−３１−１０",
+        "store_lat": "35.732313",
+        "store_lon": "139.716405"
+    },
+    {
+        "store_name": "ローソン西池袋二丁目店",
+        "store_address": "東京都豊島区西池袋２−４１−８",
+        "store_lat": "35.727326",
+        "store_lon": "139.708832"
+    },
+    {
+        "store_name": "ナチュラルローソンエソラ池袋店",
+        "store_address": "東京都豊島区西池袋１−１２−１",
+        "store_lat": "35.729748",
+        "store_lon": "139.709693"
+    },
+    {
+        "store_name": "ローソン東池袋三丁目店",
+        "store_address": "東京都豊島区東池袋３−７−８",
+        "store_lat": "35.733019",
+        "store_lon": "139.717044"
+    },
+    {
+        "store_name": "ローソンＥｃｈｉｋａ池袋店",
+        "store_address": "東京都豊島区西池袋３−２８−１４",
+        "store_lat": "35.731514",
+        "store_lon": "139.708062"
+    },
+    {
+        "store_name": "ローソン西池袋店",
+        "store_address": "東京都豊島区西池袋３−２５−１５",
+        "store_lat": "35.729865",
+        "store_lon": "139.707243"
+    },
+    {
+        "store_name": "ローソン池袋二丁目文化通店",
+        "store_address": "東京都豊島区池袋２−４７−５",
+        "store_lat": "35.733592",
+        "store_lon": "139.710952"
+    },
+    {
+        "store_name": "ローソン池袋１丁目店",
+        "store_address": "東京都豊島区池袋１−２−５",
+        "store_lat": "35.734116",
+        "store_lon": "139.711776"
+    },
+    {
+        "store_name": "ナチュラルローソン目白三丁目店",
+        "store_address": "東京都豊島区目白３−４−１４",
+        "store_lat": "35.721667",
+        "store_lon": "139.7061"
+    },
+    {
+        "store_name": "ローソン南大塚三丁目店",
+        "store_address": "東京都豊島区南大塚３−３２−６",
+        "store_lat": "35.731436",
+        "store_lon": "139.726948"
+    },
+    {
+        "store_name": "ローソン新大塚駅前店",
+        "store_address": "東京都豊島区南大塚３−１−１",
+        "store_lat": "35.726194",
+        "store_lon": "139.729686"
+    },
+    {
+        "store_name": "ローソン大塚駅南口店",
+        "store_address": "東京都豊島区南大塚３−５３−１１",
+        "store_lat": "35.730508",
+        "store_lon": "139.728844"
+    },
+    {
+        "store_name": "ローソン池袋２丁目店",
+        "store_address": "東京都豊島区池袋２−５５−７",
+        "store_lat": "35.734317",
+        "store_lon": "139.707836"
+    },
+    {
+        "store_name": "ナチュラルローソン北大塚一丁目店",
+        "store_address": "東京都豊島区北大塚１−１３−４",
+        "store_lat": "35.731682",
+        "store_lon": "139.731702"
+    },
+    {
+        "store_name": "ローソン豊島西池袋五丁目店",
+        "store_address": "東京都豊島区西池袋５−１８−１１",
+        "store_lat": "35.732663",
+        "store_lon": "139.701566"
+    },
+    {
+        "store_name": "ローソンＬＴＦ北池袋駅前店",
+        "store_address": "東京都豊島区池袋本町１−３７−９",
+        "store_lat": "35.741359",
+        "store_lon": "139.716464"
+    },
+    {
+        "store_name": "ローソン椎名町駅前店",
+        "store_address": "東京都豊島区南長崎１−２５−２６",
+        "store_lat": "35.725964",
+        "store_lon": "139.695029"
+    },
+    {
+        "store_name": "ローソン巣鴨一丁目店",
+        "store_address": "東京都豊島区巣鴨１−１８−１１",
+        "store_lat": "35.73224",
+        "store_lon": "139.739706"
+    },
+    {
+        "store_name": "ローソン西巣鴨駅前店",
+        "store_address": "東京都豊島区西巣鴨４−１３−１",
+        "store_lat": "35.74406",
+        "store_lon": "139.728538"
+    },
+    {
+        "store_name": "ローソン駒込駅前店",
+        "store_address": "東京都豊島区駒込１−４３−１１",
+        "store_lat": "35.735914",
+        "store_lon": "139.746595"
+    },
+    {
+        "store_name": "ローソン長崎四丁目店",
+        "store_address": "東京都豊島区長崎４−１１−１２",
+        "store_lat": "35.729941",
+        "store_lon": "139.684564"
+    },
+    {
+        "store_name": "ローソン駒込一丁目店",
+        "store_address": "東京都豊島区駒込１−２４−９",
+        "store_lat": "35.736169",
+        "store_lon": "139.750156"
+    },
+    {
+        "store_name": "ローソンＳ中野区役所店",
+        "store_address": "東京都中野区中野４−８−１",
+        "store_lat": "35.707383",
+        "store_lon": "139.663841"
+    },
+    {
+        "store_name": "ローソン中野セントラルパークイースト店",
+        "store_address": "東京都中野区中野４−１０−１",
+        "store_lat": "35.707759",
+        "store_lon": "139.662972"
+    },
+    {
+        "store_name": "ローソンＨ中野セントラルパークサウス店",
+        "store_address": "東京都中野区中野４−１０−２",
+        "store_lat": "35.707006",
+        "store_lon": "139.661695"
+    },
+    {
+        "store_name": "ローソンＬＴＦ中野五丁目店",
+        "store_address": "東京都中野区中野５−５１−１５",
+        "store_lat": "35.709455",
+        "store_lon": "139.666341"
+    },
+    {
+        "store_name": "ナチュラルローソン東京警察病院店",
+        "store_address": "東京都中野区中野４−２２−１",
+        "store_lat": "35.709121",
+        "store_lon": "139.659359"
+    },
+    {
+        "store_name": "ローソン中野二丁目千光前通店",
+        "store_address": "東京都中野区中野２−１４−２２",
+        "store_lat": "35.704936",
+        "store_lon": "139.670085"
+    },
+    {
+        "store_name": "ローソン新中野駅前店",
+        "store_address": "東京都中野区中央４−１−３",
+        "store_lat": "35.697712",
+        "store_lon": "139.67046"
+    },
+    {
+        "store_name": "ローソン東中野ギンザ通り店",
+        "store_address": "東京都中野区東中野３−１７−１３",
+        "store_lat": "35.709204",
+        "store_lon": "139.681007"
+    },
+    {
+        "store_name": "ローソン中野本町新橋通り店",
+        "store_address": "東京都中野区本町３−２０−１３",
+        "store_lat": "35.695724",
+        "store_lon": "139.674409"
+    },
+    {
+        "store_name": "ローソン江古田一丁目店",
+        "store_address": "東京都中野区江古田１−４０−２２",
+        "store_lat": "35.724155",
+        "store_lon": "139.670085"
+    },
+    {
+        "store_name": "ローソンＨ中野新橋店",
+        "store_address": "東京都中野区弥生町２−２９−８",
+        "store_lat": "35.691578",
+        "store_lon": "139.674237"
+    },
+    {
+        "store_name": "ローソン中野本町一丁目店",
+        "store_address": "東京都中野区本町１−２５−１０",
+        "store_lat": "35.695589",
+        "store_lon": "139.682908"
+    },
+    {
+        "store_name": "ローソン中野本町二丁目店",
+        "store_address": "東京都中野区本町２−１−８",
+        "store_lat": "35.692336",
+        "store_lon": "139.681516"
+    },
+    {
+        "store_name": "ローソンＨ中野本町一丁目東店",
+        "store_address": "東京都中野区本町１−１３−１８",
+        "store_lat": "35.696172",
+        "store_lon": "139.686334"
+    },
+    {
+        "store_name": "ローソン都立家政駅北店",
+        "store_address": "東京都中野区鷺宮３−１−１４",
+        "store_lat": "35.722982",
+        "store_lon": "139.643897"
+    },
+    {
+        "store_name": "ローソンＬＴＦ中野弥生町店",
+        "store_address": "東京都中野区弥生町３−１１−２",
+        "store_lat": "35.686854",
+        "store_lon": "139.675112"
+    },
+    {
+        "store_name": "ローソン中野南台５丁目店",
+        "store_address": "東京都中野区南台５−２５−６",
+        "store_lat": "35.68416",
+        "store_lon": "139.661046"
+    },
+    {
+        "store_name": "ローソン中野江原町二丁目店",
+        "store_address": "東京都中野区江原町２−２０−２１",
+        "store_lat": "35.730652",
+        "store_lon": "139.668415"
+    },
+    {
+        "store_name": "ローソン西東京南町五丁目店",
+        "store_address": "東京都西東京市南町５−２９−３",
+        "store_lat": "35.725521",
+        "store_lon": "139.535796"
+    },
+    {
+        "store_name": "ローソン田無町四丁目店",
+        "store_address": "東京都西東京市田無町４−２７−１１",
+        "store_lat": "35.728365",
+        "store_lon": "139.539525"
+    },
+    {
+        "store_name": "ローソン西東京芝久保町一丁目店",
+        "store_address": "東京都西東京市芝久保町１−３−３",
+        "store_lat": "35.725796",
+        "store_lon": "139.531044"
+    },
+    {
+        "store_name": "ローソン西東京北原店",
+        "store_address": "東京都西東京市北原町２−１−３",
+        "store_lat": "35.733578",
+        "store_lon": "139.543524"
+    },
+    {
+        "store_name": "ローソン西東京芝久保町四丁目店",
+        "store_address": "東京都西東京市芝久保町４−１５−２１",
+        "store_lat": "35.730494",
+        "store_lon": "139.521443"
+    },
+    {
+        "store_name": "ローソンひばりが丘三丁目店",
+        "store_address": "東京都西東京市ひばりが丘３−３−８",
+        "store_lat": "35.743764",
+        "store_lon": "139.536338"
+    },
+    {
+        "store_name": "ローソン西東京住吉町二丁目店",
+        "store_address": "東京都西東京市住吉町２−８−３０",
+        "store_lat": "35.747113",
+        "store_lon": "139.547969"
+    },
+    {
+        "store_name": "ローソン西東京中町二丁目店",
+        "store_address": "東京都西東京市中町２−１−７",
+        "store_lat": "35.742832",
+        "store_lon": "139.559185"
+    },
+    {
+        "store_name": "ローソン西東京下保谷二丁目店",
+        "store_address": "東京都西東京市下保谷２−３−５",
+        "store_lat": "35.751751",
+        "store_lon": "139.557104"
+    },
+    {
+        "store_name": "ローソン練馬豊玉北六丁目店",
+        "store_address": "東京都練馬区豊玉北６−１９−９",
+        "store_lat": "35.736505",
+        "store_lon": "139.649596"
+    },
+    {
+        "store_name": "ローソン豊玉北五丁目店",
+        "store_address": "東京都練馬区豊玉北５−１６−１０",
+        "store_lat": "35.736946",
+        "store_lon": "139.655403"
+    },
+    {
+        "store_name": "ローソン練馬豊中通店",
+        "store_address": "東京都練馬区豊玉中２−１１−１９",
+        "store_lat": "35.732305",
+        "store_lon": "139.658874"
+    },
+    {
+        "store_name": "ローソン練馬中村南一丁目店",
+        "store_address": "東京都練馬区中村南１−２４−１８",
+        "store_lat": "35.727984",
+        "store_lon": "139.646976"
+    },
+    {
+        "store_name": "ローソン練馬桜台一丁目店",
+        "store_address": "東京都練馬区桜台１−６−１１",
+        "store_lat": "35.739501",
+        "store_lon": "139.661855"
+    },
+    {
+        "store_name": "ローソン練馬豊玉中二丁目店",
+        "store_address": "東京都練馬区豊玉中２−５−１",
+        "store_lat": "35.729385",
+        "store_lon": "139.660266"
+    },
+    {
+        "store_name": "ローソン練馬桜台二丁目店",
+        "store_address": "東京都練馬区桜台２−４３−１２",
+        "store_lat": "35.742877",
+        "store_lon": "139.660492"
+    },
+    {
+        "store_name": "ローソン練馬豊玉南一丁目店",
+        "store_address": "東京都練馬区豊玉南１−１７−１０",
+        "store_lat": "35.727449",
+        "store_lon": "139.659246"
+    },
+    {
+        "store_name": "ローソン練馬江古田栄町店",
+        "store_address": "東京都練馬区栄町８−７",
+        "store_lat": "35.737222",
+        "store_lon": "139.670149"
+    },
+    {
+        "store_name": "ローソン江古田駅北口店",
+        "store_address": "東京都練馬区栄町３２−１４",
+        "store_lat": "35.73812",
+        "store_lon": "139.672172"
+    },
+    {
+        "store_name": "ローソン練馬春日町三丁目店",
+        "store_address": "東京都練馬区春日町３−３５−１１",
+        "store_lat": "35.751718",
+        "store_lon": "139.639901"
+    },
+    {
+        "store_name": "ローソン練馬富士見台店",
+        "store_address": "東京都練馬区富士見台２−２−１",
+        "store_lat": "35.73433",
+        "store_lon": "139.627194"
+    },
+    {
+        "store_name": "ローソン練馬春日町二丁目店",
+        "store_address": "東京都練馬区春日町２−１４−１",
+        "store_lat": "35.756499",
+        "store_lon": "139.648989"
+    },
+    {
+        "store_name": "ローソン早宮二丁目店",
+        "store_address": "東京都練馬区早宮２−１７−４７",
+        "store_lat": "35.7574",
+        "store_lon": "139.654208"
+    },
+    {
+        "store_name": "ローソン小竹向原駅前店",
+        "store_address": "東京都練馬区小竹町２−３３−２３",
+        "store_lat": "35.744502",
+        "store_lon": "139.677945"
+    },
+    {
+        "store_name": "ローソン小竹向原店",
+        "store_address": "東京都練馬区小竹町２−３−１",
+        "store_lat": "35.742139",
+        "store_lon": "139.680088"
+    },
+    {
+        "store_name": "ローソン練馬高野台一丁目店",
+        "store_address": "東京都練馬区高野台１−１０−３",
+        "store_lat": "35.741625",
+        "store_lon": "139.618168"
+    },
+    {
+        "store_name": "ローソン練馬錦二丁目店",
+        "store_address": "東京都練馬区錦２−１３−１４",
+        "store_lat": "35.762533",
+        "store_lon": "139.666446"
+    },
+    {
+        "store_name": "ナチュラルローソン順天堂大学練馬病院店",
+        "store_address": "東京都練馬区高野台３−１−１０",
+        "store_lat": "35.742156",
+        "store_lon": "139.614762"
+    },
+    {
+        "store_name": "ローソンＬＴＦ練馬谷原店",
+        "store_address": "東京都練馬区谷原１−２２−１１",
+        "store_lat": "35.753717",
+        "store_lon": "139.620287"
+    },
+    {
+        "store_name": "ローソンＨＳ練馬光が丘病院店",
+        "store_address": "東京都練馬区光が丘２−１１−１",
+        "store_lat": "35.761999",
+        "store_lon": "139.629617"
+    },
+    {
+        "store_name": "ローソン練馬北町二丁目店",
+        "store_address": "東京都練馬区北町２−２３−１５",
+        "store_lat": "35.766583",
+        "store_lon": "139.661261"
+    },
+    {
+        "store_name": "ローソン練馬田柄二丁目店",
+        "store_address": "東京都練馬区田柄２−４８−１０",
+        "store_lat": "35.770446",
+        "store_lon": "139.642741"
+    },
+    {
+        "store_name": "ローソン練馬旭町一丁目店",
+        "store_address": "東京都練馬区旭町１−３１−１１",
+        "store_lat": "35.76566",
+        "store_lon": "139.624955"
+    },
+    {
+        "store_name": "ローソン練馬土支田二丁目店",
+        "store_address": "東京都練馬区土支田２−１９−１",
+        "store_lat": "35.760913",
+        "store_lon": "139.616184"
+    },
+    {
+        "store_name": "ローソン練馬土支田通店",
+        "store_address": "東京都練馬区土支田４−９−６",
+        "store_lat": "35.765369",
+        "store_lon": "139.613118"
+    },
+    {
+        "store_name": "ローソン練馬大泉町五丁目店",
+        "store_address": "東京都練馬区大泉町５−４−５",
+        "store_lat": "35.758899",
+        "store_lon": "139.597504"
+    },
+    {
+        "store_name": "ローソン石神井台四丁目店",
+        "store_address": "東京都練馬区石神井台４−９−４",
+        "store_lat": "35.732001",
+        "store_lon": "139.586953"
+    },
+    {
+        "store_name": "ローソン練馬東大泉五丁目店",
+        "store_address": "東京都練馬区東大泉５−１９−４",
+        "store_lat": "35.742554",
+        "store_lon": "139.587127"
+    },
+    {
+        "store_name": "ローソン大泉学園駅前店",
+        "store_address": "東京都練馬区東大泉１−２８−７",
+        "store_lat": "35.749805",
+        "store_lon": "139.587276"
+    },
+    {
+        "store_name": "ローソン八王子元本郷町三丁目店",
+        "store_address": "東京都八王子市元本郷町３−６−１０",
+        "store_lat": "35.662544",
+        "store_lon": "139.315045"
+    },
+    {
+        "store_name": "ローソン八王子横川町店",
+        "store_address": "東京都八王子市横川町２−１０",
+        "store_lat": "35.662169",
+        "store_lon": "139.309811"
+    },
+    {
+        "store_name": "ローソン八王子千人町二丁目店",
+        "store_address": "東京都八王子市千人町２−１７−１８",
+        "store_lat": "35.658755",
+        "store_lon": "139.311735"
+    },
+    {
+        "store_name": "ローソン西八王子駅前店",
+        "store_address": "東京都八王子市台町４−４５−８",
+        "store_lat": "35.656804",
+        "store_lon": "139.314203"
+    },
+    {
+        "store_name": "ローソン西八王子駅北口店",
+        "store_address": "東京都八王子市千人町３−１−１９",
+        "store_lat": "35.65667",
+        "store_lon": "139.311785"
+    },
+    {
+        "store_name": "ローソン八王子南新町店",
+        "store_address": "東京都八王子市南新町１５",
+        "store_lat": "35.658528",
+        "store_lon": "139.330105"
+    },
+    {
+        "store_name": "ローソン八王子八日町店",
+        "store_address": "東京都八王子市八日町１０−１",
+        "store_lat": "35.660136",
+        "store_lon": "139.333462"
+    },
+    {
+        "store_name": "ローソン八王子散田町四丁目店",
+        "store_address": "東京都八王子市散田町４−１４−６",
+        "store_lat": "35.652188",
+        "store_lon": "139.307005"
+    },
+    {
+        "store_name": "ローソン八王子四谷町店",
+        "store_address": "東京都八王子市四谷町６７４−３",
+        "store_lat": "35.67782",
+        "store_lon": "139.298049"
+    },
+    {
+        "store_name": "ローソン八王子長房町店",
+        "store_address": "東京都八王子市長房町４５０−１",
+        "store_lat": "35.653552",
+        "store_lon": "139.299564"
+    },
+    {
+        "store_name": "ローソン八王子四谷町交差点前店",
+        "store_address": "東京都八王子市大楽寺町４０３−１",
+        "store_lat": "35.673343",
+        "store_lon": "139.29451"
+    },
+    {
+        "store_name": "ローソン八王子東町店",
+        "store_address": "東京都八王子市東町９−１０",
+        "store_lat": "35.658513",
+        "store_lon": "139.338998"
+    },
+    {
+        "store_name": "ローソン八王子横山町店",
+        "store_address": "東京都八王子市横山町２５−６",
+        "store_lat": "35.660156",
+        "store_lon": "139.339747"
+    },
+    {
+        "store_name": "ローソン八王子元横山町一丁目店",
+        "store_address": "東京都八王子市元横山町１−７−８",
+        "store_lat": "35.662552",
+        "store_lon": "139.34285"
+    },
+    {
+        "store_name": "ローソン京王八王子駅前店",
+        "store_address": "東京都八王子市明神町４−６−１３",
+        "store_lat": "35.65833",
+        "store_lon": "139.343171"
+    },
+    {
+        "store_name": "ローソンＬＴＦ京王めじろ台駅前店",
+        "store_address": "東京都八王子市めじろ台２−１",
+        "store_lat": "35.640932",
+        "store_lon": "139.30861"
+    },
+    {
+        "store_name": "ローソン八王子大和田町六丁目店",
+        "store_address": "東京都八王子市大和田町６−５−１３",
+        "store_lat": "35.665018",
+        "store_lon": "139.347331"
+    },
+    {
+        "store_name": "ローソン八王子インター店",
+        "store_address": "東京都八王子市左入町１７０−１",
+        "store_lat": "35.682086",
+        "store_lon": "139.344587"
+    },
+    {
+        "store_name": "ローソン八王子川口町店",
+        "store_address": "東京都八王子市川口町１５８５−１",
+        "store_lat": "35.687788",
+        "store_lon": "139.291435"
+    },
+    {
+        "store_name": "ローソンめじろ台グリーンヒル通店",
+        "store_address": "東京都八王子市椚田町５４２−２",
+        "store_lat": "35.636495",
+        "store_lon": "139.310117"
+    },
+    {
+        "store_name": "ローソン八王子片倉町店",
+        "store_address": "東京都八王子市片倉町４４０−１３",
+        "store_lat": "35.642584",
+        "store_lon": "139.340943"
+    },
+    {
+        "store_name": "ローソン八王子大楽寺町店",
+        "store_address": "東京都八王子市大楽寺町１３０−１",
+        "store_lat": "35.68019",
+        "store_lon": "139.280582"
+    },
+    {
+        "store_name": "ローソン八王子卸売市場前店",
+        "store_address": "東京都八王子市北野町５８９−２",
+        "store_lat": "35.651923",
+        "store_lon": "139.356173"
+    },
+    {
+        "store_name": "ローソン八王子打越町店",
+        "store_address": "東京都八王子市打越町６３６−５",
+        "store_lat": "35.642669",
+        "store_lon": "139.355054"
+    },
+    {
+        "store_name": "ローソンＬＴＦ南大沢店",
+        "store_address": "東京都八王子市南大沢１−１８−２０",
+        "store_lat": "35.618007",
+        "store_lon": "139.383993"
+    },
+    {
+        "store_name": "ローソン八王子越野店",
+        "store_address": "東京都八王子市越野２５−１８",
+        "store_lat": "35.627813",
+        "store_lon": "139.394604"
+    },
+    {
+        "store_name": "ローソン八王子松木店",
+        "store_address": "東京都八王子市松木３２−１",
+        "store_lat": "35.625006",
+        "store_lon": "139.392622"
+    },
+    {
+        "store_name": "ローソンフォレストモール南大沢店",
+        "store_address": "東京都八王子市南大沢２−２５",
+        "store_lat": "35.612021",
+        "store_lon": "139.382452"
+    },
+    {
+        "store_name": "ローソン羽村緑ヶ丘二丁目店",
+        "store_address": "東京都羽村市緑ケ丘２−１９−５",
+        "store_lat": "35.764092",
+        "store_lon": "139.318579"
+    },
+    {
+        "store_name": "ローソン羽村小作台店",
+        "store_address": "東京都羽村市小作台５−２９−６",
+        "store_lat": "35.771612",
+        "store_lon": "139.303137"
     }
 ]

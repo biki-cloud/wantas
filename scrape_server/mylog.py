@@ -20,7 +20,7 @@ def set_log(filepath, log_name=__name__):
     # create console handler and set level to debug
     s = logging.StreamHandler()
     s.setLevel(logging.INFO)
-    r = RotatingFileHandler(filepath, maxBytes=10000000, backupCount=0)
+    r = RotatingFileHandler(filepath, maxBytes=1000000, backupCount=0)
     r.setLevel(logging.INFO)
 
     # create formatter
