@@ -1,6 +1,7 @@
 from abc import ABCMeta, abstractmethod
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/code")
 
 
 class AbsStore(metaclass=ABCMeta):

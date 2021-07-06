@@ -7,6 +7,7 @@ import os
 import logging as log
 import dataset
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/code")
 
 from scrape_server import scrape_pb2
 from scrape_server import scrape_pb2_grpc

@@ -4,6 +4,7 @@ from typing import List
 import bs4
 
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/code")
 
 from scrape_server import util
 from scrape_server.store import AbsStore

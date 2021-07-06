@@ -7,6 +7,7 @@ import datetime
 import dataset
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/code")
 import os
 import geocoder
 from geopy import geocoders

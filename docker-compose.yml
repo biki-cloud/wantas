@@ -1,0 +1,8 @@
+version: "3"
+services:
+  scrape_server:
+    build:
+      context: .
+      dockerfile: scrape_server_dockerfile
+    volumes:
+      - ./scrape_server:/code

@@ -1,5 +1,6 @@
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/code")
 import time
 import os
 
