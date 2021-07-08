@@ -9,9 +9,6 @@ import sys
 sys.path.append("/Users/hibiki/Desktop/go/go-react")
 sys.path.append("/code")
 import os
-import geocoder
-from geopy import geocoders
-from geopy.geocoders import Nominatim
 
 from scrape_server import util
 from scrape_server import geo

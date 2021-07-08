@@ -1,0 +1,7 @@
+FROM golang
+
+WORKDIR /code
+
+COPY . .
+
+EXPOSE 8080

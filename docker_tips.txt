@@ -10,3 +10,6 @@ docker run -it --name <container name> -d <image name>
 docker run -it --name scrape_server -v scrape_server:/code -d scrape_server
 
 docker exec -it <container name> bash
+
+docker-compose up -d
+docker-compose down

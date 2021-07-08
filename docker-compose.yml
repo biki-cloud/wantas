@@ -4,5 +4,24 @@ services:
     build:
       context: .
       dockerfile: scrape_server_dockerfile
-    volumes:
-      - ./scrape_server:/code
+    container_name: scrape_server_container
+    command: python3 server.py
+    networks:
+      - test-network
+    tty: true #　ポート待ち受けとかしてないとコンテナが終了してしまう対策。
+
+  scrape_client:
+    build:
+      context: .
+      dockerfile: scrape_client_dockerfile
+    ports:
+      - "8080:8080"
+    container_name: scrape_client_container
+    # command: go run main.go
+    tty: true
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    external: true

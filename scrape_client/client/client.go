@@ -84,7 +84,7 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	}
 }
 
-const grpcDialingUrl = "localhost:50051"
+const grpcDialingUrl = "192.168.80.2:50051"
 
 func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat,userInfo.UserLon)
