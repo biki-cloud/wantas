@@ -1,8 +1,8 @@
 package mylog_test
 
 import (
-	"go-react/mylog"
 	"log"
+	"scrape_client/mylog"
 	"testing"
 )
 

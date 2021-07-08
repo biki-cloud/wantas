@@ -3,11 +3,11 @@ package client
 import (
 	"context"
 	"errors"
-	"go-react/scrapeResult"
-	"go-react/scrape_client/scrapepb"
 	"io"
 	"log"
 	"net/http"
+	"scrape_client/scrapeResult"
+	"scrape_client/scrapepb"
 	"strconv"
 	"strings"
 
@@ -86,6 +86,7 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 // scraping server ip address that is docker container
 const grpcDialingUrl = "192.168.80.2:50051"
+// const grpcDialingUrl = "localhost:50051"
 
 func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat,userInfo.UserLon)

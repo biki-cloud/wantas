@@ -1,12 +1,12 @@
 package main
 
 import (
-	"go-react/mylog"
-	"go-react/scrape_client/client"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"scrape_client/client"
+	"scrape_client/mylog"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
