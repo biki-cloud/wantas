@@ -5,12 +5,12 @@ services:
       context: ./scrape_server
       dockerfile: Dockerfile
     container_name: scrape_server_container
-    command: python3 server.py
+    tty: true #　ポート待ち受けとかしてないとコンテナが終了してしまう対策。
+    # command: python3 server.py
     volumes:
       - ./log:/log
     networks:
-      - test-network
-    tty: true #　ポート待ち受けとかしてないとコンテナが終了してしまう対策。
+      - wantas-network
 
   scrape_client:
     build:
@@ -19,13 +19,13 @@ services:
     ports:
       - "8080:8080"
     container_name: scrape_client_container
-    command: go run main.go
     tty: true
+    # command: go run main.go
     volumes:
       - ./log:/log
     networks:
-      - test-network
+      - wantas-network
 
 networks:
-  test-network:
+  wantas-network:
     external: true
