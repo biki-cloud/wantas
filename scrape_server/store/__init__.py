@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 import sys
-sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/Users/hibiki/Desktop/go/wants")
 sys.path.append("/code")
 
 

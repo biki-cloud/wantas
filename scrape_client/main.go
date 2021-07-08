@@ -12,8 +12,7 @@ import (
 
 func FirstPage() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.HTML(http.StatusOK, "main.html", gin.H{
-		})
+		c.HTML(http.StatusOK, "main.html", gin.H{})
 	}
 }
 

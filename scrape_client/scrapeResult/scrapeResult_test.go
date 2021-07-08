@@ -7,7 +7,6 @@ import (
 	"testing"
 )
 
-
 func TestGetStructTag(t *testing.T) {
 	r := scrapeResult.GetFullPerametaResultStruct()
 	rtProduct := reflect.TypeOf(r)
@@ -26,7 +25,6 @@ func TestCreateProduct(t *testing.T) {
 		t.Errorf("error this is int %d \n", i)
 	}
 }
-
 
 func TestToJson(t *testing.T) {
 	b, err := scrapeResult.New().ToJson()

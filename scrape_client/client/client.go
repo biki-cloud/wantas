@@ -20,19 +20,20 @@ type UserInfo struct {
 	UserLat     float64 `json:"userlat"`
 	UserLon     float64 `json:"userlon"`
 }
-func getPerametaFromPostForm(c *gin.Context) (UserInfo, error){
+
+func getPerametaFromPostForm(c *gin.Context) (UserInfo, error) {
 	var (
-		productName = c.PostForm("ProductName")
+		productName   = c.PostForm("ProductName")
 		userLat, err1 = strconv.ParseFloat(c.PostForm("UserLat"), 64)
 		userLon, err2 = strconv.ParseFloat(c.PostForm("UserLon"), 64)
 	)
 	var userInfo UserInfo
 	if err := c.Bind(&userInfo); err == nil {
 		return userInfo, nil
-	}else {
+	} else {
 		log.Fatalf("err is %v \n", err)
 	}
-	if err1 != nil || err2 != nil{
+	if err1 != nil || err2 != nil {
 		log.Fatalf("userLat or userLon can't to convert: %v %v \n", err1, err2)
 		return userInfo, errors.New("There some error.")
 	}
@@ -71,14 +72,12 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 		log.Printf("out format: %s \n", outFormat)
 		if outFormat == "json" {
-			log.Printf("send to html from 1.")
 			c.JSON(http.StatusOK, scrapedResults)
-		}else if outFormat == "html" {
-			log.Printf("send to html . from 2.")
+		} else if outFormat == "html" {
 			c.HTML(http.StatusOK, "main.html", gin.H{
 				"results": scrapedResults,
 			})
-		}else{
+		} else {
 			panic("format is invalid.")
 		}
 	}
@@ -86,10 +85,11 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 // scraping server ip address that is docker container
 const grpcDialingUrl = "172.30.0.2:50051"
+
 // const grpcDialingUrl = "localhost:50051"
 
 func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
-	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat,userInfo.UserLon)
+	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat, userInfo.UserLon)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
 	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())
 	if err != nil {
@@ -107,9 +107,9 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 
 	// create request
 	req := &scrapepb.ScrapeManyTimesRequest{
-		ProductName:userInfo.ProductName,
-		UserLat: float32(userInfo.UserLat),
-		UserLon: float32(userInfo.UserLon),
+		ProductName: userInfo.ProductName,
+		UserLat:     float32(userInfo.UserLat),
+		UserLon:     float32(userInfo.UserLon),
 	}
 	log.Printf("request for grpc server: %v", req)
 
@@ -145,9 +145,9 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 		r.StoreAddress = msg.Result.GetStoreAddress()
 		r.StoreLat = float64(msg.Result.GetStoreLat())
 		r.StoreLon = float64(msg.Result.GetStoreLon())
-		if strings.Contains(r.StoreName, "セブンイレブン"){
+		if strings.Contains(r.StoreName, "セブンイレブン") {
 			r.Dealer = "SevenEleven"
-		} else if strings.Contains(r.StoreName, "ファミリーマート"){
+		} else if strings.Contains(r.StoreName, "ファミリーマート") {
 			r.Dealer = "FamilyMart"
 		}
 
@@ -155,4 +155,3 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 	}
 	return ScrapedResults, nil
 }
-

@@ -12,12 +12,12 @@ type ResultStruct struct {
 	ProductUrl        string `json:"url" form:"url"`
 	ProductPrice      string `json:"price" form:"price"`
 	ProductRegionList []string
-	ProductImgUrl     string `json:"imgUrl"`
-	Dealer string `json:"dealer"`
-	StoreName  string `json:"storename" form:"storename"`
-	StoreAddress string `json:"storeaddress"`
-	StoreLat   float64 `json:"lat" form:"lon"`
-	StoreLon   float64 `json:"lon" form:"lon"`
+	ProductImgUrl     string  `json:"imgUrl"`
+	Dealer            string  `json:"dealer"`
+	StoreName         string  `json:"storename" form:"storename"`
+	StoreAddress      string  `json:"storeaddress"`
+	StoreLat          float64 `json:"lat" form:"lon"`
+	StoreLon          float64 `json:"lon" form:"lon"`
 }
 
 func New() *ResultStruct {
@@ -69,7 +69,7 @@ func (p *ResultStruct) ToMapSpecificFields(AllFieldsOutFlag bool, specificFields
 	return result
 }
 
-func GetFullPerametaResultStruct() ResultStruct{
+func GetFullPerametaResultStruct() ResultStruct {
 	r := New()
 	r.ProductName = "famitiki"
 	r.ProductPrice = "140"

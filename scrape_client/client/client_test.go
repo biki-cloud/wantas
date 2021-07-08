@@ -10,8 +10,8 @@ import (
 func TestScraping(t *testing.T) {
 	userInfo := client.UserInfo{
 		ProductName: "パスタ",
-		UserLat: 35.53434,
-		UserLon: 140.32323,
+		UserLat:     35.53434,
+		UserLon:     140.32323,
 	}
 	scrapedResults, err := client.Scraping(userInfo)
 	if err != nil {

@@ -6,7 +6,7 @@ import random
 import datetime
 import dataset
 import sys
-sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 import os
 
@@ -176,81 +176,6 @@ def get_lat_lon2(address: str) -> (float, float):
         print(f"it seems too many request.{time.asctime()} sleep 2")
         time.sleep(2)
     log.debug("failed")
-
-# 住所から位置情報を取得するための色々な方法、今は使わない
-
-# def absolutely_get_lat_lon(address: str) -> (float, float):
-#     """
-#     いろんな位置情報の取得方法を使用し、位置情報をとってくる。
-#     """
-#     log.debug("sleeping 10....")
-#     # time.sleep(10)
-#     log.debug(f"find address: {address}.....")
-
-#     lat, lon = coordinate(address)
-#     if lat and lon:
-#         return lat, lon
-
-#     lat, lon = get_lat_lon(address)
-#     if lat and lon:
-#         return lat, lon
-
-#     lat, lon = get_lat_lon2(address)
-#     if lat and lon:
-#         return lat, lon
-
-#     lat, lon = get_lat_lon3(address)
-#     if lat and lon:
-#         return lat, lon
-
-#     return 0.0, 0.0
-
-# def coordinate(address: str):
-#     """
-#     addressに住所を指定すると緯度経度を返す。
-
-#     >>> coordinate('東京都文京区本郷7-3-1')
-#     ['35.712056', '139.762775']
-#     """
-#     url = 'http://www.geocoding.jp/api/'
-#     log.debug("invoked coordinate.")
-#     soup = get_geo_soup(address, url)
-#     if soup.find('error'):
-#         raise ValueError(f"Invalid address submitted. {address}")
-#     lat_tg = soup.find('lat')
-#     lon_tg = soup.find('lon')
-
-#     if lat_tg == None or lon_tg == None:
-#         log.debug("failed")
-#         return 0.0, 0.0
-#     latitude = lat_tg.string
-#     longitude = lon_tg.string
-
-#     return [latitude, longitude]
-
-# def get_lat_lon(address: str) -> (float, float):
-#     log.debug("get_lat_lon")
-#     res = geocoder.osm(address, timeout=5.0)
-#     if res.latlng == None:
-#         log.debug("failed")
-#         return 0.0, 0.0
-#     lat, lon = res.latlng
-#     log.debug(f"lat: {lat}, lon: {lon}")
-#     return lat, lon
-
-
-# def get_lat_lon3(address: str) -> (float, float):
-#     log.debug("get_lat_lon3")
-#     locater = Nominatim(user_agent="test")
-#     location = locater.geocode(address)
-#     if location == None:
-#         log.debug("failed")
-#         return 0.0, 0.0
-#     log.debug(location)
-#     lat = location.latitude
-#     lon = location.longitude
-#     log.debug(f"lat: {lat}, lon: {lon}")
-#     return lat, lon
 
 if __name__ == '__main__':
     pass

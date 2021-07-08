@@ -54826,5 +54826,2063 @@
         "store_address": "鹿児島県伊佐市大口下殿１１１２−１",
         "store_lat": "32.029326",
         "store_lon": "130.588976"
+    },
+    {
+        "store_name": "ローソン出水昭和町店",
+        "store_address": "鹿児島県出水市昭和町１５−８",
+        "store_lat": "32.087578",
+        "store_lon": "130.354372"
+    },
+    {
+        "store_name": "ローソン出水ことぶき店",
+        "store_address": "鹿児島県出水市上鯖渕広瀬５４−１",
+        "store_lat": "32.103616",
+        "store_lon": "130.395586"
+    },
+    {
+        "store_name": "ローソン出水八幡宮前店",
+        "store_address": "鹿児島県出水市中央町５４７",
+        "store_lat": "32.083035",
+        "store_lon": "130.344007"
+    },
+    {
+        "store_name": "ローソン出水大野原店",
+        "store_address": "鹿児島県出水市大野原町７３−１０",
+        "store_lat": "32.081523",
+        "store_lon": "130.326344"
+    },
+    {
+        "store_name": "ローソン出水武本店",
+        "store_address": "鹿児島県出水市武本字池ヶ迫４７０９−１",
+        "store_lat": "32.061603",
+        "store_lon": "130.360453"
+    },
+    {
+        "store_name": "ローソン出水下知識店",
+        "store_address": "鹿児島県出水市下知識町１４６９−１",
+        "store_lat": "32.110074",
+        "store_lon": "130.327465"
+    },
+    {
+        "store_name": "ローソン出水米ノ津店",
+        "store_address": "鹿児島県出水市米ノ津町４２−３０",
+        "store_lat": "32.125147",
+        "store_lon": "130.342296"
+    },
+    {
+        "store_name": "ローソン出水福之江店",
+        "store_address": "鹿児島県出水市汐見町７９１−２",
+        "store_lat": "32.102886",
+        "store_lon": "130.312472"
+    },
+    {
+        "store_name": "ローソン出水高尾野店",
+        "store_address": "鹿児島県出水市高尾野町大久保６１６−１",
+        "store_lat": "32.062192",
+        "store_lon": "130.312067"
+    },
+    {
+        "store_name": "ローソン串木野大原店",
+        "store_address": "鹿児島県いちき串木野市大原町３−１",
+        "store_lat": "31.716713",
+        "store_lon": "130.273615"
+    },
+    {
+        "store_name": "ローソン串木野神村学園前店",
+        "store_address": "鹿児島県いちき串木野市別府４３６３−１",
+        "store_lat": "31.70506",
+        "store_lon": "130.282859"
+    },
+    {
+        "store_name": "ローソン指宿秋元店",
+        "store_address": "鹿児島県指宿市十町字牛鶴２２９２",
+        "store_lat": "31.248261",
+        "store_lon": "130.632208"
+    },
+    {
+        "store_name": "ローソン指宿宮ケ浜店",
+        "store_address": "鹿児島県指宿市西方４６５７",
+        "store_lat": "31.276165",
+        "store_lon": "130.620524"
+    },
+    {
+        "store_name": "ローソン指宿十二町店",
+        "store_address": "鹿児島県指宿市十二町字尻垂ノ前４１２７−３",
+        "store_lat": "31.223897",
+        "store_lon": "130.646216"
+    },
+    {
+        "store_name": "ローソン山川成川店",
+        "store_address": "鹿児島県指宿市山川成川字前園５５８２−３",
+        "store_lat": "31.214259",
+        "store_lon": "130.617664"
+    },
+    {
+        "store_name": "ローソン曽於大崎口店",
+        "store_address": "鹿児島県曽於郡大崎町神領１７３１−１",
+        "store_lat": "31.436933",
+        "store_lon": "131.025411"
+    },
+    {
+        "store_name": "ローソン大崎町永吉店",
+        "store_address": "鹿児島県曽於郡大崎町永吉５０１７",
+        "store_lat": "31.40591",
+        "store_lon": "130.979018"
+    },
+    {
+        "store_name": "ローソン大崎野方インター店",
+        "store_address": "鹿児島県曽於郡大崎町野方２８１０−７",
+        "store_lat": "31.500143",
+        "store_lon": "130.924127"
+    },
+    {
+        "store_name": "ローソン鹿児島金生町店",
+        "store_address": "鹿児島県鹿児島市金生町４−７",
+        "store_lat": "31.594093",
+        "store_lon": "130.556974"
+    },
+    {
+        "store_name": "ローソン鹿児島北ふ頭店",
+        "store_address": "鹿児島県鹿児島市易居町１１−３",
+        "store_lat": "31.595907",
+        "store_lon": "130.560892"
+    },
+    {
+        "store_name": "ローソン鹿児島ベイサイド店",
+        "store_address": "鹿児島県鹿児島市泉町１７−１１",
+        "store_lat": "31.593847",
+        "store_lon": "130.560936"
+    },
+    {
+        "store_name": "ローソン照国神社前店",
+        "store_address": "鹿児島県鹿児島市照国町１２−２０",
+        "store_lat": "31.592755",
+        "store_lon": "130.551704"
+    },
+    {
+        "store_name": "ローソン鹿児島東千石店",
+        "store_address": "鹿児島県鹿児島市東千石町１−１１",
+        "store_lat": "31.590337",
+        "store_lon": "130.55367"
+    },
+    {
+        "store_name": "ローソン鹿児島天文館店",
+        "store_address": "鹿児島県鹿児島市山之口町１２−１６",
+        "store_lat": "31.589873",
+        "store_lon": "130.553965"
+    },
+    {
+        "store_name": "ローソン鹿児島西千石町店",
+        "store_address": "鹿児島県鹿児島市西千石町１７−２７",
+        "store_lat": "31.589406",
+        "store_lon": "130.551758"
+    },
+    {
+        "store_name": "ローソン鹿児島松原町店",
+        "store_address": "鹿児島県鹿児島市松原町８−６",
+        "store_lat": "31.586796",
+        "store_lon": "130.558901"
+    },
+    {
+        "store_name": "ローソン鹿児島加治屋町店",
+        "store_address": "鹿児島県鹿児島市加治屋町１１−２６",
+        "store_lat": "31.586491",
+        "store_lon": "130.54883"
+    },
+    {
+        "store_name": "ローソン城南魚市場前店",
+        "store_address": "鹿児島県鹿児島市城南町１１−１",
+        "store_lat": "31.585109",
+        "store_lon": "130.563001"
+    },
+    {
+        "store_name": "ローソン鹿児島新屋敷店",
+        "store_address": "鹿児島県鹿児島市新屋敷町１５−１",
+        "store_lat": "31.582558",
+        "store_lon": "130.554335"
+    },
+    {
+        "store_name": "ローソン鹿児島原良店",
+        "store_address": "鹿児島県鹿児島市原良１−２−１",
+        "store_lat": "31.598697",
+        "store_lon": "130.539232"
+    },
+    {
+        "store_name": "ローソン鹿児島中央駅前店",
+        "store_address": "鹿児島県鹿児島市中央町４−４４",
+        "store_lat": "31.585622",
+        "store_lon": "130.544381"
+    },
+    {
+        "store_name": "ローソン鹿児島薬師一丁目店",
+        "store_address": "鹿児島県鹿児島市薬師１−８−８",
+        "store_lat": "31.59098",
+        "store_lon": "130.539755"
+    },
+    {
+        "store_name": "ローソン鹿児島アミュプラザ前店",
+        "store_address": "鹿児島県鹿児島市中央町３−３６",
+        "store_lat": "31.585436",
+        "store_lon": "130.54361"
+    },
+    {
+        "store_name": "ローソン鹿児島草牟田二丁目店",
+        "store_address": "鹿児島県鹿児島市草牟田２−１−１",
+        "store_lat": "31.602249",
+        "store_lon": "130.538253"
+    },
+    {
+        "store_name": "ローソン鹿児島中央バスターミナル店",
+        "store_address": "鹿児島県鹿児島市中央町１１",
+        "store_lat": "31.583678",
+        "store_lon": "130.544372"
+    },
+    {
+        "store_name": "ローソン鹿児島西田三丁目店",
+        "store_address": "鹿児島県鹿児島市西田３−８−１７",
+        "store_lat": "31.588358",
+        "store_lon": "130.538477"
+    },
+    {
+        "store_name": "ローソン鹿児島甲南高校前店",
+        "store_address": "鹿児島県鹿児島市荒田１−１−１１",
+        "store_lat": "31.57762",
+        "store_lon": "130.548226"
+    },
+    {
+        "store_name": "ローソン鹿児島錦江町店",
+        "store_address": "鹿児島県鹿児島市錦江町８−１",
+        "store_lat": "31.576296",
+        "store_lon": "130.567177"
+    },
+    {
+        "store_name": "ローソン鹿児島荒田八幡店",
+        "store_address": "鹿児島県鹿児島市下荒田２−１２−１４",
+        "store_lat": "31.573323",
+        "store_lon": "130.555928"
+    },
+    {
+        "store_name": "ローソン鹿児島玉里団地店",
+        "store_address": "鹿児島県鹿児島市玉里団地３−１８−１３",
+        "store_lat": "31.618246",
+        "store_lon": "130.546642"
+    },
+    {
+        "store_name": "ローソン鹿児島上荒田町店",
+        "store_address": "鹿児島県鹿児島市上荒田町２８−８",
+        "store_lat": "31.575399",
+        "store_lon": "130.545257"
+    },
+    {
+        "store_name": "ローソン鹿児島天保山町店",
+        "store_address": "鹿児島県鹿児島市天保山町１４−１７",
+        "store_lat": "31.572387",
+        "store_lon": "130.563531"
+    },
+    {
+        "store_name": "ローソン鹿児島下伊敷町店",
+        "store_address": "鹿児島県鹿児島市下伊敷１−４−６",
+        "store_lat": "31.611362",
+        "store_lon": "130.533735"
+    },
+    {
+        "store_name": "ローソン鹿児島下荒田四丁目店",
+        "store_address": "鹿児島県鹿児島市下荒田４−１１−１７",
+        "store_lat": "31.571329",
+        "store_lon": "130.556174"
+    },
+    {
+        "store_name": "ローソン鹿児島田上天神店",
+        "store_address": "鹿児島県鹿児島市田上２−３３−１７",
+        "store_lat": "31.574601",
+        "store_lon": "130.531293"
+    },
+    {
+        "store_name": "ローソン鹿児島唐湊四丁目店",
+        "store_address": "鹿児島県鹿児島市唐湊４−５−６",
+        "store_lat": "31.569487",
+        "store_lon": "130.537913"
+    },
+    {
+        "store_name": "ローソン鹿児島鴨池一丁目店",
+        "store_address": "鹿児島県鹿児島市鴨池１−６４−２５",
+        "store_lat": "31.565398",
+        "store_lon": "130.545863"
+    },
+    {
+        "store_name": "ローソン鹿児島小野三丁目店",
+        "store_address": "鹿児島県鹿児島市小野３−１５９４−１",
+        "store_lat": "31.612039",
+        "store_lon": "130.517166"
+    },
+    {
+        "store_name": "ローソン鹿屋白崎町店",
+        "store_address": "鹿児島県鹿屋市白崎町６４９９−１",
+        "store_lat": "31.377941",
+        "store_lon": "130.858266"
+    },
+    {
+        "store_name": "ローソン鹿屋向江町店",
+        "store_address": "鹿児島県鹿屋市向江町２４−２０",
+        "store_lat": "31.382674",
+        "store_lon": "130.85259"
+    },
+    {
+        "store_name": "ローソン大隅鹿屋病院店",
+        "store_address": "鹿児島県鹿屋市新川町６０８１−１",
+        "store_lat": "31.376393",
+        "store_lon": "130.860962"
+    },
+    {
+        "store_name": "ローソン鹿屋田崎町店",
+        "store_address": "鹿児島県鹿屋市田崎町１３６６",
+        "store_lat": "31.367209",
+        "store_lon": "130.856844"
+    },
+    {
+        "store_name": "ローソン鹿屋西原四丁目店",
+        "store_address": "鹿児島県鹿屋市西原４−６−９",
+        "store_lat": "31.382607",
+        "store_lon": "130.830484"
+    },
+    {
+        "store_name": "ローソン鹿屋王子町店",
+        "store_address": "鹿児島県鹿屋市王子町３９５５−２",
+        "store_lat": "31.401755",
+        "store_lon": "130.866384"
+    },
+    {
+        "store_name": "ローソン鹿屋郷之原町店",
+        "store_address": "鹿児島県鹿屋市郷之原町１２０１２−２",
+        "store_lat": "31.392238",
+        "store_lon": "130.824227"
+    },
+    {
+        "store_name": "ローソン鹿屋札元二丁目店",
+        "store_address": "鹿児島県鹿屋市札元２−３６８３−５",
+        "store_lat": "31.40235",
+        "store_lon": "130.875124"
+    },
+    {
+        "store_name": "ローソン鹿屋下堀町店",
+        "store_address": "鹿児島県鹿屋市下堀町９６２５−１",
+        "store_lat": "31.350487",
+        "store_lon": "130.835406"
+    },
+    {
+        "store_name": "ローソン鹿屋笠之原町店",
+        "store_address": "鹿児島県鹿屋市笠之原町１４３４−２",
+        "store_lat": "31.392631",
+        "store_lon": "130.894089"
+    },
+    {
+        "store_name": "ローソン鹿屋旭原町店",
+        "store_address": "鹿児島県鹿屋市旭原町２８２６−８",
+        "store_lat": "31.414859",
+        "store_lon": "130.886957"
+    },
+    {
+        "store_name": "ローソン吾平町下名店",
+        "store_address": "鹿児島県鹿屋市吾平町下名３１５３",
+        "store_lat": "31.270411",
+        "store_lon": "130.882914"
+    },
+    {
+        "store_name": "ローソン串良十三塚店",
+        "store_address": "鹿児島県鹿屋市串良町上小原大久保２６１８−１３",
+        "store_lat": "31.393798",
+        "store_lon": "130.918465"
+    },
+    {
+        "store_name": "ローソン鹿屋串良町店",
+        "store_address": "鹿児島県鹿屋市串良町下小原坂元堀東３１２２−２",
+        "store_lat": "31.394305",
+        "store_lon": "130.932233"
+    },
+    {
+        "store_name": "ローソン輝北市成店",
+        "store_address": "鹿児島県鹿屋市輝北町市成座主山野２１６７−３",
+        "store_lat": "31.587689",
+        "store_lon": "130.857225"
+    },
+    {
+        "store_name": "ローソン肝付前田店",
+        "store_address": "鹿児島県肝属郡肝付町前田３５３８−１",
+        "store_lat": "31.351582",
+        "store_lon": "130.939419"
+    },
+    {
+        "store_name": "ローソン高山後田店",
+        "store_address": "鹿児島県肝属郡肝付町後田字東牧３０９０−１",
+        "store_lat": "31.340743",
+        "store_lon": "130.926516"
+    },
+    {
+        "store_name": "ローソン肝付内之浦店",
+        "store_address": "鹿児島県肝属郡肝付町北方字新道１９０４−１",
+        "store_lat": "31.282064",
+        "store_lon": "131.07159"
+    },
+    {
+        "store_name": "ローソン国分駅前店",
+        "store_address": "鹿児島県霧島市国分中央１−３−４２",
+        "store_lat": "31.742937",
+        "store_lon": "130.76465"
+    },
+    {
+        "store_name": "ローソン霧島国分中央三丁目店",
+        "store_address": "鹿児島県霧島市国分中央３−３９−１３",
+        "store_lat": "31.73854",
+        "store_lon": "130.759894"
+    },
+    {
+        "store_name": "ローソン国分中央五丁目店",
+        "store_address": "鹿児島県霧島市国分中央５丁目１６−１",
+        "store_lat": "31.735843",
+        "store_lon": "130.766872"
+    },
+    {
+        "store_name": "ローソン霧島国分野口東店",
+        "store_address": "鹿児島県霧島市国分野口東１１５３",
+        "store_lat": "31.738172",
+        "store_lon": "130.7583"
+    },
+    {
+        "store_name": "ローソン国分中央二丁目店",
+        "store_address": "鹿児島県霧島市国分中央２−１４−５",
+        "store_lat": "31.736226",
+        "store_lon": "130.775897"
+    },
+    {
+        "store_name": "ローソン隼人見次店",
+        "store_address": "鹿児島県霧島市隼人町見次字見次２５５−１",
+        "store_lat": "31.743515",
+        "store_lon": "130.744016"
+    },
+    {
+        "store_name": "ローソン国分山下町店",
+        "store_address": "鹿児島県霧島市国分山下町１７０７−１",
+        "store_lat": "31.726274",
+        "store_lon": "130.777313"
+    },
+    {
+        "store_name": "ローソン国分広瀬店",
+        "store_address": "鹿児島県霧島市国分広瀬２−５−３８",
+        "store_lat": "31.721966",
+        "store_lon": "130.758894"
+    },
+    {
+        "store_name": "ローソン霧島隼人神宮一丁目店",
+        "store_address": "鹿児島県霧島市隼人町神宮１−１１−２０",
+        "store_lat": "31.748345",
+        "store_lon": "130.742249"
+    },
+    {
+        "store_name": "ローソン隼人姫城店",
+        "store_address": "鹿児島県霧島市隼人町姫城１−１",
+        "store_lat": "31.7611",
+        "store_lon": "130.755985"
+    },
+    {
+        "store_name": "ローソン隼人真孝店",
+        "store_address": "鹿児島県霧島市隼人町真孝字櫻馬場３１−１",
+        "store_lat": "31.731678",
+        "store_lon": "130.7373"
+    },
+    {
+        "store_name": "ローソン霧島隼人日当山店",
+        "store_address": "鹿児島県霧島市隼人町内字前田１５４８−１",
+        "store_lat": "31.764231",
+        "store_lon": "130.752635"
+    },
+    {
+        "store_name": "ローソン隼人内山田店",
+        "store_address": "鹿児島県霧島市隼人町内山田４−１６−７",
+        "store_lat": "31.74052",
+        "store_lon": "130.73148"
+    },
+    {
+        "store_name": "ローソン霧島国分上井店",
+        "store_address": "鹿児島県霧島市国分上井７４１−１",
+        "store_lat": "31.723322",
+        "store_lon": "130.787746"
+    },
+    {
+        "store_name": "ローソン霧島国分重久店",
+        "store_address": "鹿児島県霧島市国分重久字樋渡６２７−５",
+        "store_lat": "31.768753",
+        "store_lon": "130.78101"
+    },
+    {
+        "store_name": "ローソン国分敷根店",
+        "store_address": "鹿児島県霧島市国分敷根字剣崎３８０−１",
+        "store_lat": "31.712456",
+        "store_lon": "130.788043"
+    },
+    {
+        "store_name": "ローソン国分インター店",
+        "store_address": "鹿児島県霧島市国分下井１７７７−１",
+        "store_lat": "31.707809",
+        "store_lon": "130.782101"
+    },
+    {
+        "store_name": "ローソン溝辺インター店",
+        "store_address": "鹿児島県霧島市隼人町西光寺字東免２４６０−３",
+        "store_lat": "31.789681",
+        "store_lon": "130.7234"
+    },
+    {
+        "store_name": "ローソン福山町店",
+        "store_address": "鹿児島県霧島市福山町福山字中町２６８７",
+        "store_lat": "31.672233",
+        "store_lon": "130.818619"
+    },
+    {
+        "store_name": "ローソン霧島溝辺麓店",
+        "store_address": "鹿児島県霧島市溝辺町麓字横大道２５２４−１",
+        "store_lat": "31.81613",
+        "store_lon": "130.705858"
+    },
+    {
+        "store_name": "ローソン霧島牧之原店",
+        "store_address": "鹿児島県霧島市福山町福山字惣陳平４５４４−１−４６９",
+        "store_lat": "31.672334",
+        "store_lon": "130.845962"
+    },
+    {
+        "store_name": "ローソン霧島温泉丸尾店",
+        "store_address": "鹿児島県霧島市牧園町高千穂３８７８−９０",
+        "store_lat": "31.89328",
+        "store_lon": "130.827462"
+    },
+    {
+        "store_name": "ローソン錦江神川店",
+        "store_address": "鹿児島県肝属郡錦江町神川字平之下３４１５",
+        "store_lat": "31.275359",
+        "store_lon": "130.793517"
+    },
+    {
+        "store_name": "ローソン川内大小路店",
+        "store_address": "鹿児島県薩摩川内市大小路町９−１４",
+        "store_lat": "31.822867",
+        "store_lon": "130.301623"
+    },
+    {
+        "store_name": "ローソン薩摩川内宮崎町店",
+        "store_address": "鹿児島県薩摩川内市宮崎町字清水田１７１９−２",
+        "store_lat": "31.803568",
+        "store_lon": "130.317902"
+    },
+    {
+        "store_name": "ローソン川内平佐町店",
+        "store_address": "鹿児島県薩摩川内市平佐町字石崎３６７９−３",
+        "store_lat": "31.82256",
+        "store_lon": "130.319726"
+    },
+    {
+        "store_name": "ローソン川内上川内町店",
+        "store_address": "鹿児島県薩摩川内市上川内町字公佛４２２４−１",
+        "store_lat": "31.836023",
+        "store_lon": "130.288738"
+    },
+    {
+        "store_name": "ローソン薩摩川内空港バイパス店",
+        "store_address": "鹿児島県薩摩川内市永利町字古川７４９−１",
+        "store_lat": "31.809283",
+        "store_lon": "130.335399"
+    },
+    {
+        "store_name": "ローソン川内中郷店",
+        "store_address": "鹿児島県薩摩川内市中郷４−２２４",
+        "store_lat": "31.838895",
+        "store_lon": "130.31511"
+    },
+    {
+        "store_name": "ローソン川内小倉店",
+        "store_address": "鹿児島県薩摩川内市小倉町字田中５４０４−１",
+        "store_lat": "31.848765",
+        "store_lon": "130.260863"
+    },
+    {
+        "store_name": "ローソン川内湯田店",
+        "store_address": "鹿児島県薩摩川内市湯田町字清水６８９−１",
+        "store_lat": "31.881961",
+        "store_lon": "130.226459"
+    },
+    {
+        "store_name": "ローソン入来副田店",
+        "store_address": "鹿児島県薩摩川内市入来町副田５８８２−１１",
+        "store_lat": "31.821213",
+        "store_lon": "130.428757"
+    },
+    {
+        "store_name": "ローソンさつま町山崎店",
+        "store_address": "鹿児島県薩摩郡さつま町山崎字瀬ノ上２１４",
+        "store_lat": "31.868437",
+        "store_lon": "130.432063"
+    },
+    {
+        "store_name": "ローソン志布志安楽店",
+        "store_address": "鹿児島県志布志市志布志町安楽字水溜１７８−４",
+        "store_lat": "31.468078",
+        "store_lon": "131.085717"
+    },
+    {
+        "store_name": "ローソン志布志町大原店",
+        "store_address": "鹿児島県志布志市志布志町志布志９３０−１",
+        "store_lat": "31.468786",
+        "store_lon": "131.098424"
+    },
+    {
+        "store_name": "ローソン志布志有明伊崎田店",
+        "store_address": "鹿児島県志布志市有明町伊崎田５６００−３",
+        "store_lat": "31.541707",
+        "store_lon": "131.043597"
+    },
+    {
+        "store_name": "ローソン曽於末吉店",
+        "store_address": "鹿児島県曽於市末吉町南之郷１３９−１",
+        "store_lat": "31.663443",
+        "store_lon": "131.023451"
+    },
+    {
+        "store_name": "ローソン大隅岩川店",
+        "store_address": "鹿児島県曽於市大隅町中之内８９６８",
+        "store_lat": "31.59938",
+        "store_lon": "130.991611"
+    },
+    {
+        "store_name": "ローソン大隅八合原店",
+        "store_address": "鹿児島県曽於市大隅町月野字有村２１９８",
+        "store_lat": "31.582503",
+        "store_lon": "131.006626"
+    },
+    {
+        "store_name": "ローソン財部南俣店",
+        "store_address": "鹿児島県曽於市南俣字流合２２−４",
+        "store_lat": "31.72837",
+        "store_lon": "130.999562"
+    },
+    {
+        "store_name": "ローソン垂水中央店",
+        "store_address": "鹿児島県垂水市上町８１",
+        "store_lat": "31.493277",
+        "store_lon": "130.701615"
+    },
+    {
+        "store_name": "ローソン垂水市木店",
+        "store_address": "鹿児島県垂水市市木４６０−３",
+        "store_lat": "31.497139",
+        "store_lon": "130.70019"
+    },
+    {
+        "store_name": "ローソン垂水浜平店",
+        "store_address": "鹿児島県垂水市浜平１８３２−２",
+        "store_lat": "31.475172",
+        "store_lon": "130.699378"
+    },
+    {
+        "store_name": "ローソン垂水海潟店",
+        "store_address": "鹿児島県垂水市海潟１４０３−１",
+        "store_lat": "31.53044",
+        "store_lon": "130.708193"
+    },
+    {
+        "store_name": "ローソン垂水新城店",
+        "store_address": "鹿児島県垂水市新城４０１２−２",
+        "store_lat": "31.44329",
+        "store_lon": "130.73778"
+    },
+    {
+        "store_name": "ローソン伊集院駅前店",
+        "store_address": "鹿児島県日置市伊集院町徳重２８５",
+        "store_lat": "31.629716",
+        "store_lon": "130.396667"
+    },
+    {
+        "store_name": "ローソン日置伊集院インター店",
+        "store_address": "鹿児島県日置市伊集院町猪鹿倉３２−１",
+        "store_lat": "31.622679",
+        "store_lon": "130.406995"
+    },
+    {
+        "store_name": "ローソン伊集院大田店",
+        "store_address": "鹿児島県日置市伊集院町大田字野首８７１−１",
+        "store_lat": "31.625986",
+        "store_lon": "130.390078"
+    },
+    {
+        "store_name": "ローソン伊集院麦生田店",
+        "store_address": "鹿児島県日置市伊集院町麦生田６８０−１",
+        "store_lat": "31.652634",
+        "store_lon": "130.437387"
+    },
+    {
+        "store_name": "ローソン東市来駅前店",
+        "store_address": "鹿児島県日置市東市来町長里２２４９−１４",
+        "store_lat": "31.655952",
+        "store_lon": "130.346984"
+    },
+    {
+        "store_name": "ローソン肝属東串良店",
+        "store_address": "鹿児島県肝属郡東串良町池之原字街道添２７５２−１",
+        "store_lat": "31.398738",
+        "store_lon": "130.969944"
+    },
+    {
+        "store_name": "ローソン枕崎桜木町店",
+        "store_address": "鹿児島県枕崎市桜木町１１",
+        "store_lat": "31.273219",
+        "store_lon": "130.293682"
+    },
+    {
+        "store_name": "ローソン枕崎東本町店",
+        "store_address": "鹿児島県枕崎市東本町１６０",
+        "store_lat": "31.269313",
+        "store_lon": "130.300606"
+    },
+    {
+        "store_name": "ローソン枕崎明和町店",
+        "store_address": "鹿児島県枕崎市明和町４９３",
+        "store_lat": "31.281522",
+        "store_lon": "130.298991"
+    },
+    {
+        "store_name": "ローソン南大隅根占店",
+        "store_address": "鹿児島県肝属郡南大隅町根占川北字潟４３−２",
+        "store_lat": "31.217802",
+        "store_lon": "130.764949"
+    },
+    {
+        "store_name": "ローソン南九州知覧警察署前店",
+        "store_address": "鹿児島県南九州市知覧町郡字前川良５１８８",
+        "store_lat": "31.373495",
+        "store_lon": "130.434723"
+    },
+    {
+        "store_name": "ローソン知覧瀬世店",
+        "store_address": "鹿児島県南九州市知覧町瀬世４７３２−１０",
+        "store_lat": "31.349539",
+        "store_lon": "130.42686"
+    },
+    {
+        "store_name": "ローソン川辺勝目麓店",
+        "store_address": "鹿児島県南九州市川辺町中山田３５５−１",
+        "store_lat": "31.370049",
+        "store_lon": "130.35224"
+    },
+    {
+        "store_name": "ローソン南九州頴娃町店",
+        "store_address": "鹿児島県南九州市頴娃町牧之内２０９１番地１号",
+        "store_lat": "31.277376",
+        "store_lon": "130.502538"
+    },
+    {
+        "store_name": "ローソン加世田本町店",
+        "store_address": "鹿児島県南さつま市加世田本町３７−１",
+        "store_lat": "31.416878",
+        "store_lon": "130.321432"
+    },
+    {
+        "store_name": "ローソン加世田東本町店",
+        "store_address": "鹿児島県南さつま市加世田東本町２−１",
+        "store_lat": "31.420667",
+        "store_lon": "130.325218"
+    },
+    {
+        "store_name": "ローソン金峰阿多店",
+        "store_address": "鹿児島県南さつま市金峰町宮崎字西大畠４０３９−１",
+        "store_lat": "31.435419",
+        "store_lon": "130.334764"
+    },
+    {
+        "store_name": "ローソン湧水町吉松店",
+        "store_address": "鹿児島県姶良郡湧水町中津川字下川路２０５",
+        "store_lat": "32.010067",
+        "store_lon": "130.761466"
+    },
+    {
+        "store_name": "ローソン糸満真栄里団地前店",
+        "store_address": "沖縄県糸満市字真栄里１８４５−１",
+        "store_lat": "26.118884",
+        "store_lon": "127.669371"
+    },
+    {
+        "store_name": "ローソン糸満南近隣公園前店",
+        "store_address": "沖縄県糸満市字糸満１５４８",
+        "store_lat": "26.129086",
+        "store_lon": "127.669259"
+    },
+    {
+        "store_name": "ローソン沖縄水産高校前店",
+        "store_address": "沖縄県糸満市兼城河尻原４７２−２",
+        "store_lat": "26.137933",
+        "store_lon": "127.670844"
+    },
+    {
+        "store_name": "ローソン糸満照屋店",
+        "store_address": "沖縄県糸満市字照屋新田原７６５",
+        "store_lat": "26.131385",
+        "store_lon": "127.683443"
+    },
+    {
+        "store_name": "ローソン糸満賀数店",
+        "store_address": "沖縄県糸満市字賀数保喜良原３６４−１",
+        "store_lat": 0.0,
+        "store_lon": 0.0
+    },
+    {
+        "store_name": "ローソン糸満バイパス店",
+        "store_address": "沖縄県糸満市字阿波根６９０",
+        "store_lat": "26.153072",
+        "store_lon": "127.688438"
+    },
+    {
+        "store_name": "ローソン糸満与座店",
+        "store_address": "沖縄県糸満市字与座太田原１０３０−１",
+        "store_lat": "26.134997",
+        "store_lon": "127.709767"
+    },
+    {
+        "store_name": "ローソン糸満武富店",
+        "store_address": "沖縄県糸満市字武富３６９−１",
+        "store_lat": "26.165303",
+        "store_lon": "127.698035"
+    },
+    {
+        "store_name": "ローソン浦添安波茶店",
+        "store_address": "沖縄県浦添市安波茶１−５３−１０",
+        "store_lat": "26.247529",
+        "store_lon": "127.714776"
+    },
+    {
+        "store_name": "ローソン浦添経塚店",
+        "store_address": "沖縄県浦添市字経塚６３４−５",
+        "store_lat": "26.237864",
+        "store_lon": "127.721961"
+    },
+    {
+        "store_name": "ローソン浦添前田駅前店",
+        "store_address": "沖縄県浦添市字前田６３６",
+        "store_lat": "26.241283",
+        "store_lon": "127.730125"
+    },
+    {
+        "store_name": "ローソンパイプライン通伊祖店",
+        "store_address": "沖縄県浦添市伊祖３−１−１３",
+        "store_lat": "26.254627",
+        "store_lon": "127.719926"
+    },
+    {
+        "store_name": "ローソン陽明高校前店",
+        "store_address": "沖縄県浦添市大平２−１１−９",
+        "store_lat": "26.244017",
+        "store_lon": "127.710446"
+    },
+    {
+        "store_name": "ＪＰローソン屋富祖郵便局店",
+        "store_address": "沖縄県浦添市屋富祖２−３−１０",
+        "store_lat": "26.248636",
+        "store_lon": "127.710499"
+    },
+    {
+        "store_name": "ローソン大名団地前店",
+        "store_address": "沖縄県浦添市経塚５６８−１",
+        "store_lat": "26.234416",
+        "store_lon": "127.719822"
+    },
+    {
+        "store_name": "ローソン昭和薬科大附属高校前店",
+        "store_address": "沖縄県浦添市字沢岻１４２２−１",
+        "store_lat": "26.238529",
+        "store_lon": "127.71077"
+    },
+    {
+        "store_name": "ローソン浦添宮城六丁目店",
+        "store_address": "沖縄県浦添市宮城６−８２５−８",
+        "store_lat": "26.242581",
+        "store_lon": "127.707154"
+    },
+    {
+        "store_name": "ローソン神森中学校前店",
+        "store_address": "沖縄県浦添市宮城６−２５−１１",
+        "store_lat": "26.241278",
+        "store_lon": "127.707717"
+    },
+    {
+        "store_name": "ローソン浦添城間店",
+        "store_address": "沖縄県浦添市城間４−２１−６",
+        "store_lat": "26.258202",
+        "store_lon": "127.714423"
+    },
+    {
+        "store_name": "ローソン前田小学校前店",
+        "store_address": "沖縄県浦添市字前田１３５１−１",
+        "store_lat": "26.237755",
+        "store_lon": "127.736866"
+    },
+    {
+        "store_name": "ローソン浦添西原店",
+        "store_address": "沖縄県浦添市当山２−５−２",
+        "store_lat": "26.251637",
+        "store_lon": "127.73824"
+    },
+    {
+        "store_name": "ローソン浦添内間四丁目店",
+        "store_address": "沖縄県浦添市内間４−１−５",
+        "store_lat": "26.238282",
+        "store_lon": "127.704973"
+    },
+    {
+        "store_name": "ローソン浦添宮城１丁目店",
+        "store_address": "沖縄県浦添市宮城１−２６−８",
+        "store_lat": "26.251459",
+        "store_lon": "127.703447"
+    },
+    {
+        "store_name": "ローソン浦添勢理客店",
+        "store_address": "沖縄県浦添市勢理客１−１−１",
+        "store_lat": "26.242833",
+        "store_lon": "127.7014"
+    },
+    {
+        "store_name": "ローソン浦添牧港二丁目店",
+        "store_address": "沖縄県浦添市牧港二丁目４５−２",
+        "store_lat": "26.26478",
+        "store_lon": "127.725803"
+    },
+    {
+        "store_name": "ローソン浦添牧港店",
+        "store_address": "沖縄県浦添市牧港５−４−１４",
+        "store_lat": "26.267355",
+        "store_lon": "127.720549"
+    },
+    {
+        "store_name": "ローソン浦添牧港一丁目店",
+        "store_address": "沖縄県浦添市牧港１−６２−２４",
+        "store_lat": "26.266858",
+        "store_lon": "127.716741"
+    },
+    {
+        "store_name": "ローソン西原インター前店",
+        "store_address": "沖縄県浦添市西原３−１９−１",
+        "store_lat": "26.251189",
+        "store_lon": "127.750819"
+    },
+    {
+        "store_name": "ローソンＳ浦添西海岸店",
+        "store_address": "沖縄県浦添市西洲３−１−１",
+        "store_lat": "26.261879",
+        "store_lon": "127.697558"
+    },
+    {
+        "store_name": "ローソンうるま安慶名店",
+        "store_address": "沖縄県うるま市字田場２０２８",
+        "store_lat": "26.373607",
+        "store_lon": "127.856673"
+    },
+    {
+        "store_name": "ローソンうるま市役所入口店",
+        "store_address": "沖縄県うるま市字赤野１００８−１",
+        "store_lat": "26.376756",
+        "store_lon": "127.864862"
+    },
+    {
+        "store_name": "ローソンうるま田場小学校前店",
+        "store_address": "沖縄県うるま市字田場２４４−１",
+        "store_lat": "26.366836",
+        "store_lon": "127.866616"
+    },
+    {
+        "store_name": "ローソン具志川田場店",
+        "store_address": "沖縄県うるま市田場１１４１−１",
+        "store_lat": "26.364431",
+        "store_lon": "127.85349"
+    },
+    {
+        "store_name": "ローソンうるま川崎店",
+        "store_address": "沖縄県うるま市川崎４２０−１",
+        "store_lat": "26.382528",
+        "store_lon": "127.841945"
+    },
+    {
+        "store_name": "ローソン具志川高校前店",
+        "store_address": "沖縄県うるま市喜仲３−２６−２３",
+        "store_lat": "26.354311",
+        "store_lon": "127.846181"
+    },
+    {
+        "store_name": "ローソンうるま栄野比店",
+        "store_address": "沖縄県うるま市字栄野比１０３５−１",
+        "store_lat": "26.39204",
+        "store_lon": "127.828413"
+    },
+    {
+        "store_name": "ローソンうるま豊原店",
+        "store_address": "沖縄県うるま市字豊原２４０",
+        "store_lat": "26.346624",
+        "store_lon": "127.852557"
+    },
+    {
+        "store_name": "ローソンうるま塩屋店",
+        "store_address": "沖縄県うるま市字塩屋４６２−４",
+        "store_lat": "26.345883",
+        "store_lon": "127.860337"
+    },
+    {
+        "store_name": "ローソンうるま川田店",
+        "store_address": "沖縄県うるま市川田１４３−２",
+        "store_lat": "26.344942",
+        "store_lon": "127.867822"
+    },
+    {
+        "store_name": "ローソン中部病院前店",
+        "store_address": "沖縄県うるま市字赤道２５５−７",
+        "store_lat": "26.354371",
+        "store_lon": "127.829993"
+    },
+    {
+        "store_name": "ローソンうるま江洲店",
+        "store_address": "沖縄県うるま市字江洲仲原３３２",
+        "store_lat": "26.3501",
+        "store_lon": "127.826447"
+    },
+    {
+        "store_name": "ローソンうるま与那城照間店",
+        "store_address": "沖縄県うるま市与那城照間１００１−６",
+        "store_lat": "26.342818",
+        "store_lon": "127.885717"
+    },
+    {
+        "store_name": "ローソン石川曙三丁目店",
+        "store_address": "沖縄県うるま市石川曙３−１２−７６",
+        "store_lat": "26.415949",
+        "store_lon": "127.824149"
+    },
+    {
+        "store_name": "ローソン石川バイパス店",
+        "store_address": "沖縄県うるま市石川山城８４２−３",
+        "store_lat": "26.412926",
+        "store_lon": "127.817967"
+    },
+    {
+        "store_name": "ローソンうるま石川店",
+        "store_address": "沖縄県うるま市石川２−２４−９",
+        "store_lat": "26.425194",
+        "store_lon": "127.825255"
+    },
+    {
+        "store_name": "ローソンうるま与勝店",
+        "store_address": "沖縄県うるま市与那城４２３番地１",
+        "store_lat": "26.32882",
+        "store_lon": "127.892196"
+    },
+    {
+        "store_name": "ローソンうるま与那城店",
+        "store_address": "沖縄県うるま市与那城１２０番地",
+        "store_lat": "26.32582",
+        "store_lon": "127.889106"
+    },
+    {
+        "store_name": "ローソン石川インター店",
+        "store_address": "沖縄県うるま市石川２３１３−２",
+        "store_lat": "26.435531",
+        "store_lon": "127.827329"
+    },
+    {
+        "store_name": "ローソンうるま伊波店",
+        "store_address": "沖縄県うるま市石川伊波１５１２−１５",
+        "store_lat": "26.428837",
+        "store_lon": "127.808454"
+    },
+    {
+        "store_name": "ローソン与那城海中道路前店",
+        "store_address": "沖縄県うるま市与那城平安座４２２番２",
+        "store_lat": "26.340551",
+        "store_lon": "127.954766"
+    },
+    {
+        "store_name": "ローソン大宜味塩屋店",
+        "store_address": "沖縄県国頭郡大宜味村字塩屋念蒲１３０６−３",
+        "store_lat": "26.677732",
+        "store_lon": "128.101899"
+    },
+    {
+        "store_name": "ローソン沖縄市役所前店",
+        "store_address": "沖縄県沖縄市仲宗根町３０番４号",
+        "store_lat": "26.333397",
+        "store_lon": "127.804634"
+    },
+    {
+        "store_name": "ローソン沖縄安慶田三丁目店",
+        "store_address": "沖縄県沖縄市安慶田３−１−１１",
+        "store_lat": "26.331862",
+        "store_lon": "127.809682"
+    },
+    {
+        "store_name": "ローソン沖縄上地店",
+        "store_address": "沖縄県沖縄市上地１−１０−２",
+        "store_lat": "26.334286",
+        "store_lon": "127.798959"
+    },
+    {
+        "store_name": "ローソン沖縄こどもの国前店",
+        "store_address": "沖縄県沖縄市胡屋四丁目２４−１６",
+        "store_lat": "26.3296",
+        "store_lon": "127.8001"
+    },
+    {
+        "store_name": "ローソン沖縄越来一丁目店",
+        "store_address": "沖縄県沖縄市越来１丁目１９番７号",
+        "store_lat": "26.34345",
+        "store_lon": "127.809038"
+    },
+    {
+        "store_name": "ローソン沖縄コザ高校前店",
+        "store_address": "沖縄県沖縄市宮里３−３−３３",
+        "store_lat": "26.334408",
+        "store_lon": "127.81891"
+    },
+    {
+        "store_name": "ローソン沖縄南インター店",
+        "store_address": "沖縄県沖縄市上地４−２０−９",
+        "store_lat": "26.335874",
+        "store_lon": "127.792155"
+    },
+    {
+        "store_name": "ローソン沖縄越来三丁目店",
+        "store_address": "沖縄県沖縄市越来３−８−１７",
+        "store_lat": "26.346262",
+        "store_lon": "127.812336"
+    },
+    {
+        "store_name": "ローソン沖縄八重島二丁目店",
+        "store_address": "沖縄県沖縄市八重島２−９−１",
+        "store_lat": "26.348565",
+        "store_lon": "127.802775"
+    },
+    {
+        "store_name": "ローソン沖縄高原店",
+        "store_address": "沖縄県沖縄市高原７−１−１",
+        "store_lat": "26.322007",
+        "store_lon": "127.821855"
+    },
+    {
+        "store_name": "ローソン沖縄美里店",
+        "store_address": "沖縄県沖縄市美原１−１１−１１",
+        "store_lat": "26.346761",
+        "store_lon": "127.822601"
+    },
+    {
+        "store_name": "ローソン沖縄美原三丁目店",
+        "store_address": "沖縄県沖縄市美原３−９−９",
+        "store_lat": "26.351588",
+        "store_lon": "127.816668"
+    },
+    {
+        "store_name": "ローソン沖縄山内３丁目店",
+        "store_address": "沖縄県沖縄市山内３−１５−６",
+        "store_lat": "26.327851",
+        "store_lon": "127.781844"
+    },
+    {
+        "store_name": "ローソン美里工業高校前店",
+        "store_address": "沖縄県沖縄市泡瀬５−２４−１２",
+        "store_lat": "26.324453",
+        "store_lon": "127.82991"
+    },
+    {
+        "store_name": "ローソン沖縄松本店",
+        "store_address": "沖縄県沖縄市松本１−２２−８",
+        "store_lat": "26.3558",
+        "store_lon": "127.817459"
+    },
+    {
+        "store_name": "ローソン沖縄松本二丁目店",
+        "store_address": "沖縄県沖縄市松本８４７",
+        "store_lat": "26.353479",
+        "store_lon": "127.822152"
+    },
+    {
+        "store_name": "ローソン泡瀬団地前店",
+        "store_address": "沖縄県沖縄市古謝二丁目１８−３",
+        "store_lat": "26.332568",
+        "store_lon": "127.834722"
+    },
+    {
+        "store_name": "ローソン沖縄泡瀬店",
+        "store_address": "沖縄県沖縄市泡瀬４−２１−１３",
+        "store_lat": "26.316689",
+        "store_lon": "127.83019"
+    },
+    {
+        "store_name": "ローソン沖縄古謝店",
+        "store_address": "沖縄県沖縄市古謝９４４番地",
+        "store_lat": "26.337304",
+        "store_lon": "127.833984"
+    },
+    {
+        "store_name": "ローソン中頭病院前店",
+        "store_address": "沖縄県沖縄市登川２−２４−１６",
+        "store_lat": "26.365486",
+        "store_lon": "127.823413"
+    },
+    {
+        "store_name": "ローソン沖縄登川店",
+        "store_address": "沖縄県沖縄市字登川２７１２−１",
+        "store_lat": "26.368614",
+        "store_lon": "127.815592"
+    },
+    {
+        "store_name": "ローソン恩納万座毛入口店",
+        "store_address": "沖縄県国頭郡恩納村恩納２５８１−１",
+        "store_lat": "26.497971",
+        "store_lon": "127.854298"
+    },
+    {
+        "store_name": "ローソン恩納万座ビーチ前店",
+        "store_address": "沖縄県国頭郡恩納村字瀬良垣２４９１−１",
+        "store_lat": "26.501532",
+        "store_lon": "127.859733"
+    },
+    {
+        "store_name": "ローソン恩納安富祖店",
+        "store_address": "沖縄県国頭郡恩納村字安富祖９１８番１",
+        "store_lat": "26.501276",
+        "store_lon": "127.887039"
+    },
+    {
+        "store_name": "ローソン恩納ムーンビーチ店",
+        "store_address": "沖縄県国頭郡恩納村前兼久９６５−５",
+        "store_lat": "26.450536",
+        "store_lon": "127.804773"
+    },
+    {
+        "store_name": "ローソン恩納インブビーチ前店",
+        "store_address": "沖縄県国頭郡恩納村名嘉真２２４０−２",
+        "store_lat": "26.525692",
+        "store_lon": "127.925014"
+    },
+    {
+        "store_name": "ローソンネーブルカデナ店",
+        "store_address": "沖縄県中頭郡嘉手納町兼久４２４",
+        "store_lat": "26.3522",
+        "store_lon": "127.745921"
+    },
+    {
+        "store_name": "ローソン嘉手納屋良店",
+        "store_address": "沖縄県中頭郡嘉手納町屋良１０７５−２",
+        "store_lat": "26.366426",
+        "store_lon": "127.772255"
+    },
+    {
+        "store_name": "ローソン北中城安谷屋店",
+        "store_address": "沖縄県中頭郡北中城村安谷屋１９５５−１",
+        "store_lat": "26.296084",
+        "store_lon": "127.780701"
+    },
+    {
+        "store_name": "ローソン県総合運動公園前店",
+        "store_address": "沖縄県中頭郡北中城村美崎１７",
+        "store_lat": "26.306447",
+        "store_lon": "127.819781"
+    },
+    {
+        "store_name": "ローソン金武ベースボールスタジアム入口店",
+        "store_address": "沖縄県国頭郡金武町字金武１０４０４−２",
+        "store_lat": "26.4682",
+        "store_lon": "127.93928"
+    },
+    {
+        "store_name": "ローソン屋嘉インター店",
+        "store_address": "沖縄県国頭郡金武町字屋嘉２９１５",
+        "store_lat": "26.438295",
+        "store_lon": "127.842587"
+    },
+    {
+        "store_name": "ローソン宜野座惣慶店",
+        "store_address": "沖縄県国頭郡宜野座村字惣慶１８３０−８",
+        "store_lat": "26.480745",
+        "store_lon": "127.973183"
+    },
+    {
+        "store_name": "ローソン宜野座漢那店",
+        "store_address": "沖縄県国頭郡宜野座村字漢那１２７８−１",
+        "store_lat": "26.493371",
+        "store_lon": "127.941375"
+    },
+    {
+        "store_name": "ローソン宜野湾市役所前店",
+        "store_address": "沖縄県宜野湾市野嵩２−１−６",
+        "store_lat": "26.282254",
+        "store_lon": "127.778031"
+    },
+    {
+        "store_name": "ローソン宜野湾普天間二丁目店",
+        "store_address": "沖縄県宜野湾市普天間２−３３−１２",
+        "store_lat": "26.290651",
+        "store_lon": "127.774644"
+    },
+    {
+        "store_name": "ローソン宜野湾新城二丁目店",
+        "store_address": "沖縄県宜野湾市新城２−４５−２",
+        "store_lat": "26.287326",
+        "store_lon": "127.76568"
+    },
+    {
+        "store_name": "ローソン宜野湾伊佐三丁目店",
+        "store_address": "沖縄県宜野湾市伊佐３−３−３",
+        "store_lat": "26.290166",
+        "store_lon": "127.755552"
+    },
+    {
+        "store_name": "ローソン宜野湾記念病院前店",
+        "store_address": "沖縄県宜野湾市志真志４−２−８",
+        "store_lat": "26.259418",
+        "store_lon": "127.75879"
+    },
+    {
+        "store_name": "ローソン宜野湾大山７丁目店",
+        "store_address": "沖縄県宜野湾市大山７−６−１",
+        "store_lat": "26.286515",
+        "store_lon": "127.746938"
+    },
+    {
+        "store_name": "ローソン琉大北口前店",
+        "store_address": "沖縄県宜野湾市志真志２−２１−５",
+        "store_lat": "26.254636",
+        "store_lon": "127.763743"
+    },
+    {
+        "store_name": "ローソン宜野湾二丁目店",
+        "store_address": "沖縄県宜野湾市宜野湾２−７−１",
+        "store_lat": "26.26171",
+        "store_lon": "127.752511"
+    },
+    {
+        "store_name": "ローソン中部商業高校前店",
+        "store_address": "沖縄県宜野湾市志真志４−２４−９",
+        "store_lat": "26.256174",
+        "store_lon": "127.758873"
+    },
+    {
+        "store_name": "ローソン森川公園前店",
+        "store_address": "沖縄県宜野湾市大山２−３１−２５",
+        "store_lat": "26.273593",
+        "store_lon": "127.741146"
+    },
+    {
+        "store_name": "ローソン宜野湾我如古店",
+        "store_address": "沖縄県宜野湾市字我如古３７４",
+        "store_lat": "26.259539",
+        "store_lon": "127.747989"
+    },
+    {
+        "store_name": "ローソン宜野湾真栄原１丁目店",
+        "store_address": "沖縄県宜野湾市真栄原１−３−１２",
+        "store_lat": "26.259084",
+        "store_lon": "127.74646"
+    },
+    {
+        "store_name": "ローソンパイプライン通大謝名店",
+        "store_address": "沖縄県宜野湾市大謝名１−１６−１",
+        "store_lat": "26.268001",
+        "store_lon": "127.737368"
+    },
+    {
+        "store_name": "ローソン宜野湾大謝名三丁目店",
+        "store_address": "沖縄県宜野湾市大謝名３−１−３",
+        "store_lat": "26.263425",
+        "store_lon": "127.739485"
+    },
+    {
+        "store_name": "ローソン宜野湾宇地泊店",
+        "store_address": "沖縄県宜野湾市字宇地泊９００−１",
+        "store_lat": "26.273542",
+        "store_lon": "127.733106"
+    },
+    {
+        "store_name": "ローソン宜野湾コンベンションシティ店",
+        "store_address": "沖縄県宜野湾市字宇地泊５５８−１０",
+        "store_lat": "26.274672",
+        "store_lon": "127.729606"
+    },
+    {
+        "store_name": "ローソン宜野湾宇地泊バス停前店",
+        "store_address": "沖縄県宜野湾市字宇地泊東原１７０",
+        "store_lat": "26.268685",
+        "store_lon": "127.731122"
+    },
+    {
+        "store_name": "ローソン国頭浜店",
+        "store_address": "沖縄県国頭郡国頭村字浜兼久原５２１−５",
+        "store_lat": "26.722825",
+        "store_lon": "128.160992"
+    },
+    {
+        "store_name": "ローソン北谷町役場前店",
+        "store_address": "沖縄県中頭郡北谷町字伊平３１４−７",
+        "store_lat": "26.325075",
+        "store_lon": "127.759641"
+    },
+    {
+        "store_name": "ローソン北谷美浜店",
+        "store_address": "沖縄県中頭郡北谷町美浜２−１−１５",
+        "store_lat": "26.317026",
+        "store_lon": "127.7597"
+    },
+    {
+        "store_name": "ローソン北谷美浜二丁目店",
+        "store_address": "沖縄県中頭郡北谷町美浜２−７−４",
+        "store_lat": "26.319821",
+        "store_lon": "127.758541"
+    },
+    {
+        "store_name": "ローソン美浜フィッシャリーナ店",
+        "store_address": "沖縄県中頭郡北谷町字美浜３４−２",
+        "store_lat": "26.316664",
+        "store_lon": "127.754327"
+    },
+    {
+        "store_name": "ローソン美浜アメリカンビレッジ店",
+        "store_address": "沖縄県中頭郡北谷町字美浜９−２２",
+        "store_lat": "26.315052",
+        "store_lon": "127.753994"
+    },
+    {
+        "store_name": "ローソン北谷上勢頭店",
+        "store_address": "沖縄県中頭郡北谷町字上勢頭８１４−４",
+        "store_lat": "26.328156",
+        "store_lon": "127.771366"
+    },
+    {
+        "store_name": "ローソンアラハビーチ前店",
+        "store_address": "沖縄県中頭郡北谷町北前１−１９−１３",
+        "store_lat": "26.298068",
+        "store_lon": "127.759068"
+    },
+    {
+        "store_name": "ローソン北谷町北前店",
+        "store_address": "沖縄県中頭郡北谷町北前２４０",
+        "store_lat": "26.296003",
+        "store_lon": "127.760498"
+    },
+    {
+        "store_name": "ローソン豊見城宜保店",
+        "store_address": "沖縄県豊見城市宜保一丁目７番１３",
+        "store_lat": "26.179521",
+        "store_lon": "127.680833"
+    },
+    {
+        "store_name": "ローソン豊見城団地前店",
+        "store_address": "沖縄県豊見城市字平良１２６−１",
+        "store_lat": "26.168139",
+        "store_lon": "127.69332"
+    },
+    {
+        "store_name": "ローソン豊見城真玉橋店",
+        "store_address": "沖縄県豊見城市字真玉橋２８２",
+        "store_lat": "26.190255",
+        "store_lon": "127.690526"
+    },
+    {
+        "store_name": "ローソン豊見城南高校前店",
+        "store_address": "沖縄県豊見城市翁長４６３−１",
+        "store_lat": "26.161876",
+        "store_lon": "127.669529"
+    },
+    {
+        "store_name": "ローソン豊見城市民体育館前店",
+        "store_address": "沖縄県豊見城市字与根２０１−８",
+        "store_lat": "26.166696",
+        "store_lon": "127.657288"
+    },
+    {
+        "store_name": "ローソン豊見城豊崎店",
+        "store_address": "沖縄県豊見城市字豊崎１−４２０",
+        "store_lat": "26.157645",
+        "store_lon": "127.658743"
+    },
+    {
+        "store_name": "ローソン豊崎レンタカーステーション前店",
+        "store_address": "沖縄県豊見城市字豊崎３−７０",
+        "store_lat": "26.157923",
+        "store_lon": "127.654166"
+    },
+    {
+        "store_name": "ローソン中城南上原店",
+        "store_address": "沖縄県中頭郡中城村字南上原厚生原５１３",
+        "store_lat": "26.253968",
+        "store_lon": "127.77418"
+    },
+    {
+        "store_name": "ローソン中城南小学校前店",
+        "store_address": "沖縄県中頭郡中城村字南上原７７０番地１",
+        "store_lat": "26.249974",
+        "store_lon": "127.773516"
+    },
+    {
+        "store_name": "ローソン中城登又店",
+        "store_address": "沖縄県中頭郡中城村字登又３１４",
+        "store_lat": "26.282444",
+        "store_lon": "127.785096"
+    },
+    {
+        "store_name": "ローソン中城久場店",
+        "store_address": "沖縄県中頭郡中城村字久場後浜原１９５３−１",
+        "store_lat": "26.285469",
+        "store_lon": "127.815468"
+    },
+    {
+        "store_name": "ローソン今帰仁村役場前店",
+        "store_address": "沖縄県国頭郡今帰仁村字謝名謝名俣原４４６−１",
+        "store_lat": "26.683258",
+        "store_lon": "127.970062"
+    },
+    {
+        "store_name": "ローソン今帰仁店",
+        "store_address": "沖縄県国頭郡今帰仁村天底２６２−１",
+        "store_lat": "26.67382",
+        "store_lon": "127.979228"
+    },
+    {
+        "store_name": "ローソン名護大東一丁目店",
+        "store_address": "沖縄県名護市大東１−２１−１２",
+        "store_lat": "26.590278",
+        "store_lon": "127.985803"
+    },
+    {
+        "store_name": "ローソン名護大西三丁目店",
+        "store_address": "沖縄県名護市大西３−１９−２９",
+        "store_lat": "26.597694",
+        "store_lon": "127.983424"
+    },
+    {
+        "store_name": "ローソン名護大中店",
+        "store_address": "沖縄県名護市大中３−２−３",
+        "store_lat": "26.594172",
+        "store_lon": "127.988475"
+    },
+    {
+        "store_name": "ローソン名護宮里店",
+        "store_address": "沖縄県名護市字宮里名座喜原１３７３−２",
+        "store_lat": "26.604619",
+        "store_lon": "127.975306"
+    },
+    {
+        "store_name": "ローソン名護東江店",
+        "store_address": "沖縄県名護市東江４−２４−２８",
+        "store_lat": "26.579959",
+        "store_lon": "127.985451"
+    },
+    {
+        "store_name": "ローソン名護高校前店",
+        "store_address": "沖縄県名護市大西５−１６−１３",
+        "store_lat": "26.602832",
+        "store_lon": "127.986389"
+    },
+    {
+        "store_name": "ローソン名護宇茂佐の森店",
+        "store_address": "沖縄県名護市宇茂佐の森１−１７−１２",
+        "store_lat": "26.597812",
+        "store_lon": "127.963198"
+    },
+    {
+        "store_name": "ローソン名護宇茂佐店",
+        "store_address": "沖縄県名護市宇茂佐の森４−１−２",
+        "store_lat": "26.601712",
+        "store_lon": "127.964368"
+    },
+    {
+        "store_name": "ローソン名護東江五丁目店",
+        "store_address": "沖縄県名護市東江５−２２−２０",
+        "store_lat": "26.576208",
+        "store_lon": "127.983973"
+    },
+    {
+        "store_name": "ローソン名護大北店",
+        "store_address": "沖縄県名護市大北３−３０−２３",
+        "store_lat": "26.606904",
+        "store_lon": "127.994014"
+    },
+    {
+        "store_name": "ローソン名護バイパス店",
+        "store_address": "沖縄県名護市屋部１７１１−１",
+        "store_lat": "26.600371",
+        "store_lon": "127.951329"
+    },
+    {
+        "store_name": "ローソン名桜大学前店",
+        "store_address": "沖縄県名護市字為又１２２０−２５",
+        "store_lat": "26.617922",
+        "store_lon": "127.96872"
+    },
+    {
+        "store_name": "ローソン名護田井等店",
+        "store_address": "沖縄県名護市字田井等７９２番１",
+        "store_lat": "26.615871",
+        "store_lon": "128.009417"
+    },
+    {
+        "store_name": "ローソン名護呉我店",
+        "store_address": "沖縄県名護市字呉我５６４−１",
+        "store_lat": "26.638837",
+        "store_lon": "127.996993"
+    },
+    {
+        "store_name": "ローソンかりゆしビーチリゾート店",
+        "store_address": "沖縄県名護市字喜瀬１９９６",
+        "store_lat": "26.531619",
+        "store_lon": "127.930124"
+    },
+    {
+        "store_name": "ローソン名護辺野古店",
+        "store_address": "沖縄県名護市辺野古１０１０−６８",
+        "store_lat": "26.523575",
+        "store_lon": "128.022571"
+    },
+    {
+        "store_name": "ローソン那覇ハーバービュー通店",
+        "store_address": "沖縄県那覇市泉崎１−３−１",
+        "store_lat": "26.210773",
+        "store_lon": "127.679449"
+    },
+    {
+        "store_name": "ローソンかりゆしＬＣＨ．泉崎店",
+        "store_address": "沖縄県那覇市泉崎１−１１−８",
+        "store_lat": "26.213121",
+        "store_lon": "127.677316"
+    },
+    {
+        "store_name": "ローソン那覇旭町店",
+        "store_address": "沖縄県那覇市旭町１１６−３７",
+        "store_lat": "26.210029",
+        "store_lon": "127.676972"
+    },
+    {
+        "store_name": "ローソン旭橋駅前店",
+        "store_address": "沖縄県那覇市旭町１−９",
+        "store_lat": "26.210563",
+        "store_lon": "127.675936"
+    },
+    {
+        "store_name": "ローソン那覇久茂地三丁目店",
+        "store_address": "沖縄県那覇市久茂地３−１１−１５",
+        "store_lat": "26.215069",
+        "store_lon": "127.68139"
+    },
+    {
+        "store_name": "ローソンタイムスビル店",
+        "store_address": "沖縄県那覇市久茂地２−２−２",
+        "store_lat": "26.215762",
+        "store_lon": "127.67906"
+    },
+    {
+        "store_name": "ローソン国際通松尾一丁目店",
+        "store_address": "沖縄県那覇市松尾１−３−６",
+        "store_lat": "26.214096",
+        "store_lon": "127.682582"
+    },
+    {
+        "store_name": "ローソン国際通久茂地店",
+        "store_address": "沖縄県那覇市久茂地３−５−４−１",
+        "store_lat": "26.214929",
+        "store_lon": "127.683306"
+    },
+    {
+        "store_name": "ローソン那覇商業高校前店",
+        "store_address": "沖縄県那覇市久米２−１６−３１",
+        "store_lat": "26.216845",
+        "store_lon": "127.676994"
+    },
+    {
+        "store_name": "ローソン那覇東町店",
+        "store_address": "沖縄県那覇市東町２０−７",
+        "store_lat": "26.212168",
+        "store_lon": "127.673519"
+    },
+    {
+        "store_name": "ローソン国際通松尾店",
+        "store_address": "沖縄県那覇市松尾２−５−１",
+        "store_lat": "26.214949",
+        "store_lon": "127.685068"
+    },
+    {
+        "store_name": "ローソン那覇松山二丁目店",
+        "store_address": "沖縄県那覇市松山２−１−１８",
+        "store_lat": 0.0,
+        "store_lon": 0.0
+    },
+    {
+        "store_name": "ローソン那覇松山店",
+        "store_address": "沖縄県那覇市松山１−１３−８",
+        "store_lat": "26.218795",
+        "store_lon": "127.679803"
+    },
+    {
+        "store_name": "ローソン那覇西一丁目店",
+        "store_address": "沖縄県那覇市西１−５−８",
+        "store_lat": "26.212259",
+        "store_lon": "127.671864"
+    },
+    {
+        "store_name": "ローソン那覇久茂地二丁目店",
+        "store_address": "沖縄県那覇市久茂地２−２１−１４",
+        "store_lat": "26.219212",
+        "store_lon": "127.68272"
+    },
+    {
+        "store_name": "ローソン那覇開南バス停前店",
+        "store_address": "沖縄県那覇市松尾２−１７−２０",
+        "store_lat": "26.211555",
+        "store_lon": "127.687704"
+    },
+    {
+        "store_name": "ローソン那覇壷川店",
+        "store_address": "沖縄県那覇市壺川１−１３−１３",
+        "store_lat": "26.204603",
+        "store_lon": "127.681969"
+    },
+    {
+        "store_name": "ローソン那覇若狭二丁目店",
+        "store_address": "沖縄県那覇市若狭２−３−１３",
+        "store_lat": "26.220625",
+        "store_lon": "127.676748"
+    },
+    {
+        "store_name": "ローソン国際通牧志店",
+        "store_address": "沖縄県那覇市牧志３−２−１０てんぶす那覇１ＦＡ−１",
+        "store_lat": "26.21612",
+        "store_lon": "127.68937"
+    },
+    {
+        "store_name": "ローソン那覇若狭三丁目店",
+        "store_address": "沖縄県那覇市若狭３−４３−１５",
+        "store_lat": "26.223156",
+        "store_lon": "127.680617"
+    },
+    {
+        "store_name": "ローソン那覇前島１丁目店",
+        "store_address": "沖縄県那覇市前島１−１３−１",
+        "store_lat": "26.221764",
+        "store_lon": "127.685929"
+    },
+    {
+        "store_name": "ローソンとまりん店",
+        "store_address": "沖縄県那覇市前島３−２５−１",
+        "store_lat": "26.223733",
+        "store_lon": "127.683804"
+    },
+    {
+        "store_name": "ローソン那覇古波蔵三丁目店",
+        "store_address": "沖縄県那覇市古波蔵３−８−１",
+        "store_lat": "26.200928",
+        "store_lon": "127.684917"
+    },
+    {
+        "store_name": "ローソン那覇牧志公園前店",
+        "store_address": "沖縄県那覇市牧志３−１３−２３",
+        "store_lat": "26.217376",
+        "store_lon": "127.692097"
+    },
+    {
+        "store_name": "ローソン那覇崇元寺通店",
+        "store_address": "沖縄県那覇市安里１−８−４",
+        "store_lat": "26.220124",
+        "store_lon": "127.690333"
+    },
+    {
+        "store_name": "ローソン那覇三原一丁目店",
+        "store_address": "沖縄県那覇市三原１−１３−１０",
+        "store_lat": "26.213103",
+        "store_lon": "127.696471"
+    },
+    {
+        "store_name": "ローソン那覇与儀店",
+        "store_address": "沖縄県那覇市与儀３６４−３",
+        "store_lat": "26.20212",
+        "store_lon": "127.692588"
+    },
+    {
+        "store_name": "ローソン那覇西高校前店",
+        "store_address": "沖縄県那覇市金城２−１８−３",
+        "store_lat": "26.202163",
+        "store_lon": "127.663064"
+    },
+    {
+        "store_name": "ローソン新都心センタービル店",
+        "store_address": "沖縄県那覇市おもろまち１−１−１２",
+        "store_lat": "26.223041",
+        "store_lon": "127.695232"
+    },
+    {
+        "store_name": "ローソン那覇上之屋店",
+        "store_address": "沖縄県那覇市おもろまち２−５−１",
+        "store_lat": "26.225732",
+        "store_lon": "127.693011"
+    },
+    {
+        "store_name": "ローソン南城市役所前店",
+        "store_address": "沖縄県南城市字玉城字親慶原仲田原４７５−１",
+        "store_lat": "26.162302",
+        "store_lon": "127.774459"
+    },
+    {
+        "store_name": "ローソン南城佐敷店",
+        "store_address": "沖縄県南城市佐敷字兼久親田原５８−１",
+        "store_lat": "26.169039",
+        "store_lon": "127.782733"
+    },
+    {
+        "store_name": "ローソン玉城親慶原店",
+        "store_address": "沖縄県南城市玉城親慶原１４７",
+        "store_lat": "26.155666",
+        "store_lon": "127.782035"
+    },
+    {
+        "store_name": "ローソン佐敷津波古店",
+        "store_address": "沖縄県南城市佐敷字津波古５８４",
+        "store_lat": "26.176916",
+        "store_lon": "127.773969"
+    },
+    {
+        "store_name": "ローソン南城大城店",
+        "store_address": "沖縄県南城市大里字大城道堂原６８６番地",
+        "store_lat": 0.0,
+        "store_lon": 0.0
+    },
+    {
+        "store_name": "ローソン南城富里店",
+        "store_address": "沖縄県南城市玉城字富里６９０−１",
+        "store_lat": "26.139279",
+        "store_lon": "127.767029"
+    },
+    {
+        "store_name": "ローソン南城高平店",
+        "store_address": "沖縄県南城市大里字高平１４７−１",
+        "store_lat": "26.171856",
+        "store_lon": "127.742059"
+    },
+    {
+        "store_name": "ローソン大里グリーンタウン前店",
+        "store_address": "沖縄県南城市大里稲嶺伊久田原２０４７−３",
+        "store_lat": "26.169184",
+        "store_lon": "127.740252"
+    },
+    {
+        "store_name": "ローソンおきなわワールド前店",
+        "store_address": "沖縄県南城市玉城字前川２４４−１",
+        "store_lat": "26.145824",
+        "store_lon": "127.745381"
+    },
+    {
+        "store_name": "ローソン南城仲間店",
+        "store_address": "沖縄県南城市大里字仲間４３９−１",
+        "store_lat": "26.180891",
+        "store_lon": "127.742371"
+    },
+    {
+        "store_name": "ローソン西原津花波店",
+        "store_address": "沖縄県中頭郡西原町津花波１２１",
+        "store_lat": "26.226043",
+        "store_lon": "127.759454"
+    },
+    {
+        "store_name": "ローソン西原工業団地前店",
+        "store_address": "沖縄県中頭郡西原町字内間３９５−２",
+        "store_lat": "26.231974",
+        "store_lon": "127.769477"
+    },
+    {
+        "store_name": "ローソン西原幸地店",
+        "store_address": "沖縄県中頭郡西原町字幸地南良８８７",
+        "store_lat": "26.230006",
+        "store_lon": "127.739339"
+    },
+    {
+        "store_name": "ローソン琉球大学病院店",
+        "store_address": "沖縄県中頭郡西原町上原２０７",
+        "store_lat": "26.242477",
+        "store_lon": "127.759169"
+    },
+    {
+        "store_name": "ローソン西原棚原店",
+        "store_address": "沖縄県中頭郡西原町棚原１丁目２３番地の１１",
+        "store_lat": "26.241614",
+        "store_lon": "127.752854"
+    },
+    {
+        "store_name": "ローソン琉大病院前店",
+        "store_address": "沖縄県中頭郡西原町字上原２丁目１５番地の９",
+        "store_lat": "26.242606",
+        "store_lon": "127.763937"
+    },
+    {
+        "store_name": "ローソン南風原兼城店",
+        "store_address": "沖縄県島尻郡南風原町兼城世理伊原２６２",
+        "store_lat": "26.196352",
+        "store_lon": "127.729945"
+    },
+    {
+        "store_name": "ローソン津嘉山公園前店",
+        "store_address": "沖縄県島尻郡南風原町字津嘉山１２６５−１",
+        "store_lat": "26.191043",
+        "store_lon": "127.716479"
+    },
+    {
+        "store_name": "ローソン南部医療センター前店",
+        "store_address": "沖縄県島尻郡南風原町字新川６４",
+        "store_lat": "26.204367",
+        "store_lon": "127.722916"
+    },
+    {
+        "store_name": "ローソン南部農林高校前店",
+        "store_address": "沖縄県島尻郡南風原町字津嘉山１５１３番２−２",
+        "store_lat": "26.188087",
+        "store_lon": "127.709393"
+    },
+    {
+        "store_name": "ローソン南風原津嘉山店",
+        "store_address": "沖縄県島尻郡南風原町津嘉山１４８３−１",
+        "store_lat": "26.190553",
+        "store_lon": "127.708587"
+    },
+    {
+        "store_name": "ローソン開邦高校前店",
+        "store_address": "沖縄県島尻郡南風原町字新川６７０−８",
+        "store_lat": "26.21795",
+        "store_lon": "127.733761"
+    },
+    {
+        "store_name": "ローソン本部八重岳入口店",
+        "store_address": "沖縄県国頭郡本部町字並里６１７−３",
+        "store_lat": "26.657023",
+        "store_lon": "127.922826"
+    },
+    {
+        "store_name": "ローソン本部大浜店",
+        "store_address": "沖縄県国頭郡本部町字大浜大崎原８６１−１",
+        "store_lat": "26.655041",
+        "store_lon": "127.882667"
+    },
+    {
+        "store_name": "ローソン本部浦崎店",
+        "store_address": "沖縄県国頭郡本部町字浦崎３６４",
+        "store_lat": "26.677342",
+        "store_lon": "127.891786"
+    },
+    {
+        "store_name": "ローソン本部港前店",
+        "store_address": "沖縄県国頭郡本部町字崎本部４６８４−１",
+        "store_lat": "26.641506",
+        "store_lon": "127.881196"
+    },
+    {
+        "store_name": "ローソン本部具志堅店",
+        "store_address": "沖縄県国頭郡本部町字具志堅１５５１−１",
+        "store_lat": "26.697163",
+        "store_lon": "127.90597"
+    },
+    {
+        "store_name": "ローソン海洋博公園前店",
+        "store_address": "沖縄県国頭郡本部町字備瀬１２１−１",
+        "store_lat": "26.696467",
+        "store_lon": "127.879095"
+    },
+    {
+        "store_name": "ローソン八重瀬町役場前店",
+        "store_address": "沖縄県島尻郡八重瀬町字東風平１２１５番１",
+        "store_lat": "26.155603",
+        "store_lon": "127.719554"
+    },
+    {
+        "store_name": "ローソン白川小学校前店",
+        "store_address": "沖縄県島尻郡八重瀬町字小城５７９−２",
+        "store_lat": "26.160662",
+        "store_lon": "127.708155"
+    },
+    {
+        "store_name": "ローソン八重瀬屋宜原店",
+        "store_address": "沖縄県島尻郡八重瀬町字屋宜原１９−６",
+        "store_lat": "26.158918",
+        "store_lon": "127.72981"
+    },
+    {
+        "store_name": "ローソン東風平宜次店",
+        "store_address": "沖縄県島尻郡八重瀬町宜次久保増原７２１−８",
+        "store_lat": "26.177862",
+        "store_lon": "127.718581"
+    },
+    {
+        "store_name": "ローソン南部工業高校前店",
+        "store_address": "沖縄県島尻郡八重瀬町字富盛１０２８−４",
+        "store_lat": "26.138399",
+        "store_lon": "127.729136"
+    },
+    {
+        "store_name": "ローソン向陽高校前店",
+        "store_address": "沖縄県島尻郡八重瀬町具志頭川平良原１１０６−１",
+        "store_lat": 0.0,
+        "store_lon": 0.0
+    },
+    {
+        "store_name": "ローソン八重瀬玻名城店",
+        "store_address": "沖縄県島尻郡八重瀬町字玻名城１６４−１",
+        "store_lat": "26.118311",
+        "store_lon": "127.738779"
+    },
+    {
+        "store_name": "ローソン東浜シーサー公園前店",
+        "store_address": "沖縄県島尻郡与那原町字東浜９５−４",
+        "store_lat": "26.204693",
+        "store_lon": "127.758541"
+    },
+    {
+        "store_name": "ローソン南風原北インター前店",
+        "store_address": "沖縄県島尻郡与那原町字上与那原４７２−１−２",
+        "store_lat": "26.19997",
+        "store_lon": "127.746944"
+    },
+    {
+        "store_name": "ローソンシーサイド与那原店",
+        "store_address": "沖縄県島尻郡与那原町与那原与原９３２",
+        "store_lat": "26.207669",
+        "store_lon": "127.754499"
+    },
+    {
+        "store_name": "ローソン与那原東浜店",
+        "store_address": "沖縄県島尻郡与那原町字東浜２３−３",
+        "store_lat": "26.206213",
+        "store_lon": "127.762047"
+    },
+    {
+        "store_name": "ローソン与那原板良敷店",
+        "store_address": "沖縄県島尻郡与那原町板良敷１３８５−１",
+        "store_lat": "26.193259",
+        "store_lon": "127.767894"
+    },
+    {
+        "store_name": "ローソン読谷座喜味店",
+        "store_address": "沖縄県中頭郡読谷村字座喜味２０１２−１",
+        "store_lat": "26.405361",
+        "store_lon": "127.747685"
+    },
+    {
+        "store_name": "ローソン読谷波平店",
+        "store_address": "沖縄県中頭郡読谷村字波平大当原２１５８−１",
+        "store_lat": "26.399716",
+        "store_lon": "127.724134"
+    },
+    {
+        "store_name": "ローソン読谷大湾店",
+        "store_address": "沖縄県中頭郡読谷村字比謝５０５−１",
+        "store_lat": "26.379",
+        "store_lon": "127.755747"
+    },
+    {
+        "store_name": "ローソン読谷長浜店",
+        "store_address": "沖縄県中頭郡読谷村字長浜吹出原１０９１−１",
+        "store_lat": "26.418105",
+        "store_lon": "127.732672"
     }
 ]

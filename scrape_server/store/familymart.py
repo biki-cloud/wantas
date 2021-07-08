@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/Users/hibiki/Desktop/go/wants")
 sys.path.append("/code")
 
 from scrape_server import util

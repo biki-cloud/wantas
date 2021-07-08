@@ -1,6 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 import os
+import socket
 
 def set_log(filepath, log_name=__name__):
     """
@@ -16,7 +17,6 @@ def set_log(filepath, log_name=__name__):
     # create logger
     logger = logging.getLogger(log_name)
     logger.setLevel(logging.DEBUG)
-
 
     # create console handler and set level to debug
     s = logging.StreamHandler()
@@ -37,7 +37,10 @@ def set_log(filepath, log_name=__name__):
 
     return logger
 
-log = set_log("/log/all.log")
+if socket.gethostname() == "hibikinoiMac.local":
+    log = set_log("/Users/hibiki/Desktop/go/wantas/log/all.log")
+else:
+    log = set_log("/log/all.log")
 
 if __name__ == '__main__':
     pass
