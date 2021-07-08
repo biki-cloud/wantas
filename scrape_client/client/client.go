@@ -84,6 +84,7 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	}
 }
 
+// scraping server ip address that is docker container
 const grpcDialingUrl = "192.168.80.2:50051"
 
 func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {

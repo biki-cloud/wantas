@@ -102,8 +102,8 @@ def serve():
     log.info("Starting GRPC server...")
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     scrape_pb2_grpc.add_ScrapingServiceServicer_to_server(ScrapingServiceManyTimes(), server)
-    # server.add_insecure_port('[::]:50051')
-    server.add_insecure_port('192.168.80.3:50051')
+    # 自分のアドレスのポート50051で待ち構える。後はclientからアクセスがくる。
+    server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()
 
