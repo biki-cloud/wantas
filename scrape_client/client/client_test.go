@@ -2,8 +2,8 @@ package client_test
 
 import (
 	"fmt"
-	"go-react/scrape_client/client"
 	"log"
+	"scrape_client/client"
 	"testing"
 )
 

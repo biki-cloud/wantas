@@ -37,8 +37,7 @@ def set_log(filepath, log_name=__name__):
 
     return logger
 
-# log = set_log("/Users/hibiki/Desktop/go/go-react/log/all.log")
-log = set_log(os.path.dirname(__file__) + "python.log")
+log = set_log("/log/all.log")
 
 if __name__ == '__main__':
     pass

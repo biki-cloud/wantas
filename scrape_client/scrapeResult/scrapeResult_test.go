@@ -2,8 +2,8 @@ package scrapeResult_test
 
 import (
 	"fmt"
-	"go-react/scrapeResult"
 	"reflect"
+	"scrape_client/scrapeResult"
 	"testing"
 )
 

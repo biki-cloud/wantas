@@ -5,7 +5,7 @@ WORKDIR /code
 RUN mkdir /code/scrape_server
 
 WORKDIR /code/scrape_server
-COPY scrape_server /code/scrape_server/
+COPY . /code/scrape_server/
 # COPY scrape_server/requirements.txt ./
 # COPY scrape_server/util.py ./
 
