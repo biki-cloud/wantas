@@ -3,7 +3,7 @@ import time
 from typing import List
 import bs4
 
-sys.path.append("/Users/hibiki/Desktop/go/wants")
+sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 
 from scrape_server import util

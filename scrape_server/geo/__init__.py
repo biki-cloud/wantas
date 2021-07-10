@@ -131,22 +131,29 @@ def is_contains(product_store_dic: dict) -> (bool):
         "近畿": ["滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山"],
         "中国": ["鳥取", "島根", "岡山", "広島", "山口"],
         "四国": ["徳島", "香川", "愛媛", "高知"],
+        "中四国": ["鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知"],
         "九州": ["福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"],
+        "北九州": ["福岡", "佐賀", "長崎", "熊本", "大分"],
+        "南九州": ["宮崎", "鹿児島"],
         "首都圏": ["埼玉", "千葉", "神奈川", "東京"]
     }
+    # 店の住所
     store_address = product_store_dic['store_address']
+    # ['中国', '熊本', '鹿児島']みたいな販売されているエリア
     product_region_list = product_store_dic['product_region_list']
     log.debug(f"store_address: {store_address}")
     log.debug(f"product_region_list: {product_region_list}")
 
     for area in product_region_list:
-        # areaが県の場合
+        # TODO: areaの一文字目に!が入っていたらその地域意外となる。
+        # 販売地域リストの一つが県名で店の住所文字列の中に入っていればそこでは販売されている
         if area in store_address:
             return True
-        # areaが東北などの地域の場合
+        # areaが中国などの地域の場合
         for k, v in area_table.items():
             if area == k:
                 for pre in v:
+                    # 中国だと"鳥取", "島根", "岡山", "広島", "山口"のどれかが店の住所文字列に入っていればそこでは販売されている
                     if pre in store_address:
                         return True
         if area == "全国":

@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 	"scrape_client/scrapeResult"
 	"scrape_client/scrapepb"
 	"strconv"
@@ -43,13 +44,7 @@ func getPerametaFromPostForm(c *gin.Context) (UserInfo, error) {
 	return userInfo, nil
 }
 
-func GetMultipleProduct() []scrapeResult.ResultStruct {
-	var li []scrapeResult.ResultStruct
-	r1 := scrapeResult.GetFullPerametaResultStruct()
-	r2 := scrapeResult.GetFullPerametaResultStruct()
-	li = append(li, r1, r2)
-	return li
-}
+
 
 func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	log.Printf("invoked SearchProductUseGRPC \n")
@@ -63,7 +58,6 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 
 		log.Printf("call Scraping.")
 		var scrapedResults, err2 = Scraping(userInfo)
-		// var scrapedResults = GetMultipleProduct()
 		log.Printf("scrapeResults length: %v \n", len(scrapedResults))
 		log.Printf("scrapedResults: %v \n", scrapedResults)
 		if err2 != nil {
@@ -83,12 +77,21 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	}
 }
 
-// scraping server ip address that is docker container
-const grpcDialingUrl = "172.30.0.2:50051"
-
-// const grpcDialingUrl = "localhost:50051"
+func GetScrapeServerAddress() string {
+	// scraping server ip address that is docker container
+	hostName, err := os.Hostname()
+	if err != nil {
+		log.Fatalf("%v \n", err)
+	}
+	if hostName == "hibikinoiMac.local" {
+		return "localhost:50051"
+	} else {
+		return "172.30.0.2:50051"
+	}
+}
 
 func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
+	grpcDialingUrl := GetScrapeServerAddress()
 	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat, userInfo.UserLon)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
 	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())

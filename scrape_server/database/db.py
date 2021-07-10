@@ -1,5 +1,5 @@
 import os, sys
-sys.path.append("/Users/hibiki/Desktop/go/wants")
+sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 
 import dataset

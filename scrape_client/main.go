@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"scrape_client/client"
 	"scrape_client/mylog"
 
@@ -16,13 +18,25 @@ func FirstPage() gin.HandlerFunc {
 	}
 }
 
+func GetLogFilePath() string {
+	hostName, err := os.Hostname()
+	if err != nil {
+		log.Fatal(err)
+	}
+	if hostName == "hibikinoiMac.local" {
+		dir, err := os.Getwd()
+		if err != nil {
+			log.Fatal(err)
+		}
+		return filepath.Join(dir, "log", "all.log")
+	} else {
+		return "log/all.log"
+	}
+}
+
 func main() {
-	// dir, err := os.Getwd()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// mylog.LoggingSet(filepath.Join(dir, "log", "all.log"))
-	mylog.LoggingSet("/log/all.log")
+	mylog.LoggingSet(GetLogFilePath())
+
 	log.Printf("-----------------------------------------------")
 	router := gin.Default()
 	router.Use(cors.Default())

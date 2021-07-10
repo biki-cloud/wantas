@@ -7,6 +7,13 @@ import (
 	"testing"
 )
 
+func GetMultipleProduct() []scrapeResult.ResultStruct {
+	var li []scrapeResult.ResultStruct
+	r1 := scrapeResult.GetFullPerametaResultStruct()
+	r2 := scrapeResult.GetFullPerametaResultStruct()
+	li = append(li, r1, r2)
+	return li
+}
 func TestGetStructTag(t *testing.T) {
 	r := scrapeResult.GetFullPerametaResultStruct()
 	rtProduct := reflect.TypeOf(r)
