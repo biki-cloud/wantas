@@ -74,7 +74,6 @@ def get_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> (float):
         raise ValueError(f"invalid value lat or lon. lat1: {lat1}, lon1: {lon1}, lat2: {lat2}, lon2: {lon2}")
 
 
-    
 def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name: str) -> (StoreInfo):
     """近くのセブンを調べて店舗の情報、位置を入れたStoreInfoクラスのインスタンスを返す。
 
@@ -147,7 +146,12 @@ def is_contains(product_store_dic: dict) -> (bool):
     for area in product_region_list:
         # TODO: areaの一文字目に!が入っていたらその地域意外となる。
         # 販売地域リストの一つが県名で店の住所文字列の中に入っていればそこでは販売されている
-        if area in store_address:
+        if area[0] == "!":
+            if area[1:] not in store_address:
+                return True
+            else:
+                return False
+        elif area in store_address:
             return True
         # areaが中国などの地域の場合
         for k, v in area_table.items():
