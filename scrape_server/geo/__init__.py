@@ -181,7 +181,7 @@ def get_lat_lon2(address: str) -> (float, float):
                 b_tag = t.findAll('b')
                 lat = b_tag[0].next_element
                 lon = b_tag[1].next_element
-                return lat, lon
+                return float(lat), float(lon)
         print(f"it seems too many request.{time.asctime()} sleep 2")
         time.sleep(2)
     log.debug("failed")

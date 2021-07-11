@@ -103,3 +103,16 @@ def test_get_lat_lon2(address, r):
 )
 def test_get_geo_soup(address, url, r):
     assert type(geo.get_geo_soup(address, url)) == r
+
+
+@pytest.mark.parametrize(
+    "name, address, r", [
+    ("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279))
+    ]
+)
+def test_StoreInfo_class(name, address, r):
+    store_info = geo.StoreInfo(name, address)
+    assert r.store_name == store_info.store_name
+    assert r.store_address == store_info.store_address
+    assert r.store_lat == store_info.store_lat
+    assert r.store_lon == store_info.store_lon
