@@ -84,12 +84,10 @@ def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name:
     Returns:
         StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
-    db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
+    db2 = dataset.connect(f"sqlite:///{os.path.abspath(os.path.dirname(__file__))}/../database/db.sqlite")
 
     store_table = db2[store_table_name]
     results = db.suited_store_table(store_table)
-    # log.info(f"store table: {store_table_name}")
-    # log.info(results)
 
     distances = []
     for store in results:
