@@ -23,6 +23,10 @@ from scrape_server import store
         }, True),
         ({
             "store_address": "埼玉県ふじみ野市",
+            "product_region_list": ["!熊本", "!埼玉"]
+        }, False),
+        ({
+            "store_address": "埼玉県ふじみ野市",
             "product_region_list": ["!埼玉"]
         }, False),
         ({
@@ -32,7 +36,11 @@ from scrape_server import store
         ({
             "store_address": "神奈川県ふじみ野市",
             "product_region_list": ["!埼玉", "関東"]
-        }, True)
+        }, True),
+        ({
+            "store_address": "滋賀県ふじみ野市",
+            "product_region_list": ['!近畿', '!中四国']
+        }, False)
     ]
 )
 def test_is_contains(dic, r):

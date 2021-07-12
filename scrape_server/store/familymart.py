@@ -1,5 +1,6 @@
 import sys
-
+from collections.abc import Callable
+from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 
@@ -127,7 +128,7 @@ class FamilyMart(AbsStore):
         """
         return util.join_slash(BASE_URL, "goods.html")
 
-    def get_kind_of_product_urls(self) -> (list):
+    def get_kind_of_product_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """商品の種類がリストされているページの中の商品の種類のページurlをリストにして返す。
 
         Returns:
@@ -143,7 +144,7 @@ class FamilyMart(AbsStore):
             results.append(kind_of_product_url)
         return results
 
-    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str) -> (list):
+    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """商品種類ページの中の商品ページのurlを全て取得し、返す。
 
         Args:
@@ -178,11 +179,11 @@ class FamilyMart(AbsStore):
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         results = []
         all_product_page_urls = []
-        kind_of_product_urls = self.get_kind_of_product_urls()
+        kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
         for kind_of_product_url in kind_of_product_urls:
             print(f"kind_of_product_url: {kind_of_product_url}")
             if self.is_available_kind_of_product_url(kind_of_product_url):
-                product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url)
+                product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
                 all_product_page_urls.extend(product_page_urls)
 
         # 途中で止まったらstart_idxを設定しなおすことで途中から始めることができる。

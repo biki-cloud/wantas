@@ -58,9 +58,10 @@ class Product:
             return ["全国"]
         if "地域" not in region_msg:
             return ["全国"]
+        if "※" in region_msg:
+            region_msg = region_msg[region_msg.index("※"):]
         region_str = region_msg[1:region_msg.index("地域")]
         region_list = region_str.split("・")
-        area_table = util.read_json_file(f"{os.path.abspath(os.path.dirname(__file__))}/../area_table.json")
         # ここでのregionはその地域意外で販売なので頭に!をつける。
         return ["!"+region for region in region_list]
 
@@ -138,10 +139,9 @@ class Lawson(AbsStore):
             product_infos = self.get_product_infos_from_type_of_product_url(type_of_product_url)
             for product_info in product_infos:
                 product = Product(product_info)
-                print(util.dict_to_json(product.to_dict()))
+                # print(util.dict_to_json(product.to_dict()))
                 results.append(product.to_dict())
         return results
-
 
 
 if __name__ == '__main__':

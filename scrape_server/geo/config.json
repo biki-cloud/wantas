@@ -10,9 +10,5 @@
     "familymart": {
         "base_url": "https://www.mapion.co.jp/phonebook/M02005CM03/",
         "geo_file_name": "store_familymart.json"
-    },
-    "ministop": {
-        "base_url": "https://www.mapion.co.jp/phonebook/M02005CM04/",
-        "geo_file_name": "store_ministop.json"
     }
 }

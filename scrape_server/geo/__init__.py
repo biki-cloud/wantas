@@ -141,25 +141,35 @@ def is_contains(product_store_dic: dict) -> (bool):
     log.debug(f"store_address: {store_address}")
     log.debug(f"product_region_list: {product_region_list}")
 
-    for area in product_region_list:
-        # TODO: areaの一文字目に!が入っていたらその地域意外となる。
-        # 販売地域リストの一つが県名で店の住所文字列の中に入っていればそこでは販売されている
-        if area[0] == "!":
-            if area[1:] not in store_address:
+    # 販売されている地域や県のリスト
+    region_list = [ele for ele in product_region_list if ele[0] != "!"]
+    # 販売されていない地域や県のリスト
+    del_list = [ele[1:] for ele in product_region_list if ele[0] == "!"]
+
+    # area_tableから販売されていない地域を削除していく
+    for el in del_list:
+        if area_table.get(el):
+            area_table.pop(el)
+        else:
+            for area, pre_list in area_table.items():
+                if el in pre_list:
+                    area_table[area].pop(area_table[area].index(el))
+
+    # area_tableが販売されている場所のみになったので後当てはまるか見る
+    if len(region_list) == 0:
+        for area, pre_list in area_table.items():
+            if area in store_address or any([True for pre in pre_list if pre in store_address]):
                 return True
-            else:
-                return False
-        elif area in store_address:
+    for region in region_list:
+        # regionが神奈川などの県の場合
+        if region in store_address:
             return True
-        # areaが中国などの地域の場合
-        for k, v in area_table.items():
-            if area == k:
-                for pre in v:
-                    # 中国だと"鳥取", "島根", "岡山", "広島", "山口"のどれかが店の住所文字列に入っていればそこでは販売されている
-                    if pre in store_address:
-                        return True
-        if area == "全国":
-            return True
+        # regionが東北などの地域の場合
+        elif area_table.get(region):
+            pre_list = area_table.get(region)
+            log.debug(f"pre_list: {pre_list}")
+            if any([True for pre in pre_list if pre in store_address]):
+                return True
     return False
 
 def get_geo_soup(address: str, url: str):

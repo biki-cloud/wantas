@@ -2,7 +2,8 @@ import sys
 import time
 from typing import List
 import bs4
-
+from collections.abc import Callable
+from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 
@@ -180,7 +181,7 @@ class SevenEleven(AbsStore):
             return util.join_slash(self.base_url, self.products, self.a, res)
         return ""
 
-    def get_recursive_links(self, link: str, all_links: list) -> (None):
+    def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
         """商品リストが掲載されているページにはラインナップボタンや、1,2,3..のようなボタンがある。
         その中を探索していき商品がリストで掲載されているページurlを取得していく。
 
@@ -191,16 +192,16 @@ class SevenEleven(AbsStore):
         if link not in all_links:
             all_links.append(link)
 
-            line_up_links = self.get_line_up_links(link)
+            line_up_links = self.get_line_up_links(link, get_soup)
             for l in line_up_links:
-                self.get_recursive_links(l, all_links)
+                self.get_recursive_links(l, all_links, get_soup)
 
             pager_links = self.get_pager_links(link)
             for l in pager_links:
-                self.get_recursive_links(l, all_links)
+                self.get_recursive_links(l, all_links, get_soup)
         return
 
-    def get_products_listed_page_urls(self) -> (list):
+    def get_products_listed_page_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """セブンイレブンの商品がリストで掲載されているのページurl全てをリストにして返す。
         page example: https://www.sej.co.jp/products/a/onigiri/
 
@@ -211,10 +212,10 @@ class SevenEleven(AbsStore):
         all_product_kind = self.product_kind.__dict__.keys()
         for product in all_product_kind:
             product_url = self.get_product_url(product)
-            self.get_recursive_links(product_url, results)
+            self.get_recursive_links(product_url, results, get_soup)
         return results
 
-    def get_line_up_links(self, url: str) -> (list):
+    def get_line_up_links(self, url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """urlページの中に"ラインナップを見る"ボタンが複数あるだけそのボタンのリンク先urlのリストを返す。
 
         Args:
@@ -267,7 +268,7 @@ class SevenEleven(AbsStore):
         """
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         results = []
-        products_listed_page_urls = self.get_products_listed_page_urls()
+        products_listed_page_urls = self.get_products_listed_page_urls(get_soup)
         for products_listed_url in products_listed_page_urls:
             soup = get_soup(products_listed_url)
             products_soup = get_products_soup_from_products_listed_page(soup)
