@@ -168,8 +168,9 @@ class JsonDbDriver:
     def search(self, search_name) -> (List[dict]):
         results = []
         for record in self.get_all():
-            if search_name in record['name']:
-                results.append(record)
+            if record.get('name'):
+                if search_name in record['name']:
+                    results.append(record)
         return results
 
     def scrape_and_put(self, store: AbsStore):

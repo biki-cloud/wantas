@@ -27,7 +27,6 @@ def solve_certificate_problem():
     time.sleep(1)
 
 def join_slash(*args):
-    return_url = ""
     joined = ""
     if "https://" not in args[0]:
         joined = "/"
