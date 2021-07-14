@@ -7,7 +7,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"scrape_client/scrapeResult"
 	"scrape_client/scrapepb"
 	"strconv"
 	"strings"
@@ -15,6 +14,44 @@ import (
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 )
+
+type ResultStruct struct {
+	ProductName       string `json:"productName" form:"productName"`
+	ProductUrl        string `json:"url" form:"url"`
+	ProductPrice      string `json:"price" form:"price"`
+	ProductRegionList []string
+	ProductImgUrl     string  `json:"imgUrl"`
+	Dealer            string  `json:"dealer"`
+	StoreName         string  `json:"storename" form:"storename"`
+	StoreAddress      string  `json:"storeaddress"`
+	StoreLat          float64 `json:"lat" form:"lon"`
+	StoreLon          float64 `json:"lon" form:"lon"`
+}
+
+func CreateResultStruct() *ResultStruct {
+	return &ResultStruct{}
+}
+
+func CreateScrapeResultFromGrpcServiceResponce(res *scrapepb.ScrapeManyTimesResponse) *ResultStruct {
+	r := CreateResultStruct()
+	r.ProductName = res.Result.GetProductName()
+	r.ProductUrl = res.Result.GetProductUrl()
+	r.ProductPrice = res.Result.GetProductPrice()
+	r.ProductRegionList = res.Result.GetProductRegionList()
+	r.ProductImgUrl = res.Result.GetProductImgUrl()
+	r.StoreName = res.Result.GetStoreName()
+	r.StoreAddress = res.Result.GetStoreAddress()
+	r.StoreLat = float64(res.Result.GetStoreLat())
+	r.StoreLon = float64(res.Result.GetStoreLon())
+	if strings.Contains(r.StoreName, "セブンイレブン") {
+		r.Dealer = "SevenEleven"
+	} else if strings.Contains(r.StoreName, "ファミリーマート") {
+		r.Dealer = "FamilyMart"
+	} else if strings.Contains(r.StoreName, "ローソン") {
+		r.Dealer = "Lawson"
+	}
+	return r
+}
 
 type UserInfo struct {
 	ProductName string  `json:"productname"`
@@ -43,8 +80,6 @@ func getPerametaFromPostForm(c *gin.Context) (UserInfo, error) {
 	userInfo.UserLon = userLon
 	return userInfo, nil
 }
-
-
 
 func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 	log.Printf("invoked SearchProductUseGRPC \n")
@@ -90,10 +125,12 @@ func GetScrapeServerAddress() string {
 	}
 }
 
-func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
+func Scraping(userInfo UserInfo) ([]ResultStruct, error) {
 	grpcDialingUrl := GetScrapeServerAddress()
 	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat, userInfo.UserLon)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
+
+	// grpcを使用しpythonとコネクションをとる
 	cc, err := grpc.Dial(grpcDialingUrl, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
@@ -105,10 +142,10 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 		}
 	}(cc)
 
-	// create client
+	// サービスクライアントオブジェクトを作成
 	c := scrapepb.NewScrapingServiceClient(cc)
 
-	// create request
+	// サービスのリクエストを作成
 	req := &scrapepb.ScrapeManyTimesRequest{
 		ProductName: userInfo.ProductName,
 		UserLat:     float32(userInfo.UserLat),
@@ -116,7 +153,7 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 	}
 	log.Printf("request for grpc server: %v", req)
 
-	var ScrapedResults []scrapeResult.ResultStruct
+	var ScrapedResults []ResultStruct
 
 	log.Printf("start request to python by using ScrapeManyTimes Service. \n")
 	// ScrapeManyTimesはサービスの中の機能の名前
@@ -126,7 +163,7 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 		return nil, err
 	}
 	for {
-		msg, err := reqStream.Recv()
+		res, err := reqStream.Recv()
 		if err == io.EOF {
 			break
 		}
@@ -135,27 +172,8 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 			return nil, err
 		}
 
-		log.Printf("received from ScrapeManyTimes service: %v \n", msg)
-
-		r := scrapeResult.New()
-
-		r.ProductName = msg.Result.GetProductName()
-		r.ProductUrl = msg.Result.GetProductUrl()
-		r.ProductPrice = msg.Result.GetProductPrice()
-		r.ProductRegionList = msg.Result.GetProductRegionList()
-		r.ProductImgUrl = msg.Result.GetProductImgUrl()
-		r.StoreName = msg.Result.GetStoreName()
-		r.StoreAddress = msg.Result.GetStoreAddress()
-		r.StoreLat = float64(msg.Result.GetStoreLat())
-		r.StoreLon = float64(msg.Result.GetStoreLon())
-		if strings.Contains(r.StoreName, "セブンイレブン") {
-			r.Dealer = "SevenEleven"
-		} else if strings.Contains(r.StoreName, "ファミリーマート") {
-			r.Dealer = "FamilyMart"
-		} else if strings.Contains(r.StoreName, "ローソン"){
-			r.Dealer = "Lawson"
-		}
-
+		log.Printf("received from ScrapeManyTimes service: %v \n", res)
+		r := CreateScrapeResultFromGrpcServiceResponce(res)
 		ScrapedResults = append(ScrapedResults, *r)
 	}
 	return ScrapedResults, nil
