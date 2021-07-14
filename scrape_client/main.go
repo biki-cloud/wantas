@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -12,12 +13,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// 最初に到達するページ
 func FirstPage() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.HTML(http.StatusOK, "main.html", gin.H{})
 	}
 }
 
+// 使用するサーバによってログの吐き出す場所を変更する
 func GetLogFilePath() string {
 	hostName, err := os.Hostname()
 	if err != nil {
@@ -28,13 +31,15 @@ func GetLogFilePath() string {
 		if err != nil {
 			log.Fatal(err)
 		}
-		return filepath.Join(dir, "log", "all.log")
+		return filepath.Join(dir, "..", "log", "all.log")
 	} else {
 		return "log/all.log"
 	}
 }
 
 func main() {
+	logFilePath := GetLogFilePath()
+	fmt.Printf("log file path: %v \n", logFilePath)
 	mylog.LoggingSet(GetLogFilePath())
 
 	log.Printf("-----------------------------------------------")
@@ -44,9 +49,10 @@ func main() {
 	router.LoadHTMLFiles("templates/main.html")
 	router.Static("/static", "./static")
 	router.GET("/search", FirstPage())
-	router.POST("/search", client.SearchProductUseGRPC("json"))
+	// router.POST("/search", client.SearchProduct("json"))
+	router.POST("/search", client.SearchProduct())
 
-	// server run
+	// サーバーを走らせる
 	log.Printf("run: 8080 \n")
 	err := router.Run(":8080")
 	if err != nil {

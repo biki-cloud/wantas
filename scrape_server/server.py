@@ -37,14 +37,12 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (List[dict]):
     for i in range(len(results)):
         store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon, results[i]['store_table_name'])
         results[i].update(store_info.__dict__)
-    log.info("added store infomation to product information")
-    log.info(results)
-    log.info(f'length: {len(results)}')
 
     area_filtered_results = [ele for ele in results if geo.is_contains(ele)]
 
     log.info("return from search funcion.")
-    log.info(f"result: {results}")
+    log.info("results length: {len(results)}")
+    log.debug(f"result: {results}")
     return results
 
 
@@ -66,7 +64,7 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
 
         scrape_results = search(product_name, user_lat, user_lon)
         results_len = len(scrape_results)
-        log.info(f"scrape_results: {scrape_results}")
+        log.debug(f"scrape_results: {scrape_results}")
 
         if scrape_results:
             log.info(f"scraping results length is {results_len}")

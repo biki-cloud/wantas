@@ -15,6 +15,7 @@ import (
 	"google.golang.org/grpc"
 )
 
+// pythonからの商品情報と店舗情報が入った結果を格納するための構造体
 type ResultStruct struct {
 	ProductName       string `json:"productName" form:"productName"`
 	ProductUrl        string `json:"url" form:"url"`
@@ -32,6 +33,8 @@ func CreateResultStruct() *ResultStruct {
 	return &ResultStruct{}
 }
 
+// GRPCのサービスレスポンス(店舗情報や商品情報が入っている)の情報をResultStruct構造体に入れ、
+// ResultStructを返す
 func CreateScrapeResultFromGrpcServiceResponce(res *scrapepb.ScrapeManyTimesResponse) *ResultStruct {
 	r := CreateResultStruct()
 	r.ProductName = res.Result.GetProductName()
@@ -53,12 +56,17 @@ func CreateScrapeResultFromGrpcServiceResponce(res *scrapepb.ScrapeManyTimesResp
 	return r
 }
 
+// アプリを使用したユーザーの情報を格納する構造体
 type UserInfo struct {
+	// ユーザーが検索した商品名
 	ProductName string  `json:"productname"`
+	// ユーザーの位置情報
 	UserLat     float64 `json:"userlat"`
 	UserLon     float64 `json:"userlon"`
 }
 
+// POSTからユーザーが検索した商品名、ユーザーの位置情報を取り出し
+// UserInfo構造体へ入れ,返す
 func getPerametaFromPostForm(c *gin.Context) (UserInfo, error) {
 	var (
 		productName   = c.PostForm("ProductName")
@@ -81,7 +89,9 @@ func getPerametaFromPostForm(c *gin.Context) (UserInfo, error) {
 	return userInfo, nil
 }
 
-func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
+// POSTをもらい、商品名を受け取り、GRPCを使用しpythonサーバーに
+// 商品情報の検索を行う。商品情報や店舗情報を受け取り、フロントエンドへjsonを返す。
+func SearchProduct() gin.HandlerFunc {
 	log.Printf("invoked SearchProductUseGRPC \n")
 	return func(c *gin.Context) {
 		log.Printf("*************************************************************************************\n")
@@ -99,19 +109,12 @@ func SearchProductUseGRPC(outFormat string) gin.HandlerFunc {
 			log.Fatalf("err is %v \n", err)
 		}
 
-		log.Printf("out format: %s \n", outFormat)
-		if outFormat == "json" {
-			c.JSON(http.StatusOK, scrapedResults)
-		} else if outFormat == "html" {
-			c.HTML(http.StatusOK, "main.html", gin.H{
-				"results": scrapedResults,
-			})
-		} else {
-			panic("format is invalid.")
-		}
+		c.JSON(http.StatusOK, scrapedResults)
 	}
 }
 
+// 使用するサーバによってGRPCで使用するIPアドレス、ポートが変わるので、
+// 適切なIPアドレス、ポートを取得する
 func GetScrapeServerAddress() string {
 	// scraping server ip address that is docker container
 	hostName, err := os.Hostname()
@@ -125,9 +128,10 @@ func GetScrapeServerAddress() string {
 	}
 }
 
+// 実際にGRPCを用いてpythonサーバにアクセスし、結果を受け取り返す。
 func Scraping(userInfo UserInfo) ([]ResultStruct, error) {
 	grpcDialingUrl := GetScrapeServerAddress()
-	log.Printf("Invoked Scraping function productName: %s, userLat: %b, userLon: %b of client.go \n", userInfo.ProductName, userInfo.UserLat, userInfo.UserLon)
+	log.Printf("Invoked Scraping function UserInfo is %v \n", userInfo)
 	log.Printf("grpc dialing url: %s \n", grpcDialingUrl)
 
 	// grpcを使用しpythonとコネクションをとる
@@ -135,6 +139,8 @@ func Scraping(userInfo UserInfo) ([]ResultStruct, error) {
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
 	}
+
+	// コネクションエラー処理
 	defer func(cc *grpc.ClientConn) {
 		err := cc.Close()
 		if err != nil {
@@ -156,6 +162,8 @@ func Scraping(userInfo UserInfo) ([]ResultStruct, error) {
 	var ScrapedResults []ResultStruct
 
 	log.Printf("start request to python by using ScrapeManyTimes Service. \n")
+
+	// リクエストストリームを作成
 	// ScrapeManyTimesはサービスの中の機能の名前
 	reqStream, err := c.ScrapeManyTimes(context.Background(), req)
 	if err != nil {
