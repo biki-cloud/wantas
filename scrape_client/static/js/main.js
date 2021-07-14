@@ -5,6 +5,8 @@ function toggleSelectStoreButton(store_name) {
         var store_btn = $("#select-seven-btn-id");
     } else if (store_name == "FamilyMart") {
         var store_btn = $("#select-famima-btn-id");
+    } else if (store_name == "Lawson") {
+        var store_btn = $("#select-lawson-btn-id");
     }
     if (store_btn.val() == "on") {
         // リストからstore_nameを削除する
@@ -18,10 +20,13 @@ function toggleSelectStoreButton(store_name) {
     }
     console.log(selected_store_list);
 }
+
 toggleSelectStoreButton("SevenEleven");
 toggleSelectStoreButton("FamilyMart");
+toggleSelectStoreButton("Lawson");
 
 $("button").click(function() {
+    console.log(this.outerText);
     toggleSelectStoreButton(this.outerText);
 });
 

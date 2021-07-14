@@ -152,6 +152,8 @@ func Scraping(userInfo UserInfo) ([]scrapeResult.ResultStruct, error) {
 			r.Dealer = "SevenEleven"
 		} else if strings.Contains(r.StoreName, "ファミリーマート") {
 			r.Dealer = "FamilyMart"
+		} else if strings.Contains(r.StoreName, "ローソン"){
+			r.Dealer = "Lawson"
 		}
 
 		ScrapedResults = append(ScrapedResults, *r)
