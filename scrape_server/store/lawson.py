@@ -36,7 +36,7 @@ class Product:
 
     def get_url(self):
         a_tag = self.product_info_soup.find('a')
-        return util.join_slash(BASE_URL, a_tag['href'])
+        return util.url_join(BASE_URL, a_tag['href'])
 
     def get_name(self):
         name_tag = self.product_info_soup.find('p', attrs={"class", "ttl"})
@@ -48,7 +48,7 @@ class Product:
 
     def get_img_url(self):
         img_tag = self.product_info_soup.find('img')
-        return util.join_slash(BASE_URL, img_tag['src'])
+        return util.url_join(BASE_URL, img_tag['src'])
 
     def get_region_list(self):
         region_msg_tag = self.product_info_soup.find('p', attrs={"class", "smalltxt"})
@@ -93,7 +93,7 @@ class Lawson(AbsStore):
         li_tags = soup.findAll('li')
         for li_tag in li_tags:
             if "/recommend/original" in str(li_tag):
-                results.append(util.join_slash(self.base_url, li_tag.find('a', href=True)['href']))
+                results.append(util.url_join(self.base_url, li_tag.find('a', href=True)['href']))
         return results
 
     def get_product_infos_from_type_of_product_url(self, type_of_product_url) -> (List[bs4.element.Tag]):

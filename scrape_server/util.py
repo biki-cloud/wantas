@@ -26,23 +26,17 @@ def solve_certificate_problem():
     subprocess.call(cmd, shell=True)
     time.sleep(1)
 
-def join_slash(*args):
-    joined = ""
-    if "https://" not in args[0]:
-        joined = "/"
-    for a in args:
-        joined += a + "/"
-    if "https://" in joined or "http://" in joined:
-        pre = joined[0:9]
-        after = joined[9:].replace("//", "/")
-        return_url = pre + after
-        # return pre + after
-    else:
-        return_url = joined.replace("//", "/")
-        # return joined.replace("//", "/")
-    if return_url[-1] == "/":
-        return return_url[:-1]
-    return return_url
+def url_join(*args):
+    joined_str = ""
+    for i in range(len(args)):
+        if "http://" in args[i] or "https://" in args[i]:
+            joined_str += args[i] + "/"
+        else:
+            if i == len(args) - 1:
+                joined_str += args[i][0].replace("/", "") + args[i][1:-1] + args[i][-1].replace("/", "")
+            else:
+                joined_str += args[i].replace("/", "") + "/"
+    return joined_str
 
 def get_html(url):
     page = urlopen(url)
@@ -69,7 +63,7 @@ def get_soup_wrapper(base_url: str):
         get_soup (function): urlページ全体をBeautifulSoupインスタンスにして返す関数を返す。
     """
     rp = urllib.robotparser.RobotFileParser()
-    robots_url = join_slash(base_url, "robots.txt")
+    robots_url = url_join(base_url, "robots.txt")
     rp.set_url(robots_url)
     rp.read()
     delay = rp.crawl_delay("*")

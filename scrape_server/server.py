@@ -19,7 +19,7 @@ from scrape_server.database import db
 
 def search(search_name: str, user_lat: float, user_lon: float) -> (List[dict]):
     """
-    商品名を受け取り、スクレイプし名前が入った商品のリストを持ってくる。
+    商品名を受け取り、データベースから名前が入った商品のリストを持ってくる。
     lat,lonから場所を検索し、商品が売られている場所のみをフィルターし、商品リストを返す。
     """
 

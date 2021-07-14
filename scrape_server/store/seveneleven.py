@@ -65,7 +65,7 @@ class Product:
         title_tag = self.item.find('div', attrs={"class", "item_ttl"})
         url = title_tag.find('a', href=True)['href']
         seven = SevenEleven()
-        url = util.join_slash(seven.base_url, url)
+        url = util.url_join(seven.base_url, url)
         return url
 
     def get_price(self) -> (str):
@@ -178,7 +178,7 @@ class SevenEleven(AbsStore):
     def get_product_url(self, product_name: str):
         res = self.product_kind.__dict__.get(product_name)
         if res:
-            return util.join_slash(self.base_url, self.products, self.a, res)
+            return util.url_join(self.base_url, self.products, self.a, res)
         return ""
 
     def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
@@ -228,7 +228,7 @@ class SevenEleven(AbsStore):
         soup = get_soup(url)
         line_up_elements = soup.find_all(class_="list_btn brn pbNested pbNestedWrapper")
         for ele in line_up_elements:
-            url = util.join_slash(self.base_url, ele.find('a', href=True)['href'])
+            url = util.url_join(self.base_url, ele.find('a', href=True)['href'])
             result_links.append(url)
         return result_links
 
@@ -248,7 +248,7 @@ class SevenEleven(AbsStore):
             if ele not in result_links:
                 a_tag = ele.find("a")
                 if a_tag:
-                    url = util.join_slash(self.base_url, a_tag.get('href'))
+                    url = util.url_join(self.base_url, a_tag.get('href'))
                     result_links.append(url)
         return result_links
 

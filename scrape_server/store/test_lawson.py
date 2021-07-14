@@ -55,5 +55,6 @@ def test_get_all_product():
     assert all_product[0].get("product_region_list") is not None
     assert all_product[0].get("product_img_url") is not None
     assert all_product[0].get("store_table_name") is not None
-    assert 742 < len(all_product)
+    # 下の数は時期によって件数が変わるので多少の増減は問題ない。
+    assert 700 < len(all_product)
 

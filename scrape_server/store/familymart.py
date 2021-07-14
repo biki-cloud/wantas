@@ -72,7 +72,7 @@ class Product:
         """
         img_div_tag = self.page_soup.find('div', attrs={"class", "js-mainimage-size"})
         img_tag = img_div_tag.find('img')
-        return util.join_slash(BASE_URL,img_tag['src'])
+        return util.url_join(BASE_URL,img_tag['src'])
 
 
 class FamilyMart(AbsStore):
@@ -126,7 +126,7 @@ class FamilyMart(AbsStore):
     def get_kind_of_products_listed_page(self) -> (str):
         """商品の種類がリストされているページのurlを取得する
         """
-        return util.join_slash(BASE_URL, "goods.html")
+        return util.url_join(BASE_URL, "goods.html")
 
     def get_kind_of_product_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """商品の種類がリストされているページの中の商品の種類のページurlをリストにして返す。

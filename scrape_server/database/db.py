@@ -10,7 +10,8 @@ from scrape_server.util import *
 from scrape_server.store import AbsStore
 from scrape_server.store.seveneleven import SevenEleven
 from scrape_server.store.familymart import FamilyMart
-
+from scrape_server import util
+from scrape_server.mylog import log
 
 class DatabasePathIsNotExistsError(Exception):
     pass
@@ -59,20 +60,21 @@ def to_suited_dict(record: dict) -> (dict):
     バリューがリストの場合はデータベースに入らないのでコンマでセパレートした文字列に変換する
     element -> database
     """
+    new_dic = {}
     for k, v in record.items():
         if k == "product_region_list":
-            record[k] = ",".join(v)
+            new_dic[k] = ",".join(v)
         elif k == "store_lat" or k == "store_lon":
-            record[k] = float(v)
+            new_dic[k] = float(v)
         else:
-            record[k] = str(v)
-    return record
+            new_dic[k] = str(v)
+    return new_dic
 
 def insert(table: dataset.table.Table, record: dict):
     """recordがテーブルの中に存在しない場合のみinsertを行う"""
     suited_record = to_suited_dict(record)
     if is_contains(table, suited_record) is False:
-        table.insert(record)
+        table.insert(suited_record)
 
 def search(table: dataset.table.Table, key: str, name: str):
     results = []
@@ -183,8 +185,10 @@ class JsonDbDriver:
 def recreate_sqlite_db(db_path: str):
     json_to_db("./product_familymart.json", db_path, "products")
     json_to_db("./product_seveneleven.json", db_path, "products")
+    json_to_db("./product_lawson.json", "./db.sqlite", "products")
     json_to_db("./store_seveneleven.json", db_path, "store_seveneleven")
     json_to_db("./store_familymart.json", db_path, "store_familymart")
+    json_to_db("./store_lawson.json", "./db.sqlite", "store_lawson")
 
 if __name__ == '__main__':
     recreate_sqlite_db("./db.sqlite")
