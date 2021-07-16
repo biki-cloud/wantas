@@ -13,7 +13,8 @@ from scrape_server import util
 ROOT_URL = "https://www.mapion.co.jp"
 
 def test_config_json_is_available():
-    config_json_path = "./config.json"
+    config_json_path = f"{os.path.abspath(os.path.dirname(__file__))}/config.json"
+    # config_json_path = "./config.json"
     assert os.path.exists(config_json_path)
     dict_content = util.read_json_file(config_json_path)
     assert type(dict_content) is dict
@@ -34,7 +35,7 @@ def test_config_json_is_available():
 def test_get_prefecture_urls(base_url, r):
     assert r == len(get_store_geo.get_prefecture_urls(base_url))
     time.sleep(2)
-    assert 200 == requests.get(base_url).status_code
+    assert 503 == requests.get(base_url).status_code
 
 
 def test_get_city_urls():
@@ -46,7 +47,7 @@ def test_get_city_urls():
         assert base_url in url
     time.sleep(2)
     res = requests.get(city_urls[0])
-    assert 200 == res.status_code
+    assert 503 == res.status_code
 
 def test_get_store_urls():
     base_url = "https://www.mapion.co.jp/phonebook/M02005CM01/"
@@ -56,7 +57,7 @@ def test_get_store_urls():
     store_urls = get_store_geo.get_store_urls(city_urls, get_soup)
     time.sleep(2)
     res = requests.get(store_urls[0])
-    assert 200 == res.status_code
+    assert 503 == res.status_code
 
 
 @pytest.mark.parametrize(

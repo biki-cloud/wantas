@@ -51,12 +51,13 @@ def test_Product_class():
     assert "product_region_list" in product.to_dict().keys()
     assert "product_img_url" in product.to_dict().keys()
     assert "store_table_name" in product.to_dict().keys()
-    assert "サーモン三昧丼" == product.name
+    assert product.name != ""
+    assert product.url != ""
+    assert product.img_url != ""
+    assert product.price != ""
+    assert 0 < len(product.region_list)
     time.sleep(2)
     assert products_urls[0] == product.url
     assert 200 == requests.get(product.url).status_code
-    assert "554円（税込598円）" == product.price
-    assert "https://www.family.co.jp/content/dam/family/goods/0750684.jpg" == product.img_url
     time.sleep(2)
     assert 200 == requests.get(product.img_url).status_code
-    assert ['予告', '北海道', '東北', '関東', '東海', '北陸', '関西', '中国', '四国', '九州'] == product.region_list

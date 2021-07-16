@@ -221,9 +221,10 @@ def test_suited_store_table(tmp_path):
     }
 
     db.insert(table, test_dic)
-    results = db.suited_store_table(table)
-    assert 1 == len(results)
-    assert results[0] == collect_dic
+    results_gene = db.suited_store_table(table)
+    for i in results_gene:
+        assert i == collect_dic
+        return
 
 
 

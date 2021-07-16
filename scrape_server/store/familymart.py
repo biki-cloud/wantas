@@ -186,7 +186,6 @@ class FamilyMart(AbsStore):
                 product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
                 all_product_page_urls.extend(product_page_urls)
 
-        # 途中で止まったらstart_idxを設定しなおすことで途中から始めることができる。
         for product_url in all_product_page_urls:
             print(f"product_url: {product_url}")
             # たまにスクレイピングできないurlが混ざっている。
