@@ -1,0 +1,30 @@
+version: "3"
+services:
+  scrape_server:
+    build:
+      # ./scrape_server/Dockerfile
+      context: ./scrape_server
+      dockerfile: Dockerfile
+    container_name: scrape_server
+    command: python3 server.py
+    volumes:
+      - ./log:/log
+    networks:
+      - wantas
+
+  scrape_client:
+    build:
+      # ./scrape_client/Dockerfile
+      context: ./scrape_client
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: scrape_client
+    command: go run main.go
+    volumes:
+      - ./log:/log
+    networks:
+      - wantas
+
+networks:
+  wantas:

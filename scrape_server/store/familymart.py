@@ -1,6 +1,8 @@
 import sys
-
-sys.path.append("/Users/hibiki/Desktop/go/go-react")
+from collections.abc import Callable
+from bs4 import BeautifulSoup
+sys.path.append("/Users/hibiki/Desktop/go/wantas")
+sys.path.append("/code")
 
 from scrape_server import util
 from scrape_server.store import AbsStore
@@ -70,7 +72,7 @@ class Product:
         """
         img_div_tag = self.page_soup.find('div', attrs={"class", "js-mainimage-size"})
         img_tag = img_div_tag.find('img')
-        return util.join_slash(BASE_URL,img_tag['src'])
+        return util.url_join(BASE_URL,img_tag['src'])
 
 
 class FamilyMart(AbsStore):
@@ -124,9 +126,9 @@ class FamilyMart(AbsStore):
     def get_kind_of_products_listed_page(self) -> (str):
         """商品の種類がリストされているページのurlを取得する
         """
-        return util.join_slash(BASE_URL, "goods.html")
+        return util.url_join(BASE_URL, "goods.html")
 
-    def get_kind_of_product_urls(self) -> (list):
+    def get_kind_of_product_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """商品の種類がリストされているページの中の商品の種類のページurlをリストにして返す。
 
         Returns:
@@ -142,7 +144,7 @@ class FamilyMart(AbsStore):
             results.append(kind_of_product_url)
         return results
 
-    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str) -> (list):
+    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
         """商品種類ページの中の商品ページのurlを全て取得し、返す。
 
         Args:
@@ -177,11 +179,11 @@ class FamilyMart(AbsStore):
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         results = []
         all_product_page_urls = []
-        kind_of_product_urls = self.get_kind_of_product_urls()
+        kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
         for kind_of_product_url in kind_of_product_urls:
             print(f"kind_of_product_url: {kind_of_product_url}")
             if self.is_available_kind_of_product_url(kind_of_product_url):
-                product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url)
+                product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
                 all_product_page_urls.extend(product_page_urls)
 
         # 途中で止まったらstart_idxを設定しなおすことで途中から始めることができる。
@@ -191,8 +193,9 @@ class FamilyMart(AbsStore):
             if BASE_URL in product_url and "?q=" not in product_url:
                 product = Product(product_url)
                 dic = product.to_dict()
+                print(dic)
                 # Prevent to insert same product.
-                if dic['name'] not in [i['name'] for i in results]:
+                if dic['product_name'] not in [i['product_name'] for i in results]:
                     results.append(dic)
             print(len(results))
         return results
@@ -202,6 +205,5 @@ class FamilyMart(AbsStore):
 if __name__ == '__main__':
     fam = FamilyMart()
     results = fam.get_all_product()
-    # 2187
-    print(len(results))
+    util.write_json_file("./product_familymart.json", results)
 
