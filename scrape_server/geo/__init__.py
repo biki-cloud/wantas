@@ -83,22 +83,21 @@ def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name:
     Returns:
         StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
-    s = time.time()
     database = dataset.connect(f"sqlite:///{os.path.abspath(os.path.dirname(__file__))}/../database/db.sqlite")
     min_distance = 100.0 # 初期値
-    min_dic = {}
+    min_dic = {} # 最小の情報が入る。
+    # ユーザーの位置情報のプラスマイナスを出す。プラスマイナスを小さくすることでデータベースでヒットする店舗数が減るので処理が早くなる。
     user_lat_plus, user_lat_minus = user_lat + 0.01, user_lat - 0.01
-    count = 0
-    for dic in database.query(f"SELECT * FROM {store_table_name} WHERE store_lat  BETWEEN {user_lat_minus} and {user_lat_plus}"):
+    # ユーザーの近くの店舗の情報がリストで入っている。
+    # ユーザーの位置情報のプラスマイナスをデータベースから検索することで大幅に処理時間を短縮できる。
+    near_stores_info = database.query(f"SELECT * FROM {store_table_name} WHERE store_lat  BETWEEN {user_lat_minus} and {user_lat_plus}")
+    for dic in near_stores_info:
         store = db.to_suited_dict(dic)
+        # ユーザーの位置と店舗の位置を計算し、距離を出す。
         distance = get_distance(user_lat, user_lon, float(store['store_lat']), float(store['store_lon']))
         if distance < min_distance:
             min_distance = distance
             min_dic = store
-        count += 1
-    log.debug(f"query get count: {count}")
-    print(f"query get count: {count}")
-    log.debug(f"get most near store info time: {time.time() - s}")
 
     return StoreInfo(min_dic['store_name'], min_dic['store_address'], min_dic['store_lat'], min_dic['store_lon'])
 

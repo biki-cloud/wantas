@@ -32,8 +32,6 @@ $("button").click(function() {
 
 // TODO: 店舗の近さでソートする。google mapで距離をとる
 // TODO: bootstrapで見た目をカッコよくする。
-// TODO: ローソンの商品のスクレイピングをする。
-// TODO: 麺 -> パスタ、うどん、ラーメン、冷やし中華を調べる。
 jQuery(function($) {
     $(document).ajaxSend(function() {
         $("#overlay").fadeIn(300);
@@ -83,6 +81,11 @@ $("#btn").on("click", function() {
         return false;
     }
     productName = document.getElementById("name").value;
+    console.log("productName is " + productName);
+    if (productName == "") {
+        alert("検索する値を入れてください");
+        return false;
+    }
     userLat = parseFloat(document.getElementById("lat").value);
     userLon = parseFloat(document.getElementById("lon").value);
     var jsonData = JSON.stringify({
@@ -129,7 +132,8 @@ $("#btn").on("click", function() {
                         r.url +
                         ' target="_blank"><img src=' +
                         r.imgUrl +
-                        ' width="128" height="96"></a></td><td>' +
+                        ' width="240" height="180"></a></td><td>' +
+                        // ' width="128" height="96"></a></td><td>' +
                         r.price +
                         "</td><td>" +
                         r.storename +
