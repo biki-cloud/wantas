@@ -1,7 +1,10 @@
 import sys
-sys.path.append("/Users/hibiki/Desktop/go/go-react")
+sys.path.append("/Users/hibiki/Desktop/go/wantas")
+sys.path.append("/code")
 import time
 import os
+from collections.abc import Callable
+from bs4 import BeautifulSoup
 
 from scrape_server import util
 from scrape_server.store import AbsStore
@@ -13,7 +16,7 @@ from scrape_server.database.db import JsonDbDriver
 ROOT_URL = "https://www.mapion.co.jp"
 
 
-def get_prefecture_urls() -> (list):
+def get_prefecture_urls(base_url) -> (list):
     """
     47都道府県のルートリンクのリストを返す。それぞれのページに市町村のリンクがある。
     """
@@ -21,12 +24,12 @@ def get_prefecture_urls() -> (list):
     for i in range(1, 48):
         # 1の位の場合初めに0を加える
         if len(str(i)) == 1:
-            results.append(BASE_URL + "0" + str(i))
+            results.append(base_url + "0" + str(i))
         else:
-            results.append(BASE_URL + str(i))
+            results.append(base_url + str(i))
     return results
 
-def get_city_urls(prefecture_url) -> (list):
+def get_city_urls(prefecture_url, get_soup: Callable[[str], BeautifulSoup]) -> (list):
     """
     都道府県ページにある市町村事のリンクをリストで返す
     """
@@ -38,7 +41,7 @@ def get_city_urls(prefecture_url) -> (list):
         results.append(ROOT_URL + city_url)
     return results
 
-def get_store_urls(city_url) -> (list):
+def get_store_urls(city_url, get_soup: Callable[[str], BeautifulSoup]) -> (list):
     """
     市町村ページにある店舗のリンクをリストで返す。
     """
@@ -52,11 +55,8 @@ def get_store_urls(city_url) -> (list):
     return results
 
 
-def get_store_info(store_url: str) -> (StoreInfo):
-    """
-    店舗のURLを受け取り、店名、住所をStoreクラスに格納し、Storeクラスを返す
-    """
-    """[summary]
+def get_store_info(store_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (StoreInfo):
+    """店舗のURLを受け取り、店名、住所をStoreクラスに格納し、Storeクラスを返す
 
     Returns:
         [type]: [description]
@@ -97,9 +97,9 @@ def register_database(json_path: str):
         pre_s_idx = 0
         city_s_idx = 0
         store_s_idx = 0
-    for i, pre in enumerate(get_prefecture_urls()[pre_s_idx:], start=pre_s_idx):
-        for i2, city in enumerate(get_city_urls(pre)[city_s_idx:], start=city_s_idx):
-            for i3, store in enumerate(get_store_urls(city)[store_s_idx:], start=store_s_idx):
+    for i, pre in enumerate(get_prefecture_urls(BASE_URL, get_soup)[pre_s_idx:], start=pre_s_idx):
+        for i2, city in enumerate(get_city_urls(pre, get_soup)[city_s_idx:], start=city_s_idx):
+            for i3, store in enumerate(get_store_urls(city, get_soup)[store_s_idx:], start=store_s_idx):
                 d = {"pre": i, "city": i2, "store": i3}
                 util.write_json_file(progress_file_path, d)
                 print(f"pre:   {pre},   i:  {i}")
@@ -112,9 +112,12 @@ def register_database(json_path: str):
         city_s_idx = 0
 
 if __name__ == '__main__':
+    # command $ python3 get_store_geo.py familymart
     # util.solve_certificate_problem()
     config_dic = util.read_json_file("./config.json")
-    famima_dic = config_dic['familymart']
-    BASE_URL = famima_dic['base_url']
-    get_soup = util.get_soup_wrapper(BASE_URL)
-    register_database(famima_dic['geo_file_name'])
+    store_name = sys.argv[1]
+    if config_dic[store_name]:
+        famima_dic = config_dic[store_name]
+        BASE_URL = famima_dic['base_url']
+        get_soup = util.get_soup_wrapper(BASE_URL)
+        register_database(famima_dic['geo_file_name'])

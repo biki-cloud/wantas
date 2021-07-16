@@ -1,3 +1,4 @@
 *.log
 *.pyc
 __pycache__
+how_to_jenkins.txt
