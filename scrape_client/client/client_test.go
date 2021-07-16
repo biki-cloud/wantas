@@ -2,9 +2,6 @@ package client
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	"net/url"
 	"testing"
 )
 
@@ -25,21 +22,7 @@ func TestScraping(t *testing.T) {
 	fmt.Println(scrapedResults)
 }
 
-func TestSendPost(t *testing.T) {
-	data := url.Values{
-		"ProductName": {"パスタ"},
-		"UserLat":     {"35.535353"},
-		"UserLon":     {"140.535353"},
-	}
 
-	resp, err := http.PostForm("http://localhost:8080/search", data)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(resp)
-}
 
 func GetFullPerametaResultStruct() ResultStruct {
 	r := CreateResultStruct()
