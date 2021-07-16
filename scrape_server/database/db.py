@@ -76,29 +76,38 @@ def insert(table: dataset.table.Table, record: dict):
     if is_contains(table, suited_record) is False:
         table.insert(suited_record)
 
-def search(table: dataset.table.Table, key: str, name: str):
+def search(table: dataset.table.Table, key: str, name: str, is_suit: bool=False):
+    s = time.time()
     results = []
     all_ele = table.find()
     for ele in all_ele:
         if key not in ele.keys():
             raise BaseException(f"{key} doesn't contain in {ele}")
         if name in ele[key]:
-            results.append(ele)
+            if is_suit is False:
+                results.append(ele)
+            else:
+                results.append(to_suited_dict(ele))
+    print(f"2 time: {time.time() - s}")
     return results
+
+def suited(d: dict) -> (dict):
+    """データベースから取り出したordered Dictの中のパラメータを
+    整形し、dictで返す。
+    """
+    new = {}
+    for k, v in d.items():
+        if k != "id":
+            if k == "product_region_list":
+                new[k] = v.split(",")
+            else:
+                new[k] = v
+    return new
 
 def suited_products_table(result: list) -> (list):
     """
     productsテーブル用。データベースから取り出す時にjsonを整形する。
     """
-    def suited(d: dict) -> (dict):
-        new = {}
-        for k, v in d.items():
-            if k != "id":
-                if k == "product_region_list":
-                    new[k] = v.split(",")
-                else:
-                    new[k] = v
-        return new
     return [suited(d) for d in result]
 
 def suited_store_table(table: dataset.table.Table):
@@ -114,7 +123,7 @@ def suited_store_table(table: dataset.table.Table):
                 else:
                     new[k] = v
         return new
-    return [suited(d) for d in table.find()]
+    return (suited(d) for d in table.find())
 
 def store_to_db(db_path: str, table_name: str, store: AbsStore):
     """セブンイレブンの全商品をスクレイピングで取得し、databaseのproductsテーブルに入れる。
@@ -183,12 +192,13 @@ class JsonDbDriver:
         return read_json_file(self.database_path)
 
 def recreate_sqlite_db(db_path: str):
+    delete_table("./db.sqlite", "products")
     json_to_db("./product_familymart.json", db_path, "products")
     json_to_db("./product_seveneleven.json", db_path, "products")
     json_to_db("./product_lawson.json", "./db.sqlite", "products")
-    json_to_db("./store_seveneleven.json", db_path, "store_seveneleven")
-    json_to_db("./store_familymart.json", db_path, "store_familymart")
-    json_to_db("./store_lawson.json", "./db.sqlite", "store_lawson")
+    # json_to_db("./store_seveneleven.json", db_path, "store_seveneleven")
+    # json_to_db("./store_familymart.json", db_path, "store_familymart")
+    # json_to_db("./store_lawson.json", "./db.sqlite", "store_lawson")
 
 if __name__ == '__main__':
     recreate_sqlite_db("./db.sqlite")

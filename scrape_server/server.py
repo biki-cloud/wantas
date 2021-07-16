@@ -8,6 +8,7 @@ import logging as log
 import dataset
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
+import time
 
 from scrape_server import scrape_pb2
 from scrape_server import scrape_pb2_grpc
@@ -26,24 +27,22 @@ def search(search_name: str, user_lat: float, user_lon: float) -> (List[dict]):
     log.info("invoked search function.")
     log.info(f"user lat: {user_lat}, user lon: {user_lon}")
 
-    # scrape_serverディレクトリで実行する必要がある。
+    start = time.time()
     db2 = dataset.connect("sqlite:///" + os.path.join("database", "db.sqlite"))
-    product_table = db2["products"]
-    results = db.search(product_table, "product_name", search_name)
-    results = db.suited_products_table(results)
-
-    # 上のresultは商品情報dictのリストになっているのでそのdictに
-    # 商品がセブンだった場合、一番近くのセブンの店舗情報を付加し返す。
-    for i in range(len(results)):
-        store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon, results[i]['store_table_name'])
-        results[i].update(store_info.__dict__)
-
-    area_filtered_results = [ele for ele in results if geo.is_contains(ele)]
-
-    log.info("return from search funcion.")
-    log.info("results length: {len(results)}")
-    log.debug(f"result: {results}")
-    return results
+    product_and_store_info_list = []
+    for dic in db2.query(f"SELECT * FROM products WHERE product_name LIKE '%{search_name}%'"):
+        # suitedでproduct_region_listを文字列からリストに変換する
+        product_info = db.suited(dic)
+        # ユーザーの位置情報から一番近い店舗の情報を取得
+        store_info: StoreInfo = geo.get_most_near_store_info(user_lat, user_lon, product_info['store_table_name'])
+        # 商品情報にユーザーから一番近い店舗情報を追記する
+        product_info.update(store_info.__dict__)
+        # 商品のregion_listと店舗情報から一番近くの店舗では商品が販売されているのか判断する
+        if geo.is_contains(product_info):
+            product_and_store_info_list.append(product_info)
+    elapsed_time = time.time() - start
+    log.info(f"search process time: {elapsed_time}")
+    return product_and_store_info_list
 
 
 class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):

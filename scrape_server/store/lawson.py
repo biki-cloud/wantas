@@ -147,4 +147,4 @@ class Lawson(AbsStore):
 if __name__ == '__main__':
     lawson = Lawson()
     results = lawson.get_all_product()
-    util.write_json_file("./lawson_result.json", results)
+    util.write_json_file("./product_lawson.json", results)

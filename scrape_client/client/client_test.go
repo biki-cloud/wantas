@@ -10,7 +10,7 @@ import (
 
 func TestScraping(t *testing.T) {
 	userInfo := UserInfo{
-		ProductName: "パスタ",
+		ProductName: "おむすび",
 		UserLat:     35.53434,
 		UserLon:     140.32323,
 	}

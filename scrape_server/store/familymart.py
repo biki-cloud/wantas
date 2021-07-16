@@ -193,8 +193,9 @@ class FamilyMart(AbsStore):
             if BASE_URL in product_url and "?q=" not in product_url:
                 product = Product(product_url)
                 dic = product.to_dict()
+                print(dic)
                 # Prevent to insert same product.
-                if dic['name'] not in [i['name'] for i in results]:
+                if dic['product_name'] not in [i['product_name'] for i in results]:
                     results.append(dic)
             print(len(results))
         return results
@@ -204,6 +205,5 @@ class FamilyMart(AbsStore):
 if __name__ == '__main__':
     fam = FamilyMart()
     results = fam.get_all_product()
-    # 2187
-    print(len(results))
+    util.write_json_file("./product_familymart.json", results)
 

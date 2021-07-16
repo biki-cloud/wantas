@@ -9,6 +9,7 @@ import sys
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
 import os
+import logging
 
 from scrape_server import util
 from scrape_server import geo
@@ -23,8 +24,6 @@ class StoreInfo:
     def __init__(self, name: str, address: str, lat=None, lon=None):
         self.store_name = name
         self.store_address = address
-        log.debug(f"lat: {lat}")
-        log.debug(f"lon: {lon}")
         if lat != None and lon != None:
             self.store_lat = float(lat)
             self.store_lon = float(lon)
@@ -84,30 +83,24 @@ def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name:
     Returns:
         StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
-    db2 = dataset.connect(f"sqlite:///{os.path.abspath(os.path.dirname(__file__))}/../database/db.sqlite")
+    s = time.time()
+    database = dataset.connect(f"sqlite:///{os.path.abspath(os.path.dirname(__file__))}/../database/db.sqlite")
+    min_distance = 100.0 # 初期値
+    min_dic = {}
+    user_lat_plus, user_lat_minus = user_lat + 0.01, user_lat - 0.01
+    count = 0
+    for dic in database.query(f"SELECT * FROM {store_table_name} WHERE store_lat  BETWEEN {user_lat_minus} and {user_lat_plus}"):
+        store = db.to_suited_dict(dic)
+        distance = get_distance(user_lat, user_lon, float(store['store_lat']), float(store['store_lon']))
+        if distance < min_distance:
+            min_distance = distance
+            min_dic = store
+        count += 1
+    log.debug(f"query get count: {count}")
+    print(f"query get count: {count}")
+    log.debug(f"get most near store info time: {time.time() - s}")
 
-    store_table = db2[store_table_name]
-    results = db.suited_store_table(store_table)
-
-    distances = []
-    for store in results:
-        dic = {}
-        store_lat = float(store['store_lat'])
-        store_lon = float(store['store_lon'])
-        dic['store_lat'] = store_lat
-        dic['store_lon'] = store_lon
-        dic['distance'] = get_distance(user_lat, user_lon, store_lat, store_lon)
-        distances.append(dic)
-
-    # ユーザーと距離が最短の店舗を探す
-    min_dis = 100.0 # 初期値
-    min_idx = 0 # 初期値
-    for idx, dis_dict in enumerate(distances):
-        if dis_dict['distance'] < min_dis:
-            min_dis = dis_dict['distance']
-            min_idx = idx
-    match_ele = results[min_idx]
-    return StoreInfo(match_ele['store_name'], match_ele['store_address'], match_ele['store_lat'], match_ele['store_lon'])
+    return StoreInfo(min_dic['store_name'], min_dic['store_address'], min_dic['store_lat'], min_dic['store_lon'])
 
 def is_contains(product_store_dic: dict) -> (bool):
     """
@@ -170,6 +163,8 @@ def is_contains(product_store_dic: dict) -> (bool):
             log.debug(f"pre_list: {pre_list}")
             if any([True for pre in pre_list if pre in store_address]):
                 return True
+        if region == "全国":
+            return True
     return False
 
 def get_geo_soup(address: str, url: str):

@@ -124,7 +124,9 @@ func GetScrapeServerAddress() string {
 	if hostName == "hibikinoiMac.local" {
 		return "localhost:50051"
 	} else {
-		return "172.30.0.2:50051"
+		// scrape_server is container name
+		return "scrape_server:50051"
+		// return "172.30.0.2:50051"
 	}
 }
 

@@ -49,7 +49,6 @@ func main() {
 	router.LoadHTMLFiles("templates/main.html")
 	router.Static("/static", "./static")
 	router.GET("/search", FirstPage())
-	// router.POST("/search", client.SearchProduct("json"))
 	router.POST("/search", client.SearchProduct())
 
 	// サーバーを走らせる

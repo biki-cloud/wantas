@@ -275,7 +275,7 @@ class SevenEleven(AbsStore):
             products = Products(products_soup)
             for product in products.get_contents():
                 dic = product.to_dict()
-                print(util.dict_to_json(dic))
+                # print(util.dict_to_json(dic))
                 # prevent to insert same product.
                 if dic['product_name'] not in [i['product_name'] for i in results]:
                     results.append(dic)

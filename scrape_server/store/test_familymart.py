@@ -39,11 +39,18 @@ def test_is_available_kind_of_product_url():
     assert False == fam.is_available_kind_of_product_url("https://www.family.co.jp/goods/safety.html")
 
 def test_Product_class():
+    # スクレイピング結果は前回と異なる場合がある。
     fam = familymart.FamilyMart()
     get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
     kind_of_urls = fam.get_kind_of_product_urls(get_soup)
     products_urls = fam.get_products_url_in_kind_of_product_url(kind_of_urls[7], get_soup)
     product = familymart.Product(products_urls[0])
+    assert "product_name" in product.to_dict().keys()
+    assert "product_url" in product.to_dict().keys()
+    assert "product_price" in product.to_dict().keys()
+    assert "product_region_list" in product.to_dict().keys()
+    assert "product_img_url" in product.to_dict().keys()
+    assert "store_table_name" in product.to_dict().keys()
     assert "サーモン三昧丼" == product.name
     time.sleep(2)
     assert products_urls[0] == product.url
