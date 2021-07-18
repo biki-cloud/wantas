@@ -53,7 +53,6 @@ func main() {
 
 	// サーバーを走らせる
 	log.Printf("run: 80 \n")
-	// err := router.Run(":8080")
 	err := router.Run(":80")
 	if err != nil {
 		log.Fatalf("failed to run %v \n", err)
