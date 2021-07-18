@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-const access_url = "http://localhost:8080/search"
+const access_url = "http://localhost:80/search"
 
 func TestRunningService(t *testing.T) {
 	res, err := http.Get(access_url)
