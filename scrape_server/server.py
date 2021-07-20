@@ -68,6 +68,7 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
         if scrape_results:
             log.info(f"scraping results length is {results_len}")
             for r in scrape_results:
+                log.info(r)
                 res = scrape_pb2.ScrapeManyTimesResponse()
 
                 # レスポンスに値をセットする。

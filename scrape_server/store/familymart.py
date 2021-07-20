@@ -12,6 +12,8 @@ from scrape_server.mylog import log
 BASE_URL = "https://www.family.co.jp"
 get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
 
+PLAN_TO_SCRAPE_PRODUCT_NAME_LIST = []
+
 class Product:
     """商品ページurlを受け取り、名前、値段などを格納するクラス
     """
@@ -147,7 +149,7 @@ class FamilyMart(AbsStore):
         return results
 
     def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
-        """商品種類ページの中の商品ページのurlを全て取得し、返す。a
+        """商品種類ページの中の商品ページのurlを全て取得し、返す。
 
         Args:
             kind_of_product_url (str): 商品種類ページのurl
@@ -157,13 +159,17 @@ class FamilyMart(AbsStore):
             list: 商品ページのurlを全て取得し、リストにして返す。
                 example: https://www.family.co.jp/goods/omusubi/0416412.html
         """
-        results = []
+        product_urls = []
         soup = get_soup(kind_of_product_url)
-        all_products_tag = soup.findAll('div', attrs={"ly-mod-layout-clm"})
-        for product_tag in all_products_tag:
-            product_url = product_tag.find('a', href=True)['href']
-            results.append(product_url)
-        return results
+        all_products_tags = soup.findAll('div', attrs={"ly-mod-infoset4 js-imgbox-size-rel"})
+        for product_tag in all_products_tags:
+            product_name = product_tag.find('p', attrs={"ly-mod-infoset4-name"}).get_text()
+            # 商品の名前が被る場合があるため下の処理をしている。被った場合は余分にスクレイピングし、時間がかかるので
+            if product_name not in PLAN_TO_SCRAPE_PRODUCT_NAME_LIST:
+                PLAN_TO_SCRAPE_PRODUCT_NAME_LIST.append(product_name)
+                product_info_url = product_tag.find('a', href=True)['href']
+                product_urls.append(product_info_url)
+        return product_urls
 
     def scraping_to_json_file(self, json_path: str) -> (list):
         """全ての商品情報を取得し、リストで返す。
@@ -190,6 +196,8 @@ class FamilyMart(AbsStore):
                 all_product_page_urls.extend(product_page_urls)
 
         progress_file_path = f"{json_path}_progress.json"
+        print(f"SCRAPE_PRODUCTS length: {len(PLAN_TO_SCRAPE_PRODUCT_NAME_LIST)}") # 1700
+        print(f"all_product_page_urls: {len(all_product_page_urls)}")
         if os.path.exists(progress_file_path):
             progress_dic = util.read_json_file(progress_file_path)
             start_idx = progress_dic['start_idx']
@@ -197,7 +205,7 @@ class FamilyMart(AbsStore):
             start_idx = 0
         for i, product_url in enumerate(all_product_page_urls[start_idx:], start=start_idx):
             print(f"product_url: {product_url}")
-            print(f"start_idx: {start_idx}")
+            print(f"start_idx: {i}")
             # たまにスクレイピングできないurlが混ざっている。
             if BASE_URL in product_url and "?q=" not in product_url:
                 # 進捗状況を書き込む
@@ -214,8 +222,6 @@ class FamilyMart(AbsStore):
         os.remove(progress_file_path)
 
 
-
 if __name__ == '__main__':
     fam = FamilyMart()
     fam.scraping_to_json_file(sys.argv[1])
-
