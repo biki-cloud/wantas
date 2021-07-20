@@ -47,7 +47,7 @@ def test_get_product_infos_from_type_of_product_url():
 
 def test_get_all_product():
     lawson_obj = lawson.Lawson()
-    all_product = lawson_obj.get_all_product()
+    all_product = lawson_obj.scraping_to_json_file()
     assert type(all_product[0]) is dict
     assert all_product[0].get("product_name") is not None
     assert all_product[0].get("product_url") is not None

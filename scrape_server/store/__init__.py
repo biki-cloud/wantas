@@ -7,7 +7,3 @@ sys.path.append("/code")
 class AbsStore(metaclass=ABCMeta):
     def __init__(self):
         pass
-
-    @abstractmethod
-    def get_all_product(self) -> (list):
-        pass

@@ -125,27 +125,6 @@ def suited_store_table(table: dataset.table.Table):
         return new
     return (suited(d) for d in table.find())
 
-def store_to_db(db_path: str, table_name: str, store: AbsStore):
-    """セブンイレブンの全商品をスクレイピングで取得し、databaseのproductsテーブルに入れる。
-    呼び出し方
-    seven = SevenEleven()
-    store_to_db("./db.sqlite", seven)
-
-    Args:
-        db_path (str): データベースのパス
-        store (AbsStore): sevenelevenやfamilymartクラスの親クラス、
-            必ずget_all_product()メソッドを持っている。
-    """
-    # スクレイピング
-    results = store.get_all_product()
-    print(f"all_length: {len(results)}")
-
-    # DBへ登録
-    db = dataset.connect(f"sqlite:///{db_path}")
-    table = db[table_name]
-    for element_dic in results:
-        insert(table, element_dic)
-
 def delete_table(db_path: str, table_name: str):
     """テーブルを削除する
     呼び出し方
@@ -184,21 +163,17 @@ class JsonDbDriver:
                     results.append(record)
         return results
 
-    def scrape_and_put(self, store: AbsStore):
-        elements = store.get_all_product()
-        self.put(elements)
-
     def get_all(self) -> (List[dict]):
         return read_json_file(self.database_path)
 
-def recreate_sqlite_db(db_path: str):
-    delete_table("./db.sqlite", "products")
-    json_to_db("./product_familymart.json", db_path, "products")
-    json_to_db("./product_seveneleven.json", db_path, "products")
-    json_to_db("./product_lawson.json", "./db.sqlite", "products")
-    # json_to_db("./store_seveneleven.json", db_path, "store_seveneleven")
-    # json_to_db("./store_familymart.json", db_path, "store_familymart")
-    # json_to_db("./store_lawson.json", "./db.sqlite", "store_lawson")
+def re_register_products_table(db_path: str, product_json_files: list):
+    log.info("start delete products table.")
+    delete_table(db_path, "products")
+    for json_path in product_json_files:
+        log.info(f"start register {json_path}")
+        json_to_db(json_path, db_path, "products")
 
 if __name__ == '__main__':
-    recreate_sqlite_db("./db.sqlite")
+    product_json_files = sys.argv[1:]
+    db_path = f"{os.path.abspath(os.path.dirname(__file__))}/db.sqlite"
+    re_register_products_table(db_path, product_json_files)

@@ -3,6 +3,7 @@ from collections.abc import Callable
 from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
+import os
 
 from scrape_server import util
 from scrape_server.store import AbsStore
@@ -163,7 +164,7 @@ class FamilyMart(AbsStore):
             results.append(product_url)
         return results
 
-    def get_all_product(self) -> (list):
+    def scraping_to_json_file(self, json_path: str) -> (list):
         """全ての商品情報を取得し、リストで返す。
 
         Returns:
@@ -177,7 +178,7 @@ class FamilyMart(AbsStore):
                     }
         """
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
-        results = []
+        all_product_info_list = []
         all_product_page_urls = []
         kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
         for kind_of_product_url in kind_of_product_urls:
@@ -186,23 +187,33 @@ class FamilyMart(AbsStore):
                 product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
                 all_product_page_urls.extend(product_page_urls)
 
-        for product_url in all_product_page_urls:
+        progress_file_path = f"{json_path}_progress.json"
+        if os.path.exists(progress_file_path):
+            progress_dic = util.read_json_file(progress_file_path)
+            start_idx = progress_dic['start_idx']
+        else:
+            start_idx = 0
+        for i, product_url in enumerate(all_product_page_urls[start_idx:], start=start_idx):
             print(f"product_url: {product_url}")
+            print(f"start_idx: {start_idx}")
             # たまにスクレイピングできないurlが混ざっている。
             if BASE_URL in product_url and "?q=" not in product_url:
+                # 進捗状況を書き込む
+                d = {"start_idx": i}
+                util.write_json_file(progress_file_path, d)
                 product = Product(product_url)
-                dic = product.to_dict()
-                print(dic)
-                # Prevent to insert same product.
-                if dic['product_name'] not in [i['product_name'] for i in results]:
-                    results.append(dic)
-            print(len(results))
-        return results
+                product_dic = product.to_dict()
+                # 同じ名前の情報を登録するのを防ぐ
+                if product_dic['product_name'] not in [i['product_name'] for i in all_product_info_list]:
+                    # リストに商品情報を追加
+                    all_product_info_list.append(product_dic)
+                    # リストに書き込む
+                    util.write_json_file(json_path, all_product_info_list)
+        os.remove(progress_file_path)
 
 
 
 if __name__ == '__main__':
     fam = FamilyMart()
-    results = fam.get_all_product()
-    util.write_json_file("./product_familymart.json", results)
+    fam.scraping_to_json_file(sys.argv[1])
 

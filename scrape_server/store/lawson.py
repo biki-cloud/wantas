@@ -119,7 +119,7 @@ class Lawson(AbsStore):
         return product_info_tags
 
 
-    def get_all_product(self) -> (list):
+    def scraping_to_json_file(self, json_path: str) -> (list):
         """全ての商品情報を取得し、リストで返す。
 
         Returns:
@@ -133,18 +133,32 @@ class Lawson(AbsStore):
                     }
         """
         results = []
+        progress_file_path = f"{json_path}_progress.json"
+        if os.path.exists(progress_file_path):
+            progress_dic = util.read_json_file(progress_file_path)
+            type_of_product_url_idx = progress_dic['type_of_product_url_idx']
+            product_info_idx = progress_dic['product_info_idx']
+        else:
+            type_of_product_url_idx = 0
+            product_info_idx = 0
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         all_type_of_product_urls = self.get_all_type_of_product_urls()
-        for type_of_product_url in all_type_of_product_urls:
+        for i, type_of_product_url in enumerate(all_type_of_product_urls[type_of_product_url_idx:], start=type_of_product_url_idx):
             product_infos = self.get_product_infos_from_type_of_product_url(type_of_product_url)
-            for product_info in product_infos:
-                product = Product(product_info)
-                # print(util.dict_to_json(product.to_dict()))
-                results.append(product.to_dict())
-        return results
+            for j, product_info in enumerate(product_infos[product_info_idx:], start=product_info_idx):
+                # 進捗状況を書き込む
+                d = {"type_of_product_url_idx": i, "product_info_idx": j}
+                util.write_json_file(progress_file_path, d)
+                product_dic = Product(product_info).to_dict()
+                if product_dic['product_name'] not in [i['product_name'] for i in results]:
+                    # リストに商品情報を追加
+                    results.append(product_dic)
+                    # リストを書き込む
+                    util.write_json_file(json_path, results)
 
+            product_info_idx = 0
+        os.remove(progress_file_path)
 
 if __name__ == '__main__':
     lawson = Lawson()
-    results = lawson.get_all_product()
-    util.write_json_file("./product_lawson.json", results)
+    lawson.scraping_to_json_file(sys.argv[1])

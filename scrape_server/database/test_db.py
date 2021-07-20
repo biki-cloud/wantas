@@ -256,4 +256,3 @@ def test_suited_store_table(tmp_path):
 
 
 
-

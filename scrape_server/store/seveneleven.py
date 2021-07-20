@@ -6,6 +6,7 @@ from collections.abc import Callable
 from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
+import os
 
 from scrape_server import util
 from scrape_server.store import AbsStore
@@ -252,7 +253,7 @@ class SevenEleven(AbsStore):
                     result_links.append(url)
         return result_links
 
-    def get_all_product(self) -> (list):
+    def scraping_to_json_file(self, json_path: str):
         """全商品をスクレイピングし、dictにしそれをリストにして返す。
         店舗ごとにクラスを作成する場合にこのメソッドを実装しなければならない
 
@@ -268,23 +269,34 @@ class SevenEleven(AbsStore):
         """
         get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
         results = []
+        progress_file_path = f"{json_path}_progress.json"
+        if os.path.exists(progress_file_path):
+            progress_dic = util.read_json_file(progress_file_path)
+            products_listed_url_idx = progress_dic['products_listed_url_idx']
+            product_idx = progress_dic['product_idx']
+        else:
+            products_listed_url_idx = 0
+            product_idx = 0
         products_listed_page_urls = self.get_products_listed_page_urls(get_soup)
-        for products_listed_url in products_listed_page_urls:
+        for i, products_listed_url in enumerate(products_listed_page_urls[products_listed_url_idx:], start=products_listed_url_idx):
             soup = get_soup(products_listed_url)
             products_soup = get_products_soup_from_products_listed_page(soup)
             products = Products(products_soup)
-            for product in products.get_contents():
+            for j, product in enumerate(products.get_contents()[product_idx:], start=product_idx):
+                # 進捗状況を記録する
+                d = {"products_listed_url_idx": i, "product_idx": j}
+                util.write_json_file(progress_file_path, d)
                 dic = product.to_dict()
-                # print(util.dict_to_json(dic))
-                # prevent to insert same product.
+                # 同じ名前で登録するのを防ぐ
                 if dic['product_name'] not in [i['product_name'] for i in results]:
                     results.append(dic)
-        return results
+                    util.write_json_file(json_path, results)
+            product_idx = 0
+        os.remove(progress_file_path)
 
 
 if __name__ == '__main__':
     # util.solve_certificate_problem()
     seven = SevenEleven()
-    results = seven.get_all_product()
-    util.write_json_file("./product_seveneleven.json", results)
+    seven.scraping_to_json_file(sys.argv[1])
 
