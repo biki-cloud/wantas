@@ -145,7 +145,7 @@ class FamilyMart(AbsStore):
         return results
 
     def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
-        """商品種類ページの中の商品ページのurlを全て取得し、返す。
+        """商品種類ページの中の商品ページのurlを全て取得し、返す。a
 
         Args:
             kind_of_product_url (str): 商品種類ページのurl
