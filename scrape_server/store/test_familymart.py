@@ -20,7 +20,7 @@ def test_get_kind_of_product_urls():
     fam = familymart.FamilyMart()
     get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
     urls = fam.get_kind_of_product_urls(get_soup)
-    assert 39 == len(urls)
+    assert 0 < len(urls)
     time.sleep(2)
     assert 200 == requests.get(urls[0]).status_code
 
