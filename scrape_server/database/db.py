@@ -167,6 +167,13 @@ class JsonDbDriver:
         return read_json_file(self.database_path)
 
 def re_register_products_table(db_path: str, product_json_files: list):
+    """現在データベースに入っている商品情報を削除し、
+    新たにスクレイピングしたjsonデータを挿入する。
+
+    Args:
+        db_path (str): sqliteのパス
+        product_json_files (list): スクレイピング結果が入っているjsonのパスのリスト
+    """
     log.info("start delete products table.")
     delete_table(db_path, "products")
     for json_path in product_json_files:

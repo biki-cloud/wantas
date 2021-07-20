@@ -23,7 +23,7 @@ class Product:
                 <p>452kcal</p>
                 <p class="price"><span>298円</span><span>(税込)</span></p>
                 <p class="smalltxt" style="padding-top:5px;">※近畿・中四国地域のローソンではお取り扱いしておりません。</p>
-                </li>
+                </li>a
     """
     def __init__(self, product_info_soup: bs4.element.Tag):
         self.product_info_soup = product_info_soup
