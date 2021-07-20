@@ -35,7 +35,7 @@ def test_Product_class():
 def test_get_all_type_of_product_urls():
     lawson_obj = lawson.Lawson()
     urls = lawson_obj.get_all_type_of_product_urls()
-    assert 26 == len(urls)
+    assert 0 < len(urls)
     time.sleep(2)
     assert 200 == requests.get(urls[0]).status_code
 
@@ -45,16 +45,4 @@ def test_get_product_infos_from_type_of_product_url():
     product_infos = lawson_obj.get_product_infos_from_type_of_product_url(all_type_of_product_urls[0])
     assert 20 < len(product_infos)
 
-def test_get_all_product():
-    lawson_obj = lawson.Lawson()
-    all_product = lawson_obj.scraping_to_json_file()
-    assert type(all_product[0]) is dict
-    assert all_product[0].get("product_name") is not None
-    assert all_product[0].get("product_url") is not None
-    assert all_product[0].get("product_price") is not None
-    assert all_product[0].get("product_region_list") is not None
-    assert all_product[0].get("product_img_url") is not None
-    assert all_product[0].get("store_table_name") is not None
-    # 下の数は時期によって件数が変わるので多少の増減は問題ない。
-    assert 700 < len(all_product)
 

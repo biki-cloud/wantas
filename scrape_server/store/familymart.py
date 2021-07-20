@@ -7,6 +7,7 @@ import os
 
 from scrape_server import util
 from scrape_server.store import AbsStore
+from scrape_server.mylog import log
 
 BASE_URL = "https://www.family.co.jp"
 get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
@@ -181,6 +182,7 @@ class FamilyMart(AbsStore):
         all_product_info_list = []
         all_product_page_urls = []
         kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
+        log.debug(f"kind_of_product_urls: {len(kind_of_product_urls)}")
         for kind_of_product_url in kind_of_product_urls:
             print(f"kind_of_product_url: {kind_of_product_url}")
             if self.is_available_kind_of_product_url(kind_of_product_url):
