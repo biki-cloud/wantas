@@ -43,7 +43,8 @@ def test_Product_class():
     fam = familymart.FamilyMart()
     get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
     kind_of_urls = fam.get_kind_of_product_urls(get_soup)
-    products_urls = fam.get_products_url_in_kind_of_product_url(kind_of_urls[7], get_soup)
+    kind_of_product_url = "https://www.family.co.jp/goods/omusubi.html"
+    products_urls = fam.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
     product = familymart.Product(products_urls[0])
     assert "product_name" in product.to_dict().keys()
     assert "product_url" in product.to_dict().keys()
