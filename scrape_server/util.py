@@ -4,7 +4,6 @@ import subprocess
 import time
 from urllib.request import urlopen
 import urllib.robotparser
-from goto import goto, label
 from bs4 import BeautifulSoup
 
 def dict_to_json(d):
