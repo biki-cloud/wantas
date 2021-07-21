@@ -880,7 +880,10 @@
         "product_region_list": [
             "北海道",
             "東北",
-            "関東",
+            "埼玉県",
+            "千葉県",
+            "東京都",
+            "神奈川県",
             "鳥取県",
             "島根県",
             "岡山県",
@@ -895,7 +898,7 @@
         "product_url": "https://www.sej.co.jp/products/a/item/045729/chugoku",
         "product_price": "460円（税込496.80円）",
         "product_region_list": [
-            "東北",
+            "福島県",
             "茨城県",
             "栃木県",
             "群馬県",
@@ -2391,16 +2394,6 @@
         "store_table_name": "store_seveneleven"
     },
     {
-        "product_name": "小海老の炊込みご飯おむすび",
-        "product_url": "https://www.sej.co.jp/products/a/item/045670",
-        "product_price": "125円（税込135円）",
-        "product_region_list": [
-            "山梨県"
-        ],
-        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045670/41A808CCE6F8F8709F53F261FE28DCBC.jpg",
-        "store_table_name": "store_seveneleven"
-    },
-    {
         "product_name": "発芽雑穀米おむすび　じゃこ高菜",
         "product_url": "https://www.sej.co.jp/products/a/item/044229",
         "product_price": "120円（税込129.60円）",
@@ -2883,6 +2876,16 @@
         "store_table_name": "store_seveneleven"
     },
     {
+        "product_name": "わかめ御飯おむすび（三陸産わかめ使用）",
+        "product_url": "https://www.sej.co.jp/products/a/item/040060",
+        "product_price": "105円（税込113.40円）",
+        "product_region_list": [
+            "新潟県"
+        ],
+        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/040060/3A8C998AD20F7EFE99A48C9F708E2E34.jpg",
+        "store_table_name": "store_seveneleven"
+    },
+    {
         "product_name": "手巻寿司低温発酵熟成　納豆巻",
         "product_url": "https://www.sej.co.jp/products/a/item/044949",
         "product_price": "135円（税込145.80円）",
@@ -2937,6 +2940,10 @@
         "product_url": "https://www.sej.co.jp/products/a/item/045994",
         "product_price": "140円（税込151.20円）",
         "product_region_list": [
+            "埼玉県",
+            "千葉県",
+            "東京都",
+            "神奈川県",
             "甲信越",
             "九州"
         ],
@@ -8373,7 +8380,20 @@
         "product_url": "https://www.sej.co.jp/products/a/item/450572",
         "product_price": "298円（税込321.84円）",
         "product_region_list": [
-            "全国"
+            "栃木県",
+            "群馬県",
+            "埼玉県",
+            "千葉県",
+            "東京都",
+            "神奈川県",
+            "長野県",
+            "北陸",
+            "東海",
+            "近畿",
+            "中国",
+            "四国",
+            "九州",
+            "沖縄"
         ],
         "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/450572/02E710936060B9905F8041A0622B0E0D.jpg",
         "store_table_name": "store_seveneleven"

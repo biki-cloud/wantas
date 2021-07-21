@@ -10,7 +10,6 @@ sys.path.append("/home/hibiki/wantas")
 import os
 
 from scrape_server import util
-from scrape_server.store import AbsStore
 
 BASE_URL = "https://www.sej.co.jp"
 get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
@@ -164,7 +163,7 @@ def get_products_soup_from_products_listed_page(soup) -> (bs4):
     return soup.findAll("div", {"class": "list_inner"})
 
 
-class SevenEleven(AbsStore):
+class SevenEleven:
     """
     セブンイレブンのサイトをスクレイピングするクラス。Storeクラスを継承していて、get_all_productを実装しなければならない。
     """
@@ -183,7 +182,8 @@ class SevenEleven(AbsStore):
             return util.url_join(self.base_url, self.products, self.a, res)
         return ""
 
-    def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
+    #def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
+    def get_recursive_links(self, link: str, all_links: list, get_soup) -> (None):
         """商品リストが掲載されているページにはラインナップボタンや、1,2,3..のようなボタンがある。
         その中を探索していき商品がリストで掲載されているページurlを取得していく。
 
@@ -203,7 +203,8 @@ class SevenEleven(AbsStore):
                 self.get_recursive_links(l, all_links, get_soup)
         return
 
-    def get_products_listed_page_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    #def get_products_listed_page_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    def get_products_listed_page_urls(self, get_soup) -> (list):
         """セブンイレブンの商品がリストで掲載されているのページurl全てをリストにして返す。
         page example: https://www.sej.co.jp/products/a/onigiri/
 
@@ -217,7 +218,7 @@ class SevenEleven(AbsStore):
             self.get_recursive_links(product_url, results, get_soup)
         return results
 
-    def get_line_up_links(self, url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    def get_line_up_links(self, url: str, get_soup) -> (list):
         """urlページの中に"ラインナップを見る"ボタンが複数あるだけそのボタンのリンク先urlのリストを返す。
 
         Args:

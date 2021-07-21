@@ -8,7 +8,6 @@ import os
 
 from scrape_server import util
 from scrape_server.store import AbsStore
-from scrape_server.mylog import log
 
 BASE_URL = "https://www.family.co.jp"
 get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
@@ -80,7 +79,7 @@ class Product:
         return util.url_join(BASE_URL,img_tag['src'])
 
 
-class FamilyMart(AbsStore):
+class FamilyMart:
     def __init__(self):
         pass
 
@@ -133,7 +132,7 @@ class FamilyMart(AbsStore):
         """
         return util.url_join(BASE_URL, "goods.html")
 
-    def get_kind_of_product_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    def get_kind_of_product_urls(self, get_soup) -> (list):
         """商品の種類がリストされているページの中の商品の種類のページurlをリストにして返す。
 
         Returns:
@@ -149,7 +148,7 @@ class FamilyMart(AbsStore):
             results.append(kind_of_product_url)
         return results
 
-    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    def get_products_url_in_kind_of_product_url(self, kind_of_product_url: str, get_soup) -> (list):
         """商品種類ページの中の商品ページのurlを全て取得し、返す。
 
         Args:
@@ -189,7 +188,6 @@ class FamilyMart(AbsStore):
         all_product_info_list = []
         all_product_page_urls = []
         kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
-        log.debug(f"kind_of_product_urls: {len(kind_of_product_urls)}")
         for kind_of_product_url in kind_of_product_urls:
             print(f"kind_of_product_url: {kind_of_product_url}")
             if self.is_available_kind_of_product_url(kind_of_product_url):
