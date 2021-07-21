@@ -2,7 +2,7 @@ import pytest
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas/scrape_server")
+sys.path.append("/home/hibiki/wantas")
 import requests
 import time
 import logging
@@ -16,7 +16,7 @@ BASE_URL = "https://www.sej.co.jp"
 
 @pytest.mark.large
 def test_get_products_listed_page_urls():
-    # 時間がかかりすぎる
+    # 再起でurlをとっていくため時間がかかりすぎる
     assert True
     # seven = seveneleven.SevenEleven()
     # get_soup = util.get_soup_wrapper(BASE_URL)

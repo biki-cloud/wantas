@@ -8,7 +8,7 @@ import dataset
 import sys
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas/scrape_server")
+sys.path.append("/home/hibiki/wantas")
 import os
 import logging
 
