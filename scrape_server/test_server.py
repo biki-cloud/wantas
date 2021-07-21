@@ -7,6 +7,7 @@ import logging as log
 import dataset
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
+sys.path.append("/home/hibiki/wantas/scrape_server")
 from scrape_server import server
 
 

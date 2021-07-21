@@ -6,6 +6,7 @@ from collections.abc import Callable
 from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
+sys.path.append("/home/hibiki/wantas/scrape_server")
 import os
 
 from scrape_server import util
