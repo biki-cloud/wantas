@@ -6,7 +6,7 @@ from collections.abc import Callable
 from bs4 import BeautifulSoup
 sys.path.append("/Users/hibiki/Desktop/go/wantas")
 sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
+sys.path.append("/home/hibiki/wantas/scrape_server")
 import os
 
 from scrape_server import util
@@ -164,7 +164,7 @@ def get_products_soup_from_products_listed_page(soup) -> (bs4):
     return soup.findAll("div", {"class": "list_inner"})
 
 
-class SevenEleven(AbsStore):
+class SevenEleven:
     """
     セブンイレブンのサイトをスクレイピングするクラス。Storeクラスを継承していて、get_all_productを実装しなければならない。
     """

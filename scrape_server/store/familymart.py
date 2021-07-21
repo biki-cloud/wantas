@@ -80,7 +80,7 @@ class Product:
         return util.url_join(BASE_URL,img_tag['src'])
 
 
-class FamilyMart(AbsStore):
+class FamilyMart:
     def __init__(self):
         pass
 

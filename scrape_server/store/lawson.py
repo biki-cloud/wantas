@@ -78,7 +78,7 @@ class Product:
         }
 
 
-class Lawson(AbsStore):
+class Lawson:
     def __init__(self):
         self.base_url = "https://www.lawson.co.jp"
 
