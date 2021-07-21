@@ -20,6 +20,8 @@ mv database/products_json/product_lawson.json database/products_json/$(date "+%Y
 
 echo "cp store/product_familymart.json database/products_json/product_familymart.json"
 cp store/product_familymart.json database/products_json/product_familymart.json
+#echo "python3 store/familymart.py database/products_json/product_familymart.json"
+#python3 store/familymart.py database/products_json/product_familymart.json
 
 echo "python3 store/seveneleven.py database/products_json/product_seveneleven.json"
 python3 store/seveneleven.py database/products_json/product_seveneleven.json

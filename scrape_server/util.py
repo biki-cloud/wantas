@@ -4,7 +4,7 @@ import subprocess
 import time
 from urllib.request import urlopen
 import urllib.robotparser
-
+from goto import goto, label
 from bs4 import BeautifulSoup
 
 def dict_to_json(d):
@@ -76,8 +76,18 @@ def get_soup_wrapper(base_url: str):
     def get_soup(url: str):
         if rp.can_fetch("*", url) == False:
             raise UrlCannotFetchError(f"This url: {url} can't fetch.")
-        time.sleep(interval)
-        html = get_html(url)
+        max_continue_count = 10
+        continue_count = 0
+        while True:
+            time.sleep(interval)
+            try:
+                html = get_html(url)
+                break
+            except urllib.error.HTTPError:
+                continue_count += 1
+                if continue_count > max_continue_count:
+                    break
+                continue
         return html_to_soup(html)
 
     return get_soup
