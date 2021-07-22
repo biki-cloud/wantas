@@ -2,35 +2,28 @@
 
 # セブンイレブン、ファミリーマート、ローソンの商品情報をスクレイピングし、
 # database/products_json/db.sqliteに再登録する
-echo "start $(date)"
+echo "start $(date)" >> /home/hibiki/wantas/log/scraping.log 2>&1
 
-echo "python3 util.py"
-$(python3 util.py)
+echo "python3 /home/hibiki/wantas/scrape_server/util.py" >> /home/hibiki/wantas/log/scraping.log 2>&1
+$(python3 /home/hibiki/wantas/scrape_server/util.py)
 
-# echo "python3 store/familymart.py"
-# python3 store/familymart.py
+rm -fr /home/hibiki/wantas/scrape_server/database/products_json/*_product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+mv /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json /home/hibiki/wantas/scrape_server/database/products_json/$(date "+%Y%m%d")_product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+echo "/home/hibiki/wantas/scrape_server/python3 store/familymart.py /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json" >> /home/hibiki/wantas/log/scraping.log 
+python3 /home/hibiki/wantas/scrape_server/store/familymart.py /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1
 
-rm -fr database/products_json/*_product_familymart.json
-rm -fr database/products_json/*_product_seveneleven.json
-rm -fr database/products_json/*_product_lawson.json
+rm -fr /home/hibiki/wantas/scrape_server/database/products_json/*_product_seveneleven.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+mv /home/hibiki/wantas/scrape_server/database/products_json/product_seveneleven.json /home/hibiki/wantas/scrape_server/database/products_json/$(date "+%Y%m%d")_product_seveneleven.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+echo "/home/hibiki/wantas/scrape_server/python3 store/seveneleven.py /home/hibiki/wantas/scrape_server/database/products_json/product_seveneleven.json" >> /home/hibiki/wantas/log/scraping.log
+python3 /home/hibiki/wantas/scrape_server/store/seveneleven.py /home/hibiki/wantas/scrape_server/database/products_json/product_seveneleven.json >> /home/hibiki/wantas/log/scraping.log 2>&1
 
-mv database/products_json/product_familymart.json database/products_json/$(date "+%Y%m%d")_product_familymart.json
-mv database/products_json/product_seveneleven.json database/products_json/$(date "+%Y%m%d")_product_seveneleven.json
-mv database/products_json/product_lawson.json database/products_json/$(date "+%Y%m%d")_product_lawson.json
-
-echo "cp store/product_familymart.json database/products_json/product_familymart.json"
-cp store/product_familymart.json database/products_json/product_familymart.json
-#echo "python3 store/familymart.py database/products_json/product_familymart.json"
-#python3 store/familymart.py database/products_json/product_familymart.json
-
-echo "python3 store/seveneleven.py database/products_json/product_seveneleven.json"
-python3 store/seveneleven.py database/products_json/product_seveneleven.json
-
-echo "python3 store/lawson.py database/products_json/product_lawson.json"
-python3 store/lawson.py database/products_json/product_lawson.json
+rm -fr /home/hibiki/wantas/scrape_server/database/products_json/*_product_lawson.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+mv /home/hibiki/wantas/scrape_server/database/products_json/product_lawson.json /home/hibiki/wantas/scrape_server/database/products_json/$(date "+%Y%m%d")_product_lawson.json >> /home/hibiki/wantas/log/scraping.log 2>&1
+echo "python3 /home/hibiki/wantas/scrape_server/store/lawson.py /home/hibiki/wantas/scrape_server/database/products_json/product_lawson.json" >> /home/hibiki/wantas/log/scraping.log
+python3 /home/hibiki/wantas/scrape_server/store/lawson.py /home/hibiki/wantas/scrape_server/database/products_json/product_lawson.json >> /home/hibiki/wantas/log/scraping.log 2>&1
 
 
-echo "python3 database/products_json/db.py database/products_json/product_seveneleven.json database/products_json/product_lawson.json database/products_json/product_familymart.json"
-python3 database/db.py database/products_json/product_seveneleven.json database/products_json/product_lawson.json database/products_json/product_familymart.json
+echo "python3 /home/hibiki/wantas/scrape_server/database/products_json/db.py /home/hibiki/wantas/scrape_server/database/products_json/product_seveneleven.json /home/hibiki/wantas/scrape_server/database/products_json/product_lawson.json /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json" >> /home/hibiki/wantas/log/scraping.log
+python3 /home/hibiki/wantas/scrape_server/database/db.py /home/hibiki/wantas/scrape_server/database/products_json/product_seveneleven.json /home/hibiki/wantas/scrape_server/database/products_json/product_lawson.json /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1
 
-echo "end $(date)"
+echo "end $(date)" >> /home/hibiki/wantas/log/scraping.log

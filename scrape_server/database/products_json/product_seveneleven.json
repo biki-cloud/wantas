@@ -858,7 +858,7 @@
         "product_region_list": [
             "近畿"
         ],
-        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/044755/15796702A80A7C0BE2F040F0B97C5D23.jpg",
+        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/044755/FDFF84A46DD871987597EAA759F6B2A3.jpg",
         "store_table_name": "store_seveneleven"
     },
     {
@@ -1456,10 +1456,6 @@
         "product_url": "https://www.sej.co.jp/products/a/item/045817",
         "product_price": "135円（税込145.80円）",
         "product_region_list": [
-            "鳥取県",
-            "島根県",
-            "岡山県",
-            "広島県",
             "四国"
         ],
         "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045817/808B32E37FE9D2AD2E613D7D93FDACFF.jpg",
@@ -1616,6 +1612,10 @@
             "青森県",
             "岩手県",
             "秋田県",
+            "鳥取県",
+            "島根県",
+            "岡山県",
+            "広島県",
             "沖縄"
         ],
         "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/041409/18A84682ADE61E921C7DA1D4966AD0C9.jpg",
@@ -7984,17 +7984,6 @@
             "北海道"
         ],
         "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/104574/F87189828C1E65641F314F5C58CF9E7D.jpg",
-        "store_table_name": "store_seveneleven"
-    },
-    {
-        "product_name": "たんぱく質が摂れる鶏むね肉のサラダ",
-        "product_url": "https://www.sej.co.jp/products/a/item/101486",
-        "product_price": "398円（税込429.84円）",
-        "product_region_list": [
-            "東京都",
-            "神奈川県"
-        ],
-        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/101486/EB305C0CA095E527F406B91723A2103B.jpg",
         "store_table_name": "store_seveneleven"
     },
     {

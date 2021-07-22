@@ -189,7 +189,6 @@ class FamilyMart:
         all_product_page_urls = []
         kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
         for kind_of_product_url in kind_of_product_urls:
-            print(f"kind_of_product_url: {kind_of_product_url}")
             if self.is_available_kind_of_product_url(kind_of_product_url):
                 product_page_urls = self.get_products_url_in_kind_of_product_url(kind_of_product_url, get_soup)
                 all_product_page_urls.extend(product_page_urls)
@@ -203,8 +202,6 @@ class FamilyMart:
         else:
             start_idx = 0
         for i, product_url in enumerate(all_product_page_urls[start_idx:], start=start_idx):
-            print(f"product_url: {product_url}")
-            print(f"start_idx: {i}")
             # たまにスクレイピングできないurlが混ざっている。
             if BASE_URL in product_url and "?q=" not in product_url:
                 # 進捗状況を書き込む
