@@ -5,3 +5,4 @@ __pycache__
 deploy_settings
 log
 scrape_server/database/db.sqlite*
+*.sqlite*
