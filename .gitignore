@@ -4,4 +4,4 @@ __pycache__
 .pytest_cache
 deploy_settings
 log
-*db.sqlite*
+scrape_server/database/db.sqlite*
