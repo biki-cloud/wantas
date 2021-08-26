@@ -1,17 +1,14 @@
+import os
 import sys
 from typing import List
-import bs4
-import os
 
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
+import bs4
 
 from scrape_server import util
-from scrape_server.store import AbsStore
 
 BASE_URL = "https://www.lawson.co.jp"
-get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
+get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
+
 
 class Product:
     """商品ページurlを受け取り、名前、値段などを格納するクラス
@@ -26,6 +23,7 @@ class Product:
                 <p class="smalltxt" style="padding-top:5px;">※近畿・中四国地域のローソンではお取り扱いしておりません。</p>
                 </li>a
     """
+
     def __init__(self, product_info_soup: bs4.element.Tag):
         self.product_info_soup = product_info_soup
         self.url = self.get_url()
@@ -53,7 +51,7 @@ class Product:
 
     def get_region_list(self):
         region_msg_tag = self.product_info_soup.find('p', attrs={"class", "smalltxt"})
-        try: # textがない場合がある
+        try:  # textがない場合がある
             region_msg = region_msg_tag.text
         except AttributeError:
             return ["全国"]
@@ -64,8 +62,7 @@ class Product:
         region_str = region_msg[1:region_msg.index("地域")]
         region_list = region_str.split("・")
         # ここでのregionはその地域意外で販売なので頭に!をつける。
-        return ["!"+region for region in region_list]
-
+        return ["!" + region for region in region_list]
 
     def to_dict(self) -> (dict):
         return {
@@ -119,7 +116,6 @@ class Lawson:
         product_info_tags = all_product_info_tag.findAll("li")
         return product_info_tags
 
-
     def scraping_to_json_file(self, json_path: str) -> (list):
         """全ての商品情報を取得し、リストで返す。
 
@@ -142,9 +138,10 @@ class Lawson:
         else:
             type_of_product_url_idx = 0
             product_info_idx = 0
-        get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
+        get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
         all_type_of_product_urls = self.get_all_type_of_product_urls()
-        for i, type_of_product_url in enumerate(all_type_of_product_urls[type_of_product_url_idx:], start=type_of_product_url_idx):
+        for i, type_of_product_url in enumerate(all_type_of_product_urls[type_of_product_url_idx:],
+                                                start=type_of_product_url_idx):
             product_infos = self.get_product_infos_from_type_of_product_url(type_of_product_url)
             for j, product_info in enumerate(product_infos[product_info_idx:], start=product_info_idx):
                 # 進捗状況を書き込む
@@ -159,6 +156,7 @@ class Lawson:
 
             product_info_idx = 0
         os.remove(progress_file_path)
+
 
 if __name__ == '__main__':
     lawson = Lawson()

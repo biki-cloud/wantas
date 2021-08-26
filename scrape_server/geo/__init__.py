@@ -1,18 +1,16 @@
+import os
+import sys
+import time
+from pathlib import Path
+
+import dataset
 import requests
 from bs4 import BeautifulSoup
-from typing import List
-import time
-import random
-import datetime
-import dataset
-import sys
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
-import os
-import logging
 
-from scrape_server import util
+sys.path.append(str(Path(__file__).parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.parent.resolve()))
+
 from scrape_server import geo
 from scrape_server.mylog import log
 from scrape_server.database import db
@@ -22,6 +20,7 @@ class StoreInfo:
     """
     店名と住所、位置情報を格納するクラス
     """
+
     def __init__(self, name: str, address: str, lat=None, lon=None):
         self.store_name = name
         self.store_address = address
@@ -35,11 +34,12 @@ class StoreInfo:
         try:
             self.store_lat, self.store_lon = geo.get_lat_lon2(self.store_address)
         except ValueError:
-            self.store_lat, self.store_lon = 0,0
+            self.store_lat, self.store_lon = 0, 0
 
 
 def is_lat(lat) -> (bool):
     return lat > -45 and lat < 45
+
 
 def is_lon(lon) -> (bool):
     return lon > -180 and lon < 180
@@ -85,13 +85,14 @@ def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name:
         StoreInfo: 位置情報などを入力されたStoreInfoクラスのインスタンスを返す
     """
     database = dataset.connect(f"sqlite:///{os.path.abspath(os.path.dirname(__file__))}/../database/db.sqlite")
-    min_distance = 100.0 # 初期値
-    min_dic = {} # 最小の情報が入る。
+    min_distance = 100.0  # 初期値
+    min_dic = {}  # 最小の情報が入る。
     # ユーザーの位置情報のプラスマイナスを出す。プラスマイナスを小さくすることでデータベースでヒットする店舗数が減るので処理が早くなる。
     user_lat_plus, user_lat_minus = user_lat + 0.01, user_lat - 0.01
     # ユーザーの近くの店舗の情報がリストで入っている。
     # ユーザーの位置情報のプラスマイナスをデータベースから検索することで大幅に処理時間を短縮できる。
-    near_stores_info = database.query(f"SELECT * FROM {store_table_name} WHERE store_lat  BETWEEN {user_lat_minus} and {user_lat_plus}")
+    near_stores_info = database.query(
+        f"SELECT * FROM {store_table_name} WHERE store_lat  BETWEEN {user_lat_minus} and {user_lat_plus}")
     for dic in near_stores_info:
         store = db.to_suited_dict(dic)
         # ユーザーの位置と店舗の位置を計算し、距離を出す。
@@ -101,6 +102,7 @@ def get_most_near_store_info(user_lat: float, user_lon: float, store_table_name:
             min_dic = store
 
     return StoreInfo(min_dic['store_name'], min_dic['store_address'], min_dic['store_lat'], min_dic['store_lon'])
+
 
 def is_contains(product_store_dic: dict) -> (bool):
     """
@@ -167,11 +169,13 @@ def is_contains(product_store_dic: dict) -> (bool):
             return True
     return False
 
+
 def get_geo_soup(address: str, url: str):
     time.sleep(1)
     payload = {'q': address}
     html = requests.get(url, params=payload)
     return BeautifulSoup(html.content, "html.parser")
+
 
 def get_lat_lon2(address: str) -> (float, float):
     log.debug("get_lat_lon2")
@@ -190,6 +194,7 @@ def get_lat_lon2(address: str) -> (float, float):
         print(f"it seems too many request.{time.asctime()} sleep 2")
         time.sleep(2)
     log.debug("failed")
+
 
 if __name__ == '__main__':
     pass

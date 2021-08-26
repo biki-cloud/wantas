@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
-import os
-import socket
+from pathlib import Path
+
 
 def set_log(filepath, log_name=__name__):
     """
@@ -25,7 +25,8 @@ def set_log(filepath, log_name=__name__):
     r.setLevel(logging.INFO)
 
     # create formatter
-    formatter = logging.Formatter('%(asctime)s %(filename)s:%(lineno)d: %(levelname)s - %(message)s','%Y/%m/%d %H:%M:%S')
+    formatter = logging.Formatter('%(asctime)s %(filename)s:%(lineno)d: %(levelname)s - %(message)s',
+                                  '%Y/%m/%d %H:%M:%S')
 
     # add formatter to ch
     s.setFormatter(formatter)
@@ -37,12 +38,15 @@ def set_log(filepath, log_name=__name__):
 
     return logger
 
-if socket.gethostname() == "hibikinoiMac.local":
-    log = set_log("/Users/hibiki/Desktop/go/wantas/log/all.log")
-elif socket.gethostname() == "ip-10-0-0-234.us-east-2.compute.internal":
-    log = set_log("/home/hibiki/wantas/log/all.log")
-else:
-    log = set_log("/log/all.log")
+
+# if socket.gethostname() == "hibikinoiMac.local":
+#     log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
+# elif socket.gethostname() == "ip-10-0-0-234.us-east-2.compute.internal":
+#     log = set_log("/home/hibiki/wantas/log/all.log")
+# else:
+#     log = set_log("/log/all.log")
+
+log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
 
 if __name__ == '__main__':
     pass

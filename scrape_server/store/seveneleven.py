@@ -1,18 +1,15 @@
-import sys
-import time
-from typing import List
-import bs4
-from collections.abc import Callable
-from bs4 import BeautifulSoup
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
 import os
+import sys
+from typing import List
+
+import bs4
+from bs4 import BeautifulSoup
 
 from scrape_server import util
 
 BASE_URL = "https://www.sej.co.jp"
-get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
+get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
+
 
 class Product:
     """
@@ -182,7 +179,7 @@ class SevenEleven:
             return util.url_join(self.base_url, self.products, self.a, res)
         return ""
 
-    #def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
+    # def get_recursive_links(self, link: str, all_links: list, get_soup: Callable[[str], BeautifulSoup]) -> (None):
     def get_recursive_links(self, link: str, all_links: list, get_soup) -> (None):
         """商品リストが掲載されているページにはラインナップボタンや、1,2,3..のようなボタンがある。
         その中を探索していき商品がリストで掲載されているページurlを取得していく。
@@ -203,7 +200,7 @@ class SevenEleven:
                 self.get_recursive_links(l, all_links, get_soup)
         return
 
-    #def get_products_listed_page_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
+    # def get_products_listed_page_urls(self, get_soup: Callable[[str], BeautifulSoup]) -> (list):
     def get_products_listed_page_urls(self, get_soup) -> (list):
         """セブンイレブンの商品がリストで掲載されているのページurl全てをリストにして返す。
         page example: https://www.sej.co.jp/products/a/onigiri/
@@ -269,7 +266,7 @@ class SevenEleven:
                 img_url: 商品画像のurl
             }
         """
-        get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
+        get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
         results = []
         progress_file_path = f"{json_path}_progress.json"
         if os.path.exists(progress_file_path):
@@ -280,7 +277,8 @@ class SevenEleven:
             products_listed_url_idx = 0
             product_idx = 0
         products_listed_page_urls = self.get_products_listed_page_urls(get_soup)
-        for i, products_listed_url in enumerate(products_listed_page_urls[products_listed_url_idx:], start=products_listed_url_idx):
+        for i, products_listed_url in enumerate(products_listed_page_urls[products_listed_url_idx:],
+                                                start=products_listed_url_idx):
             soup = get_soup(products_listed_url)
             products_soup = get_products_soup_from_products_listed_page(soup)
             products = Products(products_soup)
@@ -301,4 +299,3 @@ if __name__ == '__main__':
     # util.solve_certificate_problem()
     seven = SevenEleven()
     seven.scraping_to_json_file(sys.argv[1])
-

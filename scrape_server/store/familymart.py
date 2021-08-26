@@ -1,22 +1,18 @@
-import sys
-from collections.abc import Callable
-from bs4 import BeautifulSoup
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
 import os
+import sys
 
 from scrape_server import util
-from scrape_server.store import AbsStore
 
 BASE_URL = "https://www.family.co.jp"
-get_soup = util.get_soup_wrapper(BASE_URL) # 必ず必要
+get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
 
 PLAN_TO_SCRAPE_PRODUCT_NAME_LIST = []
+
 
 class Product:
     """商品ページurlを受け取り、名前、値段などを格納するクラス
     """
+
     def __init__(self, page_url: str):
         self.url = page_url
         self.page_soup = get_soup(self.url)
@@ -76,7 +72,7 @@ class Product:
         """
         img_div_tag = self.page_soup.find('div', attrs={"class", "js-mainimage-size"})
         img_tag = img_div_tag.find('img')
-        return util.url_join(BASE_URL,img_tag['src'])
+        return util.url_join(BASE_URL, img_tag['src'])
 
 
 class FamilyMart:
@@ -184,7 +180,7 @@ class FamilyMart:
                         img_url: 商品画像のurl
                     }
         """
-        get_soup = util.get_soup_wrapper(BASE_URL) #必ず必要
+        get_soup = util.get_soup_wrapper(BASE_URL)  # 必ず必要
         all_product_info_list = []
         all_product_page_urls = []
         kind_of_product_urls = self.get_kind_of_product_urls(get_soup)
@@ -194,7 +190,7 @@ class FamilyMart:
                 all_product_page_urls.extend(product_page_urls)
 
         progress_file_path = f"{json_path}_progress.json"
-        print(f"SCRAPE_PRODUCTS length: {len(PLAN_TO_SCRAPE_PRODUCT_NAME_LIST)}") # 1700
+        print(f"SCRAPE_PRODUCTS length: {len(PLAN_TO_SCRAPE_PRODUCT_NAME_LIST)}")  # 1700
         print(f"all_product_page_urls: {len(all_product_page_urls)}")
         if os.path.exists(progress_file_path):
             progress_dic = util.read_json_file(progress_file_path)

@@ -1,8 +1,10 @@
-from abc import ABCMeta, abstractmethod
 import sys
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
+from abc import ABCMeta
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.parent.resolve()))
 
 
 class AbsStore(metaclass=ABCMeta):

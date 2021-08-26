@@ -1,18 +1,12 @@
-import sys
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
-import time
 import os
+import sys
 from collections.abc import Callable
+
 from bs4 import BeautifulSoup
 
 from scrape_server import util
-from scrape_server.store import AbsStore
-from scrape_server import geo
-from scrape_server.geo import StoreInfo
 from scrape_server.database.db import JsonDbDriver
-
+from scrape_server.geo import StoreInfo
 
 ROOT_URL = "https://www.mapion.co.jp"
 
@@ -30,6 +24,7 @@ def get_prefecture_urls(base_url) -> (list):
             results.append(base_url + str(i))
     return results
 
+
 def get_city_urls(prefecture_url, get_soup: Callable[[str], BeautifulSoup]) -> (list):
     """
     都道府県ページにある市町村事のリンクをリストで返す
@@ -41,6 +36,7 @@ def get_city_urls(prefecture_url, get_soup: Callable[[str], BeautifulSoup]) -> (
         city_url = tag.find('a', href=True)['href']
         results.append(ROOT_URL + city_url)
     return results
+
 
 def get_store_urls(city_url, get_soup: Callable[[str], BeautifulSoup]) -> (list):
     """
@@ -68,6 +64,7 @@ def get_store_info(store_url: str, get_soup: Callable[[str], BeautifulSoup]) -> 
     store_name = td_tags[0].renderContents().decode('utf-8')
     address = td_tags[2].renderContents().decode('utf-8')
     return StoreInfo(store_name, address)
+
 
 def register_database(json_path: str):
     """全国の店舗の情報をjsonに格納する
@@ -111,6 +108,7 @@ def register_database(json_path: str):
                 print(util.dict_to_json(store_info.__dict__))
             store_s_idx = 0
         city_s_idx = 0
+
 
 if __name__ == '__main__':
     # command $ python3 get_store_geo.py familymart

@@ -1,21 +1,25 @@
 import json
-import random
 import subprocess
 import time
-from urllib.request import urlopen
 import urllib.robotparser
+from urllib.request import urlopen
+
 from bs4 import BeautifulSoup
+
 
 def dict_to_json(d):
     return json.dumps(d, ensure_ascii=False, indent=4)
+
 
 def write_json_file(file_path, dic):
     with open(file_path, 'w') as fp:
         json.dump(dic, fp, indent=4, ensure_ascii=False)
 
+
 def read_json_file(file_path) -> (dict):
     with open(file_path, 'r') as fp:
         return json.load(fp)
+
 
 def solve_certificate_problem():
     import certifi
@@ -24,6 +28,7 @@ def solve_certificate_problem():
     cmd = f"export SSL_CERT_FILE={certifi.where()}"
     subprocess.call(cmd, shell=True)
     time.sleep(1)
+
 
 def url_join(*args):
     joined_str = ""
@@ -37,11 +42,13 @@ def url_join(*args):
                 joined_str += args[i].replace("/", "") + "/"
     return joined_str
 
+
 def get_html(url):
     page = urlopen(url)
     html_bytes = page.read()
     html = html_bytes.decode("utf-8")
     return html
+
 
 def html_to_soup(html: str):
     return BeautifulSoup(html, "html.parser")
@@ -49,6 +56,7 @@ def html_to_soup(html: str):
 
 class UrlCannotFetchError(Exception):
     pass
+
 
 def get_soup_wrapper(base_url: str):
     """スクレイピングするためにrobots.txtを確認する。
@@ -90,6 +98,7 @@ def get_soup_wrapper(base_url: str):
         return html_to_soup(html)
 
     return get_soup
+
 
 if __name__ == '__main__':
     solve_certificate_problem()

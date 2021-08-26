@@ -1,18 +1,12 @@
-import os, sys
-sys.path.append("/Users/hibiki/Desktop/go/wantas")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
+import os
+import sys
+from typing import List
 
 import dataset
-from typing import List
-import requests
 
-from scrape_server.util import *
-from scrape_server.store import AbsStore
-from scrape_server.store.seveneleven import SevenEleven
-from scrape_server.store.familymart import FamilyMart
-from scrape_server import util
 from scrape_server.mylog import log
+from scrape_server.util import *
+
 
 class DatabasePathIsNotExistsError(Exception):
     pass
@@ -42,6 +36,7 @@ def json_to_db(json_path: str, database_path: str, table_name: str):
     for element_dic in elements:
         insert(table, element_dic)
 
+
 def is_contains(table: dataset.table.Table, record: dict) -> (bool):
     """
     recordがtableに含まれているか
@@ -55,6 +50,7 @@ def is_contains(table: dataset.table.Table, record: dict) -> (bool):
         if new_dic_from_ordered_dic == record:
             return True
     return False
+
 
 def to_suited_dict(record: dict) -> (dict):
     """
@@ -71,13 +67,15 @@ def to_suited_dict(record: dict) -> (dict):
             new_dic[k] = str(v)
     return new_dic
 
+
 def insert(table: dataset.table.Table, record: dict):
     """recordがテーブルの中に存在しない場合のみinsertを行う"""
     suited_record = to_suited_dict(record)
     if is_contains(table, suited_record) is False:
         table.insert(suited_record)
 
-def search(table: dataset.table.Table, key: str, name: str, is_suit: bool=False):
+
+def search(table: dataset.table.Table, key: str, name: str, is_suit: bool = False):
     s = time.time()
     results = []
     all_ele = table.find()
@@ -92,6 +90,7 @@ def search(table: dataset.table.Table, key: str, name: str, is_suit: bool=False)
     print(f"2 time: {time.time() - s}")
     return results
 
+
 def suited(d: dict) -> (dict):
     """データベースから取り出したordered Dictの中のパラメータを
     整形し、dictで返す。
@@ -105,16 +104,19 @@ def suited(d: dict) -> (dict):
                 new[k] = v
     return new
 
+
 def suited_products_table(result: list) -> (list):
     """
     productsテーブル用。データベースから取り出す時にjsonを整形する。
     """
     return [suited(d) for d in result]
 
+
 def suited_store_table(table: dataset.table.Table):
     """
     store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を含むdictのリストを返す。
     """
+
     def suited(d: dict) -> (dict):
         new = {}
         for k, v in d.items():
@@ -124,7 +126,9 @@ def suited_store_table(table: dataset.table.Table):
                 else:
                     new[k] = v
         return new
+
     return (suited(d) for d in table.find())
+
 
 def delete_table(db_path: str, table_name: str):
     """テーブルを削除する
@@ -139,10 +143,12 @@ def delete_table(db_path: str, table_name: str):
     table = db[table_name]
     table.delete()
 
+
 class JsonDbDriver:
     """
     jsonに対し、データの書き込み、読み込みを行うクラス。データベースの簡易版。
     """
+
     def __init__(self, database_path):
         self.database_path = database_path
 
@@ -167,6 +173,7 @@ class JsonDbDriver:
     def get_all(self) -> (List[dict]):
         return read_json_file(self.database_path)
 
+
 def re_register_products_table(db_path: str, product_json_files: list):
     """現在データベースに入っている商品情報を削除し、
     新たにスクレイピングしたjsonデータを挿入する。
@@ -180,6 +187,7 @@ def re_register_products_table(db_path: str, product_json_files: list):
     for json_path in product_json_files:
         log.info(f"start register {json_path}")
         json_to_db(json_path, db_path, "products")
+
 
 if __name__ == '__main__':
     product_json_files = sys.argv[1:]
