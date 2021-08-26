@@ -131,20 +131,27 @@ def is_contains(product_store_dic: dict) -> (bool):
     }
     # 店の住所
     store_address = product_store_dic['store_address']
-    # ['中国', '熊本', '鹿児島']みたいな販売されているエリア
+
+    """
+    # ['中国', '熊本', '鹿児島', '!長崎']みたいなのが販売されているエリア
+    中国、熊本、鹿児島では販売されているが長崎では販売されていない
+    """
     product_region_list = product_store_dic['product_region_list']
     log.debug(f"store_address: {store_address}")
     log.debug(f"product_region_list: {product_region_list}")
 
     # 販売されている地域や県のリスト
     region_list = [ele for ele in product_region_list if ele[0] != "!"]
+
     # 販売されていない地域や県のリスト
     del_list = [ele[1:] for ele in product_region_list if ele[0] == "!"]
 
     # area_tableから販売されていない地域を削除していく
     for el in del_list:
+
         if area_table.get(el):
             area_table.pop(el)
+
         else:
             for area, pre_list in area_table.items():
                 if el in pre_list:
@@ -155,18 +162,24 @@ def is_contains(product_store_dic: dict) -> (bool):
         for area, pre_list in area_table.items():
             if area in store_address or any([True for pre in pre_list if pre in store_address]):
                 return True
+
     for region in region_list:
+
         # regionが神奈川などの県の場合
         if region in store_address:
             return True
+
         # regionが東北などの地域の場合
         elif area_table.get(region):
             pre_list = area_table.get(region)
             log.debug(f"pre_list: {pre_list}")
+
             if any([True for pre in pre_list if pre in store_address]):
                 return True
+
         if region == "全国":
             return True
+
     return False
 
 
@@ -193,7 +206,7 @@ def get_lat_lon2(address: str) -> (float, float):
                 return float(lat), float(lon)
         print(f"it seems too many request.{time.asctime()} sleep 2")
         time.sleep(2)
-    log.debug("failed")
+        log.debug("failed")
 
 
 if __name__ == '__main__':

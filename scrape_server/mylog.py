@@ -1,7 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
-from pathlib import Path
-
+import socket
 
 def set_log(filepath, log_name=__name__):
     """
@@ -39,14 +38,13 @@ def set_log(filepath, log_name=__name__):
     return logger
 
 
-# if socket.gethostname() == "hibikinoiMac.local":
-#     log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
-# elif socket.gethostname() == "ip-10-0-0-234.us-east-2.compute.internal":
-#     log = set_log("/home/hibiki/wantas/log/all.log")
-# else:
-#     log = set_log("/log/all.log")
+if socket.gethostname() == "hibikinoiMac.local":
+    log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
+elif socket.gethostname() == "ip-10-0-0-234.us-east-2.compute.internal":
+    log = set_log("/home/hibiki/wantas/log/all.log")
+else:
+    log = set_log("/log/all.log")
 
-log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
 
 if __name__ == '__main__':
     pass

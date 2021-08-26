@@ -1,12 +1,17 @@
 import logging as log
 import os
+import sys
 import time
 from concurrent import futures
+from pathlib import Path
 from typing import List
 
 import dataset
 import grpc
 
+sys.path.append(str(Path(__file__).parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.resolve()))
+sys.path.append(str(Path(__file__).parent.parent.parent.resolve()))
 from scrape_server import geo
 from scrape_server import scrape_pb2
 from scrape_server import scrape_pb2_grpc
