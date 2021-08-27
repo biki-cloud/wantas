@@ -57,8 +57,15 @@ def json_to_db(json_path: str, database_path: str, table_name: str):
 
 def is_contains(table: dataset.table.Table, record: dict) -> (bool):
     """
-    recordがtableに含まれているか
-    TODO: この関数はsqlite本来の機能で代用できる。
+    recordが登録されているか
+    TODO: この関数の機能はSqlite本来の機能で代用できる
+
+    Args:
+        table:
+        record:
+
+    Returns:
+
     """
     all_element = table.find()
     for ordered_dic in all_element:
@@ -69,6 +76,10 @@ def is_contains(table: dataset.table.Table, record: dict) -> (bool):
         if new_dic_from_ordered_dic == record:
             return True
     return False
+
+
+def is_contains2(db, record: dict) -> (bool):
+    pass
 
 
 def to_suited_dict(record: dict) -> (dict):

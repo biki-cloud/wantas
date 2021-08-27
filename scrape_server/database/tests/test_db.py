@@ -46,7 +46,7 @@ def get_store_info_dic_list() -> (List[dict]):
         }]
 
 
-def get_test_sqlite(tmp_path):
+def get_tmp_sqlite(tmp_path):
     test_dir_path = os.path.join(tmp_path, "sub")
     d = tmp_path / "sub"
     d.mkdir()
@@ -95,7 +95,7 @@ def test_json_to_db(tmp_path):
     # JSONファイルを作成
     json_file_path = os.path.join(test_dir_path, "test.json")
     util.write_json_file(json_file_path, product_dic_list)
-    assert True == os.path.exists(json_file_path)
+    assert os.path.exists(json_file_path) is True
 
     db_path = os.path.join(test_dir_path, "test.sqlite")
     database = dataset.connect(f"sqlite:///{db_path}")
@@ -114,7 +114,7 @@ def test_json_to_db(tmp_path):
 
 
 def test_is_contains(tmp_path):
-    database = get_test_sqlite(tmp_path)
+    database = get_tmp_sqlite(tmp_path)
     table_name = "test_table"
 
     table = database.get_table(table_name)
@@ -148,7 +148,7 @@ def test_to_suited_dict():
 
 
 def test_insert(tmp_path):
-    database = get_test_sqlite(tmp_path)
+    database = get_tmp_sqlite(tmp_path)
     products_table = database['products']
     product_info_dict_list = get_product_info_dict_list()
     for dic in product_info_dict_list:
@@ -167,7 +167,7 @@ def test_insert(tmp_path):
 
 
 def test_search(tmp_path):
-    database = get_test_sqlite(tmp_path)
+    database = get_tmp_sqlite(tmp_path)
     table = database['test_table']
     assert 0 == len(table)
     product_info_dic_list = get_product_info_dict_list()
@@ -184,7 +184,7 @@ def test_search(tmp_path):
 
 
 def test_suited_products_table(tmp_path):
-    database = get_test_sqlite(tmp_path)
+    database = get_tmp_sqlite(tmp_path)
     table = database['test_table']
     assert 0 == len(table)
     product_info_dic_list = get_product_info_dict_list()
@@ -198,7 +198,7 @@ def test_suited_products_table(tmp_path):
 
 
 def test_suited_store_table(tmp_path):
-    database = get_test_sqlite(tmp_path)
+    database = get_tmp_sqlite(tmp_path)
     table = database['store_table']
     assert 0 == len(table)
     test_dic = {

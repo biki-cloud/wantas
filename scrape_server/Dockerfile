@@ -8,5 +8,5 @@ WORKDIR /code/scrape_server
 COPY . .
 
 RUN pip install -r requirements.txt
-RUN $(python3 util.py)
+RUN $(python3 util/__init__.py)
 EXPOSE 50051
