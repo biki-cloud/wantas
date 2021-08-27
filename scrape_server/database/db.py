@@ -8,12 +8,30 @@ from scrape_server.mylog import log
 from scrape_server.util import *
 
 
-class DatabasePathIsNotExistsError(Exception):
-    pass
+class DatabasePathIsNotExistsError(Exception): pass
 
 
-class TableNameIsNotExistsError(Exception):
-    pass
+class TableNameIsNotExistsError(Exception): pass
+
+
+class KeyIsNotContainsError(Exception): pass
+
+
+class DbAdapter:
+    """
+    リストなどをdatabaseに入れる時は,でjoinしたりしないといけない。
+    逆に取り出す時は,でsplitして文字列にしないといけない。
+    そういう細かい作業を行う時に使用するクラス。
+    """
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def get_from_db(cls): pass
+
+    @classmethod
+    def insert_to_db(cls): pass
 
 
 def json_to_db(json_path: str, database_path: str, table_name: str):
@@ -40,6 +58,7 @@ def json_to_db(json_path: str, database_path: str, table_name: str):
 def is_contains(table: dataset.table.Table, record: dict) -> (bool):
     """
     recordがtableに含まれているか
+    TODO: この関数はsqlite本来の機能で代用できる。
     """
     all_element = table.find()
     for ordered_dic in all_element:
@@ -81,7 +100,7 @@ def search(table: dataset.table.Table, key: str, name: str, is_suit: bool = Fals
     all_ele = table.find()
     for ele in all_ele:
         if key not in ele.keys():
-            raise BaseException(f"{key} doesn't contain in {ele}")
+            raise KeyIsNotContainsError(f"{key} doesn't contain in {ele}")
         if name in ele[key]:
             if is_suit is False:
                 results.append(ele)
@@ -98,6 +117,7 @@ def suited(d: dict) -> (dict):
     new = {}
     for k, v in d.items():
         if k != "id":
+            # 長崎,埼玉,島根 -> ["長崎", "埼玉", "島根"]
             if k == "product_region_list":
                 new[k] = v.split(",")
             else:
@@ -115,12 +135,19 @@ def suited_products_table(result: list) -> (list):
 def suited_store_table(table: dataset.table.Table):
     """
     store_infoテーブル用。全てのレコードを取り出し、lat,lonをfloatにした要素を含むdictのリストを返す。
+
+    Args:
+        table: dataset.table.Tableオブジェクト。
+
+    Returns:
+
     """
 
     def suited(d: dict) -> (dict):
         new = {}
         for k, v in d.items():
             if k != "id":
+                # "35.422323" -> 35.422323
                 if k == "store_lat" or k == "store_lon":
                     new[k] = float(v)
                 else:
@@ -153,24 +180,29 @@ class JsonDbDriver:
         self.database_path = database_path
 
     def put(self, data: List[dict]):
+
         if os.path.exists(self.database_path):
             elements = self.get_all()
         else:
             elements = []
+
         for d in data:
             if d not in elements:
                 elements.append(d)
+
         write_json_file(self.database_path, elements)
 
     def search(self, search_name) -> (List[dict]):
         results = []
+
         for record in self.get_all():
             if record.get('name'):
                 if search_name in record['name']:
                     results.append(record)
+
         return results
 
-    def get_all(self) -> (List[dict]):
+    def get_all(self) -> (dict):
         return read_json_file(self.database_path)
 
 
@@ -184,6 +216,7 @@ def re_register_products_table(db_path: str, product_json_files: list):
     """
     log.info("start delete products table.")
     delete_table(db_path, "products")
+
     for json_path in product_json_files:
         log.info(f"start register {json_path}")
         json_to_db(json_path, db_path, "products")
