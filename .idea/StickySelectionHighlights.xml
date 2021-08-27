@@ -88,6 +88,16 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/mylog/__init__.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/mylog/mylog.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/scrape_server/scrape_pb2_grpc.py">
           <value>
             <PaintGroupHighlightMap />
@@ -154,6 +164,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/scrape_server/util.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/util/__init__.py">
           <value>
             <PaintGroupHighlightMap />
           </value>

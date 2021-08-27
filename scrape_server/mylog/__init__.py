@@ -1,11 +1,10 @@
 import logging
-import socket
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
+import os
 
 
 def set_log(filepath, log_name=__name__):
-    print(filepath)
     """
     CRITICAL
     ERROR
@@ -15,6 +14,8 @@ def set_log(filepath, log_name=__name__):
 
     setLevelでDEBUGを指定すると上全てを表示する。
     """
+
+    assert os.path.exists(filepath) is True
 
     # create logger
     logger = logging.getLogger(log_name)
@@ -41,15 +42,8 @@ def set_log(filepath, log_name=__name__):
     return logger
 
 
-# if socket.gethostname() == "hibikinoiMac.local":
-#     log = set_log("/Users/hibiki/Desktop/go/wantas/log/all.log")
-# elif socket.gethostname() == "ip-10-0-0-234.us-east-2.compute.internal":
-#     log = set_log("/home/hibiki/wantas/log/all.log")
-# else:
-#     log = set_log("/log/all.log")
-
 try:
-    log = set_log(f"{str(Path(__file__).parent.parent.resolve())}/log/all.log")
+    log = set_log(f"{str(Path(__file__).parent.parent.parent.resolve())}/log/all.log")
 except FileNotFoundError:
     log = set_log("/log/all.log")
 
