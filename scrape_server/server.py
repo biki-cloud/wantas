@@ -163,6 +163,7 @@ class ScrapingServiceManyTimes(scrape_pb2_grpc.ScrapingServiceServicer):
             for product_info_dic in responses:
                 log.debug(f"send response to go client.")
                 yield product_info_dic
+
         else:
             # no result
             log.info("Scraping results is None.")

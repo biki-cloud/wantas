@@ -2,6 +2,7 @@ import json
 import time
 import urllib.robotparser
 from urllib.request import urlopen
+import urllib
 
 from bs4 import BeautifulSoup
 
@@ -77,8 +78,10 @@ def get_soup_wrapper(base_url: str):
         interval = delay
 
     def get_soup(url: str):
+        # urlはスクレイピングできるか
         if rp.can_fetch("*", url) == False:
             raise UrlCannotFetchError(f"This url: {url} can't fetch.")
+
         max_continue_count = 10
         continue_count = 0
         while True:

@@ -30,7 +30,6 @@ $("button").click(function() {
     toggleSelectStoreButton(this.outerText);
 });
 
-// TODO: 店舗の近さでソートする。google mapで距離をとる
 // TODO: bootstrapで見た目をカッコよくする。
 jQuery(function($) {
     $(document).ajaxSend(function() {
