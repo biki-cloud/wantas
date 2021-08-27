@@ -11,9 +11,11 @@
 ### プログラミング言語: バックエンド
 * Python
 * Go
+* Shell
  
 ### プログラミング言語: フロントエンド
 * Html
+* Css
 * Javascript
 
 ### データベース
@@ -31,31 +33,34 @@
 今後はログイン機能を追加し、SNSでシェアするような機能を付けていきたいと思っています。
 
 
+# とりあえずローカルで使ってみる
+### 起動方法
+```shell
+git clone git@github.com:biki-cloud/wantas.git
+docker-compose up -d # 起動
+```
+
+### [**アクセス**](http://localhost:80/search)
+
+### 終了方法
+```shell
+docker-compose down -v --rmi all # 終了
+```
+
 # テスト
 ```shell
-docker build -t <image name> . # dockerfileのビルド
+# 起動
+docker-compose up -d # 通常起動
+# or
+docker-compose up --build # 通常起動でエラーが出た場合
 
-docker-compose up -d # 通常時
-
-docker-compose up --build # 通常実行でエラーが出た場合
-
-docker-compose down -v --rmi all # docker-compose終了時
-```
-
-
-### pytestを使用してスクレイピング等が正常に動作しているか確認する
-```shell
+# pytestを使用してスクレイピング等が正常に動作しているか確認する
 cd scrape_server
 python3 util.py
-export SSL_CERT_FILE=/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/certifi/cacert.pem
-# 上の出力を貼り付ける。スクレイピングできるようにするために。
-export SSL_CERT_FILE=/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/certifi/cacert.pem
+# 上の出力をコマンドラインに貼り付け実行する。スクレイピングできるようにするために。
 pytest -v -p no:warning
-```
 
-### webサーバとスクレイピングサーバを起動し、最終テストを行う。
-
-```shell
+# webサーバとスクレイピングサーバを起動し、最終テストを行う。
 # 別のセッション
 cd scrape_server
 python3 server.py
@@ -67,5 +72,9 @@ go run main.go
 # 別のセッション
 cd scrape_client
 go test -v
+
+# 終了
+docker-compose down -v --rmi all # docker-compose終了時
 ```
+
 
