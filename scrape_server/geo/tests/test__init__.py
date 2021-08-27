@@ -1,47 +1,43 @@
-import sys
 import pytest
 from bs4 import BeautifulSoup
-sys.path.append("/")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
 
 from scrape_server import geo
-from scrape_server import store
+
 
 @pytest.mark.parametrize(
     "dic, r", [
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["埼玉", "熊本", "静岡"]
-        }, True),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["埼玉", "熊本", "静岡"]
+         }, True),
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["関東", "熊本", "静岡"]
-        }, True),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["関東", "熊本", "静岡"]
+         }, True),
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["!熊本"]
-        }, True),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["!熊本"]
+         }, True),
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["!熊本", "!埼玉"]
-        }, False),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["!熊本", "!埼玉"]
+         }, False),
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["!埼玉"]
-        }, False),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["!埼玉"]
+         }, False),
         ({
-            "store_address": "埼玉県ふじみ野市",
-            "product_region_list": ["!埼玉", "関東"]
-        }, False),
+             "store_address": "埼玉県ふじみ野市",
+             "product_region_list": ["!埼玉", "関東"]
+         }, False),
         ({
-            "store_address": "神奈川県ふじみ野市",
-            "product_region_list": ["!埼玉", "関東"]
-        }, True),
+             "store_address": "神奈川県ふじみ野市",
+             "product_region_list": ["!埼玉", "関東"]
+         }, True),
         ({
-            "store_address": "滋賀県ふじみ野市",
-            "product_region_list": ['!近畿', '!中四国']
-        }, False)
+             "store_address": "滋賀県ふじみ野市",
+             "product_region_list": ['!近畿', '!中四国']
+         }, False)
     ]
 )
 def test_is_contains(dic, r):
@@ -84,21 +80,36 @@ def test_get_distance(lat1, lon1, lat2, lon2, r):
 
 @pytest.mark.parametrize(
     "user_lat, user_lon, store_table_name, r", [
-        (35.43343434, 140.43434, "store_familymart", geo.StoreInfo("ファミリーマート茂原六ッ野店", "千葉県茂原市六ツ野３１３３−１", 35.436399, 140.337963)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
-        (38.4343, 144.333, "store_seveneleven", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (35.43343434, 140.43434, "store_familymart",
+         geo.StoreInfo("ファミリーマート茂原六ッ野店", "千葉県茂原市六ツ野３１３３−１", 35.436399, 140.337963)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
+        (38.4343, 144.333, "store_seveneleven",
+         geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279)),
     ]
 )
 def test_get_most_near_store_info(user_lat, user_lon, store_table_name, r):
@@ -129,7 +140,7 @@ def test_get_geo_soup(address, url, r):
 
 @pytest.mark.parametrize(
     "name, address, r", [
-    ("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279))
+        ("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", geo.StoreInfo("セブンイレブン女川バイパス店", "宮城県牡鹿郡女川町大道１−２", 38.439817, 141.440279))
     ]
 )
 def test_StoreInfo_class(name, address, r):

@@ -50,9 +50,7 @@ docker-compose down -v --rmi all # 終了
 # テスト
 ```shell
 # 起動
-docker-compose up -d # 通常起動
-# or
-docker-compose up --build # 通常起動でエラーが出た場合
+docker-compose up -d # 通常起動。エラーが出た場合は-dを--buildに変えてみる。
 
 # pytestを使用してスクレイピング等が正常に動作しているか確認する
 cd scrape_server

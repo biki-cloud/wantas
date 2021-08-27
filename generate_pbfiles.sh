@@ -1,3 +1,5 @@
+# GRPCにて使用するpbファイルを自動作成する。
+
 echo "python3 -m grpc_tools.protoc -I scrape_client/scrapepb --python_out=scrape_client/scrapepb --grpc_python_out=scrape_client/scrapepb scrape_client/scrapepb/scrape.proto"
 python3 -m grpc_tools.protoc -I scrape_client/scrapepb --python_out=scrape_client/scrapepb --grpc_python_out=scrape_client/scrapepb scrape_client/scrapepb/scrape.proto
 

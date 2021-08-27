@@ -1,14 +1,16 @@
-import pytest
 import os
-import requests
 import time
 from pathlib import Path
 
+import pytest
+import requests
+
 from scrape_server import geo
-from scrape_server.geo import get_store_geo
 from scrape_server import util
+from scrape_server.geo import get_store_geo
 
 ROOT_URL = "https://www.mapion.co.jp"
+
 
 def test_config_json_is_available():
     config_json_path = f"{str(Path(__file__).parent.parent.resolve())}/config.json"
@@ -46,6 +48,7 @@ def test_get_city_urls():
     res = requests.get(city_urls[0])
     assert 503 == res.status_code
 
+
 def test_get_store_urls():
     base_url = "https://www.mapion.co.jp/phonebook/M02005CM01/"
     get_soup = util.get_soup_wrapper(base_url)
@@ -59,8 +62,10 @@ def test_get_store_urls():
 
 @pytest.mark.parametrize(
     "base_url, r", [
-        ("https://www.mapion.co.jp/phonebook/M02005CM01/", geo.StoreInfo("セブンイレブン愛別町店", '北海道上川郡愛別町本町１４０', 43.908554, 142.573098)),
-        ("https://www.mapion.co.jp/phonebook/M02005CM02/", geo.StoreInfo("ローソン赤平幌岡店", '北海道赤平市幌岡町５４', 43.579571, 142.037059)),
+        ("https://www.mapion.co.jp/phonebook/M02005CM01/",
+         geo.StoreInfo("セブンイレブン愛別町店", '北海道上川郡愛別町本町１４０', 43.908554, 142.573098)),
+        ("https://www.mapion.co.jp/phonebook/M02005CM02/",
+         geo.StoreInfo("ローソン赤平幌岡店", '北海道赤平市幌岡町５４', 43.579571, 142.037059)),
     ]
 )
 def test_get_store_info(base_url, r):

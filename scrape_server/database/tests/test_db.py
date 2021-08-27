@@ -1,37 +1,34 @@
 import os
-import sys
-sys.path.append("/")
-sys.path.append("/code")
-sys.path.append("/home/hibiki/wantas")
-
-import dataset
 from typing import List
 
-from scrape_server.database import db
+import dataset
+
 from scrape_server import util
+from scrape_server.database import db
+
 
 def get_product_info_dict_list() -> (List[dict]):
     return [
-    {
-        "product_name": "手巻おにぎり　炙り焼さば",
-        "product_url": "https://www.sej.co.jp/products/a/item/045687/hokkaido",
-        "product_price": "125円（税込135円）",
-        "product_region_list": [
-            "北海道"
-        ],
-        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045687/D10E5252B4B52AA7139ECAE5D7DFFBB3.jpg",
-        "store_table_name": "store_seveneleven"
-    },
-    {
-        "product_name": "北海道米こだわりおむすび　道産帆立山わさび添え",
-        "product_url": "https://www.sej.co.jp/products/a/item/045680/hokkaido",
-        "product_price": "160円（税込172.80円）",
-        "product_region_list": [
-            "北海道"
-        ],
-        "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045680/D9C54C8C5981CA17BBA6C99E44B0AF78.jpg",
-        "store_table_name": "store_seveneleven"
-    }]
+        {
+            "product_name": "手巻おにぎり　炙り焼さば",
+            "product_url": "https://www.sej.co.jp/products/a/item/045687/hokkaido",
+            "product_price": "125円（税込135円）",
+            "product_region_list": [
+                "北海道"
+            ],
+            "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045687/D10E5252B4B52AA7139ECAE5D7DFFBB3.jpg",
+            "store_table_name": "store_seveneleven"
+        },
+        {
+            "product_name": "北海道米こだわりおむすび　道産帆立山わさび添え",
+            "product_url": "https://www.sej.co.jp/products/a/item/045680/hokkaido",
+            "product_price": "160円（税込172.80円）",
+            "product_region_list": [
+                "北海道"
+            ],
+            "product_img_url": "https://img.7api-01.dp1.sej.co.jp/item-image/045680/D9C54C8C5981CA17BBA6C99E44B0AF78.jpg",
+            "store_table_name": "store_seveneleven"
+        }]
 
 
 def get_store_info_dic_list() -> (List[dict]):
@@ -41,12 +38,12 @@ def get_store_info_dic_list() -> (List[dict]):
         "store_lat": "43.579571",
         "store_lon": "142.037059"
     },
-    {
-        "store_name": "ローソン旭川８条十丁目店",
-        "store_address": "北海道旭川市８条通１０−２１９１−６",
-        "store_lat": "43.772961",
-        "store_lon": "142.367272"
-    }]
+        {
+            "store_name": "ローソン旭川８条十丁目店",
+            "store_address": "北海道旭川市８条通１０−２１９１−６",
+            "store_lat": "43.772961",
+            "store_lon": "142.367272"
+        }]
 
 
 def get_test_sqlite(tmp_path):
@@ -94,7 +91,7 @@ def test_json_to_db(tmp_path):
     d.mkdir()
     assert True == os.path.exists(test_dir_path)
 
-    product_dic_list  = get_product_info_dict_list()
+    product_dic_list = get_product_info_dict_list()
     # JSONファイルを作成
     json_file_path = os.path.join(test_dir_path, "test.json")
     util.write_json_file(json_file_path, product_dic_list)
@@ -222,34 +219,3 @@ def test_suited_store_table(tmp_path):
     for i in results_gene:
         assert i == collect_dic
         return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
