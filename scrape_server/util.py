@@ -1,5 +1,4 @@
 import json
-import subprocess
 import time
 import urllib.robotparser
 from urllib.request import urlopen
@@ -24,9 +23,6 @@ def read_json_file(file_path) -> (dict):
 def solve_certificate_problem():
     import certifi
     print(f"export SSL_CERT_FILE={certifi.where()}")
-    path = certifi.where()
-    cmd = f"export SSL_CERT_FILE={certifi.where()}"
-    subprocess.call(cmd, shell=True)
     time.sleep(1)
 
 
