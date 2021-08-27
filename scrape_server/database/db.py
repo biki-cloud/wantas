@@ -79,6 +79,8 @@ def is_contains(table: dataset.table.Table, record: dict) -> (bool):
 
 
 def is_contains2(db, record: dict) -> (bool):
+    print(db, record)
+    print("now")
     pass
 
 

@@ -130,6 +130,23 @@ def test_is_contains(tmp_path):
     assert False == db.is_contains(table, test_dic)
 
 
+def test_is_contains2(tmp_path):
+    database = get_tmp_sqlite(tmp_path)
+    table_name = "test_table"
+
+    table = database.get_table(table_name)
+    test_dict_list = get_product_info_dict_list()
+    for ele in test_dict_list:
+        ele['product_region_list'] = "".join(ele['product_region_list'])
+        table.insert(ele)
+        assert True == db.is_contains(table, ele)
+    test_dic = {
+        "name": "mike",
+        "age": 22
+    }
+    assert False == db.is_contains(table, test_dic)
+
+
 def test_to_suited_dict():
     # dict -> database
     test_dic = {

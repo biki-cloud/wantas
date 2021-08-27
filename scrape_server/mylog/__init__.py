@@ -15,8 +15,6 @@ def set_log(filepath, log_name=__name__):
     setLevelでDEBUGを指定すると上全てを表示する。
     """
 
-    assert os.path.exists(filepath) is True
-
     # create logger
     logger = logging.getLogger(log_name)
     logger.setLevel(logging.DEBUG)
