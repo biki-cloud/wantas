@@ -88,6 +88,7 @@ def f():
 
 cProfile.run('f()')
 ```
+
 出力結果
 ```text
 start
