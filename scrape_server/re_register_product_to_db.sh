@@ -4,8 +4,8 @@
 # database/products_json/db.sqliteに再登録する
 echo "start $(date)" >> /home/hibiki/wantas/log/scraping.log 2>&1
 
-echo "python3 /home/hibiki/wantas/scrape_server/util.py" >> /home/hibiki/wantas/log/scraping.log 2>&1
-$(python3 /home/hibiki/wantas/scrape_server/util.py)
+echo "python3 /home/hibiki/wantas/scrape_server/util/__init__.py" >> /home/hibiki/wantas/log/scraping.log 2>&1
+$(python3 /home/hibiki/wantas/scrape_server/util/__init__.py)
 
 rm -fr /home/hibiki/wantas/scrape_server/database/products_json/*_product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1
 mv /home/hibiki/wantas/scrape_server/database/products_json/product_familymart.json /home/hibiki/wantas/scrape_server/database/products_json/$(date "+%Y%m%d")_product_familymart.json >> /home/hibiki/wantas/log/scraping.log 2>&1

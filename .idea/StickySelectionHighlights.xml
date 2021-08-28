@@ -108,6 +108,11 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/scrape_server/re_register_product_to_db.sh">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/scrape_server/scrape_pb2_grpc.py">
           <value>
             <PaintGroupHighlightMap />

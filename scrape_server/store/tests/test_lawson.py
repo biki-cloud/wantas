@@ -1,8 +1,5 @@
 from bs4 import BeautifulSoup
 import sys
-# sys.path.append("/")
-# sys.path.append("/code")
-# sys.path.append("/home/hibiki/wantas")
 import requests
 import time
 
