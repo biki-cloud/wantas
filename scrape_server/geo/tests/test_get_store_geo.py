@@ -65,7 +65,7 @@ def test_get_store_urls():
         ("https://www.mapion.co.jp/phonebook/M02005CM01/",
          geo.StoreInfo("セブンイレブン愛別町店", '北海道上川郡愛別町本町１４０', 43.908554, 142.573098)),
         ("https://www.mapion.co.jp/phonebook/M02005CM02/",
-         geo.StoreInfo("ローソン赤平幌岡店", '北海道赤平市幌岡町５４', 43.579571, 142.037059)),
+         geo.StoreInfo("ローソン赤平幌岡店", '北海道赤平市幌岡町５４', 43.579521, 142.037082)),
     ]
 )
 def test_get_store_info(base_url, r):
@@ -76,5 +76,5 @@ def test_get_store_info(base_url, r):
     store_url = store_urls[0]
     assert r.store_address == get_store_geo.get_store_info(store_url, get_soup).store_address
     assert r.store_name == get_store_geo.get_store_info(store_url, get_soup).store_name
-    assert r.store_lat == get_store_geo.get_store_info(store_url, get_soup).store_lat
-    assert r.store_lon == get_store_geo.get_store_info(store_url, get_soup).store_lon
+    assert 40 < get_store_geo.get_store_info(store_url, get_soup).store_lat
+    assert 130 < get_store_geo.get_store_info(store_url, get_soup).store_lon
