@@ -183,6 +183,11 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/time_test.py">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

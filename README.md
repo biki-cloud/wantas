@@ -75,4 +75,33 @@ go test -v
 docker-compose down -v --rmi all # docker-compose終了時
 ```
 
+# プロファイリング
+プロファイリングはcProfileを使用する。使用方法は以下の通り。
+```python
+import cProfile
+import time
+
+def f():
+    print("start")
+    time.sleep(2)
+    print("end")
+
+cProfile.run('f()')
+```
+出力結果
+```text
+start
+end
+         7 function calls in 2.003 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.003    2.003 <string>:1(<module>)
+        1    0.000    0.000    2.003    2.003 time_test.py:5(f)
+        1    0.000    0.000    2.003    2.003 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    2.003    2.003    2.003    2.003 {built-in method time.sleep}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+```
 

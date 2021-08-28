@@ -1,7 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-import os
 
 
 def set_log(filepath, log_name=__name__):
